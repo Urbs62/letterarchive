@@ -16,32 +16,30 @@
           "type": "envelope-front",
           "label": "Kuvert framsida",
           "image": "letters/1975/1975-05-24/envelope-front.jpg",
-          "transcription": "",
-          "description": ""
+          "transcription": "Ulf Sandlund\nSaffjällsgatan 16\n431 39 MÖLNDAL",
+          "description": "Handskrivet kuvert med tre svenska frimärken. Poststämplat i Piteå 29.5.75."
         },
         {
           "type": "envelope-back",
           "label": "Kuvert baksida",
           "image": "letters/1975/1975-05-24/envelope-back.jpg",
-          "transcription": "",
-          "description": ""
+          "transcription": "S.V.A.\n\nUrban Sandlund\nDegermansgatan 3\n941 00 PITEÅ\n\nVarför mår inte jag? När Roger Moore.\nDet kan man fråga sig",
+          "description": "Överst står 'S.V.A.' med pilar som visar att bokstäverna ska läsas i omvänd ordning som 'AVS', en ordvits på förkortningen för avsändare. Baksidan innehåller också en ordvits kring namnet Roger Moore. Delar av annan text är överstrukna eller täckta av tejp."
         },
         {
           "type": "page",
           "page": 1,
           "label": "Sida 1",
           "image": "letters/1975/1975-05-24/page-01.jpg",
-          "transcription": "Kära Ulf,\n\nDet här är en kort demotext för brevets första sida. Den slutliga transkriptionen ska återge originalets språk och stavning exakt.",
-          "transcriptionStatus": "demo-incomplete",
-          "transcriptionNote": "Demotext – transkriptionen är ofullständig.",
-          "description": ""
+          "transcription": "24/5-61\n\nHej Ulf!\n\nTörs nästan inte skriva. Det var väl\nnästan 1 år sen du skrev.\n\nVi har i alla fall skaffat ttak kärk = katt kräk.\n(en historia \"En pojk\". (rolig vaa\näkta norrländska)\n\nJust nu klättrar Frasse omkring på papperet\n\noooo/morron har jag namnsdag 25/5\n\nKommer ni i sommar?\n\nHur många meter är du?\n\nSpelar Birgitta piano eller kan hon inte spela?\n\nDin bästa matsort?\n\nHur mycket arg är du på mig för att jag\ninte skrivit? Svara i ton.\n\nSvara",
+          "description": "Texten 'ttak kärk' är skriven upp och ner i originalet."
         },
         {
           "type": "page",
           "page": 2,
           "label": "Sida 2",
           "image": "letters/1975/1975-05-24/page-02.jpg",
-          "transcription": "",
+          "transcription": "Lasse Berghagens sång\n\nJenny Jenny Jenny, Jenny, Jenny\nJenny, Jenny, Jenny, Jenny o.s.v.\n\nDen urkassaste, hemskaste, dåligaste, sopigaste\ndassigaste, äckligaste, snuskigaste, enformigaste\nsamma textigaste, melodi jag hört\n\nIdag ska vi fara till Skellefteå på cykel-\ntävling\n\nKameran går fint (eller rättare sagt \"springer\")\n\nIdag har det varit Lyon loppmarknad\npå Norrmalmia. Jag for inte dit\nmen det gjorde \"micke\" nyss kom han\nhem med en korg (näver), bollkastnings-\nställ, en gramofon som inte funkar och\nen TV för 6 kr som kan explodera när som\nhelst",
           "description": ""
         },
         {
@@ -49,7 +47,7 @@
           "page": 3,
           "label": "Sida 3",
           "image": "letters/1975/1975-05-24/page-03.jpg",
-          "transcription": "",
+          "transcription": "Snart ska vi fara till Skellefteå så nu kan\njag inte skriva mer förutom en grym neger-\nhistoria.\n\nEn man gick fram till en neger och frågade\nvar apoteket var. Negern svarade;\n\n– Mtphlamtm hlvomom\n– Hörrö neger svara ordentligt var är apoteket\n– Momohlåmtna\n– Men jä-la neger jä-el var är apoteket\n\nNigern blev smått arg på mannen och puttade\nbort han 2 meter sen sa han\n\nJa kan väl för f-n inte svara när du står\npå underläppen\n\nHejdå,\n\nHelsningar Urban\n\nP.S SKRIV SNABBT OCH FORT.\nP.S Flåt stilen\nP.S På torsdag far vi till Kemi på skolresa",
           "description": ""
         }
       ]
