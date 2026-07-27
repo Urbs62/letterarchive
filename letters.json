@@ -11,65 +11,48 @@
       "to": "Ulf",
       "senderAge": 13,
       "type": "handwritten",
-      "folder": "letters/1975/1975-05-24/",
-      "images": [
+      "items": [
         {
-          "file": "envelope-front.jpg",
-          "kind": "envelope",
-          "label": "Kuvertets framsida"
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1975/1975-05-24/envelope-front.jpg",
+          "transcription": "",
+          "description": ""
         },
         {
-          "file": "envelope-back.jpg",
-          "kind": "envelope",
-          "label": "Kuvertets baksida"
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1975/1975-05-24/envelope-back.jpg",
+          "transcription": "",
+          "description": ""
         },
         {
-          "file": "page-01.jpg",
-          "kind": "page",
+          "type": "page",
           "page": 1,
-          "label": "Sida 1"
+          "label": "Sida 1",
+          "image": "letters/1975/1975-05-24/page-01.jpg",
+          "transcription": "Kära Ulf,\n\nDet här är en kort demotext för brevets första sida. Den slutliga transkriptionen ska återge originalets språk och stavning exakt.",
+          "transcriptionStatus": "demo-incomplete",
+          "transcriptionNote": "Demotext – transkriptionen är ofullständig.",
+          "description": ""
         },
         {
-          "file": "page-02.jpg",
-          "kind": "page",
+          "type": "page",
           "page": 2,
-          "label": "Sida 2"
+          "label": "Sida 2",
+          "image": "letters/1975/1975-05-24/page-02.jpg",
+          "transcription": "",
+          "description": ""
         },
         {
-          "file": "page-03.jpg",
-          "kind": "page",
+          "type": "page",
           "page": 3,
-          "label": "Sida 3"
-        },
-        {
-          "file": "page-04.jpg",
-          "kind": "page",
-          "page": 4,
-          "label": "Sida 4"
-        },
-        {
-          "file": "page-05.jpg",
-          "kind": "page",
-          "page": 5,
-          "label": "Sida 5"
-        },
-        {
-          "file": "page-06.jpg",
-          "kind": "page",
-          "page": 6,
-          "label": "Sida 6"
+          "label": "Sida 3",
+          "image": "letters/1975/1975-05-24/page-03.jpg",
+          "transcription": "",
+          "description": ""
         }
-      ],
-      "transcription": {
-        "status": "demo-incomplete",
-        "note": "Demotext – transkriptionen är ofullständig.",
-        "pages": [
-          {
-            "page": 1,
-            "text": "Kära Ulf,\n\nDet här är en kort demotext för brevets första sida. Den slutliga transkriptionen ska återge originalets språk och stavning exakt."
-          }
-        ]
-      }
+      ]
     }
   ]
 }

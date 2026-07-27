@@ -402,9 +402,44 @@ button:focus-visible {
   line-height: 1.9;
 }
 
+.transcription-page .transcription-text,
+.item-description p {
+  white-space: pre-wrap;
+}
+
 .transcription-page .missing-transcription {
   color: var(--muted);
   font-style: italic;
+}
+
+.transcription-page .transcription-note {
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.item-description {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.item-description h3 {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+}
+
+.item-description p {
+  color: var(--muted);
+}
+
+.letter-view > .image-navigation {
+  max-width: 54rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .site-footer {

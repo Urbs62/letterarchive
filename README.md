@@ -15,7 +15,7 @@ letterarchive/
 ├── index.html       Sidans semantiska grundstruktur
 ├── style.css        All formgivning och responsiv layout
 ├── app.js           Läser data och renderar arkiv- och brevvy
-├── letters.json     Metadata, bildordning och transkriptioner
+├── letters.json     Metadata, arkivdelar, transkriptioner och beskrivningar
 ├── README.md
 └── letters/
     └── ÅÅÅÅ/
@@ -29,9 +29,33 @@ letterarchive/
 ## Hur breven lagras
 
 Varje brev har ett objekt i `letters.json`. Där finns datum, avsändare,
-mottagare, avsändarens ålder, brevtyp, mappsökväg, bilder i rätt ordning och
-transkriptioner sida för sida. Allt innehåll som hör till ett enskilt brev ska
-ligga där, inte i HTML- eller JavaScript-filerna.
+mottagare, avsändarens ålder, brevtyp och en ordnad lista `items`. Varje post i
+listan är en egen arkivdel: kuvertets framsida, kuvertets baksida eller en
+brevsida. Kuverten behandlas alltså som fullvärdiga arkivsidor, inte enbart som
+metadata eller miniatyrbilder.
+
+Varje arkivdel kan innehålla:
+
+```json
+{
+  "type": "envelope-front",
+  "label": "Kuvert framsida",
+  "image": "letters/1975/1975-05-24/envelope-front.jpg",
+  "transcription": "",
+  "description": ""
+}
+```
+
+`type` är `envelope-front`, `envelope-back` eller `page`. Brevsidor har dessutom
+ett numeriskt `page`-fält. `transcription` innehåller en ordagrann återgivning
+av läsbar text. Stavning, grammatik och äldre uttryck ska inte moderniseras eller
+korrigeras. `description` är separat och kan beskriva exempelvis teckningar,
+frimärken och dekorationer. Båda fälten är frivilliga och kan lämnas tomma medan
+materialet bearbetas.
+
+Ofullständiga demotranskriptioner kan märkas med `transcriptionStatus` och
+`transcriptionNote`. Allt innehåll som hör till ett enskilt brev ska ligga i
+`letters.json`, inte i HTML- eller JavaScript-filerna.
 
 Bilderna ligger under `letters/<år>/<datum>/`. Datum används i ISO-format:
 `ÅÅÅÅ-MM-DD`. Kuvertbilder heter `envelope-front.jpg` och
@@ -45,10 +69,11 @@ Sidan visar en tydlig platshållare om en bild ännu inte finns.
 1. Skapa en mapp, exempelvis `letters/1976/1976-08-03/`.
 2. Lägg originalbilderna i mappen enligt namnkonventionen ovan.
 3. Lägg till ett nytt objekt i listan `letters` i `letters.json`.
-4. Ange varje bild i `images` i den ordning den ska visas. Sätt `kind` till
-   `envelope` eller `page`; för en brevsida anges också dess sidnummer i `page`.
-5. Lägg transkriberad text i `transcription.pages`, ett objekt per
-   transkriberad sida. Behåll originalets språk och stavning.
+4. Ange varje kuvertsida och brevsida i `items` i den ordning de ska visas. Ange
+   `type`, svensk `label`, sökvägen `image` och, för en brevsida, dess sidnummer
+   i `page`.
+5. Lägg den ordagranna texten i arkivdelens eget `transcription`-fält. Lägg en
+   eventuell förklaring av visuellt material separat i `description`.
 6. Kontrollera att `id`, `date` och `folder` stämmer överens och att JSON-filen
    är giltig.
 

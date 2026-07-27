@@ -27,22 +27,26 @@ function formatDate(date) {
 }
 
 function letterPageCount(letter) {
-  return letter.images.filter((image) => image.kind === "page").length;
+  return letter.items.filter((item) => item.type === "page").length;
 }
 
-function imagePath(letter, image) {
-  return `${letter.folder}${image.file}`;
+function imagePath(item) {
+  return item.image;
 }
 
-function createPlaceholder(image, compact = false) {
+function imageFileName(item) {
+  return item.image.split("/").pop();
+}
+
+function createPlaceholder(item, compact = false) {
   const placeholder = document.createElement("div");
   placeholder.className = `image-placeholder${compact ? " image-placeholder--compact" : ""}`;
   placeholder.setAttribute("role", "img");
-  placeholder.setAttribute("aria-label", `${image.label}. Bilden saknas.`);
+  placeholder.setAttribute("aria-label", `${item.label}. Bilden saknas.`);
   placeholder.innerHTML = `
     <span class="placeholder-mark" aria-hidden="true">✦</span>
-    <strong>${image.label}</strong>
-    <span>${image.file}</span>
+    <strong>${item.label}</strong>
+    <span>${imageFileName(item)}</span>
     <small>Originalbild kommer senare</small>
   `;
   return placeholder;
@@ -50,19 +54,21 @@ function createPlaceholder(image, compact = false) {
 
 function createArchiveImage(letter) {
   const envelope =
-    letter.images.find((image) => image.file === "envelope-front.jpg") ||
-    letter.images.find((image) => image.kind === "envelope") ||
-    letter.images[0];
+    letter.items.find((item) => item.type === "envelope-front") ||
+    letter.items.find((item) => item.type.startsWith("envelope")) ||
+    letter.items[0];
   const frame = document.createElement("div");
   frame.className = "card-image";
 
   if (!envelope) {
-    frame.append(createPlaceholder({ label: "Kuvert", file: "Bild saknas" }, true));
+    frame.append(
+      createPlaceholder({ label: "Kuvert", image: "Bild saknas" }, true)
+    );
     return frame;
   }
 
   const image = new Image();
-  image.src = imagePath(letter, envelope);
+  image.src = imagePath(envelope);
   image.alt = envelope.label;
   image.loading = "lazy";
   image.addEventListener("error", () => image.replaceWith(createPlaceholder(envelope, true)));
@@ -134,83 +140,94 @@ function renderArchive() {
   app.focus({ preventScroll: true });
 }
 
-function createOriginalImage(letter, image) {
+function createOriginalImage(item) {
   const frame = document.createElement("button");
   frame.className = "original-frame";
   frame.type = "button";
-  frame.setAttribute("aria-label", `Förstora ${image.label.toLowerCase()}`);
+  frame.setAttribute("aria-label", `Förstora ${item.label.toLowerCase()}`);
 
   const img = new Image();
-  img.src = imagePath(letter, image);
-  img.alt = image.label;
+  img.src = imagePath(item);
+  img.alt = item.label;
   img.addEventListener("error", () => {
     frame.disabled = true;
     frame.removeAttribute("aria-label");
-    img.replaceWith(createPlaceholder(image));
+    img.replaceWith(createPlaceholder(item));
   });
   frame.append(img);
-  frame.addEventListener("click", () => openViewer(letter, image));
+  frame.addEventListener("click", () => openViewer(item));
   return frame;
 }
 
 function imagePositionLabel(letter, index) {
-  const image = letter.images[index];
-  if (image.kind === "envelope") {
-    const envelopeImages = letter.images.filter((item) => item.kind === "envelope");
-    const position = envelopeImages.indexOf(image) + 1;
-    return `Kuvert ${position} av ${envelopeImages.length}`;
-  }
-  return `Sida ${image.page} av ${letterPageCount(letter)}`;
+  const item = letter.items[index];
+  return `${item.label} · ${index + 1} av ${letter.items.length}`;
 }
 
-function updateOriginal() {
-  const image = activeLetter.images[activeImageIndex];
+function updateItem() {
+  const item = activeLetter.items[activeImageIndex];
   const stage = app.querySelector(".original-stage");
-  stage.replaceChildren(createOriginalImage(activeLetter, image));
-  app.querySelector(".image-position").textContent = imagePositionLabel(
-    activeLetter,
-    activeImageIndex
-  );
+  stage.replaceChildren(createOriginalImage(item));
+  updateTranscription(item);
+  app.querySelector(".image-position").textContent =
+    imagePositionLabel(activeLetter, activeImageIndex);
   app.querySelector(".previous-image").disabled = activeImageIndex === 0;
   app.querySelector(".next-image").disabled =
-    activeImageIndex === activeLetter.images.length - 1;
+    activeImageIndex === activeLetter.items.length - 1;
 }
 
 function moveImage(direction) {
-  if (!activeLetter || !app.querySelector(".original-panel:not([hidden])")) return;
+  if (!activeLetter) return;
   const nextIndex = activeImageIndex + direction;
-  if (nextIndex < 0 || nextIndex >= activeLetter.images.length) return;
+  if (nextIndex < 0 || nextIndex >= activeLetter.items.length) return;
   activeImageIndex = nextIndex;
-  updateOriginal();
+  updateItem();
 }
 
-function createTranscription(letter) {
+function createTranscription() {
   const panel = document.createElement("section");
   panel.className = "transcription-panel";
   panel.hidden = true;
+  panel.innerHTML = '<article class="transcription-page"></article>';
+  return panel;
+}
 
-  if (letter.transcription.note) {
-    panel.innerHTML = `<p class="transcription-note">${letter.transcription.note}</p>`;
+function updateTranscription(item) {
+  const article = app.querySelector(".transcription-page");
+  article.replaceChildren();
+
+  const heading = document.createElement("h2");
+  heading.textContent = item.label;
+  article.append(heading);
+
+  if (item.transcriptionNote) {
+    const note = document.createElement("p");
+    note.className = "transcription-note";
+    note.textContent = item.transcriptionNote;
+    article.append(note);
   }
 
-  const pages = letter.images.filter((image) => image.kind === "page");
-  pages.forEach((image) => {
-    const transcription = letter.transcription.pages.find(
-      (page) => page.page === image.page
-    );
-    const article = document.createElement("article");
-    article.className = "transcription-page";
-    article.innerHTML = `
-      <h2>Sida ${image.page}</h2>
-      ${
-        transcription
-          ? `<p>${transcription.text.replaceAll("\n", "<br>")}</p>`
-          : '<p class="missing-transcription">Ingen transkription tillagd ännu.</p>'
-      }
-    `;
-    panel.append(article);
-  });
-  return panel;
+  const transcription = document.createElement("p");
+  if (item.transcription) {
+    transcription.className = "transcription-text";
+    transcription.textContent = item.transcription;
+  } else {
+    transcription.className = "missing-transcription";
+    transcription.textContent =
+      "Ingen transkription registrerad för denna sida ännu.";
+  }
+  article.append(transcription);
+
+  if (item.description) {
+    const descriptionSection = document.createElement("section");
+    descriptionSection.className = "item-description";
+    const descriptionHeading = document.createElement("h3");
+    descriptionHeading.textContent = "Beskrivning";
+    const description = document.createElement("p");
+    description.textContent = item.description;
+    descriptionSection.append(descriptionHeading, description);
+    article.append(descriptionSection);
+  }
 }
 
 function renderLetter(letter) {
@@ -233,20 +250,25 @@ function renderLetter(letter) {
     </div>
     <section id="original-panel" class="original-panel" role="tabpanel" aria-labelledby="original-tab">
       <div class="original-stage"></div>
-      <nav class="image-navigation" aria-label="Bläddra bland originalbilder">
-        <button class="previous-image" type="button"><span aria-hidden="true">←</span> Föregående</button>
-        <p class="image-position" aria-live="polite"></p>
-        <button class="next-image" type="button">Nästa <span aria-hidden="true">→</span></button>
-      </nav>
       <p class="image-hint">Tryck på bilden för att se den i större format.</p>
     </section>
   `;
 
-  const transcription = createTranscription(letter);
+  const transcription = createTranscription();
   transcription.id = "transcription-panel";
   transcription.setAttribute("role", "tabpanel");
   transcription.setAttribute("aria-labelledby", "transcription-tab");
   view.append(transcription);
+
+  const navigation = document.createElement("nav");
+  navigation.className = "image-navigation";
+  navigation.setAttribute("aria-label", "Bläddra bland brevets delar");
+  navigation.innerHTML = `
+    <button class="previous-image" type="button"><span aria-hidden="true">←</span> Föregående</button>
+    <p class="image-position" aria-live="polite"></p>
+    <button class="next-image" type="button">Nästa <span aria-hidden="true">→</span></button>
+  `;
+  view.append(navigation);
   app.replaceChildren(view);
 
   view.querySelector(".previous-image").addEventListener("click", () => moveImage(-1));
@@ -254,7 +276,7 @@ function renderLetter(letter) {
   view.querySelectorAll(".mode-tab").forEach((tab) => {
     tab.addEventListener("click", () => setMode(tab.id === "original-tab"));
   });
-  updateOriginal();
+  updateItem();
   app.focus({ preventScroll: true });
 }
 
@@ -272,11 +294,11 @@ function setMode(showOriginal) {
   transcriptionPanel.hidden = showOriginal;
 }
 
-function openViewer(letter, image) {
+function openViewer(item) {
   lastFocusedElement = document.activeElement;
   const fullImage = new Image();
-  fullImage.src = imagePath(letter, image);
-  fullImage.alt = image.label;
+  fullImage.src = imagePath(item);
+  fullImage.alt = item.label;
   viewerContent.replaceChildren(fullImage);
   viewer.hidden = false;
   document.body.classList.add("viewer-open");
@@ -313,7 +335,7 @@ async function loadArchive() {
     const response = await fetch("letters.json");
     if (!response.ok) throw new Error("Kunde inte läsa letters.json");
     const data = await response.json();
-    letters = data.letters;
+    letters = data.letters.map(normalizeLetter);
     handleRoute();
   } catch (error) {
     app.innerHTML = `
@@ -324,6 +346,39 @@ async function loadArchive() {
     `;
     console.error(error);
   }
+}
+
+function normalizeLetter(letter) {
+  if (letter.items) return letter;
+
+  const legacyPages = letter.transcription?.pages || [];
+  return {
+    ...letter,
+    items: (letter.images || []).map((image) => {
+      const legacyTranscription = legacyPages.find(
+        (page) => image.kind === "page" && page.page === image.page
+      );
+      return {
+        type:
+          image.kind === "page"
+            ? "page"
+            : image.file === "envelope-front.jpg"
+              ? "envelope-front"
+              : "envelope-back",
+        page: image.page,
+        label: image.label,
+        image: `${letter.folder || ""}${image.file}`,
+        transcription: legacyTranscription?.text || "",
+        transcriptionStatus: legacyTranscription
+          ? letter.transcription?.status
+          : undefined,
+        transcriptionNote: legacyTranscription
+          ? letter.transcription?.note
+          : undefined,
+        description: ""
+      };
+    })
+  };
 }
 
 window.addEventListener("hashchange", handleRoute);
