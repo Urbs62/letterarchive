@@ -1,0 +1,75 @@
+{
+  "collection": {
+    "id": "breven-till-ulf",
+    "title": "Breven till Ulf"
+  },
+  "letters": [
+    {
+      "id": "1975-05-24",
+      "date": "1975-05-24",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 13,
+      "type": "handwritten",
+      "folder": "letters/1975/1975-05-24/",
+      "images": [
+        {
+          "file": "envelope-front.jpg",
+          "kind": "envelope",
+          "label": "Kuvertets framsida"
+        },
+        {
+          "file": "envelope-back.jpg",
+          "kind": "envelope",
+          "label": "Kuvertets baksida"
+        },
+        {
+          "file": "page-01.jpg",
+          "kind": "page",
+          "page": 1,
+          "label": "Sida 1"
+        },
+        {
+          "file": "page-02.jpg",
+          "kind": "page",
+          "page": 2,
+          "label": "Sida 2"
+        },
+        {
+          "file": "page-03.jpg",
+          "kind": "page",
+          "page": 3,
+          "label": "Sida 3"
+        },
+        {
+          "file": "page-04.jpg",
+          "kind": "page",
+          "page": 4,
+          "label": "Sida 4"
+        },
+        {
+          "file": "page-05.jpg",
+          "kind": "page",
+          "page": 5,
+          "label": "Sida 5"
+        },
+        {
+          "file": "page-06.jpg",
+          "kind": "page",
+          "page": 6,
+          "label": "Sida 6"
+        }
+      ],
+      "transcription": {
+        "status": "demo-incomplete",
+        "note": "Demotext – transkriptionen är ofullständig.",
+        "pages": [
+          {
+            "page": 1,
+            "text": "Kära Ulf,\n\nDet här är en kort demotext för brevets första sida. Den slutliga transkriptionen ska återge originalets språk och stavning exakt."
+          }
+        ]
+      }
+    }
+  ]
+}

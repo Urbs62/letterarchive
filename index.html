@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="LetterArchive – ett personligt digitalt arkiv för gamla brev."
+    >
+    <title>LetterArchive – Breven till Ulf</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-title" href="#" aria-label="Gå till arkivet">LetterArchive</a>
+      <p class="collection-title">Breven till Ulf</p>
+      <p class="introduction">
+        En samling brev från Urban till Ulf. Originalbrev, kuvert, teckningar
+        och transkriberad text.
+      </p>
+    </header>
+
+    <main id="app" class="site-main" tabindex="-1">
+      <p class="loading" role="status">Öppnar arkivet…</p>
+    </main>
+
+    <footer class="site-footer">
+      <p>Ett personligt arkiv för brev och minnen.</p>
+    </footer>
+
+    <div
+      id="image-viewer"
+      class="image-viewer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Förstorad originalbild"
+      hidden
+    >
+      <button class="viewer-close" type="button" aria-label="Stäng bildvisaren">
+        Stäng <span aria-hidden="true">×</span>
+      </button>
+      <div class="viewer-content"></div>
+    </div>
+  </body>
+</html>
