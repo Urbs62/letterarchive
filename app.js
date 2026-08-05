@@ -30,6 +30,10 @@ function letterPageCount(letter) {
   return letter.items.filter((item) => item.type === "page").length;
 }
 
+function attachmentCount(letter) {
+  return letter.items.filter((item) => item.type === "attachment").length;
+}
+
 function imagePath(item) {
   return item.image;
 }
@@ -79,15 +83,19 @@ function createArchiveImage(letter) {
 function renderArchive() {
   activeLetter = null;
   document.title = "LetterArchive – Breven till Ulf";
+  const years = letters.map((letter) => letter.date.slice(0, 4));
+  const yearRange = years.length
+    ? `${Math.min(...years)}${Math.min(...years) === Math.max(...years) ? "" : `–${Math.max(...years)}`}`
+    : "Inga årtal";
   const section = document.createElement("section");
   section.className = "archive";
   section.setAttribute("aria-labelledby", "archive-heading");
   section.innerHTML = `
-    <div class="section-heading">
-      <p class="eyebrow">Samlingen</p>
-      <h1 id="archive-heading">Brevarkivet</h1>
-      <p>${letters.length} ${letters.length === 1 ? "brev" : "brev"} bevarade i arkivet</p>
-    </div>
+    <header class="archive-introduction">
+      <h1 id="archive-heading">Breven till Ulf</h1>
+      <p>En samling brev från Urban till kusinen Ulf.<br>Originalbrev, kuvert, bilagor och transkriberad text.</p>
+      <p class="archive-statistics">${letters.length} brev <span aria-hidden="true">•</span> ${yearRange}</p>
+    </header>
   `;
 
   const byYear = Map.groupBy
@@ -100,7 +108,7 @@ function renderArchive() {
       }, new Map());
 
   [...byYear.entries()]
-    .sort(([a], [b]) => b.localeCompare(a))
+    .sort(([a], [b]) => a.localeCompare(b))
     .forEach(([year, yearLetters]) => {
       const yearSection = document.createElement("section");
       yearSection.className = "year-group";
@@ -109,8 +117,9 @@ function renderArchive() {
       grid.className = "letter-grid";
 
       yearLetters
-        .sort((a, b) => b.date.localeCompare(a.date))
+        .sort((a, b) => a.date.localeCompare(b.date))
         .forEach((letter) => {
+          const attachments = attachmentCount(letter);
           const article = document.createElement("article");
           article.className = "letter-card";
           article.append(createArchiveImage(letter));
@@ -122,6 +131,7 @@ function renderArchive() {
             <ul>
               <li>${letter.from}, ${letter.senderAge} år</li>
               <li>${letterPageCount(letter)} sidor</li>
+              ${attachments ? `<li>${attachments} ${attachments === 1 ? "bilaga" : "bilagor"}</li>` : ""}
               <li>${typeLabels[letter.type] || letter.type}</li>
             </ul>
             <a class="open-letter" href="#brev/${encodeURIComponent(letter.id)}">
@@ -167,13 +177,34 @@ function imagePositionLabel(letter, index) {
 function updateItem() {
   const item = activeLetter.items[activeImageIndex];
   const stage = app.querySelector(".original-stage");
-  stage.replaceChildren(createOriginalImage(item));
+  stage.replaceChildren();
+  if (item.type === "attachment") {
+    stage.append(createItemHeading(item));
+  }
+  stage.append(createOriginalImage(item));
   updateTranscription(item);
   app.querySelector(".image-position").textContent =
     imagePositionLabel(activeLetter, activeImageIndex);
   app.querySelector(".previous-image").disabled = activeImageIndex === 0;
   app.querySelector(".next-image").disabled =
     activeImageIndex === activeLetter.items.length - 1;
+}
+
+function createItemHeading(item) {
+  const heading = document.createElement("header");
+  heading.className = "item-heading";
+
+  const label = document.createElement("h2");
+  label.textContent = item.label;
+  heading.append(label);
+
+  if (item.title) {
+    const title = document.createElement("p");
+    title.textContent = item.title;
+    heading.append(title);
+  }
+
+  return heading;
 }
 
 function moveImage(direction) {
@@ -200,6 +231,13 @@ function updateTranscription(item) {
   heading.textContent = item.label;
   article.append(heading);
 
+  if (item.title) {
+    const title = document.createElement("p");
+    title.className = "item-title";
+    title.textContent = item.title;
+    article.append(title);
+  }
+
   if (item.transcriptionNote) {
     const note = document.createElement("p");
     note.className = "transcription-note";
@@ -207,16 +245,17 @@ function updateTranscription(item) {
     article.append(note);
   }
 
-  const transcription = document.createElement("p");
   if (item.transcription) {
+    const transcriptionSection = document.createElement("section");
+    transcriptionSection.className = "item-transcription";
+    const transcriptionHeading = document.createElement("h3");
+    transcriptionHeading.textContent = "Transkription";
+    const transcription = document.createElement("p");
     transcription.className = "transcription-text";
     transcription.textContent = item.transcription;
-  } else {
-    transcription.className = "missing-transcription";
-    transcription.textContent =
-      "Ingen transkription registrerad för denna sida ännu.";
+    transcriptionSection.append(transcriptionHeading, transcription);
+    article.append(transcriptionSection);
   }
-  article.append(transcription);
 
   if (item.description) {
     const descriptionSection = document.createElement("section");
@@ -227,6 +266,14 @@ function updateTranscription(item) {
     description.textContent = item.description;
     descriptionSection.append(descriptionHeading, description);
     article.append(descriptionSection);
+  }
+
+  if (!item.transcription && !item.description) {
+    const missingText = document.createElement("p");
+    missingText.className = "missing-transcription";
+    missingText.textContent =
+      "Ingen text eller beskrivning registrerad för detta objekt ännu.";
+    article.append(missingText);
   }
 }
 
@@ -246,7 +293,7 @@ function renderLetter(letter) {
     </header>
     <div class="mode-tabs" role="tablist" aria-label="Välj visningsläge">
       <button id="original-tab" class="mode-tab is-active" role="tab" aria-selected="true" aria-controls="original-panel" type="button">Original</button>
-      <button id="transcription-tab" class="mode-tab" role="tab" aria-selected="false" aria-controls="transcription-panel" type="button">Transkription</button>
+      <button id="transcription-tab" class="mode-tab" role="tab" aria-selected="false" aria-controls="transcription-panel" type="button">Text</button>
     </div>
     <section id="original-panel" class="original-panel" role="tabpanel" aria-labelledby="original-tab">
       <div class="original-stage"></div>
@@ -269,6 +316,22 @@ function renderLetter(letter) {
     <button class="next-image" type="button">Nästa <span aria-hidden="true">→</span></button>
   `;
   view.append(navigation);
+
+  if (letter.summary) {
+    const summary = document.createElement("section");
+    summary.className = "letter-summary";
+    summary.setAttribute("aria-labelledby", "letter-summary-heading");
+
+    const summaryHeading = document.createElement("h2");
+    summaryHeading.id = "letter-summary-heading";
+    summaryHeading.textContent = "Sammanfattning";
+
+    const summaryText = document.createElement("p");
+    summaryText.textContent = letter.summary;
+    summary.append(summaryHeading, summaryText);
+    view.append(summary);
+  }
+
   app.replaceChildren(view);
 
   view.querySelector(".previous-image").addEventListener("click", () => moveImage(-1));

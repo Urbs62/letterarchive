@@ -49,43 +49,11 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-.site-header {
-  max-width: 76rem;
-  margin: 0 auto;
-  padding: 3.5rem 2rem 2.5rem;
-  text-align: center;
-  border-bottom: 1px solid var(--line);
-}
-
-.site-title {
-  display: inline-block;
-  color: var(--ink);
-  font-size: clamp(2.2rem, 5vw, 4.4rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  text-decoration: none;
-}
-
-.collection-title {
-  margin: 0.7rem 0 1.4rem;
-  color: var(--accent);
-  font-size: 1.15rem;
-  font-style: italic;
-  letter-spacing: 0.08em;
-}
-
-.introduction {
-  max-width: 38rem;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
 .site-main {
   width: min(72rem, calc(100% - 3rem));
   min-height: 55vh;
   margin: 0 auto;
-  padding: 4rem 0 6rem;
+  padding: 2.5rem 0 6rem;
   outline: none;
 }
 
@@ -95,12 +63,11 @@ button:focus-visible {
   text-align: center;
 }
 
-.section-heading {
-  margin-bottom: 4rem;
-  text-align: center;
+.archive-introduction {
+  margin-bottom: 2rem;
 }
 
-.section-heading h1,
+.archive-introduction h1,
 .letter-heading h1 {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3.5rem);
@@ -108,10 +75,24 @@ button:focus-visible {
   line-height: 1.15;
 }
 
-.section-heading > p:last-child,
 .letter-heading > p:last-child {
   margin: 0.8rem 0 0;
   color: var(--muted);
+}
+
+.archive-introduction > p {
+  max-width: 38rem;
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+}
+
+.archive-introduction .archive-statistics {
+  margin-top: 1rem;
+  color: var(--accent-dark);
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: bold;
+  letter-spacing: 0.06em;
 }
 
 .eyebrow {
@@ -263,6 +244,30 @@ button:focus-visible {
   text-align: center;
 }
 
+.letter-summary {
+  max-width: 54rem;
+  margin: 2.5rem auto 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.28);
+  border-left: 2px solid var(--line);
+}
+
+.letter-summary h2 {
+  margin: 0 0 0.65rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.letter-summary p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
 .mode-tabs {
   display: flex;
   justify-content: center;
@@ -306,6 +311,27 @@ button:focus-visible {
 
 .original-stage {
   min-height: min(62vh, 46rem);
+}
+
+.item-heading {
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+
+.item-heading h2 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+}
+
+.item-heading p,
+.transcription-page .item-title {
+  margin: 0.35rem 0 0;
+  color: var(--ink);
+  font-size: 1.45rem;
+  line-height: 1.35;
 }
 
 .original-frame {
@@ -418,12 +444,14 @@ button:focus-visible {
   line-height: 1.6;
 }
 
+.item-transcription,
 .item-description {
   margin-top: 2.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--line);
 }
 
+.item-transcription h3,
 .item-description h3 {
   margin: 0 0 0.6rem;
   color: var(--accent);
@@ -498,17 +526,9 @@ code {
 }
 
 @media (max-width: 40rem) {
-  .site-header {
-    padding: 2.5rem 1.25rem 2rem;
-  }
-
   .site-main {
     width: min(100% - 2rem, 72rem);
     padding-top: 2.5rem;
-  }
-
-  .section-heading {
-    margin-bottom: 2.5rem;
   }
 
   .back-link {

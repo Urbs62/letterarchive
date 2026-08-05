@@ -5,6 +5,112 @@
   },
   "letters": [
     {
+      "id": "1972-12-10",
+      "date": "1972-12-10",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 10,
+      "type": "handwritten",
+      "summary": "Detta är det äldsta bevarade brevet i samlingen och skrevs när Urban nyligen fyllt tio år.\n\nBrevet består av en vardaglig uppdatering om livet i Piteå inför julen 1972. Urban berättar att han nyligen sett cowboyfilmen Med snaran om halsen, att den ordinarie läraren är sjuk och att klassen därför har en vikarie. Han nämner också att skolan fått både matsal och gymnastiksal.\n\nJulen närmar sig och Urban längtar mycket till julafton, även om familjen inte ska bjuda hem några gäster, något han beskriver som \"trist\". Han berättar också om sina födelsedagspresenter: ett kassaskåp, en tjock Tarzanbok, två pysselböcker, en halskedja med sitt stjärntecken (Skorpionen), en pannlampa och ett par skidhandskar.\n\nBrevet avslutas med ett stort handritat HEJDÅ, vilket redan här visar den lekfullhet som senare kommer att prägla många av breven till kusinen Ulf.",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1972/1972-12-10/envelope-front.jpg",
+          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal\n\nPiteå 1972-12-10",
+          "description": "Brunt kuvert adresserat för hand till Ulf Sandlund i Mölndal. Frankerat med ett svenskt 75-öres frimärke med motiv av en väderkvarn och poststämplat Piteå 1972-12-10."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1972/1972-12-10/envelope-back.jpg",
+          "transcription": "A.V.S.\n\nUrban Sandlund\nDegermansgatan 3\n941 00 Piteå",
+          "description": "Kuvertets baksida innehåller endast avsändaradressen."
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1972/1972-12-10/page-01.jpg",
+          "transcription": "8/12-72\n\nHEJ!\n\nFörlåt att jag inte skrivit tidigare. Jag hade börjat med\nett men jag ides inte. Jag har nyss sett Cowboyfilmen\nMed snaran om halsen. Den var bra. Den handlade om en Mexikan.\nVåran fröken är sjuk så vi har en annan, våran\nriktiga fröken heter Gun Erikson som är jättebussig.\nHon kommer på Måndag. Vi har fått en matsal och en\ngymnastiksal. Jag längtar till Julafton jättemycket.\nVi ska inte bjuda någon. Trist. Mycket trist.\nJätte mycket trist. Nyss har jag fyllt år. Kuligt.\nMycket kuligt. Jätte mycket kuligt. Jag fick\nett kassaskåp, en tjock Tarzanbok, två pyssel-\nböcker, en halskedja med mitt stjärntecken som är\nen skorpion, en pannlampa och ett par skidhandskar till present.\nJag har skidträning två gånger i veckan.\nSnart ska jag börja köpa julklappar. Nu kan jag\ninte hitta på någonting mer.\n\nHejdå. Mycket hejdå. Jätte mycket hejdå.\n\nHEJDÅ\n\nHälsningar\nUrban Sandlund",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "1974-08-23",
+      "date": "1974-08-23",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 12,
+      "type": "handwritten",
+      "summary": "Detta är ett av de tidigaste breven i samlingen och Urban är omkring tolv år gammal. Brevet består nästan helt av ordvitsar, skämt och språklekar. Inledningsvis berättar han att han haft halsfluss och att familjen köpt en kamera, men därefter övergår brevet snabbt till en lång rad humoristiska infall.\n\nStörre delen av brevet bygger på dubbeltydiga uttryck och ordassociationer, exempelvis \"nu är jag ute och cyklar igen\", \"det tjänar jag klöver på\" och \"det är inget att binda sig vid\". Brevet avslutas med ytterligare ordvitsar, ett grafiskt skämt där ordet \"SAKTA\" delas mellan två rader samt en skämtsam uppmaning om Coca-Cola.\n\nTill brevet följer dessutom tre bilagor: en förpackning till ett tuggummi med tillhörande tatuering, en handskriven instruktion samt den andra sidan av förpackningen. Bilagorna visar att brevet inte bara var ett brev utan också ett litet paket med en överraskning till kusinen Ulf.",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1974/1974-08-23/envelope-front.jpg",
+          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal",
+          "description": "Brunt kuvert adresserat för hand till Ulf Sandlund i Mölndal. Frankerat med ett svenskt 140-öres frimärke och poststämplat Piteå 23-8-1974."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1974/1974-08-23/envelope-back.jpg",
+          "transcription": "Urban Sandlund\nDegemansgate 3\n941 00 Piteå\n\nA.V.S.\n\nTja...\n\n3.\n\nINNEHÅLL = Gissa\n\nUTEHÅLL = Text",
+          "description": "Kuvertets baksida är försluten med tejp. A.V.S. betyder avsändare."
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1974/1974-08-23/page-01.jpg",
+          "transcription": "Hej (Hallow) käre Ulf,\n\nÄsch Piteå 12-9-??\n\nDan efter du hade farit blidde jag sjukkk (halsfluss). Inte roligt men pappa köpte kameran för 341... äsch... 143 mark.\n\n$ Nu skärper du dig, Urban!\n\nJag klarade mig frånsamvetet, han missade. För 143 kr.\n\nVänta Ulf, måste hämta min sekreterare.\n\nKan fröken Grodkvist diktera.\n\nJag har lämnat in en rulle 12 kort och tagit tio kort. Efter det jag hade tagit 12 kort och dragit fram gick inte kameran att trycka ihop. Vad beror det på?\n\nBra gjort fröken Grodkvist.\n\nHistoriedags. Nu blev du allt rädd, va?\n\n\"För Guds skull använd båda händerna\", skrek flickan som fick lift av sin pojkvän.\n\nResten får du hitta på själv eller läsa i (G-P).\n\nSkriv istället något roligt än dumma frågor och mönster.\n\nGoddag!\n\nMitt namn är:\n\nPenna, och det kan du skriva upp.\n\nPensel, nu har jag gjort en tavla.\n\nMatematik, och det kan du räkna med.\n\nHals, och jag skall läggas in på mentalsjukhus idag.",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 2,
+          "label": "Sida 2",
+          "image": "letters/1974/1974-08-23/page-02.jpg",
+          "transcription": "krut, och det är jag bombsäker på.\n\nbil, och... äsch... nu är jag ute och cyklar igen.\n\nsnöre, men det är inget att binda sig vid.\n\nFärgdyna, men det behöver man väl inte stämplas för.\n\nKort, och det tjänar jag klöver på.\n\nMargarin, och det går åt som smör.\n\nUrban, men inte är jag glad för det.\n\nJag skickar med ett kort. Det får du ifall du skickar med ett kort på erat hus framifrån. \"The family\" ska sitta på trappan. (Du behöver inte göra det ifall du inte vill.)\n\nOm du ser i P-T måndagen den tjogonde ser du vad jag blev på 70-aden. Hur mycket kostar ett fodral till en kamera? Min alltså.\n\nHarald fick sin största chock när han kom hem från jobbet.\n\n– Hur i allsin dar har bilen kommit in i vardagsrummet, Hulda!?\n\n– Det var lätt. Jag svängde bara till vänster när jag kom in till köket.\n\n(håll i dej)",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 3,
+          "label": "Sida 3",
+          "image": "letters/1974/1974-08-23/page-03.jpg",
+          "transcription": "Goddag, mitt namn är\n\nKrok, men häng inte upp er på det.\n\nStock, driver ni med mej.\n\nSudo, ska vi slåss.\n\nSnål, jag är generösast i stan.\n\nUppe, jag känner mig ganska nere.\n\nSvärd, nu sticker jag.\n\nVinter, jag känner mig ganska insnöad.\n\nSol, jag känner mig ganska varm.\n\nMat, jag är hungrig.\n\nFlod, jag är blöt.\n\nFågel, nu flyger jag.\n\nKaramell, jag är sur.\n\nStröm, jag får stötar.\n\nFisk, jag kan inte simma.\n\nKrig, jag är pank.\n\nKlocka, nu går jag.\n\nFjäder, jag känner mig så lätt.\n\nGranit, jag känner mig så tung.\n\nSaab, jag kör Volvo.\n\nStolpe, om det kan vara till någon ledning.\n\nKorv, jag äter bara biff.\n\nEn samling fina skämt.\n\nOHEJDIÅFRAMIG\nTILLDIG\n\nSKRIV SAKT-\nA\n\nP.S. Blanda lite kemikalier i coca-colan.\n\nHahahaha",
+          "description": ""
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 1",
+          "title": "Dunkin Tattoo Bubble Gum – framsida",
+          "image": "letters/1974/1974-08-23/attachments/attachment-01.jpg",
+          "transcription": "",
+          "description": "Framsidan av en förpackning till Dunkin Tattoo Bubble Gum. Förpackningen innehåller ett tuggummi och en tillfällig tatuering (\"tattoo\")."
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 2",
+          "title": "Handskriven instruktion",
+          "image": "letters/1974/1974-08-23/attachments/attachment-02.jpg",
+          "transcription": "Ett tugggumm och\nett märke\n\ninstruktion med följer\n\nskriv hur det gått",
+          "description": ""
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 3",
+          "title": "Dunkin Tattoo Bubble Gum – baksida",
+          "image": "letters/1974/1974-08-23/attachments/attachment-03.jpg",
+          "transcription": "",
+          "description": "Baksidan av samma tuggummiförpackning. Visar produktinformation samt texten \"Everywhere!\" och att serien omfattar 150 bilder."
+        }
+      ]
+    },
+    {
       "id": "1975-05-24",
       "date": "1975-05-24",
       "from": "Urban",
@@ -49,6 +155,282 @@
           "image": "letters/1975/1975-05-24/page-03.jpg",
           "transcription": "Snart ska vi fara till Skellefteå så nu kan\njag inte skriva mer förutom en grym neger-\nhistoria.\n\nEn man gick fram till en neger och frågade\nvar apoteket var. Negern svarade;\n\n– Mtphlamtm hlvomom\n– Hörrö neger svara ordentligt var är apoteket\n– Momohlåmtna\n– Men jä-la neger jä-el var är apoteket\n\nNigern blev smått arg på mannen och puttade\nbort han 2 meter sen sa han\n\nJa kan väl för f-n inte svara när du står\npå underläppen\n\nHejdå,\n\nHelsningar Urban\n\nP.S SKRIV SNABBT OCH FORT.\nP.S Flåt stilen\nP.S På torsdag far vi till Kemi på skolresa",
           "description": ""
+        }
+      ]
+    },
+    {
+      "id": "1978-08-16",
+      "date": "1978-08-16",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 16,
+      "type": "handwritten",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1978/1978-08-24/envelope-front.jpg",
+          "transcription": "ULF SANDLUND\nSAFJÄLLSGATAN 16\n431 39 MÖLNDAL\n\nPITEÅ\n24-8-1978\n\n1.30 SVERIGE",
+          "description": "Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Ett svenskt frimärke (1,30 kr) och tydlig poststämpel från Piteå den 24 augusti 1978."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1978/1978-08-24/envelope-back.jpg",
+          "transcription": "Detta brevs avsändare heter Urban Sandlund\noch bor på Degermansgatan 3\nPITEÅ\n\n... som har postnummer 94100\n\nTack för bandet\n\nSAMTAL I\nBJÖRKDUNGEN\n\nDo you\nlöv me?\n\nNäver!\n\nLite träning inför\nbrevet\n\nStart",
+          "description": "Kuvertets baksida innehåller avsändaradress, texten 'Tack för bandet', rubriken 'SAMTAL I BJÖRKDUNGEN' samt ordvitsen 'Do you löv me? Näver!'. Nederst finns början på den labyrint som fortsätter i de medföljande bilagorna."
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1978/1978-08-24/page-01.jpg",
+          "transcription": "HEJ\n\nPITEÅ 78.08.16\n\nLigger i sängen och skriver. Klockan\när 23.20. Jag har nyss läst ditt\nsenaste brev en andra gång och rullat\nihop det för andra gången. 4 min\ntog det att rulla ihop. Läser din redo-\ngörelse om mina kort och märker\natt det har blivit vissa missförstånd.\n\n4:1. Två italienska cyklister som körde\nom oss när vi stod och tog kort.\nSnabb som jag är så hann jag\nplåta dom.\n\n4:2. Tack för elogeen. Det är jag som\nställt upp cyklisterna (svenska) och\nplåtat ganska knixigt och hinna in\nbakom cykeln. Kameran stod f.ö.\npå en stubbe. Ifall det går så skulle jag\nvilja ha en stor förstoring av det\nkortet. Största möjliga.\n\n3. Detta är inte en ledare. Ej heller\nStig. Peter Nilsson är namnet. Han var\nen av killarna på lägret i Danmark.\nKortet är taget på färjan.",
+          "description": "Första sidan kommenterar fotografier som tidigare skickats mellan kusinerna. Urban rättar några missförstånd kring bilderna och berättar hur fotografierna togs."
+        },
+        {
+          "type": "page",
+          "page": 2,
+          "label": "Sida 2",
+          "image": "letters/1978/1978-08-24/page-02.jpg",
+          "transcription": "4:4. Honom skulle du lätt träffa om\nvi hade möts i Göteborg. Jan Erixon\nvar namnet. Platsen är densamma som\npå förra kortet.\n\nTappade ner pennan bakom\nsängen. Tog en ny.\n\n5. Jag på Nils Edéns väg, som du skrev\nHoogert fotograf. Solen rakt i ögonen.\n\n6. —\nSkulle vilja ha detta kort uppförstorat\nså stort det går. Ifall det behövs\nnå't särskilt papper så kan jag\nbetala.\n\n7. Ingen kommentar\n\n8. —\n\n9. —\n\n10. Rätt igen att jag är fotograf.\n\n11. —\n\n12. Namnet är Stig.",
+          "description": "Urban fortsätter kommentera fotografierna ett efter ett. Han rättar namn, platser och motiv samt önskar stora förstoringar av några av bilderna."
+        },
+        {
+          "type": "page",
+          "page": 3,
+          "label": "Sida 3",
+          "image": "letters/1978/1978-08-24/page-03.jpg",
+          "transcription": "Rosa (Anki och Göstas katt som\när här medan dom är i Småland)\nsitter och tittar på mig. Bara\nsitter och tittar. Jag börjar tro att\nden katten är lite knäpp. Sinnesjuk.\nNervösaste katt jag träffat. Helt\nplötsligt idag när den satt på fönster-\nblecket ute och jag tittade på den\ninifrån så började hon morra. En\nstund senare när Åsa kom för att\nlåna en Magnecyl, så sträckte hon ut\nhanden för att klappa katten. Då sköt\nhon rygg. Helt utan anledning som sagt.\nSinnesjuk verkar hon, men en viss intelligens\nhar hon i alla fall. T.ex. kan\nhon putta\nupp dörrar med tassen, jamar när den\nvill ha mat och gå ut. Det senare\nhänder sällan. Nu låter det kanske inte\nsom om jag gillar kräket, men det\ngör jag faktiskt! Nog för att jag är\nallergisk mot katter men ändå.",
+          "description": "Hela sidan handlar om katten Rosa som Urban passar medan ägarna är bortresta. Han beskriver katten både humoristiskt och kärleksfullt trots att han är allergisk mot katter."
+        },
+        {
+          "type": "page",
+          "page": 4,
+          "label": "Sida 4",
+          "image": "letters/1978/1978-08-24/page-04.jpg",
+          "transcription": "78.08.17\n\nLigger och skriver i sängen samtidigt som jag\nlyssnar på bandet. Just nu snackar du om\natt Catarina har stuckit till Eslöv.\n\nJag, Hoogert och Bengt har varit på bio.\n\"Goldfinger\". Ganska bra. Det är den fjärde\nJames Bond-filmen jag sett.\n\"Älskade spion\" var den bästa. Sen\n\"Leva och låta dö\". Efter det\n\"Mannen med den gyllene pistolen\" sist den\njag såg idag.\n\nNu pratar du om en fluga på\nkassettluckan. Det får mej\natt tänka på vad Robert Landin sa\ntill Krister Thander:\n\"Thander har\ninga vänner, bara en fluga som är död!\"\nGanska grymt, eller brutalt.\n\nSlut på bandet. Om jag orkar\nnån gång ska jag också spela in.\n\nI helgen blir det tävla i Boden och\nLuleå. Jag kör med en annan utväxling\nnu eftersom jag klättrat upp mej till\nJunior. Numera kör jag på utväxlingen\n\n50–13. Det betyder alltså 50 kuggar\nfram på det stora drevet och 13 bak\npå det minsta. Om man tar\n\n50 kuggar × 27 tum\n------------------\n13 kuggar",
+          "description": "Urban skriver medan han lyssnar på ett kassettband från Ulf. Han berättar om bio, James Bond-filmer, ett skämt från Robert Landin och den nya utväxlingen på sin tävlingscykel inför kommande cykeltävlingar."
+        },
+        {
+          "type": "page",
+          "page": 5,
+          "label": "Sida 5",
+          "image": "letters/1978/1978-08-24/page-05.jpg",
+          "transcription": "PÅ NÄS-\nTA SI-\nDA NE-\nGERNÖJE\n\nPÅ NÄS-\nTA SI-\nDA NE-\nGERNÖJE\n\nPÅ NÄS-\nTA SI-\nDA NE-\nGERNÖJE\n\nPÅ NÄS-\nTA SI-\nDA NE-\nGERNÖJE\n\n78.08.18\n\nKlockan är 21.00. Skulle för en stund\nsen prata in ett band åt dig.\nMen tyvärr så gick bandspelaren sönder.\nInspelningsknappen fastnade. Det var\ninte bra. Såg på Bröderna Marx\nistället. Idag har jag inte gjort\nsärskilt mycket. Cyklat ungefär 3 mil\nmed Bengt. Spelat cykelspelet med\nHoogert och Bengt. Nu har\nvi hittat på ett spel ungefär\nsom Grand Prix som vi spelade\nen vinter. Sen städade jag rummet\nför ovanlighetens skull\nganska noggrant. I vinter ska jag\nlacka om cykeln i en ny färg.\n\nHar du nåt bra förslag att komma\nmed så kan du ju skicka.\n\nTack för alla brev. Min stora kvälls-\nsysselsättning nuförtiden har varit att\nläsa och höra dina brev.\n\nHej då\nUS",
+          "description": "Brevet avslutas den 18 augusti 1978. Urban berättar att bandspelaren gått sönder när han skulle spela in ett kassettband till Ulf, beskriver några vardagshändelser och avslutar med att tacka för alla brev. Den upprepade marginaltexten 'PÅ NÄSTA SIDA NEGERNÖJE' återges exakt som i originalet eftersom LetterArchive bevarar originalets innehåll utan ändringar."
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 1",
+          "title": "Labyrinth Puzzle",
+          "image": "letters/1978/1978-08-24/attachments/attachment-01-labyrinth.jpg",
+          "transcription": "BÖRJAN\n\nFINN VÄGEN\nTILL KAMERAN\nOCH BENET\n\nBÖRJA OM FRÅN\nBÖRJAN NÄR DU\nHITTAT NÅNTING.\n\nSTART\n\n... medskickat papper + en penna\nsom du ritar din väg med.",
+          "description": "Handritad labyrint på rutat papper. Mottagaren ska hitta vägen till både kameran och benet genom att följa labyrinten. Bilagan används tillsammans med den medföljande 'Viewer Mask', som begränsar synfältet och gör uppgiften betydligt svårare."
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 2",
+          "title": "Viewer Mask",
+          "image": "letters/1978/1978-08-24/attachments/attachment-02-viewer-mask.jpg",
+          "transcription": "TITTA HÄR OCH LETA\n\nDIG FRAM TILL\nKAMERAN. BÖRJA\nOM FRÅN\nBÖRJAN\nOCH HITTA BENET.\n\nLYCKA TILL!\n\nBakgrund:\n\nHAHAHAHA...\n\n(upprepas över nästan hela sidan)",
+          "description": "Pappersmask med ett utskuret observationsfönster. Masken placeras ovanpå labyrinten och flyttas stegvis över spelplanen så att endast en liten del av labyrinten är synlig åt gången. Den används tillsammans med 'Labyrinth Puzzle' och återskapar den ursprungliga spelidén. Bakgrunden är fylld med upprepad text 'HAHAHAHA...' över nästan hela sidan."
+        }
+      ]
+    },
+    {
+      "id": "1977-03-03",
+      "date": "1977-03-03",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 15,
+      "type": "typewritten",
+      "summary": "Detta brev skiljer sig från de tidigare genom att det är maskinskrivet, något Urban själv kommenterar redan i inledningen. Brevet är skrivet som en serie dagboksanteckningar under mars och början av april 1977 och ger en levande bild av vardagen med skola, skidträning, serietävlingar, miniskidåkning och familjeliv i Piteå.\n\nHumorn är ständigt närvarande. Urban skämtar om maskinskrivning, aprilskämt, klasskamrater och sin nallebjörn \"Arkimedes Euklides Einstein\". Brevet visar också hur nära kontakten mellan kusinerna var genom hänvisningar till vykort, fotografier, pussel, godis och kassettband som skickades mellan dem.\n\nBilagorna är ovanligt omfattande och gör försändelsen till mer än ett vanligt brev. Den handritade kartan över skidbacken illustrerar en händelse som beskrivs i texten. Intelligenstest 3 med tillhörande facit visar Urbans intresse för ordlekar och klurigheter. De två tidningsurklippen från Piteå-Tidningen ger dessutom historisk bakgrund till aprilskämtet om oljefyndigheten utanför Rosvik som nämns i brevet.\n\nSammantaget fungerar försändelsen som en liten tidskapsel från våren 1977 och ger en ovanligt levande bild av Urbans vardag, humor, intressen och brevväxlingen med kusinen Ulf.",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1977/1977-03-03/envelope-front.jpg",
+          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal 3",
+          "description": "Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Kuvertet är frankerat med fyra svenska frimärken. Poststämpeln är så svag att datum inte går att utläsa."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1977/1977-03-03/envelope-back.jpg",
+          "transcription": "Eskimån av glädje strålar\nnär han äter gamla tvålar.\n\nFråga:\n\nHur går det med intelligenstestet?\n\nSvar:\n\nKanske.",
+          "description": "På kuvertets baksida finns en handskriven vers, en fråga om ett tidigare intelligenstest samt ett humoristiskt svar. Texten visar att Urban och Ulf redan tidigare utbytt egna intelligenstest i sin brevväxling."
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1977/1977-03-03/page-01.jpg",
+          "transcription": "77-03-03\n\nHej Ulf!\n\nDetta brev skriver jag på ett någorlunda \"riktigt\" sätt.\nJag skriver alltså inte den gamla vanliga pekfingervalsen.\nSom du säkert märkt så har jag bredare marginal nu, jag\nhar också ändrat till ett höjdsteg. Det står i en bok om\nmaskinskrivning att det vanligaste höjdsteget är 1, så då\ngör jag också så. Jag tänker på att förr fick man brev ofta\noch dom man fick var långa. Nu kan man högst få ett vartannat\nhalvår, alltså tar det bara 5 min. att läsa dom. Men jag måste\nju tänka på dej. Du får ju inte överanstränga dig. Du ligger\nväl och slöar nästan hela dagarna.\n\n---\n\n77-03-04\n\nKl. 11 far pappa och jag till Pitholm, jag ska ha träning\ndär. Sen far jag kanske direkt på ÖCK-träning. I morgon ska\njag tävla på Vallsberget, serietävlan.\n\nNu har jag tittat på dessa fina kort du skickat till mej.\nGången blev ju fin. Likaså Anki och Gösta. Och korten på dej.\nEn annan såg som vanligt dum ut.\nImorse hittade jag en sliskig mask i brevlådan. Nu lägger jag\nmej och läser den tills jag somnar.\n\n---\n\n77-03-05\n\nSteg upp halv nio. Snart ska jag på serietävling på Valls-\nberget. Du var duktig på att komma på mina klasskompisar.\nEndast tre fel. Du skrev 2. Åsa. Sen skrev du Garpen. Garpen\när en av dom där asorna. Hasse och Kardan är tyvärr en och\nsamma person. Tredje felet: Nitka går inte i vår klass, han\när endast 7:a. Jag blev 2:a på Vallsberget. 10 sek efter Alf\nOlofsson. Jag fick starta med en kille från Hammarby. Han var\nbra. Nu är Bengt här. Vi har sett på Tipsextra. Jag hejade på\nMan. United, pappa och Bengt hejade på Man. City. Man. United\nvann med 3–1.",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 2,
+          "label": "Sida 2",
+          "image": "letters/1977/1977-03-03/page-02.jpg",
+          "transcription": "77-04-02\n\nDu trodde att du skulle få ett brev av mej den första april\nmen då blev du lurad. April, april din dumma sill, jag kan lura\ndej vart jag vill. I Petan såg man direkt vilket som var april-\nskämtet. Vem som helst förstår väl att dom inte har hittat nå\nolja utanför Rosvik (by ovanför Piteå). Just nu håller jag på att\nspela in skivan du bad mej spela in. Typisk sopig skiva. På ett\nmatteprov vi hade i onsdags hade jag 22 av 23. Jag\nhade haft alla rätt om jag inte gjort ett slarvfel. Birgitta\nvägrar att säga vad hon hade. Typiskt feg. När jag har typiskt\ndåligt på engelska standardproven så säger jag det till henne\ni alla fall. Det enda jag gör nu är: käkar jordnötter, skriver\ntill dej, dricker, käkar jordnötter, skriver brev, dricker, käkar\njordnötter osv. Nu har jag spelat in hela den jädrans skivan.\nNu snöar det. Ute alltså.\n\n---\n\n77-04-03\n\nNu har jag skrivit klart intelligenstest 3. Jag vaknade och\nsteg upp vid 10-tiden. Kl är nu 20 över 11. Anita har vaknat.\nIfall du vill veta det så har jag gått över till gamla heder-\nliga pekfingervalsen. Nu har jag klippt ut aprilskämtet från\nPetan. Pusslet jag fick gillar jag. Inte. Det kunde väl i alla-\nfall varit i färg. Gärna lite stadigare. Jag har tejpat ihop\nden i 10 bitar. Tack för godisen. Den var god. På golvet ligger\nden där lilla nallen jag böt mot några märken med Birgitta.\nDen är ganska massakerad. Efter senaste matteprovet, som jag\ntrodde gick dåligt, blev jag lite grym mot den. Ett öga och\nmunnen bortslitna. Skinnflådd på en del ställen. Men den\nlever ju. Nu har jag hittat på ett namn åt honom:\nArkimedes Euklides Einstein. Nu ska jag lappa ihop lilla\nArkimedes. Åsa tycker jag det är lite skralt med vykort.\nÄndå skralare är det med breven. Jag minns ett tag att det\nbara haglade in dassrullar. Nu har jag ej nåt mer att skriva\nom så då slutar jag att skriva. Kära hälsningar från din\n\ndxvldädsgbåbsbh Urban.",
+          "description": "Brevet fortsätter med två dagboksanteckningar daterade den 2 och 3 april 1977. Urban berättar om aprilskämt i Piteå-Tidningen (\"Petan\"), ett lyckat matteprov, inspelningen av ett kassettband till Ulf och vardagliga händelser hemma i Piteå. Han beskriver också hur han färdigställt \"Intelligenstest 3\", kommenterar ett pussel och godis han fått av Ulf samt berättar om en nallebjörn som fått namnet Arkimedes Euklides Einstein. Sidan avslutas med ett medvetet tangentbordskladd före signaturen."
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 1",
+          "title": "Handritad karta över skidområdet",
+          "image": "letters/1977/1977-03-03/attachments/attachment-01-map.jpg",
+          "transcription": "Skog\nStuga\nKrog\nKvistar (portar)\nHopp\nHopp från sidan\nStillstudie\nVäg som vi åkte upp (bilväg)\nSpår som man höll skidorna i när man åkte upp (den primitiva liften)",
+          "description": "Handritad minnesskiss över skidområdet där Urban och Jonas åkte miniskidor, vilket beskrivs i brevet. Kartan visar skogen, stugan, krogen, bilvägen upp till backen, den enkla liftens spår samt olika hopp och portar markerade med kvistar. Nederst finns en liten \"stillstudie\" som illustrerar ett hopp och den vurpa som nämns i brevet."
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 2",
+          "title": "Intelligenstest 3",
+          "image": "letters/1977/1977-03-03/attachments/attachment-02-IQ-test.jpg",
+          "transcription": "Intelligenstest 3\n\nTid:\n\n1. Vad är det som är blått och åker upp och ner?\n\n2. Av en deg får man 20 bullar som väger 50 g per st.\nDå får man troligen halva antalet bullar om man minskar\nvikten per bulle till hälften.\n\n3. Vilket är första djuret som nämns i Bibeln?\n\n4. Vad hette Jakobs söner?\n\n5. Vet du hurdana ärtorna är nu för tiden?",
+          "description": "Maskinskrivet Intelligenstest 3 med fem frågor, skapat av Urban och bifogat brevet. Testet nämns i brevets dagboksanteckning daterad 3 april 1977, där Urban berättar att han färdigställt det och skickar det till Ulf."
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 3",
+          "title": "Facit till Intelligenstest 3",
+          "image": "letters/1977/1977-03-03/attachments/attachment-03-test-answers.jpg",
+          "transcription": "Svar;\n\n1. Ett blåbär som åker hiss.\n2. Nej.\n3. Bi.\n4. Bröderna Jakobsson.\n5. Runda.",
+          "description": "Maskinskrivet facit till Intelligenstest 3. Svaren bygger huvudsakligen på ordlekar och humor och visar att testet var avsett som underhållning snarare än ett seriöst kunskapstest."
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 4",
+          "title": "April, april...",
+          "image": "letters/1977/1977-03-03/attachments/attachment-04-april-april-1.jpg",
+          "transcription": "",
+          "description": "Tidningsurklipp ur Piteå-Tidningen med rubriken \"April, april...\". Artikeln sammanfattar årets aprilskämt i ett antal norrländska tidningar och avslöjar bland annat att Piteå-Tidningens påstådda oljefyndighet utanför Rosvik var ett aprilskämt. Bilagan förklarar direkt den hänvisning Urban gör i brevet."
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 5",
+          "title": "Oljefynd kullkastar byggplaner",
+          "image": "letters/1977/1977-03-03/attachments/attachment-05-april-april-2.jpg",
+          "transcription": "",
+          "description": "Tidningsurklipp ur Piteå-Tidningen med rubriken \"Oljefynd kullkastar byggplaner\". Artikeln presenterades som en vanlig nyhet men var Piteå-Tidningens aprilskämt 1977. Urban hänvisar till artikeln i brevet och funderar över vilket av tidningens reportage som egentligen var aprilskämtet."
+        }
+      ]
+    },
+    {
+      "id": "1977-06-06",
+      "date": "1977-06-06",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 15,
+      "type": "handwritten",
+      "summary": "Detta är ett ovanligt ögonblicksdokument från den 6 juni 1977. Till skillnad från de längre breven skrevs detta mitt under en fysiklektion när klassen genomförde en frågesport som avslutning på terminen.\n\nBrevet fångar stämningen i klassrummet i realtid. Urban berättar om lagindelningen, hur tävlingen går till och redovisar resultatet direkt när den är avgjord. Tillsammans med kuvertets doftklistermärke och den personliga namnsdagshälsningen ger försändelsen en levande bild av vardagen mellan två kusiner under 1970-talet.\n\nDet korta formatet gör brevet till ett fint komplement till de mer omfattande breven i samlingen och visar att även små vardagshändelser ansågs värda att dela.",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1977/1977-06-10/envelope-front.jpg",
+          "transcription": "Poststämpel:\n\nPITEÅ\n\n10.6.77\n\nMottagare:\n\nUlf Sandlund\n\nSafjällsgatan 16\n\n431 39 Mölndal 3",
+          "description": "Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Frankerat med ett svenskt frimärke på 1,10 kr. Två tydliga poststämplar från Piteå visar datumet 10.6.77."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1977/1977-06-10/envelope-back.jpg",
+          "transcription": "Avsändare:\n\nAVS. Urban Sandlund\n\nDegermansgatan 3\n\n941 00 PITEÅ 1\n\n---\n\nIfall du inte vill sprätta upp\nkuväret går det bra att ånga\nupp det.\n\n---\n\nFinkan är ett hem för gubbar\nsom gjort bort sej genom nubbar.\n\n---\n\nGrattis på namnsdagen, Ulf.\n\n---\n\nHandskriven notering:\n\nGnugga, och\nvips får du\nlite god-\nlukt.",
+          "description": "Kuvertets baksida innehåller ett färgglatt doftklistermärke föreställande två barn med godis och en katt. Klistermärket började lukta godis när man gnuggade på det. Urban har dessutom skrivit några korta meddelanden, en ordvits och en namnsdagshälsning.\n\nDoftklistermärken var populära under 1970-talet. Urban uppmanar Ulf att gnugga på märket så att doften framträder, vilket gör själva kuvertet till en del av upplevelsen."
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1977/1977-06-10/page-01.jpg",
+          "transcription": "Piteå 77.06.06. Fysikrummet.\n\nHej,\n\nDet är nu sista gången vi har\nfysik. Det ska vi fira med en\nfrågesport. Hogert är ledare. Vi\nska bilda 4 lag med 5 i varje.\nVårt lag består av Wesslan, Bengt,\nKattis, och jag. Hogert ställer en\nfråga. Den som först räcker upp\nhanden får svara. Vi är lag 1.\n\nVi leder med 8 p.\n\nResultat av tävling.\n\nLag 1 – 13 p\n\nLag 2 – 12 p\n\nLag 3 – 5 p\n\nLag 4 – 0 p\n\nSeger.\n\nHej då.\n\nPS Ett byggare brev kommer\nnog snart.",
+          "description": "Ett kort brev skrivet under den sista fysiklektionen före sommarlovet. Klassen avslutar lektionen med en frågesport där fyra lag tävlar mot varandra. Urban beskriver tävlingen medan den pågår och redovisar slutresultatet direkt i brevet.\n\nDet enda brevet i försändelsen. Urban skriver direkt från fysiklektionen där klassen har sin sista fysiklektion för terminen. Lektionen avslutas med en frågesport mellan fyra lag.\n\nBrevet skrevs mitt under den pågående lektionen. Urban uppdaterar brevet medan frågesporten pågår och avslutar med det slutliga resultatet där lag 1 vinner."
+        }
+      ]
+    },
+    {
+      "id": "1975-07-22",
+      "date": "1975-07-22",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 13,
+      "type": "handwritten",
+      "summary": "Ett vardagligt sommarbrev där Urban berättar om cykeltävlingar i Boden, familjens placeringar, planer för bio och vardagslivet hemma. Brevet är uppbyggt nästan som en dagbok där flera korta anteckningar skrivits vid olika tidpunkter under ett dygn. Det mest utmärkande är de numrerade små teckningarna som förklaras i slutet av brevet – ett lekfullt inslag som visar både humor och fantasi.",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1975/1975-07-22/envelope-front.jpg",
+          "transcription": "Poststämpel: 1975-07-22",
+          "description": ""
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1975/1975-07-22/envelope-back.jpg",
+          "transcription": "",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1975/1975-07-22/page-01.jpg",
+          "transcription": "Hej Ulf!\n\nHade just sagt hejdå och vinkat adjöss, så\nsprang jag in och skrev detta. Men nu måste jag\ngå och lägga mig. Jag ska ju upp klockan 6 i morgon.\n\nGodnatt för mig.\n\nHar just kommit hem från Boden. Det gick åt\nhel-e för mig. Har aldrig åkt så dåligt.\nKom 8 (åtta). Hade jag åkt som jag brukar hade\njag kanske kommit in på en 4 placering eller\ni alla fall 5:a. Pappa vann oldboysklassen. För\nfjärde gången i rad. \"Anki\" 2:a. Anita 3:a.\n\nI morgon är det linjelopp. Synd att det inte är\nnågot linje för P.B.\n\nSer auktion.\n\nHar just\nsett på när Murre ätit upp en råtta.\n\nKlockan är nu 6 på morgon. Vi ska som skrivet\ntill Boden. Kommit hem från Boden. \"Anki\" 2:a.\nAnita 3:a. I kväll ska jag på bio.\nÄgget är löst med Jonas.",
+          "description": "Illustrationer på sidan:\n\n1. Ingen teckning – förklaras på nästa sida som \"Fluga, levande\".\n2. Teckning av ett fiskskelett.\n3. Fyra cirklar ovanför ett hjärtformat avtryck.\n4. Teckning av en mygga.\n5. Teckning av en mus.\n6. Pil som visar att brevet fortsätter på nästa sida."
+        },
+        {
+          "type": "page",
+          "page": 2,
+          "label": "Sida 2",
+          "image": "letters/1975/1975-07-22/page-02.jpg",
+          "transcription": "Snart kommer nog Jonas, då ska vi gå. Jag är\nensam hemma nu förutom \"Anki\" som\nligger och sussar. Nu kommer Jonas.\n\nHar kommit hem från filmen. Den var\nfaktisk dörolig på sina ställen.\n\nNu har jag sett Orson Welles bästa.\n\nKlockan är nu 22.30. Natt!\nNatti, nu har jag vaknat\nför tredje gången. Jag somnar\nbara om. Jag och \"Anki\", Anita\noch mamma har varit på\nstan. Det blev ett band till\npappas födelsedag. Med Les\nHumphries Singers Carnival.\n\nHejdå, lite knasigt brev, mest en dagbok.\n\nHär kommer en nummerlista över mina\nteckningar.\n\n1. Fluga, levande.\n2. Fisk, mindre levande.\n3. Frasses tass, underifrån.\n4. Mygga, hane.\n5. Mus, hungrig.\n6. Pil, så att ni fattar.\n7 a) Hårdkokt ägg.\n   b) Löskokt ägg.\n8. Höna, ej hane.\n9. Orson Wells, teckning.\n\nP.S.\nTjing.",
+          "description": "Illustrationer på sidan:\n\n7a. Hårdkokt ägg.\n7b. Löskokt ägg.\n8. Höna.\n9. Teckning av Orson Welles."
+        }
+      ]
+    },
+    {
+      "id": "1974-09-17",
+      "date": "1974-09-17",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 12,
+      "type": "handwritten",
+      "summary": "Detta brev är skrivet den 17 september 1974 och präglas av Urbans karakteristiska blandning av humor, fantasi och vardagsberättelser.\n\nBrevet inleds med ett skämtsamt försök att skriva på pitemål innan Urban övergår till vanlig svenska. Den största delen handlar om familjens katt Frasse, som beskrivs som en blivande astronom och vetenskapsman. Med hjälp av teckningar berättar Urban hur Frasse sitter på taket och studerar stjärnhimlen, undersöker världen genom att titta, lyssna, smaka och känna på vatten samt har fått en ny kattkompis, Putte.\n\nI den andra delen berättar Urban om skolans friluftsdag där hans volleybollag vann tre av fyra matcher. Han visar även med ritningar hur han möblerat om sitt rum och utmanar Ulf att hitta ett tredje sätt att placera möblerna. Brevet avslutas med kommentarer om ett fysikprov, flera humoristiska post scriptum och en hälsning till Torbjörn.\n\nBreven visar tydligt hur Urban vid tolv års ålder gärna blandade berättelser, ordvitsar, dialekt, illustrationer och små uppgifter till mottagaren för att göra breven underhållande.",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1974/1974-09-17/envelope-front.jpg",
+          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal\n\nPiteå 1974-09-17\n\nBrev från \"Ubbe\" igen\nHåhå jaja",
+          "description": "Tecknat spindelnät i övre vänstra hörnet."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1974/1974-09-17/envelope-back.jpg",
+          "transcription": "A.V.S. FOTOGRAF.\n\nUrban Sandlund\nDegermansgatan 3\n941 00 PITEÅ",
+          "description": "Kuvertets baksida är rikt dekorerad med färgade linjer och geometriska mönster."
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1974/1974-09-17/page-01.jpg",
+          "transcription": "Hej! längeeda man skrev.\n\nHoppes ni må bra denja, ner i\nSverige. Under du varför je skriv\nsöjna? Ja he, kan man fråg se.\n\nNe, allvarlig(t) talat. Hej som vanligt,\nsom vanligt, o.s.v. Först ska jag tala om att\nFrasse (hoppas du inte glömt bort honom) har blivit\nen astronom och en vetenskapsman. Han\nsitter på taket och tittar på stjärnor.\nHan tittar när det droppar i tvättstället.\nUndersöker: tittar, lyssnar, smakar,\nkänner på vattnet. När Frasse var\nmindre brukade jag fråga honom\nvad han ska bli då, sa\nhan, jägare i Lingon-\nskogen. Nu vill han\nbli amerikansk rymd-\nforskare. Frasse har\nfått en kompis.\nPutte, en liten\ntuff bondkatt\nsom troligen\ninte har\nnågot\nhem.\n\nPutte ska bli en Kock.\n\nNog med Katter för idag.",
+          "description": "Illustrationer på sidan:\n\nKarlavagnen.\nFrasse på taket som tittar mot Karlavagnen.\nTeckning av Frasse bredvid ett tvättställ med droppande \"blup blup\".\nPutte."
+        },
+        {
+          "type": "page",
+          "page": 2,
+          "label": "Sida 2",
+          "image": "letters/1974/1974-09-17/page-02.jpg",
+          "transcription": "Jag hinner\ninte (uppehåll, satans katt dra inte iväg\npennan) skriva på grund av\nläxor. För en vecka sen hade vi en\nfriluftsdag, jag valde volleyboll. Vårat lag\nvann 3 av 4 matcher alltså 3 fjärdedelar.\nEftersom din mamma vill veta vad det\när för vinster så vet jag inte de. Men\nalltid ska jag väl kunna kamma ihop\nnåt pris men du vet ju mitt hår.\n\nIdag har jag möblerat om i mitt rum\nså här ser det ut. Nu ska du hitta\npå ett tredje sätt att\nmöblera. Här får du veta måtten.\n\n(Tre skisser över rummet med mått.)\n\nRum: ca 2,3 × 2,75 m\nSäng: 2 m\nFönster markerat\nSkiss med sängens mått: 1,80 m\n(80 cm + 1 m + 40 cm)\n\nIdag hade vi prov i Fysik. Det gick\nbrrrrrrrrrrrrrrrrrrrrrraaaaaaaaa.\n\nHej då från mej till dej.\n\nUrban Sandlund\n\nP.S. Tips till katt-tävlingen.\nFrasses öra är 4,2 cm.\n\nP.S. Hoppes du kan\nläsa och förstå brevet lite konstigt\nmen i skrev he på 25 min.\n\nP.S. Hälsa TORBJÖRN från alla.\n\nTJING",
+          "description": "Illustrationer på sidan:\n\nCirkel som visar att laget vann tre fjärdedelar av sina matcher (75 % markerat, en fjärdedel omarkerad).\nTre skisser som visar hur rummet möblerats, med mått och ett uppdrag till Ulf att hitta ett tredje sätt att möblera."
         }
       ]
     }
