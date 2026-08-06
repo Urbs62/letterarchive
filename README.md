@@ -1,8 +1,7 @@
 # LetterArchive
 
-LetterArchive är ett statiskt, personligt digitalt arkiv för gamla brev. Den
-första samlingen heter **Breven till Ulf**. Originalbilderna är arkivets
-huvudmaterial; transkriptionerna gör breven läsbara och sökbara utan att ersätta
+LetterArchive är ett statiskt, personligt digitalt arkiv för brev och vykort.
+Originalbilderna är arkivets huvudmaterial; transkriptionerna gör materialet läsbart och sökbart utan att ersätta
 originalen.
 
 Webbplatsen använder endast HTML, CSS och vanlig JavaScript. Den har inga externa
@@ -15,6 +14,7 @@ letterarchive/
 ├── index.html       Sidans semantiska grundstruktur
 ├── style.css        All formgivning och responsiv layout
 ├── app.js           Läser data och renderar arkiv- och brevvy
+├── archive-markdown.mjs  Parser för letter.md och postcard.md
 ├── letters.json     Metadata, arkivdelar, transkriptioner och beskrivningar
 ├── README.md
 └── letters/
@@ -27,7 +27,25 @@ letterarchive/
             └── …
 ```
 
-## Hur breven lagras
+## Dokumenttyper
+
+Varje nytt arkivobjekt har `type: "letter"` eller `type: "postcard"`. Poster utan
+dokumenttyp, samt äldre poster där `type` är `handwritten`, `typewritten` eller
+`mixed`, normaliseras automatiskt till `letter`. Den äldre skrivstilen bevaras
+som `writingType`. Nya poster använder därför exempelvis:
+
+```json
+{
+  "type": "letter",
+  "writingType": "handwritten"
+}
+```
+
+Dokumenttypernas etikett, förhandsbild och beteende samlas i registret
+`documentTypes` i `app.js`, så fler typer kan läggas till utan att ändra den
+befintliga brevlogiken.
+
+## Hur brev lagras
 
 ### Standard för `letter.md`
 
@@ -137,8 +155,45 @@ Sidan visar en tydlig platshållare om en bild ännu inte finns.
 6. Kontrollera att `id`, `date` och `folder` stämmer överens och att JSON-filen
    är giltig.
 
-Ett brev kan ha typen `handwritten`, `typewritten` eller `mixed`, vilka visas
+Ett brevs `writingType` kan vara `handwritten`, `typewritten` eller `mixed`, vilka visas
 som Handskrivet, Maskinskrivet respektive Blandat i gränssnittet.
+
+## Hur vykort lagras
+
+Ett vykort använder `postcard.md` och har två bildobjekt, `front` och `back`.
+Bilderna heter `postcard-front.jpg` och `postcard-back.jpg`; inga `page-01`-bilder
+förväntas. Ett minimalt objekt i `letters.json` ser ut så här:
+
+```json
+{
+  "id": "1978-07-01-postcard",
+  "date": "1978-07-01",
+  "from": "Urban",
+  "to": "Ulf",
+  "senderAge": 15,
+  "type": "postcard",
+  "folder": "letters/1978/1978-07-01-postcard/",
+  "summary": "En kort sammanfattning.",
+  "items": [
+    { "type": "front", "label": "Front", "image": "letters/1978/1978-07-01-postcard/postcard-front.jpg", "description": "" },
+    { "type": "back", "label": "Back", "image": "letters/1978/1978-07-01-postcard/postcard-back.jpg", "transcription": "" }
+  ]
+}
+```
+
+Om `items` utelämnas skapar normaliseringen automatiskt fram- och baksida från
+`folder` och de standardiserade filnamnen.
+
+`archive-markdown.mjs` accepterar både `letter.md` och `postcard.md` och returnerar
+samma datastruktur som används i `letters.json`. Filnamnet avgör dokumenttypen.
+Ett vykort använder huvudrubrikerna `# Front`, `# Back`, `# Transcription` och
+`# Summary`; `## Date`, `## From`, `## To` och `## Sender Age` används som
+metadata. Parsern kan även kontrolleras direkt:
+
+```sh
+node archive-markdown.mjs letters/1977/1977-06-10/letter.md
+node archive-markdown.mjs letters/1978/1978-07-01-postcard/postcard.md
+```
 
 ## Visa webbplatsen lokalt
 

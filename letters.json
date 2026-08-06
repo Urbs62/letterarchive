@@ -433,6 +433,65 @@
           "description": "Illustrationer på sidan:\n\nCirkel som visar att laget vann tre fjärdedelar av sina matcher (75 % markerat, en fjärdedel omarkerad).\nTre skisser som visar hur rummet möblerats, med mått och ett uppdrag till Ulf att hitta ett tredje sätt att möblera."
         }
       ]
+    },
+    {
+      "id": "1977-05-07",
+      "date": "1977-05-07",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 15,
+      "type": "handwritten",
+      "summary": "Urban skriver brevet från Esso Motor Hotel vid Järva Krog i Stockholm under en tävlingshelg. Han berättar att han glömde skriva dagen innan eftersom han saknade penna, men har nu fått låna en av Sixten Hedkvist, tabbens pappa.\n\nHan redovisar dagens cykeltävling med stor noggrannhet: sträckan var 28 kilometer, tiden 40.24 och han kom på åttonde plats bland 75 startande (88 anmälda). Som pris vann han en cykelflaska.\n\nUrban berättar vilka som bor i hotellrummen, att de planerar att besöka Gröna Lund på kvällen och att nästa dags tävling ska köras i Järfälla. Han nämner flera cykelkamrater vid namn, bland andra boman, tabbe, sixten, nyström, lundberg, fors och gunnar.\n\nBrevet avslutas med att Urban skickar med en tändsticksask och berättar att Jörgen och tabbe gör pappersflygplan av hotellets brevpapper.",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1977/1977-05-07/envelope-front.jpg",
+          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal\n\nSolna 1977-05-09",
+          "description": "Kuvert från Esso Motor Hotel med två svenska 55-öres frimärken."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1977/1977-05-07/envelope-back.jpg",
+          "transcription": "A.V.S.\n\nUrban Sandlund\nDegermansgatan 3\n941 00 Piteå",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1977/1977-05-07/page-01.jpg",
+          "transcription": "Stockholm 77.05.07\n\nHej Ulf!\n\nDet är kusin Urban som skriver.\nJag skulle skriva igår när vi\nkom fram, men jag hade ingen\npenna. Nu har jag fått\nen av Sixten Hedkvist, tabbens\npappa. Vi ligger på Esso Motor\nHotel. Järva Krog i Stockholm. Idag\ntävlade jag. Sträcka: 28 km. Tid: 40.24.\nAnmälda: 88. Startande: 75. Plac.: 8.\n\nMycket bra. Vi ligger i ett\nfyrabäddarsrum. Jag, boman, tabbe, sixten och\njörgan dalberg. Snart ska\njag ringa hem.\n\nImorgon väntar tävling\ni Järfälla. I andra\nrummet ligger nyström,\nlundberg, fors, gunnar\noch Lars Lundberg.\n\nIkväll ska vi till\nGröna Lund. På tävlingen vann\njag en cykelflaska.\n\nJörgen och tabbe\ngör pappersflygplan av\nsånt här papper. Skickar med en\ntändsticksask fastän jag vet att\ndu har denna.\n\nHälsningar\n\nUrban",
+          "description": "Brevet är skrivet på Esso Motor Hotels brevpapper under en tävlingshelg i Stockholm."
+        }
+      ]
+    },
+    {
+      "id": "1976-07-15",
+      "date": "1976-07-15",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 14,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Urban skickar ett vykort från Sundsvall under familjens semesterresa sommaren 1976. Han berättar att de just passerat Norrköping och att de gick upp redan klockan fyra på morgonen. När vykortet skrivs sitter han skämtsamt \"i en bastu\" innan han rättar sig och förklarar att det egentligen är en stekhet bil.\n\nFamiljen har stannat vid IKEA för att äta, där Urban åt schnitzel. Han beskriver även motivet på vykortet och berättar att utsiktstornet på Norra Berget är 22 meter högt samt att de varit uppe i det. Jonas tog tiden när Urban sprang upp, vilket enligt honom tog 22,3 sekunder.\n\nVykortet är adresserat till kusinen Ulf, som denna sommar bodde hos deras farmor Linnea i Hortlax. Det ger därför en liten inblick i familjens semestervanor och kusinernas kontakt under sommarlovet. Vykortet avslutas med en hälsning till alla och den humoristiska kommentaren \"U.S. är bäst.\"",
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1976/1976-07-15/postcard-front.jpg",
+          "transcription": "",
+          "description": "Flerbildsvykort från Sundsvall med motiv från Norra Berget. Vykortet visar bland annat utsiktstornet och byggnader från friluftsmuseet."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1976/1976-07-15/postcard-back.jpg",
+          "transcription": "Onsdag 14/7\n\nTorsdag 15/7\n\nVi har just passerat\nNorrköping.\nVi steg upp kl. 4.\n\nHej Ulf\n\nJag sitter nu i en\nbastu. Oh, jag menar\ni en stekhet bil.\n\nKortet köpte jag på IKEA.\nDär hade vi stannat för\natt äta. Jag åt schnitzel.\nBurk, så dåligt.\n\nHar du roligt?\n\nKortet är taget ungefär\n1 km där vi låg vid\nNorrlandsokån. Tornet du\nser är 22 meter högt. Vi\nvar upp där också. En och\nen halv minut tog\nJonas tid på mig.\n22,3 sek.\n\nHälsa alla.\n\nP.S.\nU.S. är bäst.\n\nHälsningar\n\nUrban\n\nUlf Sandlund\nc/o Linnea Sandlund\nBox 188\n940 10 Hortlax\nSweden",
+          "description": "Vykortets baksida är daterad 14–15 juli 1976. Poststämpeln är inte läsbar."
+        }
+      ]
     }
   ]
 }

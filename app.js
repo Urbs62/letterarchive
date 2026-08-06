@@ -3,10 +3,27 @@ const viewer = document.querySelector("#image-viewer");
 const viewerContent = viewer.querySelector(".viewer-content");
 const viewerClose = viewer.querySelector(".viewer-close");
 
-const typeLabels = {
+const writingTypeLabels = {
   handwritten: "Handskrivet",
   typewritten: "Maskinskrivet",
   mixed: "Blandat"
+};
+
+const documentTypes = {
+  letter: {
+    label: "Brev",
+    badge: "Letter",
+    icon: "📄",
+    openLabel: "Öppna brevet",
+    previewItemTypes: ["envelope-front", "envelope-back", "page"]
+  },
+  postcard: {
+    label: "Vykort",
+    badge: "Postcard",
+    icon: "🖼️",
+    openLabel: "Öppna vykortet",
+    previewItemTypes: ["front", "back"]
+  }
 };
 
 let letters = [];
@@ -34,6 +51,10 @@ function attachmentCount(letter) {
   return letter.items.filter((item) => item.type === "attachment").length;
 }
 
+function documentType(document) {
+  return documentTypes[document.type] || documentTypes.letter;
+}
+
 function imagePath(item) {
   return item.image;
 }
@@ -57,8 +78,9 @@ function createPlaceholder(item, compact = false) {
 }
 
 function createArchiveImage(letter) {
+  const preferredTypes = documentType(letter).previewItemTypes;
   const envelope =
-    letter.items.find((item) => item.type === "envelope-front") ||
+    preferredTypes.map((type) => letter.items.find((item) => item.type === type)).find(Boolean) ||
     letter.items.find((item) => item.type.startsWith("envelope")) ||
     letter.items[0];
   const frame = document.createElement("div");
@@ -82,7 +104,7 @@ function createArchiveImage(letter) {
 
 function renderArchive() {
   activeLetter = null;
-  document.title = "LetterArchive – Breven till Ulf";
+  document.title = "LetterArchive – Arkiv";
   const years = letters.map((letter) => letter.date.slice(0, 4));
   const yearRange = years.length
     ? `${Math.min(...years)}${Math.min(...years) === Math.max(...years) ? "" : `–${Math.max(...years)}`}`
@@ -92,9 +114,9 @@ function renderArchive() {
   section.setAttribute("aria-labelledby", "archive-heading");
   section.innerHTML = `
     <header class="archive-introduction">
-      <h1 id="archive-heading">Breven till Ulf</h1>
-      <p>En samling brev från Urban till kusinen Ulf.<br>Originalbrev, kuvert, bilagor och transkriberad text.</p>
-      <p class="archive-statistics">${letters.length} brev <span aria-hidden="true">•</span> ${yearRange}</p>
+      <h1 id="archive-heading">Arkiv</h1>
+      <p>En samling försändelser från Urban till kusinen Ulf.<br>Original, bilagor och transkriberad text.</p>
+      <p class="archive-statistics">${letters.length} objekt <span aria-hidden="true">•</span> ${yearRange}</p>
     </header>
   `;
 
@@ -120,6 +142,7 @@ function renderArchive() {
         .sort((a, b) => a.date.localeCompare(b.date))
         .forEach((letter) => {
           const attachments = attachmentCount(letter);
+          const kind = documentType(letter);
           const article = document.createElement("article");
           article.className = "letter-card";
           article.append(createArchiveImage(letter));
@@ -127,15 +150,16 @@ function renderArchive() {
           const details = document.createElement("div");
           details.className = "card-details";
           details.innerHTML = `
+            <p class="document-type"><span aria-hidden="true">${kind.icon}</span> ${kind.badge}</p>
             <time datetime="${letter.date}">${formatDate(letter.date)}</time>
             <ul>
               <li>${letter.from}, ${letter.senderAge} år</li>
-              <li>${letterPageCount(letter)} sidor</li>
+              ${letter.type === "letter" ? `<li>${letterPageCount(letter)} sidor</li>` : ""}
               ${attachments ? `<li>${attachments} ${attachments === 1 ? "bilaga" : "bilagor"}</li>` : ""}
-              <li>${typeLabels[letter.type] || letter.type}</li>
+              ${letter.writingType ? `<li>${writingTypeLabels[letter.writingType] || letter.writingType}</li>` : ""}
             </ul>
             <a class="open-letter" href="#brev/${encodeURIComponent(letter.id)}">
-              Öppna brevet <span aria-hidden="true">→</span>
+              ${kind.openLabel} <span aria-hidden="true">→</span>
             </a>
           `;
           article.append(details);
@@ -282,12 +306,16 @@ function renderLetter(letter) {
   activeImageIndex = 0;
   document.title = `${formatDate(letter.date)} – LetterArchive`;
 
+  const kind = documentType(letter);
+  const detailMeta = letter.type === "letter"
+    ? `${letter.writingType ? `${writingTypeLabels[letter.writingType] || letter.writingType} · ` : ""}${letterPageCount(letter)} sidor`
+    : kind.label;
   const view = document.createElement("article");
   view.className = "letter-view";
   view.innerHTML = `
     <a class="back-link" href="#"><span aria-hidden="true">←</span> Tillbaka till arkivet</a>
     <header class="letter-heading">
-      <p class="eyebrow">${typeLabels[letter.type] || letter.type} · ${letterPageCount(letter)} sidor</p>
+      <p class="eyebrow">${detailMeta}</p>
       <h1><time datetime="${letter.date}">${formatDate(letter.date)}</time></h1>
       <p>${letter.from}, ${letter.senderAge} år <span aria-hidden="true">→</span> ${letter.to}</p>
     </header>
@@ -309,7 +337,7 @@ function renderLetter(letter) {
 
   const navigation = document.createElement("nav");
   navigation.className = "image-navigation";
-  navigation.setAttribute("aria-label", "Bläddra bland brevets delar");
+  navigation.setAttribute("aria-label", `Bläddra bland ${kind.label.toLowerCase()}ets delar`);
   navigation.innerHTML = `
     <button class="previous-image" type="button"><span aria-hidden="true">←</span> Föregående</button>
     <p class="image-position" aria-live="polite"></p>
@@ -386,7 +414,7 @@ function handleRoute() {
   else {
     app.innerHTML = `
       <section class="error-message">
-        <h1>Brevet kunde inte hittas</h1>
+        <h1>Objektet kunde inte hittas</h1>
         <p><a href="#">Tillbaka till arkivet</a></p>
       </section>
     `;
@@ -412,11 +440,20 @@ async function loadArchive() {
 }
 
 function normalizeLetter(letter) {
-  if (letter.items) return letter;
+  // `type` historically described the writing style. Only registered document
+  // types are interpreted as document types; all legacy records remain letters.
+  const isDocumentType = Object.hasOwn(documentTypes, letter.type);
+  const normalized = {
+    ...letter,
+    type: isDocumentType ? letter.type : "letter",
+    writingType: letter.writingType || (isDocumentType ? undefined : letter.type)
+  };
+
+  if (normalized.items || normalized.type === "postcard") return normalizeDocumentItems(normalized);
 
   const legacyPages = letter.transcription?.pages || [];
   return {
-    ...letter,
+    ...normalized,
     items: (letter.images || []).map((image) => {
       const legacyTranscription = legacyPages.find(
         (page) => image.kind === "page" && page.page === image.page
@@ -441,6 +478,29 @@ function normalizeLetter(letter) {
         description: ""
       };
     })
+  };
+}
+
+function normalizeDocumentItems(document) {
+  if (document.type !== "postcard") return document;
+
+  const folder = document.folder || "";
+  const suppliedItems = document.items || [];
+  const items = suppliedItems.length
+    ? suppliedItems
+    : [
+        { type: "front", label: "Front", image: `${folder}postcard-front.jpg` },
+        { type: "back", label: "Back", image: `${folder}postcard-back.jpg` }
+      ];
+
+  return {
+    ...document,
+    items: items.map((item) => ({
+      transcription: "",
+      description: "",
+      ...item,
+      label: item.label || (item.type === "front" ? "Front" : item.type === "back" ? "Back" : item.type)
+    }))
   };
 }
 
