@@ -550,6 +550,32 @@
           "description": "Lärarlistan fortsätter och sidan innehåller en teckning av biologiläraren samt ordlekar och en lekfull rivalitet mellan kameramärkena Konica och Agfa."
         }
       ]
+    },
+    {
+      "id": "1977-02-06",
+      "date": "1977-02-06",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 15,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Detta vykort skickas från Piteå den 6 februari 1977 och är en kort hälsning mitt under skolterminen. Urban berättar att skolarbetet upptar det mesta av tiden med fysikprov dagen efter och matteprov senare samma vecka. Han har samtidigt hunnit träna längdskidåkning med den lokala skidklubben SGIF och nämner både sina Kneissl-skidor och att de vallats med Rode. Vykortet avslutas med planer på ett biobesök för att se Fruktan är mitt vapen, vilket ger en liten inblick i fritidsintressena vid sidan av skolan. Trots att hälsningen är kort lyckas den fånga en vanlig vintervecka för en femtonåring i Piteå 1977, där skola, skidträning och bio samsas i vardagen.",
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1977/1977-02-06/postcard-front.jpg",
+          "transcription": "A letter means so much",
+          "description": "Vykort ur Postverkets serie \"A letter means so much\". Motivet visar en äldre kvinna som sitter och läser ett brev."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1977/1977-02-06/postcard-back.jpg",
+          "transcription": "Hej Ulf.\n\nSitter och skriver i mitt rum.\n\nFysikprov i morgon. Matteprov på torsdag, så egentligen har jag inte tid att skriva till dej nu.\n\nHar just varit på SGIF-träning. Åkte 11 km skidspår med mina Kneissl. Hade klistrat med Rode.\n\nI fysiken håller vi på med elektronik.\n\nPå fredag har jag tänkt att gå på en av de tre biograferna som finns i Piteå, Saga. Där går Fruktan är mitt vapen av Alistair MacLean.\n\nHejdå.\n\nUrban.\n\n(Jag ringer någon gång.)\n\nUlf Sandlund\nSafjällsgatan 16\n431 39 Mölndal\nSverige",
+          "description": "Vykortets baksida är poststämplad i Piteå den 6 februari 1977 och adresserad till Ulf Sandlund i Mölndal."
+        }
+      ]
     }
   ]
 }
