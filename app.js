@@ -26,6 +26,18 @@ const documentTypes = {
   }
 };
 
+const primarySectionTitles = new Set([
+  "letter",
+  "brev",
+  "vykort",
+  "kuvert",
+  "bilagor",
+  "transcription",
+  "transkribering",
+  "summary",
+  "sammanfattning"
+]);
+
 let letters = [];
 let activeLetter = null;
 let activeImageIndex = 0;
@@ -301,6 +313,41 @@ function updateTranscription(item) {
   }
 }
 
+function sectionPlainText(markdown) {
+  return markdown
+    .replace(/^!\[[^\]]*\]\([^)]*\)\s*$/gm, "")
+    .replace(/^#{2,6}\s+/gm, "")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*\n]+)\*/g, "$1")
+    .replace(/^>\s?/gm, "")
+    .replace(/ {2}$/gm, "")
+    .replace(/^---\s*$/gm, "")
+    .trim();
+}
+
+function appendAdditionalSections(view, letter) {
+  const sections = (letter.sections || []).filter(
+    (section) =>
+      section?.title &&
+      section?.content &&
+      !primarySectionTitles.has(section.title.trim().toLocaleLowerCase("sv-SE"))
+  );
+
+  sections.forEach((archiveSection, index) => {
+    const section = document.createElement("section");
+    section.className = "letter-summary letter-additional-section";
+    const heading = document.createElement("h2");
+    heading.id = `letter-additional-section-${index + 1}`;
+    heading.textContent = archiveSection.title;
+    section.setAttribute("aria-labelledby", heading.id);
+
+    const content = document.createElement("p");
+    content.textContent = sectionPlainText(archiveSection.content);
+    section.append(heading, content);
+    view.append(section);
+  });
+}
+
 function renderLetter(letter) {
   activeLetter = letter;
   activeImageIndex = 0;
@@ -359,6 +406,8 @@ function renderLetter(letter) {
     summary.append(summaryHeading, summaryText);
     view.append(summary);
   }
+
+  appendAdditionalSections(view, letter);
 
   app.replaceChildren(view);
 

@@ -35,6 +35,27 @@ function itemContent(markdown, heading) {
   };
 }
 
+/** Collect every level-one Markdown section without knowing its title. */
+function topLevelSections(markdown) {
+  const lines = markdown.split(/\r?\n/);
+  const headings = [];
+
+  lines.forEach((line, index) => {
+    const match = line.match(/^#\s+(.+?)\s*$/);
+    if (match) headings.push({ title: match[1], line: index });
+  });
+
+  return headings.map((heading, index) => {
+    const end = headings[index + 1]?.line ?? lines.length;
+    const content = lines
+      .slice(heading.line + 1, end)
+      .join("\n")
+      .replace(/^---\s*$/gm, "")
+      .trim();
+    return { title: heading.title, content };
+  });
+}
+
 function parseLetter(markdown, folder) {
   const items = [];
   const envelope = section(markdown, "Envelope", "#");
@@ -99,6 +120,7 @@ export function parseArchiveMarkdown(markdown, { fileName, folder = "", id } = {
     writingType: field(markdown, "Writing Type") || undefined,
     folder,
     summary: section(markdown, "Summary", "#") || section(markdown, "Sammanfattning", "#"),
+    sections: topLevelSections(markdown),
     items: type === "postcard" ? parsePostcard(markdown, folder) : parseLetter(markdown, folder)
   };
 }
