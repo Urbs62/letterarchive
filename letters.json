@@ -869,6 +869,70 @@
           "description": "Ett kort julbrev med maskinskriven text och handskrivna tillägg."
         }
       ]
+    },
+    {
+      "id": "1977-12-21",
+      "date": "1977-12-21",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 15,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Urban skriver vykortet från Bodéns bokhandel, där han sitter på mammans stol medan hon arbetar. Han har varit och köpt julklappar och berättar att sista skoldagen mest bestått av lugna aktiviteter.\n\nNästa dag väntar betygsutdelning, fika, dans och en uppvisningsmatch i landhockey mellan lärare och elever. Urban hade hoppats få vara med men verkar ha haft otur i lottningen och tycker att den inte gick riktigt rätt till.\n\nHan avslutar med att önska Ulf en god jul och ett gott nytt år.",
+      "sections": [
+        {
+          "title": "Vykort",
+          "content": "**Datum:** 1977-12-21 (poststämpel 21.12.1977)  \n**Typ:** Vykort  \n**Ort:** Piteå (skrivet från Bodéns bokhandel)  \n**Avsändare:** Urban Sandlund  \n**Mottagare:** Ulf Sandlund"
+        },
+        {
+          "title": "Vykortets framsida",
+          "content": "Fotografi från **Piteå hamn** med bogserbåtarna **EOL** och **REID** vid kaj. Industrimiljö och vinterhimmel i bakgrunden."
+        },
+        {
+          "title": "Vykortets baksida",
+          "content": "## Transkription\n\nPiteå (Bodéns) 77.12.21\n\nHej Ulf\n\nSitter på mammas stol och skriver. Här har jag köpt julklappar. Idag har vi bara slöat i skolan. I morn blir det ändå slöare. Då får vi betyg. Före det ska vi fika, dansa och se på landhockey. Lärare mot elever. För att få vara med där så fick man skriva upp sig på en lapp.\n\nSen lottade dom ut laget. Jag hade otur. Fick inte vara med. Lottningen var lite skum. 4 st från samma klass kom med. En av dom var med och lottade.\n\nGod Jul & gott nytt år\n\nP.S. Det var en miss av dej att inte komma hit."
+        },
+        {
+          "title": "Sammanfattning",
+          "content": "Urban skriver vykortet från **Bodéns bokhandel**, där han sitter på mammans stol medan hon arbetar. Han har varit och köpt julklappar och berättar att sista skoldagen mest bestått av lugna aktiviteter.\n\nNästa dag väntar betygsutdelning, fika, dans och en uppvisningsmatch i landhockey mellan lärare och elever. Urban hade hoppats få vara med men verkar ha haft otur i lottningen och tycker att den inte gick riktigt rätt till.\n\nHan avslutar med att önska Ulf en god jul och ett gott nytt år."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Det här är ännu ett av de vykort där Urban använder några minuter i vardagen till att hålla kontakten med Ulf. Att han anger att han sitter på **mammas stol på Bodéns bokhandel** ger vykortet en ovanligt konkret inramning. Man ser nästan framför sig hur han väntar medan mamma arbetar och passar på att skriva.\n\nSkolavslutningen beskrivs med typisk Urban-humor. Först konstaterar han att de \"bara slöat\" i skolan och fortsätter sedan med att nästa dag kommer bli \"ännu slöare\". Samtidigt nämns de traditionella inslagen kring skolavslutningen: betyg, fika, dans och lärarmatch.\n\nDen lilla kommentaren om den \"skumma\" lottningen visar också hur viktigt det var att få delta i aktiviteterna. Besvikelsen uttrycks utan att ta över hela berättelsen."
+        },
+        {
+          "title": "Personer",
+          "content": "**Ulf Sandlund**  \nMottagare av vykortet.\n\n**Urban Sandlund**  \nAvsändare.\n\n**Mamma**  \nArbetar på Bodéns bokhandel, där Urban skriver vykortet."
+        },
+        {
+          "title": "Platser",
+          "content": "**Bodéns bokhandel, Piteå**  \nHär sitter Urban när vykortet skrivs.\n\n**Piteå**  \nOrt för både vykortet och motivet på framsidan."
+        },
+        {
+          "title": "Tidsdokument",
+          "content": "Vykortet ger en liten inblick i hur sista skoldagarna före jul kunde se ut 1977.\n\n- Julklappshandel i bokhandel.\n- Sista skoldagen före jullovet.\n- Betygsutdelning.\n- Fika och dans.\n- Landhockeymatch mellan lärare och elever."
+        },
+        {
+          "title": "Reflektion",
+          "content": "Även detta korta vykort visar Urbans känsla för att fånga en vardagssituation. Innehållet är egentligen ganska enkelt, men detaljerna – stolen på mammans arbete, julklapparna, den ifrågasatta laguttagningen och de kommande julaktiviteterna – gör att läsaren får en tydlig bild av en decemberdag i Piteå 1977.\n\nDet är också ett fint exempel på hur Urban ofta skrev direkt där han befann sig. Breven och vykorten blir därför små ögonblicksbilder snarare än berättelser skrivna i efterhand."
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1977/1977-12-21/postcard-front.jpg",
+          "transcription": "",
+          "description": "Fotografi från Piteå hamn med bogserbåtarna EOL och REID vid kaj. Industrimiljö och vinterhimmel syns i bakgrunden."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1977/1977-12-21/postcard-back.jpg",
+          "transcription": "Piteå (Bodéns) 77.12.21\n\nHej Ulf\n\nSitter på mammas stol och skriver. Här har jag köpt julklappar. Idag har vi bara slöat i skolan. I morn blir det ändå slöare. Då får vi betyg. Före det ska vi fika, dansa och se på landhockey. Lärare mot elever. För att få vara med där så fick man skriva upp sig på en lapp.\n\nSen lottade dom ut laget. Jag hade otur. Fick inte vara med. Lottningen var lite skum. 4 st från samma klass kom med. En av dom var med och lottade.\n\nGod Jul & gott nytt år\n\nP.S. Det var en miss av dej att inte komma hit.",
+          "description": "Vykortet är skrivet från Bodéns bokhandel i Piteå den 21 december 1977."
+        }
+      ]
     }
   ]
 }
