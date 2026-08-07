@@ -30,10 +30,15 @@ const primarySectionTitles = new Set([
   "letter",
   "brev",
   "vykort",
+  "front",
+  "framsida",
+  "back",
+  "baksida",
   "kuvert",
   "bilagor",
   "transcription",
   "transkribering",
+  "transkription",
   "summary",
   "sammanfattning"
 ]);

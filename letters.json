@@ -729,6 +729,78 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1978-04-10",
+      "date": "1978-04-10",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 16,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Urban skriver vykortet under en tågresa söderut. Resan har blivit betydligt mer dramatisk än planerat eftersom tåget varit fyra timmar försenat, vilket gjort att han inte hann ringa Ulf vid bytet i Göteborg som han hade tänkt.\n\nTrots förseningarna verkar han ha fått ett gott första intryck av Varberg och skriver att staden verkar trevlig. Han hoppas fortfarande kunna ringa Ulf senare under vistelsen.\n\nSom avslutning pekar han med glimten i ögat ut \"den snygga tjejen på framsidan\", en typisk Urban-kommentar där själva vykortsmotivet blir en del av meddelandet.",
+      "sections": [
+        {
+          "title": "Vykort",
+          "content": "**Datum:** 1978-04-10 (poststämpel Varberg 10.4.1978)  \n**Typ:** Vykort  \n**Ort:** Varberg  \n**Avsändare:** Urban Sandlund  \n**Mottagare:** Ulf Sandlund"
+        },
+        {
+          "title": "Framsida",
+          "content": "Flerbildsvykort från Varberg med motiv av:\n\n- Flygplan på flygfält.\n- Flicka vid strandkanten.\n- Dansuppvisning.\n- Europafärjan.\n- Varbergs fästning.\n\nText: **VARBERG**"
+        },
+        {
+          "title": "Baksida",
+          "content": "**Adress**\n\nUlf Sandlund  \nSafjällsgatan 16  \n431 39 Mölndal"
+        },
+        {
+          "title": "Transkription",
+          "content": "> 78.04.08\n>\n> Hej\n>\n> Skriver från en kiosk\n> i Varberg. Kl är 12.35.\n>\n> Klockan 13.00 var vi i\n> Göteborg. Jag hade tänker\n> ringa men det blev\n> så jäktigt med tågbyte.\n>\n> Tåget vi åkte med\n> blev 4 timmar för-\n> senat. Grrrr. Varberg\n> verkar vara en trevlig\n> stad. Jag kanske ringer\n> till dig härifrån. OBS\n> Den snygga tjejen på\n> framsidan.\n>\n> Hejdå  \n> Urban"
+        },
+        {
+          "title": "Sammanfattning",
+          "content": "Urban skriver vykortet under en tågresa söderut. Resan har blivit betydligt mer dramatisk än planerat eftersom tåget varit fyra timmar försenat, vilket gjort att han inte hann ringa Ulf vid bytet i Göteborg som han hade tänkt.\n\nTrots förseningarna verkar han ha fått ett gott första intryck av Varberg och skriver att staden verkar trevlig. Han hoppas fortfarande kunna ringa Ulf senare under vistelsen.\n\nSom avslutning pekar han med glimten i ögat ut \"den snygga tjejen på framsidan\", en typisk Urban-kommentar där själva vykortsmotivet blir en del av meddelandet."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Detta är ett ovanligt kort och spontant vykort. Till skillnad från de långa, genomarbetade breven fungerar det nästan som ett resemeddelande i realtid.\n\nVykortet visar också hur viktigt det var att hålla kontakten under resor innan mobiltelefonernas tid. Urban hade planerat att ringa från Göteborg men missade möjligheten på grund av tågförseningen. Istället skickar han snabbt ett vykort från en kiosk i Varberg.\n\nDen avslutande kommentaren om \"den snygga tjejen på framsidan\" visar att hans humor fortfarande finns där, även när utrymmet är begränsat."
+        },
+        {
+          "title": "Personer",
+          "content": "**Urban Sandlund**  \nAvsändare.\n\n**Ulf Sandlund**  \nMottagare."
+        },
+        {
+          "title": "Platser",
+          "content": "**Varberg**  \nHär skrivs och postas vykortet.\n\n**Göteborg**  \nPlanerat tågbyte där Urban hade tänkt ringa Ulf."
+        },
+        {
+          "title": "Tidsdokument",
+          "content": "- Tågförsening på fyra timmar.\n- Telefonsamtal planeras från resa eller station.\n- Snabbt resevykort från en kiosk.\n- Flerbildsvykort, en vanlig souvenir under 1970-talet."
+        },
+        {
+          "title": "Humor",
+          "content": "Humorn är lågmäld men typisk för Urban. Istället för ett vanligt avslut uppmanar han Ulf att lägga märke till \"den snygga tjejen på framsidan\", vilket gör att själva vykortet blir en del av skämtet."
+        },
+        {
+          "title": "Reflektion",
+          "content": "Även om detta är ett av de kortaste vykorten i samlingen ger det en fin ögonblicksbild av en resa genom Sverige våren 1978. Försenade tåg, snabba hälsningar från en kiosk och planer på att ringa från nästa ort gör att vykortet känns spontant och levande. Det visar också hur Urban gärna utnyttjade själva vykortets motiv för att ge meddelandet en extra personlig och humoristisk avslutning."
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1978/1978-04-10/postcard-front.jpg",
+          "transcription": "VARBERG",
+          "description": "Flerbildsvykort från Varberg med motiv av flygplan på flygfält, en flicka vid strandkanten, dansuppvisning, Europafärjan och Varbergs fästning."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1978/1978-04-10/postcard-back.jpg",
+          "transcription": "78.04.08\n\nHej\n\nSkriver från en kiosk\ni Varberg. Kl är 12.35.\n\nKlockan 13.00 var vi i\nGöteborg. Jag hade tänker\nringa men det blev\nså jäktigt med tågbyte.\n\nTåget vi åkte med\nblev 4 timmar för-\nsenat. Grrrr. Varberg\nverkar vara en trevlig\nstad. Jag kanske ringer\ntill dig härifrån. OBS\nDen snygga tjejen på\nframsidan.\n\nHejdå\nUrban\n\nUlf Sandlund\nSafjällsgatan 16\n431 39 Mölndal",
+          "description": "Vykortet är poststämplat i Varberg den 10 april 1978 och adresserat till Ulf Sandlund i Mölndal."
+        }
+      ]
     }
   ]
 }
