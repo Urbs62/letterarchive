@@ -576,6 +576,39 @@
           "description": "Vykortets baksida är poststämplad i Piteå den 6 februari 1977 och adresserad till Ulf Sandlund i Mölndal."
         }
       ]
+    },
+    {
+      "id": "1975-07-01",
+      "date": "1975-07-01",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 13,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Urban skriver att han längtar efter att Ulf ska komma upp till Piteå och ber honom ta med cykeln så att de kan cykla i skogen hos farmor. Vykortet är särskilt intressant eftersom den ursprungliga adressen i Mölndal har strukits och ersatts med familjen Sandlunds adress i Piteå. Det tyder på att kortet och Ulf korsade varandra på vägen norrut inför sommaren 1975.",
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1975/1975-07-01/postcard-front.jpg",
+          "transcription": "MÖLNDAL 1 – 1.7.75",
+          "description": "Vykort med motiv av en äldre Scania-Vabis postbuss från 1923, utrustad för vinterkörning med banddrift och skidor."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1975/1975-07-01/postcard-back.jpg",
+          "transcription": "Hej Ulf\n\nJag längtar till\ndu kommer upp\ntill Piteå. Kan\ndu ta med dig\ncykeln. Så att vi får\ncykla i skogen\nhos farmor någon gång.\n\nHälsa Birgitta.\n\nHälsningar: Urban\n\nUlf Sandlund\nSafjällsgatan 16\n431 39 Mölndal\n\nUlf Sandlund\nc/o Rune Sandlund\nDegermansgatan 3\n941 00 Piteå",
+          "description": "Den ursprungliga adressen i Mölndal har senare strukits över och ersatts med en adress till c/o Rune Sandlund i Piteå. Vykortet verkar ha omdirigerats medan Ulf var på väg norrut inför sommaren. Den exakta postgången går inte att fastställa."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida 2",
+          "image": "letters/1975/1975-07-01/postcard-back2.jpg",
+          "transcription": "",
+          "description": "Andra bild av vykortets baksida."
+        }
+      ]
     }
   ]
 }
