@@ -332,12 +332,26 @@ function sectionPlainText(markdown) {
     .trim();
 }
 
+function isPrimarySectionTitle(title) {
+  const normalized = title
+    .trim()
+    .toLocaleLowerCase("sv-SE")
+    .replace(/[–—]/g, "-");
+
+  return (
+    primarySectionTitles.has(normalized) ||
+    /^(brev|letter|vykort|postcard)(?:\s+\d{4}-\d{2}-\d{2})?$/.test(normalized) ||
+    /^(?:vykort|kuvert)(?:ets?)?\s*(?:-\s*)?(?:fram|bak)sida$/.test(normalized) ||
+    /^(?:page|sida)\s+\d+$/.test(normalized)
+  );
+}
+
 function appendAdditionalSections(view, letter) {
   const sections = (letter.sections || []).filter(
     (section) =>
       section?.title &&
       section?.content &&
-      !primarySectionTitles.has(section.title.trim().toLocaleLowerCase("sv-SE"))
+      !isPrimarySectionTitle(section.title)
   );
 
   sections.forEach((archiveSection, index) => {
