@@ -1353,6 +1353,40 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1978-01-09",
+      "date": "1978-01-09",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 16,
+      "type": "letter",
+      "writingType": "mixed",
+      "summary": "Ett ovanligt kort brev som påbörjas den 28 december 1977 men blir liggande över nyår. Urban berättar om en vardag fylld av sådant som återkommer i många av breven från den här tiden: cykelträning på rullar, schack, kompisar, bio och skidåkning på TV.\n\nDen 8 januari tar han upp brevet igen, huvudsakligen för att tala om för Ulf att han fortfarande lever. Han konstaterar själv att detta borde vara ett av de kortaste brev han skrivit. Innan kvällen fortsätter ska han se Stenmark och därefter spela landhockey.\n\nKuvertet är nästan mer påkostat än själva brevet. Det är dekorerat med bland annat en apelsinbild som avger apelsindoft när man gnuggar på den, tillsammans med uppmaningen \"Gnugga och njut (även tillåtet för anställda vid posten)\". Urban ber dessutom redan på kuvertet om ursäkt för det \"undermåliga brevet\".\n\nBrevet poststämplades i Piteå den 9 januari 1978.",
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1978/1978-01-09/envelope-front.jpg",
+          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 MÖLNDAL\n\nPiteå 9.1.78",
+          "description": "Kuvertets framsida är adresserad till Ulf Sandlund i Mölndal, frankerad med 1,10 kronor och poststämplad i Piteå den 9 januari 1978."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1978/1978-01-09/envelope-back.jpg",
+          "transcription": "Urban Sandlund\nDegermansgatan 3\n941 00 PITEÅ\n\nGnugga och njut\n(även tillåtet för anställda vid posten)\n\nJag ber på förhand om ursäkt för detta undermåliga brev.",
+          "description": "Kuvertets baksida är rikt dekorerad med handritade gröna former och en fastklistrad bild av en halv apelsin som börjar lukta apelsin när man gnuggar på den."
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1978/1978-01-09/page-01.jpg",
+          "transcription": "77.12.28\n\nHej Ulf.\n\nDet var länge sen jag skrev. Så nu vet du det. Idag har jag vaknat.\nJag gick upp och såg Ville, Valle och Viktor. Sen somnade jag\nigen. Steg upp kvart över elva. Åt. Gick ut i garaget och cyklade på\nrullar. Cyklade i en halvtimme. Duschade. Spelade sen\nschack mot Gösta. Vann. Kokade knäck. (Andra satsen) Ikväll ska jag\npå bio med mikarna. Lundberg, Boman, Nyström. Jag kom just på att jag\nkänner många miklar. Förutom Lundberg, Nyström, Boman känner jag Johansson. (han som kräktes på nyårsafton) Gustafsson (skidåkare som kallas\ngusen) Lundström (basketspelare) Sen känner jag bara andra miklar så-\nsom Andersson, Lundberg.\n\n78.01.08\n\nDetta brev skickar jag iväg nu bara\nför att du ska veta att jag lever.\nDet här borde väl vara det näst kortaste bre-\njag skrivit. Älskade spin var bra. Om 20 min\nska jag se Stenmark. Efter det\nfar jag och spelar landhockey.\n\nHej då från\nUrban.S",
+          "description": "Brevet påbörjades den 28 december 1977 och fortsattes för hand den 8 januari 1978. Datumet i fortsättningen är skrivet som 77.01.08 men av sammanhanget framgår att 78.01.08 avses."
+        }
+      ]
     }
   ]
 }
