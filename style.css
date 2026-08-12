@@ -278,6 +278,53 @@ button:focus-visible {
   white-space: pre-line;
 }
 
+.letter-collapsible-section {
+  padding: 0;
+}
+
+.letter-collapsible-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 1.25rem 1.5rem;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+}
+
+.letter-collapsible-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.letter-collapsible-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.letter-collapsible-heading {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.letter-collapsible-chevron {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: 0 0 auto;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 160ms ease;
+}
+
+.letter-collapsible-section[open] .letter-collapsible-chevron {
+  transform: rotate(45deg);
+}
+
+.letter-collapsible-content {
+  padding: 0 1.5rem 1.25rem 2.7rem;
+}
+
 .mode-tabs {
   display: flex;
   justify-content: center;
@@ -543,6 +590,16 @@ code {
 
   .back-link {
     margin-bottom: 2rem;
+  }
+
+  .letter-collapsible-toggle {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .letter-collapsible-content {
+    padding-right: 1rem;
+    padding-left: 2.15rem;
   }
 
   .card-image {

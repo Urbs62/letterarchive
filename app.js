@@ -45,6 +45,27 @@ const primarySectionTitles = new Set([
   "sammanfattning"
 ]);
 
+// Only source material and document structure remain open by default. Every
+// other top-level Markdown section is treated as editorial and collapsible, so
+// future analytical headings require no rendering changes.
+const openStructuralSectionTitles = new Set([
+  "metadata",
+  "grunduppgifter",
+  "fakta",
+  "datum",
+  "date",
+  "postmarked",
+  "location",
+  "envelope",
+  "envelope front",
+  "envelope back",
+  "attachments",
+  "bild",
+  "bilder",
+  "beskrivning",
+  "description"
+]);
+
 let letters = [];
 let activeLetter = null;
 let activeImageIndex = 0;
@@ -332,11 +353,15 @@ function sectionPlainText(markdown) {
     .trim();
 }
 
-function isPrimarySectionTitle(title) {
-  const normalized = title
+function normalizedSectionTitle(title) {
+  return title
     .trim()
     .toLocaleLowerCase("sv-SE")
     .replace(/[–—]/g, "-");
+}
+
+function isPrimarySectionTitle(title) {
+  const normalized = normalizedSectionTitle(title);
 
   return (
     primarySectionTitles.has(normalized) ||
@@ -344,6 +369,58 @@ function isPrimarySectionTitle(title) {
     /^(?:vykort|kuvert)(?:ets?)?\s*(?:-\s*)?(?:fram|bak)sida$/.test(normalized) ||
     /^(?:page|sida)\s+\d+$/.test(normalized)
   );
+}
+
+function isOpenStructuralSectionTitle(title) {
+  const normalized = normalizedSectionTitle(title);
+  return (
+    openStructuralSectionTitles.has(normalized) ||
+    /^\d{4}-\d{2}-\d{2}(?:\s+-\s+.*)?$/.test(normalized) ||
+    /^(?:brev(?:et)?|letter)(?:\s+.*)?$/.test(normalized) ||
+    /^(?:bilaga|attachment)\s+\d+(?:\s+-\s+.*)?$/.test(normalized) ||
+    /^(?:page|sida|ark)\s+\d+(?:\s+-\s+.*)?$/.test(normalized)
+  );
+}
+
+function createSectionContent(content, cleanMarkdown = true) {
+  const paragraph = document.createElement("p");
+  paragraph.textContent = cleanMarkdown ? sectionPlainText(content) : content;
+  return paragraph;
+}
+
+function createCollapsibleSection(title, content, cleanMarkdown = true) {
+  const details = document.createElement("details");
+  details.className = "letter-summary letter-collapsible-section";
+
+  const toggle = document.createElement("summary");
+  toggle.className = "letter-collapsible-toggle";
+
+  const chevron = document.createElement("span");
+  chevron.className = "letter-collapsible-chevron";
+  chevron.setAttribute("aria-hidden", "true");
+
+  const heading = document.createElement("span");
+  heading.className = "letter-collapsible-heading";
+  heading.textContent = title;
+
+  const body = document.createElement("div");
+  body.className = "letter-collapsible-content";
+  body.append(createSectionContent(content, cleanMarkdown));
+
+  toggle.append(chevron, heading);
+  details.append(toggle, body);
+  return details;
+}
+
+function createOpenAdditionalSection(title, content, index) {
+  const section = document.createElement("section");
+  section.className = "letter-summary letter-additional-section";
+  const heading = document.createElement("h2");
+  heading.id = `letter-additional-section-${index + 1}`;
+  heading.textContent = title;
+  section.setAttribute("aria-labelledby", heading.id);
+  section.append(heading, createSectionContent(content));
+  return section;
 }
 
 function appendAdditionalSections(view, letter) {
@@ -355,17 +432,11 @@ function appendAdditionalSections(view, letter) {
   );
 
   sections.forEach((archiveSection, index) => {
-    const section = document.createElement("section");
-    section.className = "letter-summary letter-additional-section";
-    const heading = document.createElement("h2");
-    heading.id = `letter-additional-section-${index + 1}`;
-    heading.textContent = archiveSection.title;
-    section.setAttribute("aria-labelledby", heading.id);
-
-    const content = document.createElement("p");
-    content.textContent = sectionPlainText(archiveSection.content);
-    section.append(heading, content);
-    view.append(section);
+    view.append(
+      isOpenStructuralSectionTitle(archiveSection.title)
+        ? createOpenAdditionalSection(archiveSection.title, archiveSection.content, index)
+        : createCollapsibleSection(archiveSection.title, archiveSection.content)
+    );
   });
 }
 
@@ -414,18 +485,7 @@ function renderLetter(letter) {
   view.append(navigation);
 
   if (letter.summary) {
-    const summary = document.createElement("section");
-    summary.className = "letter-summary";
-    summary.setAttribute("aria-labelledby", "letter-summary-heading");
-
-    const summaryHeading = document.createElement("h2");
-    summaryHeading.id = "letter-summary-heading";
-    summaryHeading.textContent = "Sammanfattning";
-
-    const summaryText = document.createElement("p");
-    summaryText.textContent = letter.summary;
-    summary.append(summaryHeading, summaryText);
-    view.append(summary);
+    view.append(createCollapsibleSection("Sammanfattning", letter.summary, false));
   }
 
   appendAdditionalSections(view, letter);
