@@ -80,7 +80,19 @@ const swedishDate = new Intl.DateTimeFormat("sv-SE", {
 });
 
 function formatDate(date) {
+  const unknownDate = date.match(/^(\d{4})-unknown(?:-\d+)?$/);
+  if (unknownDate) return `Troligen ${unknownDate[1]}`;
   return swedishDate.format(new Date(`${date}T12:00:00Z`));
+}
+
+function dateTimeAttribute(date) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? ` datetime="${date}"` : "";
+}
+
+function senderLabel(letter) {
+  return Number.isFinite(letter.senderAge)
+    ? `${letter.from}, ${letter.senderAge} år`
+    : letter.from;
 }
 
 function letterPageCount(letter) {
@@ -191,9 +203,9 @@ function renderArchive() {
           details.className = "card-details";
           details.innerHTML = `
             <p class="document-type"><span aria-hidden="true">${kind.icon}</span> ${kind.badge}</p>
-            <time datetime="${letter.date}">${formatDate(letter.date)}</time>
+            <time${dateTimeAttribute(letter.date)}>${formatDate(letter.date)}</time>
             <ul>
-              <li>${letter.from}, ${letter.senderAge} år</li>
+              <li>${senderLabel(letter)}</li>
               ${letter.type === "letter" ? `<li>${letterPageCount(letter)} sidor</li>` : ""}
               ${attachments ? `<li>${attachments} ${attachments === 1 ? "bilaga" : "bilagor"}</li>` : ""}
               ${letter.writingType ? `<li>${writingTypeLabels[letter.writingType] || letter.writingType}</li>` : ""}
@@ -455,8 +467,8 @@ function renderLetter(letter) {
     <a class="back-link" href="#"><span aria-hidden="true">←</span> Tillbaka till arkivet</a>
     <header class="letter-heading">
       <p class="eyebrow">${detailMeta}</p>
-      <h1><time datetime="${letter.date}">${formatDate(letter.date)}</time></h1>
-      <p>${letter.from}, ${letter.senderAge} år <span aria-hidden="true">→</span> ${letter.to}</p>
+      <h1><time${dateTimeAttribute(letter.date)}>${formatDate(letter.date)}</time></h1>
+      <p>${senderLabel(letter)} <span aria-hidden="true">→</span> ${letter.to}</p>
     </header>
     <div class="mode-tabs" role="tablist" aria-label="Välj visningsläge">
       <button id="original-tab" class="mode-tab is-active" role="tab" aria-selected="true" aria-controls="original-panel" type="button">Original</button>

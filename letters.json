@@ -5,6 +5,66 @@
   },
   "letters": [
     {
+      "id": "1971-01-31",
+      "date": "1971-01-31",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 8,
+      "type": "letter",
+      "writingType": "handwritten",
+      "summary": "Urban skriver ett kort brev till Ulf och säger att han vill att de ska turas om att skriva brev till varandra.\r\n\r\nHan berättar att hans pappa på söndagen åkt Andörjan, ett lopp på 4,5 mil, och blivit 95:a av 668 deltagare. Urban själv hade varit sjuk med ont i magen och kräkningar och hade därför inte haft särskilt roligt. Han skriver också att han inte tagit något märke.\r\n\r\nMot slutet handlar brevet om ishockey. Urban tycker att det är spännande att titta på, men tycker att det är synd att Sverige förlorat mot Finland.\r\n\r\nBrevet avslutas med uppmaningen \"skriv snart\" och signaturen \"URBAN\".",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "Detta är hittills det äldsta bevarade brevet i samlingen. Urban är åtta år gammal vid tiden för poststämpeln.\r\n\r\nBrevet är handskrivet med blyerts och har två små färgade klisterbilder högst upp på sidan.\r\n\r\nRedan den första meningen är intressant:\r\n\r\n> ja jag vill turas om att skriva brev.\r\n\r\nFormuleringen antyder att Urban svarar på ett förslag från Ulf om att de ska skriva till varandra. Det kan därför ha funnits någon form av korrespondens redan före detta brev, även om något tidigare brev från Urban inte finns bevarat i samlingen.\r\n\r\nHandstilen på kuvertets framsida skiljer sig tydligt från Urbans barnhandstil i brevet. Adressen kan ha skrivits av Urbans mamma.\r\n\r\nStavningen och meningsbyggnaden har bevarats som Urban skrev den, bland annat \"söndas\", \"tråkit\", \"rolit\", \"vist\" och \"ishocky\"."
+        },
+        {
+          "title": "Personer",
+          "content": "**Urban Sandlund**  \r\nAvsändare. Åtta år gammal när brevet postas.\r\n\r\n**Ulf Sandlund**  \r\nMottagare och Urbans kusin. Urban vill att de ska turas om att skriva brev till varandra.\r\n\r\n**Pappa**  \r\nUrbans pappa. Har deltagit i Andörjan och enligt brevet blivit 95:a av 668 deltagare."
+        },
+        {
+          "title": "Platser",
+          "content": "**Piteå**  \r\nHär postas brevet.\r\n\r\n**Mölndal**  \r\nDit brevet skickas."
+        },
+        {
+          "title": "Tidsdokument",
+          "content": "Brevet är ett litet tidsdokument från januari 1971 och visar vad som upptar en åttaårings tankar: familjen, ett stort motionslopp, den egna sjukdomen och ishockey på TV.\r\n\r\nBrevskrivandet är fortfarande mycket enkelt. Brevet är skrivet med blyerts på ett vikt papper och dekorerat med små klisterbilder. Kuvertet är handadresserat och frankerat med ett svenskt frimärke.\r\n\r\nAndörjan beskrivs som ett 4,5 mil långt lopp med 668 deltagare. Urbans pappa placerar sig enligt brevet som nummer 95.\r\n\r\nUrban nämner också att han inte har \"tagit något märke\". Exakt vilket märke han syftar på framgår inte av brevet.\r\n\r\nIshockey är redan ett intresse. Urban skriver att det är spännande att titta på och beklagar att Sverige förlorat mot Finland.\r\n\r\nJämfört med de senare breven i samlingen är detta mycket enkelt. Här finns ännu inte de långa redogörelserna, skämten, teckningarna, konstruktionerna och bilagorna som så småningom blir en del av brevväxlingen."
+        },
+        {
+          "title": "Humor",
+          "content": "Brevet innehåller inte den medvetna humor och de ordvitsar som blir vanliga i de senare breven.\r\n\r\nI stället präglas det av ett barns direkta sätt att berätta. Händelser följer på varandra utan större övergångar: pappas lopp, Urbans magsjuka och Sveriges ishockeyförlust ryms inom samma korta brev."
+        },
+        {
+          "title": "Reflektion",
+          "content": "Om detta förblir det äldsta bevarade brevet i samlingen får den första meningen en särskild betydelse:\r\n\r\n> ja jag vill turas om att skriva brev.\r\n\r\nDen kan nästan läsas som början på själva brevarkivet.\r\n\r\nDet är ett enkelt brev från en åttaåring, men tillsammans med de senare breven blir det möjligt att följa hur både skrivandet och relationen med Ulf utvecklas. De korta blyertsraderna kommer med åren att ersättas av långa maskinskrivna brev fyllda med vardagsberättelser, humor, sport, teckningar, experiment och egentillverkade bilagor.\r\n\r\nRedan här finns ändå själva kärnan i brevväxlingen: Urban berättar för Ulf om det som händer i hans värld och avslutar med en önskan om att få ett brev tillbaka:\r\n\r\n> skriv snart"
+        }
+      ],
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1971/1971-01-31/envelopet-front.jpg",
+          "transcription": "Ulf Sandlund\nSaftjällsgatan 16\n431 39 Mölndal 3\n\nPITEÅ 1 31.1.71",
+          "description": "Rött svenskt frimärke. Adressen är skriven med en annan och betydligt vuxnare handstil än själva brevet. Den kan ha skrivits av Urbans mamma."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1971/1971-01-31/envelope-back.jpg",
+          "transcription": "",
+          "description": "Kuvertets baksida saknar text och personliga anteckningar. Det rosa innerfodret är synligt där kuvertet har öppnats."
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1971/1971-01-31/page-01.jpg",
+          "transcription": "Hej Ulf\r\n\r\nja jag vill turas om att skriva  \r\nbrev. I söndas åkte pappa  \r\nAndörjan (4,5 mil) han blev  \r\n95 av 668 stycken men tråkit nog  \r\nvar jag sjuk jag hade ont i magen  \r\noch kräktes så jag hade inte så  \r\nrolit jag har inte tagit något  \r\nmärke vist är det spännande att se  \r\npå ishockey men synd att sverige förlorade  \r\nishocky mot finland\r\n\r\nskriv snart\r\n\r\nURBAN",
+          "description": ""
+        }
+      ]
+    },
+    {
       "id": "1972-12-10",
       "date": "1972-12-10",
       "from": "Urban",
@@ -33,6 +93,57 @@
           "label": "Sida 1",
           "image": "letters/1972/1972-12-10/page-01.jpg",
           "transcription": "8/12-72\n\nHEJ!\n\nFörlåt att jag inte skrivit tidigare. Jag hade börjat med\nett men jag ides inte. Jag har nyss sett Cowboyfilmen\nMed snaran om halsen. Den var bra. Den handlade om en Mexikan.\nVåran fröken är sjuk så vi har en annan, våran\nriktiga fröken heter Gun Erikson som är jättebussig.\nHon kommer på Måndag. Vi har fått en matsal och en\ngymnastiksal. Jag längtar till Julafton jättemycket.\nVi ska inte bjuda någon. Trist. Mycket trist.\nJätte mycket trist. Nyss har jag fyllt år. Kuligt.\nMycket kuligt. Jätte mycket kuligt. Jag fick\nett kassaskåp, en tjock Tarzanbok, två pyssel-\nböcker, en halskedja med mitt stjärntecken som är\nen skorpion, en pannlampa och ett par skidhandskar till present.\nJag har skidträning två gånger i veckan.\nSnart ska jag börja köpa julklappar. Nu kan jag\ninte hitta på någonting mer.\n\nHejdå. Mycket hejdå. Jätte mycket hejdå.\n\nHEJDÅ\n\nHälsningar\nUrban Sandlund",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "1974-03-05",
+      "date": "1974-03-05",
+      "from": "Urban",
+      "to": "Ulf",
+      "type": "letter",
+      "writingType": "handwritten",
+      "summary": "Ett kort, handskrivet brev från Urban till Ulf, poststämplat i Piteå den 5 mars 1974.\r\n\r\nBrevet visar en redan intensiv brevväxling mellan kusinerna. Urban beskriver hur det blivit svårt att hålla ordning på brevnumren eftersom ett nytt brev från Ulf kan hinna komma medan Urban fortfarande håller på att skriva ett tidigare svar.\r\n\r\nEn stor del av första sidan upptas av en humoristisk teckning. En person rider på en häst som försetts med en cykelliknande drivlina med pedal, vevparti och kedja mellan en främre och en bakre krans. Teckningen kommenteras bland annat med \"ARMA HÄST\" och \"SKA FÖRESTÄLLA CATARINA ELLER BIRGITTA\".\r\n\r\nPå andra sidan berättar Urban en historia om två män som slår vad om att den ene kan bita sig själv i ögat. Historien bygger först på ett porslinsöga och därefter på löständer.\r\n\r\nDärefter följer ett antal korta, numrerade och delvis svårlästa svar. Sammanhanget framgår inte av brevet, men de verkar sannolikt vara svar på frågor eller kommentarer från Ulf i ett tidigare brev.\r\n\r\nMot slutet nämner Urban att han varit hos Jonas och åkt trickskidor och ramlat \"100 gånger ungefär\". Brevet avslutas med att klockan är omkring elva och att han ska gå och lägga sig.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "- Brevet är poststämplat i Piteå den 5 mars 1974. Det är därmed ett av de tidigaste bevarade breven i samlingen.\r\n\r\n- Kuvertets adress ser ut att vara skriven med en annan handstil än själva brevet och kan ha skrivits av Urbans mamma.\r\n\r\n- På kuvertets baksida står \"A.V.S. För snutens skull.\" Därefter anges Urbans namn och adress. Formuleringen är ett skämtsamt sätt att ange avsändaren.\r\n\r\n- Brevet ger ett tydligt belägg för hur intensiv brevväxlingen mellan Urban och Ulf redan var. Urban beskriver själv problemet med att hålla reda på brevnummer när ett nytt brev hinner anlända innan ett tidigare svar har skickats.\r\n\r\n- Teckningen på första sidan kombinerar humor med Urbans cykelintresse. Hästen har försetts med en cykelliknande konstruktion med pedal, vevparti och kedja mellan en främre och en bakre krans.\r\n\r\n- Texten \"SKA FÖRESTÄLLA CATARINA ELLER BIRGITTA\" visar att Catarina och Birgitta redan förekommer som personer i den humoristiska världen kring breven.\r\n\r\n- Sida 2 innehåller flera numrerade korta svar vars frågor inte finns med i brevet. De kan vara svar på ett tidigare brev från Ulf. Det går inte att avgöra om sammanhanget enbart fanns i Ulfs brev eller om någon sida eller bilaga till detta brev saknas.\r\n\r\n- Brevet blandar löpande berättande, intern kommunikation, skämt och teckningar. Redan här syns flera drag som återkommer i senare brev: ordlekar, absurda historier, kommentarer direkt till Ulf och teckningar som en integrerad del av brevet.\r\n\r\n- Hänvisningen till Jonas och trickskidåkning är ett exempel på hur vardagliga händelser återges mycket kortfattat, som om Ulf redan känner till personerna och sammanhanget."
+        },
+        {
+          "title": "Personer",
+          "content": "## Urban Sandlund\r\n\r\nBrevets avsändare. Skriver om brevväxlingen med Ulf, berättar historier, svarar på vad som förefaller vara tidigare frågor och beskriver bland annat ett besök hos Jonas där han åkt trickskidor.\r\n\r\n## Ulf Sandlund\r\n\r\nBrevets mottagare och Urbans kusin. Brevet visar att Urban och Ulf vid denna tid redan hade en tät brevväxling.\r\n\r\n## Catarina\r\n\r\nOmnämns i texten till teckningen på sida 1: \"SKA FÖRESTÄLLA CATARINA ELLER BIRGITTA\". Catarina är Ulfs syster.\r\n\r\n## Birgitta\r\n\r\nOmnämns tillsammans med Catarina i texten till teckningen på sida 1. Det framgår inte av just detta brev vilken Birgitta som avses.\r\n\r\n## Jonas\r\n\r\nUrban skriver att han varit hos Jonas och åkt trickskidor. Någon ytterligare identifiering av Jonas framgår inte av brevet."
+        }
+      ],
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1974/1974-03-05/envelope-front.jpg",
+          "transcription": "Ulf Sandlund\nSaftjällsgatan 16\n43139 Mölndal\n\nPITEÅ 1\n5.3.74",
+          "description": "Svenskt frimärke, 75 öre."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1974/1974-03-05/envelope-back.jpg",
+          "transcription": "A.V.S. För snutens skull.\nUrban Sandlund\nDegermansgatan 3\n94100 PITEÅ\n\nLUKTA!!!",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1974/1974-03-05/page-01.jpg",
+          "transcription": "Ulf Heeeeeeeej\r\n\r\nJag mår bra. Datumet är det däråt. Det\r\nhar blivit lite tjörigt med brevskriv-\r\nningen om jag tex håller på och skriver till\r\nbrev nummer 4 så kommer brev nummer 5 och\r\nsen skickar jag brev 4 så tror du att det är\r\nbrev nummer 5 men det borde väl tjörva upp\r\nsig. Vårat sportlov har inte börjat än.\r\n\r\nHihihoboborhihihtehe ohohagg.\r\n\r\n[Resten av sidan består huvudsakligen av en teckning.]",
+          "description": "I nedre delen av sidan finns en stor humoristisk teckning. En person rider på en häst och en annan person står bakom.\r\n\r\nHästen har byggts om med en cykelliknande drivlina: en pedal med vevparti samt kedja mellan en främre och en bakre krans.\r\n\r\nRunt teckningen finns flera texter:\r\n\r\nARMA HÄST\r\n\r\n91:special NR 5\r\n\r\nSKA FÖRESTÄLLA CATARINA ELLER BIRGITTA"
+        },
+        {
+          "type": "page",
+          "page": 2,
+          "label": "Sida 2",
+          "image": "letters/1974/1974-03-05/page-02.jpg",
+          "transcription": "Historia\n\nTvå gubbar satt och pratade. Då sa den ene ska vi\r\nslå vad om att jag kan blita mig i ögat. Okey sa den\r\nandra 1000 spänn. Då tog den första ut sitt porslinsöga och\r\nbet sig. Efter en stund sa den förste ska vi slå vad\r\natt jag kan bita mig i det andra ögat me. Jo\r\ndet gick den andra me på. Då tog han\r\noch tog ut sina löständer. Hoo.\r\n\r\nPå ena sidan:\r\n[Här följer ett antal numrerade, delvis svårlästa korta svar som\r\ntroligen syftar på frågor eller kommentarer i ett tidigare brev från Ulf.]\r\n\r\n2. Jag räknade inte med tuschen här men ändå.\r\n3. 10 st. Texten var bara för tjock tyvärr.\r\n4. Ingenting, bara bindningarna är kvar.\r\n5. [svårläst/överstruket]\r\n\r\nDet blev sådär. Ska tänka om det\r\ndär med kassetten. Har varit hos Jonas och\r\nåkt trickskidor, ramlade 100 gånger ungefär.\r\nHoppas jag inte hoppat över några\r\nsvar. Jag fick in Luxemburg men klockan\r\när 11.00 och jag ska gå och lägga mig.",
           "description": ""
         }
       ]
@@ -1609,6 +1720,60 @@
           "image": "letters/1978/1978-06-12/page-02.jpg",
           "transcription": "Härnösand och Sundsvall. Jag ska tävla i Härnösand på lördag\noch i Sundsvall på söndag. Troligen får du ett vykort därifrån.\nEller i klartext. Det kommer att dimpa ner ett kort i postlådan.\nWell, well cykelställ. Vad ska jag skriva nu då? Det plingar på\ndörren och någon kommer in. Någon är i detta fall några som i\ndetta fall är Kerstin och en Annan tant.\nFrån åtta till ungefär halvtio, tvättade jag och benget cyklarna.\nSen såg jag på Dave Allan. Han är frän. Han kör iallafall inte med\nlika dåliga vitsar som jag gör (se förra bladet)\nImorron på avslutningen har jag tänkt ta lite kort på klass-\nkompisarna. Så jag ska fixa till kameran. Tyvärr har jag tappat\nall film som du skulle få framkalla. Dessutom har jag tappat\notagen film. Så jag får klämma in klasskompisarna på 8 kort.\n\nHejdå från Urban",
           "description": ""
+        }
+      ]
+    },
+    {
+      "id": "1978-unknown-01",
+      "date": "1978-unknown-01",
+      "from": "Urban",
+      "to": "Ulf",
+      "type": "postcard",
+      "summary": "Urban befinner sig tillsammans med ÖCK i Sollefteå för en cykeltävling. Kortet skrivs i Kalle Bomans husvagn, som har blivit samlingsplats för klubbens deltagare och där det finns fika och skydd mot regnet.\r\n\r\nUrban berättar att det följande dag väntar fem mil tempo och att han ska starta som nummer 88.\r\n\r\nBengt gör ett eget tillägg på vykortet. Han ska starta som nummer 3 och skämtar om att han kommer hinna i mål innan Urban ens hunnit starta. Urban kommenterar detta med \"Anser Urban.\"\r\n\r\nÄven Kicki Forss lämnar en kort hälsning vid frimärket: \"Hej Jag heter Kicki Forss\".\r\n\r\nVykortet är sannolikt från 1978, men poststämpeln är för svårläst för att datum eller år ska kunna fastställas från själva kortet.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "Vykortet är ovanligt genom att flera personer deltar i skrivandet. Urbans huvudsakliga text kompletteras först av Bengt och därefter av Kicki Forss.\r\n\r\nTexten ger intryck av ett tävlingsläger där klubbkamraterna samlas mellan tävlingsmomenten. Kalle Bomans husvagn fungerar som en gemensam bas för ÖCK.\r\n\r\nUrban förklarar också varför vykortet är smutsigt: han hade köpt det i en bokhandel men tappat det på golvet i ett omklädningsrum.\r\n\r\nDet exakta datumet är okänt. Poststämpeln finns kvar men är till stor del dold av frimärket och går inte att läsa med tillräcklig säkerhet."
+        },
+        {
+          "title": "Cykling",
+          "content": "Vykortets sammanhang är en cykeltävling i Sollefteå där flera medlemmar från ÖCK deltar.\r\n\r\nUrban skriver:\r\n\r\n> I morgon 5 mil tempo. Jag startar som 88:e man.\r\n\r\nDet innebär ett individuellt tempolopp över 50 kilometer. Bengts kommentar visar att deltagarna startar med mellanrum:\r\n\r\n> Jag startar som 3:e man. Jag hinner i mål innan Urban hinner starta.\r\n\r\nVilket exakt tävlingsarrangemang det rör sig om har inte kunnat fastställas. Vykortet bedöms vara från omkring 1978."
+        },
+        {
+          "title": "Personer",
+          "content": "**Ulf Sandlund**  \r\nMottagare av vykortet.\r\n\r\n**Urban Sandlund**  \r\nAvsändare. Befinner sig i Sollefteå tillsammans med ÖCK och ska köra fem mil tempo.\r\n\r\n**Kalle Boman**  \r\nHans husvagn fungerar som samlingsplats för ÖCK under tävlingarna. Där erbjuds enligt Urban både fika och skydd mot regnet.\r\n\r\n**Bengt**  \r\nKlubbkamrat som själv skriver några rader på vykortet. Han ska starta som nummer 3 i tempoloppet, medan Urban har startnummer 88.\r\n\r\n**Kicki Forss**  \r\nSkriver en egen kort hälsning vid frimärket: \"Hej Jag heter Kicki Forss\"."
+        },
+        {
+          "title": "Platser",
+          "content": "**Sollefteå**  \r\nPlatsen där vykortet skrivs och där cykeltävlingarna äger rum.\r\n\r\n**Kalle Bomans husvagn**  \r\nÖCK:s informella samlingsplats under tävlingarna. Här samlas deltagarna för fika och för att komma undan regnet."
+        },
+        {
+          "title": "Tidsdokument",
+          "content": "Vykortet ger en liten men konkret bild av hur en cykeltävling kunde upplevas från deltagarnas perspektiv under slutet av 1970-talet.\r\n\r\nKlubben reser till tävlingsorten och en medföljande husvagn blir naturlig samlingspunkt. Där träffas klubbkamraterna, fikar och söker skydd när det regnar.\r\n\r\nAtt Urban skriver att han ska starta som nummer 88 medan Bengt startar som nummer 3 ger också en antydan om ett relativt stort startfält eller åtminstone en omfattande startlista.\r\n\r\nSjälva vykortet är också tidstypiskt: ett turistkort från Sollefteå med flera lokala motiv och ett svenskt 1:15-frimärke med björn."
+        },
+        {
+          "title": "Humor",
+          "content": "Humorn är koncentrerad till Bengts tillägg:\r\n\r\n> Jag startar som 3:e man. Jag hinner i mål innan Urban hinner starta.\r\n\r\nSkämtet bygger på den stora skillnaden mellan deras startnummer, 3 och 88. Urban svarar kort:\r\n\r\n> Anser Urban.\r\n\r\nÄven Kicki Forss mycket enkla presentation, \"Hej Jag heter Kicki Forss\", blir en spontan och personlig del av kortet."
+        },
+        {
+          "title": "Reflektion",
+          "content": "Det här lilla vykortet berättar betydligt mer än dess format först antyder. På några få rader fångas livet kring en cykeltävling: resan till Sollefteå, klubbkamraterna, regnet, husvagnen som samlingsplats och nerven inför nästa dags femmilatempo.\r\n\r\nAtt Bengt och Kicki också skriver på kortet gör det till mer än en hälsning från Urban. Det blir ett litet gemensamt dokument från ÖCK-gänget på tävlingsresa.\r\n\r\nTill och med smutsen och slitaget har fått sin egen historia. Urban förklarar redan på kortet att han tappat det i ett omklädningsrum. Det som annars bara hade sett ut som en skada på ett gammalt vykort blir därmed en bevarad del av berättelsen.\r\n\r\nDet exakta datumet är fortfarande okänt. I stället för att tillskriva vykortet en osäker datering bevaras det därför som ett sannolikt dokument från 1978, med möjligheten att senare precisera datumet om tävlingen kan identifieras."
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1978/1978-unknown-01/envelope-front.jpg",
+          "transcription": "",
+          "description": "Vykort med fyra färgbilder från Sollefteå och den lodräta texten **SOLLEFTEÅ**.\r\n\r\nMotiven visar bland annat Hallstaberget, Ångermanälven, Risöbadet och delar av samhället."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1978/1978-unknown-01/envelope-back.jpg",
+          "transcription": "Hej!\r\n\r\nSitter i Kalle Bomans husvagn och skriver. Detta har blivit\r\nsamlingsplatsen för hela ÖCK. Här bjuds alltid på fika och\r\nskydd mot regn. Kortet köpte jag i en bokhandel men tappade\r\nner det i ett omklädningsrum, därav skiten.\r\n\r\nI morgon 5 mil tempo. Jag startar som 88:e man.\r\n\r\nJag startar som 3:e man. Jag hinner i mål innan Urban\r\nhinner starta. /Bengt.\r\n\r\nAnser Urban.\r\n\r\nVid frimärket:\r\n\r\nHej Jag heter Kicki Forss\r\n\r\nHejdå",
+          "description": "Tryckt text:\r\n\r\n**NORRLAND – FÄRGERNAS LAND**  \r\nHälsningar från SOLLEFTEÅ, Ångermanland  \r\nHallstabergets Konferenshotell,  \r\nÅngermanälven, Risöbadet, Samhället\r\n\r\nSvenskt frimärke, 1:15 kr, med björnmotiv.\r\n\r\nPoststämpeln är delvis dold av frimärket och så svårläst att något säkert datum inte kan fastställas."
         }
       ]
     },
