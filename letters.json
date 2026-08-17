@@ -98,6 +98,58 @@
       ]
     },
     {
+      "id": "1974-02-12",
+      "date": "1974-02-12",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 11,
+      "type": "letter",
+      "writingType": "handwritten",
+      "summary": "Ett lekfullt och mycket kreativt brev från februari 1974. Urban berättar bland annat att Anki har fyllt år och fått en kamera av mamma och pappa, om snön och om ishockey. En stor del av brevet består dock inte av vanlig löpande text utan av rebusar, ordlekar, teckningar och en skämthistoria.\r\n\r\nPå första sidan finns bland annat en siffergåta där talet 991 ska göras mindre än hundra genom att lägga till en etta och en tvåa. På den andra sidan fortsätter en annan rebus, vars svar \"35 grader över 0\" är dolt bakom en fastklistrad och vikbar papperslapp. Ytterligare ett dolt svar anges som \"99 1/2\".\r\n\r\nSidan innehåller också en ordlek byggd kring ett stort S, där bokstaven kombineras med olika ordfragment, samt ordet \"Moss\" som används som ett lekfullt sätt att säga hejdå.\r\n\r\nBrevet avslutas med en skämthistoria som är skriven som en spiral. Den handlar om en man som vill ta med sig en elefant på ett flygplan. När elefanten inte tillåts ombord går mannen hem och sätter fyra smörgåsar på elefantens fötter. När flygkaptenen åter protesterar svarar mannen att han inte ska bry sig om vad han har för \"pålägg\" på smörgåsarna.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "Brevet är daterat genom poststämpeln i Piteå den 12 februari 1974.\r\n\r\nHandstilen på första sidan är tydligt präglad av den skrivstil som lärdes ut under de första skolåren, vilket gör brevet intressant även som exempel på hur Urban skrev vid denna tid.\r\n\r\nBrevet är ovanligt visuellt och lekfullt. Text, teckningar, färger, rebusar och ordlekar blandas över hela papperet. Det fungerar därför nästan lika mycket som ett hemgjort pysselhäfte som ett traditionellt brev.\r\n\r\nSärskilt intressanta är de fastklistrade papperslapparna på sida 2. De fungerar som små luckor som mottagaren måste vicka undan för att avslöja svaren på rebusarna. Det gör brevet fysiskt interaktivt på ett sätt som inte framgår av en ren texttranskription.\r\n\r\nÄven spiralhistorien utnyttjar själva papperet. Läsaren måste följa texten runt spiralens varv för att komma fram till slutpoängen om elefanten och \"pålägget\".\r\n\r\nDen stora dekorativa bokstaven S tillsammans med ordfragmenten är ytterligare ett exempel på hur ordens grafiska utformning används som en del av skämtet.\r\n\r\nOrdet \"Moss\" används som ett eget, lekfullt uttryck för hejdå.\r\n\r\nKuvertets baksida är märkt \"A.V.S. För säkerhets skull\" tillsammans med Urbans avsändaradress. Redan kuvertet visar därmed samma lekfulla ton som själva brevet."
+        },
+        {
+          "title": "Personer",
+          "content": "- **Urban Sandlund** – brevets avsändare.\r\n- **Ulf Sandlund** – brevets mottagare.\r\n- **Anki** – omnämns på första sidan; har fyllt år och fått en kamera av mamma och pappa."
+        }
+      ],
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1974/1974-02-12/envelope-front.jpg",
+          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal 3\n\nPITEÅ 1\n12.2.74",
+          "description": "Svenskt 75-öresfrimärke med porträttmotiv."
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1974/1974-02-12/envelope-back.jpg",
+          "transcription": "A.V.S. För säkerhets skull.\n\nUrban Sandlund\nDegermansgatan 3\n94100 PITEÅ.",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1974/1974-02-12/page-01.jpg",
+          "transcription": "Fredag den 8\r\n\r\nHej!!!!\r\n\r\nHej Ulf. I dag fyller Anki år.\r\nJag gav henne ett läppstift och två\r\ntvålar. Tillsammans blev det 8 och 50.\r\nHär vräker det ner snö, på bak-\r\nsidan av huset når det upp till\r\nmidjan. En gåta: Gör det talet\r\n991 till mindre än 100!\r\n\r\nDu ska sätta dit en etta\r\noch en tvåa ingenting annat. svar sid 2\r\n\r\nJag har en brevvän i Rättvik, han\r\nheter Peter Storgärdes.\r\n\r\nEn rebus: 50 · 3 − 1 100 + 10 · 2 − 20 delat med 2\r\n\r\n[På sidan finns även en tecknad blomma, dekorativa rubrikmarkeringar\r\noch en liten blå figur i anslutning till gåtan.]\r\n\r\n[Högt uppe till höger står:]\r\n\r\nAnki fick en kamera av Mamma och Pappa.",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 2,
+          "label": "Sida 2",
+          "image": "letters/1974/1974-02-12/page-02.jpg",
+          "transcription": "[Överst fortsätter rebusen från sida 1 med ytterligare siffror och\r\ntecknade symboler. En av symbolerna liknar ett bord med en boll eller\r\ncirkel ovanför, följt av en nolla.]\r\n\r\nSvar: 35 grader över 0.\r\n\r\n[Svaret är dolt bakom en fastklistrad tecknad papperslapp som går att\r\nvicka undan.]\r\n\r\nHejdå\r\n\r\n[Ett stort dekorativt S med orden:]\r\n\r\nKriv\r\nnart\r\nå\r\nka\r\nvar\r\nnart\r\nändas\r\n\r\n[Detta bildar Skriv snart så ska svar snart sändas.]\r\n\r\nMoss.\r\n\r\n[Moss används här som ett annat ord för \"Hejdå\".]\r\n\r\nP.S.\r\n\r\nEn historia\r\n\r\n[Historien är skriven som en spiral och måste läsas runt, varv efter\r\nvarv. Delar av texten är svårlästa. Ungefärlig transkription:]\r\n\r\nDet var en man som hade en elefant. Då en dag skulle han flyga men flygkaptenen sa att elefanter inte får åka flygplan. Då gick mannen hem och bredde 4 smörgåsar och satte dom på elefantens fötter. När han då kom dit sa flygkaptenen återigen att elefanter inte får vistas i planet. Då sade mannen: Du ska väl inte bry dig om vad jag har för pålägg på smörgåsen.\r\n\r\n[På sidan finns ytterligare svar på rebus från sida 1. Svaret är dolt bakom en\r\nfastklistrad lapp som kan vickas undan.]\r\n\r\nSvar: 99 1/2.\r\n\r\n[Det skrivna svaret under lappen är tydligare än själva rebusen.]",
+          "description": ""
+        }
+      ]
+    },
+    {
       "id": "1974-03-05",
       "date": "1974-03-05",
       "from": "Urban",
