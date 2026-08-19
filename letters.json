@@ -2101,6 +2101,42 @@
           "description": "Maskinskriven brevsida med handskrivna anteckningar i högermarginalen. Ordet ”strunt” är upprepat flera gånger. Nederst finns långa rader av upprepade bokstäver som en del av brevets marginalskämt."
         }
       ]
+    },
+    {
+      "id": "1977-06-17",
+      "date": "1977-06-17",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 14,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Urban skriver från Norrköping, dit han kom dagen före vykortets datum. Han bor på ett enkelt resandehem och berättar om vistelsen inför flera cykeltävlingar. Den första tävlingen är en prolog på två kilometer, följd av ytterligare tre tävlingar under lördag och söndag.\n\nMellan tävlingarna fördriver de tiden med korsord, tiörespoker, patienser, att gå på stan, äta, dricka samt skriva och skicka vykort. Urban avslutar med att konstatera att det är svårt att få tag på frimärken i Norrköping.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "Vykortet ger en liten ögonblicksbild från en tävlingsresa och visar hur mycket av cyklingen som bestod av mer än själva tävlandet: resor, enkelt boende och väntan tillsammans med de andra.\n\nUppräkningen av tidsfördriv är särskilt tidstypisk. Att de spelar tiörespoker – poker med 10-öresinsatser – är en konkret detalj från 1970-talets vardag och penningvärde.\n\nUrban använder ordet ”yttlänningar”, uppenbarligen som en skämtsam eller uttalsbaserad variant av ”utlänningar”. Sådana egenheter i stavning och språk är återkommande inslag i breven.\n\nKortets framsida är ett klassiskt turistvykort med flera vyer från Norrköping och texten ”Hälsning från Norrköping”."
+        },
+        {
+          "title": "Personer",
+          "content": "- **Ulf** – Urbans kusin och mottagare av vykortet.\n- **Urban** – avsändare."
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1977/1977-06-17/postcard-front.jpg",
+          "transcription": "HÄLSNING FRÅN NORRKÖPING",
+          "description": "Klassiskt turistvykort med flera vyer från Norrköping."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1977/1977-06-17/postcard-back.jpg",
+          "transcription": "Hej\n\nJag är nu i Norrköping. Kom hit\n77.06.16. Vi bor på ett lumpet\nhotell som heter resande-\nhemmet. Här är en massa\nyttlänningar. Men\nträffar yttlänningar nästan\növerallt. Ikväll ska vi\ntävla första tävlingen. En\nprolog på 2 km. Sen följer\n3 andra tävlingar på lördag\noch söndag. Vi roar oss\nmed att lösa korsord, spela\ntiöres poker, lägga patienser,\ngå på stan, äta, dricka, skriva\noch skicka vykort. Det är\nsvårt att få tag på\nfrimärke i den här jäkla\nstan.\n\nUS",
+          "description": ""
+        }
+      ]
     }
   ]
 }
