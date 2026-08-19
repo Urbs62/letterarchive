@@ -2137,6 +2137,42 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1978-02-28",
+      "date": "1978-02-28",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 15,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Urban skickar ett egenritat vykort till Ulf i slutet av februari 1978. Han konstaterar att kontakten dem emellan varit begränsad och att den främst gått via Catarina och Anita.\n\nHan berättar om skolan, där tyskprovet gått dåligt medan musikprovet gått bättre. Cyklingen har redan kommit igång för året och Urban beskriver cyklisterna som det säkraste vårtecknet. Dagen före hade han gjort årets premiärtur på racercykel. Han nämner också en genomförd mekanikerkurs och ett kommande kemiprov.\n\nFramöver väntar resor till Italien den 21 mars och Danmark den 8 april. Vykortets andra sida består av en egen teckning där en bilist möter två cyklister och konstaterar: ”Äntligen är våren här – nu har cyklisterna börjat cykla ute”.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "Vykortet är ett tydligt exempel på hur cyklingen blivit en viktig del av Urbans vardag. Att årets första träningspass på racercykel redan genomförts i slutet av februari tyder på en ovanligt tidig utomhuspremiär. Formuleringen om cyklisterna som ”det säkraste vårtecknet” återkommer dessutom visuellt på vykortets egenritade baksida.\n\nTeckningen gör vykortet särskilt personligt. I stället för ett köpt motiv har Urban själv skapat hela bildsidan och låtit den fungera som en direkt fortsättning på texten. Den tecknade bilen är dessutom märkt ”1978 års SAAB”.\n\nResorna till Italien den 21 mars och Danmark den 8 april visar att en aktiv tävlings- och resesäsong ligger framför honom. Danmarkresan är särskilt intressant eftersom den senare återkommer i arkivet: här nämns den som en kommande resa, medan ett senare brev berättar om vistelsen i Danmark efter att den ägt rum.\n\nVykortet är daterat 27 februari av Urban men poststämplat i Piteå den 28 februari 1978. Enligt arkivets dateringsprincip registreras det därför som 1978-02-28."
+        },
+        {
+          "title": "Personer",
+          "content": "- **Urban** – avsändare, 15 år.\n- **Ulf** – Urbans kusin och mottagare.\n- **Catarina** – Ulfs storasyster.\n- **Anita** – Urbans storasyster"
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1978/1978-02-28/postcard-front.jpg",
+          "transcription": "[Teckning av en bil som möter två cyklister på en tvåfilig väg. I bakgrunden syns träd.]\n\nEn person i bilen säger:\n\n”Äntligen är våren  \nhär – nu har cyklisterna  \nbörjat cykla ute”\n\nPå bilen står:\n\n”1978 års SAAB”",
+          "description": "Egenritad bildsida där en bil möter två cyklister på en tvåfilig väg."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1978/1978-02-28/postcard-back.jpg",
+          "transcription": "Från  \nU.S.\n\nHej!                         78-02-27\n\nTyckte att det var på tiden att visa att  \njag lever. Enda kontakten med dej nu för\ntiden är  när Catarina ringer till  \nAnita och jag hälsar till dej.\n\nInte bra. Inte bra gick tyskaprovet idag.\nInte dåligt (bra) gick däremot musikprovet  \ni fredags. Månända att blommor och fåglar är vår-  \ntecken, men det säkraste vårtecknet är ändå cyklisterna.  \nI går gjorde jag premiär. 3,5 mil återstår!\nI helgen   gick jag en mekaniker kurs, i morron kemiprov.  \nDen 21 mars bär det iväg till Italien. Den 8  \napril till Danmark. Mer om det i nästa brev/hejdå",
+          "description": ""
+        }
+      ]
     }
   ]
 }
