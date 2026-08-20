@@ -2209,6 +2209,42 @@
           "description": "Vykortets baksida innehåller Urbans handskrivna hälsning samt adressen till Ulf. Poststämpeln är svårläst. Dag och månad tolkas som 26.8 och årtalet som 78, vilket ger det sannolika datumet 1978-08-26."
         }
       ]
+    },
+    {
+      "id": "1976-10-20",
+      "date": "1976-10-20",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 13,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Urban skriver ett kort och skämtsamt vykort till Ulf och Torbjörn. Han berättar att mamma säger att Ulf är välkommen och uppmanar honom därför att genast beställa biljetter, förutsatt att han själv vill och får för sina föräldrar.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "Vykortets årtal går inte att läsa säkert i poststämpeln. Det har daterats till 1976-10-20 utifrån den handskrivna dateringen, kortets innehåll och frankeringen. Årtalet bör därför betraktas som en tolkning snarare än helt säkert fastställt.\n\nAtt \"all snö har smält bort\" passar väl med en höstdatering i Piteå och kan syfta på en tidig snö som hunnit försvinna igen.\n\nFrankeringen består av 30 + 55 öre, totalt 85 öre. Detta är förenligt med vykortsportot under 1976 och är en viktig ledtråd till dateringen.\n\nKommentaren \"Tyska imorron\" ger ytterligare en tidsmarkör från skoltiden. Tillsammans med resultaten från matte- och engelskaproven ger kortet en konkret glimt av Urbans skolvardag.\n\nFörkortningen \"TUAB = Torbjörn Urban Ulf aktiebolag\" är ett exempel på den interna humor och de egna begrepp som förekommer i korrespondensen. Formuleringen \"SOOK heter numera TUAB\" antyder dessutom att detta bygger vidare på något som Ulf och Urban redan känner till.\n\nUppmaningen \"P.S. SKICKA NÅN GÅNG.\" visar återigen att brevväxlingen i sig kommenteras i korrespondensen och antyder att Urban väntar på svar.\n\nVykortets framsida uppmärksammar Köpings 500-årsjubileum, grundat på ett torgbrev från 1474. Kortet är alltså några år äldre än den sannolika tidpunkten då Urban skickade det."
+        },
+        {
+          "title": "Personer",
+          "content": "- Urban Sandlund – avsändare.\n- Ulf Sandlund – Urbans kusin och mottagare.\n- Torbjörn – Bardomskompis till Ulf.\n- Mamma – Urbans mamma."
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1976/1976-10-20/postcard-front.jpg",
+          "transcription": "KÖPING 500 ÅR\n\ncentrum genom sekler",
+          "description": "Vykort från Köping med anledning av stadens 500-årsjubileum.\n\nMotivet består av en grafisk jubileumsbild med ett stort blått kugghjul och texten:\n\n”KÖPING 500 ÅR”\n\nsamt:\n\n”centrum genom sekler”"
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1976/1976-10-20/postcard-back.jpg",
+          "transcription": "SOOK heter numera TUAB =\nTorbjörn Urban Ulf aktiebolag, där fick du tjii.\n\nHej Ulf □\n(och Torbjörn)\n\nSvar: Mamma säger att du är väl  kommen.\nAlltså beställer du biljetter genast. Om du\nvill och får för dina föräldrar vill säga. All\nsnö har smält bort här.\n\nNu ska jag på träning.\nMatteprov. 22 av 26. Engelska 63½ av\n65.\nTyska imorron\n\nGutbay\nKram Urban\nP.S. SKICKA NÅN GÅNG.",
+          "description": "Vykortets baksida har förtryckt information om Köpings 500-årsjubileum och stadens historia. Där anges bland annat att ett torgbrev daterat den 19 januari 1474 ligger till grund för jubileet.\n\nKortet är adresserat till:\n\nUlf Sandlund  \nSafjällsgatan 16  \n431 39 MÖLNDAL 3\n\nKortet är frankerat med två svenska frimärken, 30 öre och 55 öre.\n\nUtöver den egentliga hälsningen finns flera handskrivna kommentarer och tillägg runt den förtryckta texten, bland annat:\n\n”SOOK heter numera TUAB = Torbjörn Urban Ulf aktiebolag, där fick du tjii.”\n\nLängst ned finns tillägget:\n\n”P.S. SKICKA NÅN GÅNG.”"
+        }
+      ]
     }
   ]
 }
