@@ -2173,6 +2173,42 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1978-08-26",
+      "date": "1978-08-26",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 15,
+      "type": "postcard",
+      "writingType": "handwritten",
+      "summary": "Urban skriver vykortet under en resa till Uppsala tillsammans med flera cykelkamrater. Boman sitter på hans högra sida och läser Lektyr, Nyström sitter på hans vänstra sida och tittar efter tjejer, Lundberg sitter längre fram och lyssnar på hårdrock och Solgerd kör.\n\nKortet är skrivet i en skämtsam ton och innehåller bland annat en liten frågetävling som Boman föreslagit. I en pratbubbla berättar Urban också: ”Idag har vi sprängt en dynamitgubbe.”",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "Poststämpeln är svårläst. Dag och månad har tolkats som 26 augusti och årtalet som 1978. Vykortet registreras därför som 1978-08-26, men dateringen är inte helt säker.\n\nKortet ger en ögonblicksbild från en gemensam resa till Uppsala med flera av Urbans cykelkamrater. Något specifikt lopp eller arrangemang nämns inte.\n\nLektyr, som Boman sitter och läser, var vid den här tiden en välkänd svensk herrtidning. Den hade utvecklats från ett berättelsemagasin till en tidning med reportage, humor, serier och erotiskt material. Det ger formuleringen om Boman och den samtidigt tjejspanande Nyström en tydlig 1970-talsprägel.\n\nNoteringen ”Idag har vi sprängt en dynamitgubbe” syftar på en verklig händelse enligt Urbans minne. Urban minns att dynamiten troligen hade stulits från ett bygge av Torbjörn H. Det framgår dock inte av själva vykortet."
+        },
+        {
+          "title": "Personer",
+          "content": "- Urban Sandlund – avsändare, 15 år.\n- Ulf Sandlund – Urbans kusin och mottagare.\n- Boman – cykelkamrat till Urban.\n- Nyström – cykelkamrat till Urban.\n- Lundberg – cykelkamrat till Urban.\n- Solgerd – mamma till Mikael Lundberg\n- Torbjörn H – cykelkamrat till Urban"
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Vykortets framsida",
+          "image": "letters/1978/1978-08-26/postcard-front.jpg",
+          "transcription": "",
+          "description": "Vykort med fotografiskt motiv."
+        },
+        {
+          "type": "back",
+          "label": "Vykortets baksida",
+          "image": "letters/1978/1978-08-26/postcard-back.jpg",
+          "transcription": "Hej!\n\nDet här kortet köpte jag i en kiosk i Gävle.\nVi är nu på väg till Uppsala som du säkert\nvet. Boman sitter på min högra sida och läser en\nLektyr. Nyström, på min vänstra sida, tittar efter\ntjejer. Lundberg sitter där fram och diggar hård-\nrock. Solgerd kör. (Lä(l)igt)\nIdag har vi sprängt en dynamitgubbe.\n\nDetta som jag skriver nu är ett förslag av BOMAN.\n\nFrågetävlingsdags!\n\nVad betyder Mare Nootrum?\n\nSvar: Se framsida\n\nHej då. Hälsningar\nyour cousin. Urban.\n\nP.S. Titta under\nfrimärket. Svar.",
+          "description": "Vykortets baksida innehåller Urbans handskrivna hälsning samt adressen till Ulf. Poststämpeln är svårläst. Dag och månad tolkas som 26.8 och årtalet som 78, vilket ger det sannolika datumet 1978-08-26."
+        }
+      ]
     }
   ]
 }
