@@ -95,6 +95,20 @@ function senderLabel(letter) {
     : letter.from;
 }
 
+function correspondenceDirection(letter) {
+  const normalizeName = (name) => String(name || "")
+    .trim()
+    .toLocaleLowerCase("sv-SE");
+  const from = normalizeName(letter.from);
+  const to = normalizeName(letter.to);
+  const isUrban = (name) => name === "urban" || name === "urban sandlund";
+  const isUlf = (name) => name === "ulf" || name === "ulf sandlund";
+
+  if (isUrban(from) && isUlf(to)) return "urban-to-ulf";
+  if (isUlf(from) && isUrban(to)) return "ulf-to-urban";
+  return "";
+}
+
 function letterPageCount(letter) {
   return letter.items.filter((item) => item.type === "page").length;
 }
@@ -196,7 +210,7 @@ function renderArchive() {
           const attachments = attachmentCount(letter);
           const kind = documentType(letter);
           const article = document.createElement("article");
-          article.className = "letter-card";
+          article.className = `letter-card ${correspondenceDirection(letter)}`.trim();
           article.append(createArchiveImage(letter));
 
           const details = document.createElement("div");
@@ -462,7 +476,7 @@ function renderLetter(letter) {
     ? `${letter.writingType ? `${writingTypeLabels[letter.writingType] || letter.writingType} · ` : ""}${letterPageCount(letter)} sidor`
     : kind.label;
   const view = document.createElement("article");
-  view.className = "letter-view";
+  view.className = `letter-view ${correspondenceDirection(letter)}`.trim();
   view.innerHTML = `
     <a class="back-link" href="#"><span aria-hidden="true">←</span> Tillbaka till arkivet</a>
     <header class="letter-heading">
