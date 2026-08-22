@@ -180,9 +180,15 @@ function renderArchive() {
   section.setAttribute("aria-labelledby", "archive-heading");
   section.innerHTML = `
     <header class="archive-introduction">
-      <h1 id="archive-heading">Arkiv</h1>
-      <p>En samling försändelser från Urban till kusinen Ulf.<br>Original, bilagor och transkriberad text.</p>
-      <p class="archive-statistics">${letters.length} objekt <span aria-hidden="true">•</span> ${yearRange}</p>
+      <div class="archive-introduction-copy">
+        <h1 id="archive-heading">Arkiv</h1>
+        <p>En samling försändelser från Urban till kusinen Ulf.<br>Original, bilagor och transkriberad text.</p>
+        <p class="archive-statistics">${letters.length} objekt <span aria-hidden="true">•</span> ${yearRange}</p>
+      </div>
+      <figure class="archive-portrait">
+        <img src="assets/images/urban-ulf.jpg" alt="Urban och Ulf" width="4000" height="3000">
+        <figcaption>Urban och Ulf</figcaption>
+      </figure>
     </header>
   `;
 
