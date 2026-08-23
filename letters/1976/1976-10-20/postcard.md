@@ -6,7 +6,7 @@
 - **Typ:** Vykort
 - **Från:** Urban Sandlund
 - **Till:** Ulf Sandlund
-- **Ålder:** 13 år
+- **Avsändarens ålder:** 13 år
 
 ## Framsida
 

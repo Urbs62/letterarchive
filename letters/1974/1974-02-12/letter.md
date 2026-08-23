@@ -3,7 +3,7 @@
 - Poststämplat: 1974-02-12
 - Avsändare: Urban Sandlund
 - Mottagare: Ulf Sandlund
-- Urbans ålder: 11 år
+- Avsändarens ålder: 11 år
 - Från: Piteå
 - Till: Mölndal
 - Omfattning: 2 handskrivna sidor

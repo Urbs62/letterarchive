@@ -3,7 +3,7 @@
 - Datum: 1977-06-17
 - Typ: Vykort
 - Avsändare: Urban
-- Urbans ålder: 14 år
+- Avsändarens ålder: 14 år
 - Mottagare: Ulf
 - Ort: Norrköping
 

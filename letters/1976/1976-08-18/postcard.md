@@ -5,7 +5,7 @@
 - Typ: Vykort
 - Avsändare: Urban Sandlund
 - Mottagare: Ulf Sandlund
-- Urbans ålder: 13 år
+- Avsändarens ålder: 13 år
 - Från: Piteå
 - Till: Mölndal
 

@@ -3,7 +3,7 @@
 - Poststämplat: 1977-03-02
 - Avsändare: Urban Sandlund
 - Mottagare: Ulf Sandlund
-- Urbans ålder: 14 år
+- Avsändarens ålder: 14 år
 - Från: Piteå
 - Till: Mölndal
 - Omfattning: 5 maskinskrivna sidor

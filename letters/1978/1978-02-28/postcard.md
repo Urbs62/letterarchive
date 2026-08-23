@@ -6,7 +6,7 @@
 - Avsändare: Urban
 - Mottagare: Ulf
 - Ort: Piteå
-- Ålder: 15 år
+- Avsändarens ålder: 15 år
 
 # Transkription
 

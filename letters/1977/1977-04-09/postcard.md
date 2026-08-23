@@ -4,7 +4,7 @@
 - Typ: Vykort
 - Avsändare: Urban
 - Mottagare: Ulf
-- Ålder: 14 år
+- Avsändarens ålder: 14 år
 - Poststämplat: 1977-04-09
 - Ort: Piteå
 

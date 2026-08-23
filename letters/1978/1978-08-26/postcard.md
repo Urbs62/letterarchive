@@ -3,7 +3,7 @@
 - Poststämplat: 1978-08-26 (tolkat från svårläst poststämpel)
 - Avsändare: Urban Sandlund
 - Mottagare: Ulf Sandlund
-- Urbans ålder: 15 år
+- Avsändarens ålder: 15 år
 - Från: Gävle
 - Till: Mölndal
 - Typ: Vykort

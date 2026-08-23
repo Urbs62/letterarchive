@@ -4,7 +4,7 @@
 - Typ: Brev
 - Avsändare: Urban
 - Mottagare: Ulf
-- Ålder: 15 år
+- Avsändarens ålder: 15 år
 - Poststämplat: 1978-04-17
 - Ort: Piteå
 
