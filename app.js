@@ -265,6 +265,26 @@ function createOriginalImage(item) {
   return frame;
 }
 
+function createHistoricalArchivePhoto() {
+  const item = {
+    label: "Ulf i Urbans rum, Piteå",
+    image: "letters/1975/1975-08-13/photo-ulf-urbans-room.jpg",
+  };
+  const section = document.createElement("section");
+  section.className = "historical-archive-photo";
+  section.innerHTML = `
+    <h2>Ur arkivet</h2>
+    <figure>
+      <button type="button" aria-label="Förstora Ulf i Urbans rum, Piteå">
+        <img src="${item.image}" alt="Ulf i Urbans rum, Piteå">
+      </button>
+      <figcaption>Ulf i Urbans rum, Piteå<br>Foto från ungefär samma period.</figcaption>
+    </figure>
+  `;
+  section.querySelector("button").addEventListener("click", () => openViewer(item));
+  return section;
+}
+
 function imagePositionLabel(letter, index) {
   const item = letter.items[index];
   return `${item.label} · ${index + 1} av ${letter.items.length}`;
@@ -500,6 +520,10 @@ function renderLetter(letter) {
     </section>
   `;
 
+  if (letter.id === "1975-08-13") {
+    view.querySelector("#original-panel").append(createHistoricalArchivePhoto());
+  }
+
   const transcription = createTranscription();
   transcription.id = "transcription-panel";
   transcription.setAttribute("role", "tabpanel");
@@ -531,6 +555,7 @@ function renderLetter(letter) {
   });
   updateItem();
   app.focus({ preventScroll: true });
+  requestAnimationFrame(() => window.scrollTo(0, 0));
 }
 
 function setMode(showOriginal) {

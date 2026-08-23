@@ -498,6 +498,46 @@ button:focus-visible {
   text-align: center;
 }
 
+.historical-archive-photo {
+  width: min(18rem, 100%);
+  margin: 2.5rem auto 0;
+}
+
+.historical-archive-photo h2 {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+}
+
+.historical-archive-photo figure {
+  margin: 0;
+}
+
+.historical-archive-photo button {
+  width: 100%;
+  display: block;
+  padding: 0.35rem;
+  background: #eee5d7;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(61, 47, 34, 0.12);
+  cursor: zoom-in;
+}
+
+.historical-archive-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.historical-archive-photo figcaption {
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
 .transcription-note {
   margin: 0 0 2rem;
   padding: 0.85rem 1rem;
