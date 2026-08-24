@@ -2414,6 +2414,74 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1976-05-05",
+      "date": "1976-05-05",
+      "from": "Ulf",
+      "to": "Urban",
+      "senderAge": 14,
+      "type": "letter",
+      "writingType": "mixed",
+      "summary": "Ulf skriver till sin kusin Urban om vad som händer hemma och om vad de kan göra när Urban kommer. Han berättar bland annat om en auktion i Göteborg, planerar aktiviteter och utflykter tillsammans med Urban och nämner Sjöfartsmuseet, Fiskhamnen, Femman och en eventuell resa till Danmark.\n\nEn stor del av brevet handlar om skolbetyg. Ulf redovisar sina egna betyg och jämför dem med andra elevers resultat. Han uttrycker åsikter om att betyg kan vara orättvisa.\n\nUlf berättar också om fotografering, en film han framkallat eller ska göra kopior av, planer på att bygga ett skrivmaskinsbord samt olika händelser och rykten om personer i hans omgivning. Mot slutet berättar han om mopeder, ett påstått hagelgevärsincident och vad han gjorde under kvällen.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "- Brevet är maskinskrivet och innehåller handskrivna tillägg, kommentarer, överstrykningar och teckningar.\n- Brevet är skrivet från Mölndal; på första sidan står `Mölndal 760611`.\n- Texten innehåller flera informella stavningar, förkortningar och skrivfel som har bevarats i transkriptionen.\n- Ulf använder en skämtsam och vardaglig ton genom hela brevet.\n- Det finns flera handskrivna gröna kommentarer och teckningar i marginalerna.\n- På sista sidan finns den gröna hälsningen: ”Hälsningar kakmonstret!” följt av ”(Kalla kakor)”.\n- Brevet innehåller en lista över aktiviteter som Ulf föreslår inför Urbans besök.\n- Ett avsnitt innehåller en detaljerad redovisning av skolbetyg.\n- Flera namn eller ord är överstrukna eller på annat sätt svårlästa. Dessa har inte rekonstruerats när originalet inte med säkerhet kan läsas."
+        },
+        {
+          "title": "Personer",
+          "content": "- **Ulf Sandlund** – avsändare och kusin till mottagaren Urban Sandlund.\n- **Urban Sandlund** – mottagare och Ulf Sandlunds kusin.\n- **Torbjörn** – person i Ulfs umgänge; nämns som varande i England.\n- **Svenne** – person i Ulfs umgänge; nämns bland annat i samband med moped.\n- **Birgitta** – person som Ulf nämner i samband med att spela trummor.\n- **Mamma** – Ulfs mamma, nämnd i samband med att spela trummor.\n- **Ted** – person vars låt Ulf frågar om Urban har hört."
+        }
+      ],
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1976/1976-05-05/envelope-front.jpeg",
+          "transcription": "Urban Sandlund  \nDegermansgatan 3  \n941 00 PITEÅ\n\n[Två svenska frimärken à 1 KR med Carl XVI Gustaf.]\n\n[Poststämpel: MÖLNDAL. Datumet kan läsas som 5.5.76.]\n\nGÖTEBORGS  \nKOMMUNALA SKOLOR",
+          "description": ""
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1976/1976-05-05/envelope-back.jpeg",
+          "transcription": "Ulf Sandlund  \nSafjällsgatan 16  \n431 39 Mölndal\n\nGrattis  \n(på vad  \nvet jag inte)\n\nPå framsidan av  \nkuvertet ser du  \nKungen och hans  \ntvillingbror.",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1976/1976-05-05/page-01.jpeg",
+          "transcription": "Hej(som vanligt)  \nMölndal 760611\n\n[Grön teckning av ett träd med pil och texten ”träd”.]\n\nVad gör man?När ingen är hemma?alla på landet eller i England.  \nTorbjörn i England och Svenne vet jag inte var han är.[Överstruket parti, ej läsbart]\n\nMan skriver brev.Och till vem?Till sin kusin naturligtvis.  \nDet finns ju ingen annan att skriva till förutom Torbjörn.Men jag  \nskrev till honom för några dar sen.Då återstår alltså\"bara\" en  \nkusin.\n\nNär du är här har jag tänkt att vi skulle göra lite svart-vita  \nbilder.Det var länge sen jag gjorde det förstår du.\n\nIgår var jag på auktion på göteborgs auktionskammare.Dom sålde  \nsaker som kom från ett pantlåningsställe.Jag bjöd inte på nå´t.  \nKöpte inte nå´t heller.Men dom bjöd snabbt,folk.Om det var  \n2 som ville ha en grej så börja dom på nåt bud.Sen höll dom bara upp  \nhanden.Han som auktioneraut allt sa helle tiden:25 30 35 40 45 50.  \nOch nickade åt än det ena och än det andra hållet.\n\n[Grön handskriven text/teckning i vänstermarginalen.]\n\nVi härnere har ju tänkt lite på vad ni ska se när ni kommer.\n\n[Grön handskriven teckning och text i högermarginalen.]\n\n1. Sjöfartsmuse´et.Låter tråkigt men det är det inte.Dom har  \ntorskar,spättor,rockor,krokodiler,alligator.Bara en alligator.  \n[Överstruket parti, ej läsbart] han heter smillet.Döpt av Expressens läsare.Allt det ± mycket  \nannat bl.a. ormar och det nyss invigda Vätternakvariet.I det  \nakvariet finns alla sorters fisk som finns i Vättern.\n\nI andra avdelningen sjöfartsmuse´e finns fartyg.Modeller av  \ndom och ett stort.Nåt sånt e det.Jag tror inte jag har varit där.",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 2,
+          "label": "Sida 2",
+          "image": "letters/1976/1976-05-05/page-02.jpeg",
+          "transcription": "Utanför museét finns det ett torn.Sjöfartstornet med sjömanshustrun  \növerst.Hur högt det är? Vet ej? Sjömanstornet hette det visst.Och kvinn  \nan däruppe heter kvinna eller nåt sånt. XX\n\n[Blå handskriven ändring/anteckning vid ”ej”.]\n\n2. Fiskhamnen kanske?Det är ganska kul och se auktionerna.Dom som  \nbjuder blinkar bara eller nåt sånt.Jag var där i fyran eller femman.\n\n3 Femman ja.Naturligtvis måste vi gå och handla i Göteborg.Ett par  \ngånger i alla fall.Där har dom naturligtvis allt.Det finns skumma  \naffärer och stora som Femman,Kungsgården(ett stort hus med många  \naffärer i )Det finns Åhlens och NK och allt annat.\n\n4 Danmark .Vi kanske ska åka till Aalborgockså.Och gå på zoo och  \ntivoli.Men det får vi se hur det blir me d det. Till Danmark i  \nalla fall.\n\n5 Nu skriver jag inte mer om sånt.\n\nMitt betyg kanske du vill veta.Jag blev förvånad när jag öppnade det.  \nJag trodde inte jag skulle få så högt som jag fick. Den första  \nsiffran jag skriver är vad jag fick.Den andra vad jag trodde jag  \nskulle få.\n\nSVENSKA  4  4                 gymnastik  3  3          kemi 4  3  \nmatte s  4  4                 religion   4  3          fysik 5  4  \nengelskas3  3                 samhällsk. 4  3          tyska 4  3  \nmusik    4  4                 historia   4  3-4  \nteckning 3  3                 geografi   4  4  \nslöjd-sy 3  4                 biologi    4  4",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 3,
+          "label": "Sida 3",
+          "image": "letters/1976/1976-05-05/page-03.jpeg",
+          "transcription": "Det var så jag hade.medel 3,8.Som i många andra klasser har vi en  \ns.k. plugghäst.Eller också är det medfött vilket det inte kan vara.  \nMen i alla fall hade hon 12 femmor.3 fyror och en trea.Medel 4,8.  \nEn annan kille i en annan klass hade 12 femmor.Som vanligt var  \nmånga betyg orättvisa.Det går ju inte att kommaifrån.Betyg är inte  \noch kommer inte att nånsin bli rättvisa.Det går bara inte.Bort med  \nbetygen tycker alltså jag.Sämst i våran klass hade 2,13 i medel.  \n\"Han har tänkt börja plugga i åttan som dom flesta andra våran  \nklass.\n\nDen där jag skrev om förut var inte sämst.Sämst var [överstruket namn]  \nsom jag har skrivit om förut.Han hade etta i allt utom i ett ämne  \ndär han hade streck.Det blir väl ett medel på 0,9 eller så.Jag  \norkar inte räkna ut det.Över 0,9 blir det förresten.0,94 eller  \nnåt sånt.\n\nIkväll har jag tänkt göra kort så jag kan göra kort när du kommer.  \njag har väl glömt hur man gör nu.Men övning ger färdighet.Nu har ja  \ng en film som jag ska göra kopior av också.En film som torbjörn och  \njag tog för en vecka sen för att kolla hans kamera.Den var lite kon-  \nstig förut .Men filmen gav ett positivt (!)e resultat.\n\nNuNu ska jag spela trumm el med mamma xx och Birgitta.\n\nHej, godda... Brorsans franska kort... Du har väl hört Teds låt va?  \nFy I7 för den I7 juni. Hur ska man stå ut. Med norrländska små lig-  \nister, dæa mej på en liten vagn va? Nä, jag tar mina små, nevpiller,  \nhela asken förresten, innan ni anländer.",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 4,
+          "label": "Sida 4",
+          "image": "letters/1976/1976-05-05/page-04.jpeg",
+          "transcription": "Nu vet du vad du väntar.Välkommen hit.ddddddddffffffffffffffffffffffffff\n\nDet var ett prov på anslagshårdhet.Det ändrar man med en ratt  \npå undersidan av maskinen.\"men det kommer du att få se.Hoppas  \nbåde du och jag ochnågra till.Nu vet jag inte vad jag ska  \nskriva men det kommer väl fram.Svenne har fått en I7 år  \ngammal moppe av sin farfar.I4 år är svenne som sägrer att  \nhan bara ska köra på sommaren får då finns det inte så många  \npoliser ute!Vad då jag skulle skratta om han blev fast  \noch fick vänta 2 år på körkortet.[Överstruket namn, ej läsbart] hade också  \nen moppe.Hade.Han blev fast.Dom tog moppen och det blev  \ndagsböter för farsan.Och så en prick förstås.Han har hållit på  \nmed väskryckning också.han och en annan kille.\n\nJag vill ha ett skrivmaskinsbord.Det är så jobbigt att plocka  \nbort maskinen om man ska ha upp ritbordet eller något annat.\n\nJag ska göra ett extra bord själv har jag tänkt.Den där  \nkillen jag skrev om förut har ä också skjutit en tant med  \nhagelgevär i benet.Tanten hade inte hagelgeväret utan killen  \nalltså. Allt enligt rykten men det mesta kan vara sant om den  \nkillen.Faktiskt.Jag blev inga kort idag.Jag hade glömt att jäg  \nskulle göra det.Jag kom på det kvart i tio .Då tyckte jag att  \ndet blev försent.Inte blev det någon drummel heller.Det blev  \nTV tittning istället.Den flyende holländaren.Sista avsnittet.\n\n[Grön handskriven text: ”Hälsningar kakmonstret!” och under detta ”(Kalla kakor)”]\n\nHej då.          ULF",
+          "description": ""
+        }
+      ]
     }
   ]
 }
