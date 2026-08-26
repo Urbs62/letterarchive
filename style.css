@@ -292,17 +292,59 @@ button:focus-visible {
 .back-link {
   display: inline-flex;
   gap: 0.45rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.letter-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.letter-view > * {
+  order: 5;
+}
+
+.letter-view > .back-link {
+  order: 1;
+}
+
+.letter-view > .letter-heading {
+  order: 2;
+}
+
+.letter-view > .mode-tabs {
+  order: 3;
+}
+
+.letter-view > .image-navigation {
+  order: 4;
+}
+
+.letter-view > .original-panel,
+.letter-view > .transcription-panel {
+  order: 5;
 }
 
 .letter-heading {
-  margin-bottom: 2.5rem;
+  margin-bottom: 0.7rem;
   text-align: center;
+}
+
+.letter-heading h1 {
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+}
+
+.letter-heading .eyebrow {
+  margin-bottom: 0.25rem;
+}
+
+.letter-heading > p:last-child {
+  margin-top: 0.3rem;
 }
 
 .letter-summary {
   max-width: 54rem;
-  margin: 2.5rem auto 0;
+  margin: 1rem auto 0;
   padding: 1.25rem 1.5rem;
   background: rgba(255, 255, 255, 0.28);
   border-left: 2px solid var(--line);
@@ -332,7 +374,7 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 1.25rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   color: var(--accent);
   cursor: pointer;
   list-style: none;
@@ -368,20 +410,20 @@ button:focus-visible {
 }
 
 .letter-collapsible-content {
-  padding: 0 1.5rem 1.25rem 2.7rem;
+  padding: 0 1.5rem 0.85rem 2.7rem;
 }
 
 .mode-tabs {
   display: flex;
   justify-content: center;
   gap: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 0.65rem;
   border-bottom: 1px solid var(--line);
 }
 
 .mode-tab {
   position: relative;
-  padding: 0.8rem 1.5rem;
+  padding: 0.55rem 1.5rem;
   color: var(--muted);
   background: transparent;
   border: 0;
@@ -608,7 +650,10 @@ button:focus-visible {
 }
 
 .letter-view > .image-navigation {
+  width: 100%;
   max-width: 54rem;
+  margin-top: 0;
+  margin-bottom: 0.65rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -684,7 +729,7 @@ code {
   }
 
   .back-link {
-    margin-bottom: 2rem;
+    margin-bottom: 0.65rem;
   }
 
   .letter-collapsible-toggle {
