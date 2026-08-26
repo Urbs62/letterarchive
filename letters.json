@@ -2482,6 +2482,69 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1977-09-07",
+      "date": "1977-09-07",
+      "from": "Urban",
+      "to": "Ulf",
+      "senderAge": 14,
+      "type": "letter",
+      "summary": "En ovanlig och mycket kortfattad försändelse från Urban till Ulf, poststämplad i Piteå den 7 september 1977.\n\nDet yttre kuvertet innehåller ett mindre, ostämplat kuvert samt ett vikt A4-ark. A4-arket är i stort sett helt tomt, med undantag för ett ensamt frågetecken uppe till vänster.\n\nNågon ytterligare text, förklaring eller teckning finns inte.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "- Försändelsen skiljer sig tydligt från de övriga breven genom att själva \"brevet\" endast består av ett ensamt frågetecken på ett annars tomt A4-ark.\n- Det finns dessutom ett kuvert inuti det poststämplade kuvertet. Det inre kuvertet är adresserat till Ulf men saknar både frimärke och poststämpel.\n- Både det yttre och det inre kuvertet har Urban angiven som avsändare.\n- Kombinationen av kuvert-i-kuvert och det ensamma frågetecknet ger försändelsen karaktären av ett skämt eller en medvetet förbryllande hälsning. Någon förklaring till avsikten finns dock inte i materialet.\n- Det inre kuvertet har adressen \"Safjällsgatan 3\", medan det yttre kuvertet har \"Safjällsgatan 16\"."
+        },
+        {
+          "title": "Personer",
+          "content": "- Urban Sandlund – avsändare.\n- Ulf Sandlund – mottagare och Urbans kusin."
+        },
+        {
+          "title": "Platser",
+          "content": "- Piteå – avsändningsort.\n- Mölndal – mottagarort.\n- Degermansgatan 3, Piteå – Urbans adress.\n- Safjällsgatan, Mölndal – Ulfs adress."
+        }
+      ],
+      "items": [
+        {
+          "type": "envelope-front",
+          "label": "Kuvert framsida",
+          "image": "letters/1977/1977-09-07/envelope-front.jpg",
+          "transcription": "Vitt kuvert med maskinskriven adress:\n\nUlf.Sandlund.  \nSafjällsgatan 16.  \n431 39 MÖLNDAL 3.\n\nSvenskt frimärke, valör 1,10 kr, med motiv från Uppsala universitet och texten:\n\nAcademia Upsaliensis Gustaviana  \nUPPSALA UNIVERSITET 500 ÅR  \nSVERIGE\n\nKuvertet är poststämplat:\n\nPITEÅ 1  \n-7.9.77",
+          "description": ""
+        },
+        {
+          "type": "envelope-back",
+          "label": "Kuvert baksida",
+          "image": "letters/1977/1977-09-07/envelope-back.jpg",
+          "transcription": "Maskinskriven avsändaradress:\n\nA.V.S.    Urban Sandlund  \n          Degermansgatan 3  \n          941 00 PITEÅ",
+          "description": ""
+        },
+        {
+          "type": "page",
+          "page": 1,
+          "label": "Sida 1",
+          "image": "letters/1977/1977-09-07/page-01.jpg",
+          "transcription": "?",
+          "description": ""
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 1 framsida",
+          "title": "Inre kuvert – framsida",
+          "image": "letters/1977/1977-09-07/attachments/attachment-01-front.jpg",
+          "transcription": "Ett mindre brunt kuvert låg inuti det poststämplade kuvertet. Det inre kuvertet är inte frankerat eller poststämplat.\n\nMaskinskriven adress:\n\nUlf.Sandlund.  \nSafjällsgatan 3.  \n43139 MÖLNDAL 3.\n\nPå raden med gatunamnet finns en maskinskriven rättning/överskrivning före \"Safjällsgatan\".",
+          "description": ""
+        },
+        {
+          "type": "attachment",
+          "label": "Bilaga 1 baksida",
+          "title": "Inre kuvert – baksida",
+          "image": "letters/1977/1977-09-07/attachments/attachment-01-back.jpg",
+          "transcription": "Ett mindre brunt kuvert låg inuti det poststämplade kuvertet. Det inre kuvertet är inte frankerat eller poststämplat.\n\nMaskinskriven avsändaradress:\n\nA.V.S.    Urban Sandlund  \n          Degermansgatan 3  \n          941 00 PITEÅ",
+          "description": ""
+        }
+      ]
     }
   ]
 }
