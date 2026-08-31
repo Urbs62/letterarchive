@@ -35,6 +35,19 @@ function itemContent(markdown, heading) {
   };
 }
 
+function aliasedSection(markdown, headings, level) {
+  for (const heading of headings) {
+    const headingPattern = new RegExp(
+      `^${level}\\s+${heading.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}\\s*$`,
+      "im"
+    );
+    if (headingPattern.test(markdown)) {
+      return { heading, content: section(markdown, heading, level) };
+    }
+  }
+  return undefined;
+}
+
 /** Collect every level-one Markdown section without knowing its title. */
 function topLevelSections(markdown) {
   const lines = markdown.split(/\r?\n/);
@@ -58,13 +71,39 @@ function topLevelSections(markdown) {
 
 function parseLetter(markdown, folder) {
   const items = [];
-  const envelope = section(markdown, "Envelope", "#");
-  for (const [heading, type, label, image] of [
-    ["Front", "envelope-front", "Kuvert framsida", "envelope-front.jpg"],
-    ["Back", "envelope-back", "Kuvert baksida", "envelope-back.jpg"]
-  ]) {
-    if (section(envelope, heading, "##")) {
-      items.push({ type, label, image: `${folder}${image}`, ...itemContent(envelope, heading) });
+  const envelopeSection = aliasedSection(markdown, ["Envelope", "Kuvert"], "#");
+  const envelopeItems = [
+    {
+      headings: ["Front", "Framsida"],
+      type: "envelope-front",
+      label: "Kuvert framsida",
+      image: "envelope-front.jpg"
+    },
+    {
+      headings: ["Back", "Baksida"],
+      type: "envelope-back",
+      label: "Kuvert baksida",
+      image: "envelope-back.jpg"
+    },
+    {
+      headings: ["Inside", "Insida"],
+      type: "envelope-inside",
+      label: "Kuvert insida",
+      image: "envelope-inside.jpg"
+    }
+  ];
+
+  if (envelopeSection) {
+    for (const { headings, type, label, image } of envelopeItems) {
+      const itemSection = aliasedSection(envelopeSection.content, headings, "##");
+      if (itemSection) {
+        items.push({
+          type,
+          label,
+          image: `${folder}${image}`,
+          ...itemContent(envelopeSection.content, itemSection.heading)
+        });
+      }
     }
   }
 
