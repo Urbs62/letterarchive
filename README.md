@@ -90,7 +90,7 @@ Varje arkivdel kan innehålla:
 {
   "type": "envelope-front",
   "label": "Kuvert framsida",
-  "image": "letters/1975/1975-05-24/envelope-front.jpg",
+  "image": "letters/1975/1975-05-29/envelope-front.jpg",
   "transcription": "",
   "description": ""
 }
