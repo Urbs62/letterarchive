@@ -29,7 +29,7 @@ function field(markdown, name) {
 
 function lineField(markdown, names) {
   for (const name of names) {
-    const match = markdown.match(new RegExp(`^${name}:\\s*(.+?)\\s*$`, "im"));
+    const match = markdown.match(new RegExp(`^(?:-\\s*)?${name}:\\s*(.+?)\\s*$`, "im"));
     if (match) return match[1].trim();
   }
   return "";
@@ -156,9 +156,22 @@ function parseLetter(markdown, folder, attachmentImages = []) {
 }
 
 function parsePostcard(markdown, folder) {
-  const front = itemContent(markdown, "Front");
-  const back = itemContent(markdown, "Back");
-  const transcription = section(markdown, "Transcription", "#");
+  const frontSection = aliasedSection(markdown, ["Front", "Framsida"], "##");
+  const backSection = aliasedSection(markdown, ["Back", "Baksida"], "##");
+  const frontHeading = frontSection?.heading || "Front";
+  const backHeading = backSection?.heading || "Back";
+  const front = itemContent(markdown, frontHeading);
+  const back = itemContent(markdown, backHeading);
+  if (frontHeading === "Framsida" && !front.description) {
+    front.description = frontSection.content;
+    front.transcription = "";
+  }
+  if (backHeading === "Baksida" && !back.description) {
+    back.description = backSection.content;
+    back.transcription = "";
+  }
+  const transcriptionBlock = section(markdown, "Transcription", "#") || section(markdown, "Transkription", "#");
+  const transcription = section(transcriptionBlock, "Sida 1", "##") || transcriptionBlock;
   return [
     {
       type: "front",

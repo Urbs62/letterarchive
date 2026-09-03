@@ -201,3 +201,42 @@ En sammanfattning.`, {
   assert.equal(letter.items[2].image, "letters/1978/1978-08-24/attachments/attachment-01-labyrinth.jpg");
   assert.equal(letter.items[2].description, "Bilagebeskrivning");
 });
+
+test("parses a Swedish postcard with list metadata and a numbered transcription", () => {
+  const postcard = parseArchiveMarkdown(`# Metadata
+
+- Datum: 1976-08-18
+- Poststämplat: 1976-08-18
+- Typ: Vykort
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Avsändarens ålder: 13 år
+- Från: Piteå
+- Till: Mölndal
+
+# Vykort
+## Framsida
+Framsidesbeskrivning
+
+## Baksida
+Baksidesbeskrivning
+
+# Transkription
+## Sida 1
+Vykortstext`, {
+    fileName: "postcard.md",
+    folder: "letters/1976/1976-08-18/"
+  });
+
+  assert.equal(postcard.id, "1976-08-18");
+  assert.equal(postcard.from, "Urban Sandlund");
+  assert.equal(postcard.to, "Ulf Sandlund");
+  assert.equal(postcard.senderAge, 13);
+  assert.equal(postcard.postmarked, "1976-08-18");
+  assert.equal(postcard.fromPlace, "Piteå");
+  assert.equal(postcard.toPlace, "Mölndal");
+  assert.equal(postcard.type, "postcard");
+  assert.equal(postcard.items[0].description, "Framsidesbeskrivning");
+  assert.equal(postcard.items[1].description, "Baksidesbeskrivning");
+  assert.equal(postcard.items[1].transcription, "Vykortstext");
+});
