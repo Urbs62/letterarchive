@@ -657,8 +657,9 @@
       ]
     },
     {
-      "id": "1977-05-07",
-      "date": "1977-05-07",
+      "id": "1977-05-09",
+      "date": "1977-05-09",
+      "postmarked": "1977-05-09",
       "from": "Urban",
       "to": "Ulf",
       "senderAge": 14,
@@ -668,14 +669,14 @@
         {
           "type": "envelope-front",
           "label": "Kuvert framsida",
-          "image": "letters/1977/1977-05-07/envelope-front.jpg",
+          "image": "letters/1977/1977-05-09/envelope-front.jpg",
           "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal\n\nSolna 1977-05-09",
           "description": "Kuvert från Esso Motor Hotel med två svenska 55-öres frimärken."
         },
         {
           "type": "envelope-back",
           "label": "Kuvert baksida",
-          "image": "letters/1977/1977-05-07/envelope-back.jpg",
+          "image": "letters/1977/1977-05-09/envelope-back.jpg",
           "transcription": "A.V.S.\n\nUrban Sandlund\nDegermansgatan 3\n941 00 Piteå",
           "description": ""
         },
@@ -683,7 +684,7 @@
           "type": "page",
           "page": 1,
           "label": "Sida 1",
-          "image": "letters/1977/1977-05-07/page-01.jpg",
+          "image": "letters/1977/1977-05-09/page-01.jpg",
           "transcription": "Stockholm 77.05.07\n\nHej Ulf!\n\nDet är kusin Urban som skriver.\nJag skulle skriva igår när vi\nkom fram, men jag hade ingen\npenna. Nu har jag fått\nen av Sixten Hedkvist, tabbens\npappa. Vi ligger på Esso Motor\nHotel. Järva Krog i Stockholm. Idag\ntävlade jag. Sträcka: 28 km. Tid: 40.24.\nAnmälda: 88. Startande: 75. Plac.: 8.\n\nMycket bra. Vi ligger i ett\nfyrabäddarsrum. Jag, boman, tabbe, sixten och\njörgan dalberg. Snart ska\njag ringa hem.\n\nImorgon väntar tävling\ni Järfälla. I andra\nrummet ligger nyström,\nlundberg, fors, gunnar\noch Lars Lundberg.\n\nIkväll ska vi till\nGröna Lund. På tävlingen vann\njag en cykelflaska.\n\nJörgen och tabbe\ngör pappersflygplan av\nsånt här papper. Skickar med en\ntändsticksask fastän jag vet att\ndu har denna.\n\nHälsningar\n\nUrban",
           "description": "Brevet är skrivet på Esso Motor Hotels brevpapper under en tävlingshelg i Stockholm."
         }
