@@ -1,4 +1,4 @@
-Datum: 1977-01-17
+Datum: 1977-01-18
 Poststämplat: 1977-01-18
 Typ: Brev
 Avsändare: Urban Sandlund

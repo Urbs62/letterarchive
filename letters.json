@@ -541,8 +541,9 @@
       ]
     },
     {
-      "id": "1977-06-06",
-      "date": "1977-06-06",
+      "id": "1977-06-10",
+      "date": "1977-06-10",
+      "postmarked": "1977-06-10",
       "from": "Urban",
       "to": "Ulf",
       "senderAge": 15,
@@ -1652,14 +1653,14 @@
         {
           "type": "envelope-front",
           "label": "Kuvert framsida",
-          "image": "letters/1976/1976-13-30/envelope-front.jpg",
+          "image": "letters/1976/1976-12-30/envelope-front.jpg",
           "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 MÖLNDAL\n\nPITEÅ\n30.12.1976",
           "description": "Ett relativt stort och tjockt kuvert med ett svenskt frimärke på 1 krona. Tjockleken beror på de många små lösa arken."
         },
         {
           "type": "envelope-back",
           "label": "Kuvert baksida",
-          "image": "letters/1976/1976-13-30/envelope-back.jpg",
+          "image": "letters/1976/1976-12-30/envelope-back.jpg",
           "transcription": "A.V.S. Schackmästare Urban Sandlund\nDegermansgatan 3\n941 00 PITEÅ\n\nDu e väl inte arg\n\nTjockt och härligt.\n\nSå kom det till slut.\n\nU.S. ÄR BÄST.\n\nTyvärr glömde jag stoppa i fotot men du får det nästa gång.",
           "description": "Kuvertets baksida innehåller utspridd text och en hepp-gubbe, där huvudet är ovanför en linje och fötterna hänger under den."
         },
@@ -1667,7 +1668,7 @@
           "type": "page",
           "page": 1,
           "label": "Dokumentationsbild 1",
-          "image": "letters/1976/1976-13-30/page-01.jpg",
+          "image": "letters/1976/1976-12-30/page-01.jpg",
           "transcription": "",
           "description": "Dokumentationsbild 1 av brevets 26 lösa småark. Arkens ursprungliga ordning är osäker; transkriptioner och beskrivningar visas i sektionen Småarken."
         },
@@ -1675,7 +1676,7 @@
           "type": "page",
           "page": 2,
           "label": "Dokumentationsbild 2",
-          "image": "letters/1976/1976-13-30/page-02.jpg",
+          "image": "letters/1976/1976-12-30/page-02.jpg",
           "transcription": "",
           "description": "Dokumentationsbild 2 av brevets 26 lösa småark. Arkens ursprungliga ordning är osäker; transkriptioner och beskrivningar visas i sektionen Småarken."
         },
@@ -1683,7 +1684,7 @@
           "type": "page",
           "page": 3,
           "label": "Dokumentationsbild 3",
-          "image": "letters/1976/1976-13-30/page-03.jpg",
+          "image": "letters/1976/1976-12-30/page-03.jpg",
           "transcription": "",
           "description": "Dokumentationsbild 3 av brevets 26 lösa småark. Arkens ursprungliga ordning är osäker; transkriptioner och beskrivningar visas i sektionen Småarken."
         },
@@ -1691,7 +1692,7 @@
           "type": "page",
           "page": 4,
           "label": "Dokumentationsbild 4",
-          "image": "letters/1976/1976-13-30/page-04.jpg",
+          "image": "letters/1976/1976-12-30/page-04.jpg",
           "transcription": "",
           "description": "Dokumentationsbild 4 av brevets 26 lösa småark. Arkens ursprungliga ordning är osäker; transkriptioner och beskrivningar visas i sektionen Småarken."
         },
@@ -1699,7 +1700,7 @@
           "type": "page",
           "page": 5,
           "label": "Dokumentationsbild 5",
-          "image": "letters/1976/1976-13-30/page-05.jpg",
+          "image": "letters/1976/1976-12-30/page-05.jpg",
           "transcription": "",
           "description": "Dokumentationsbild 5 av brevets 26 lösa småark. Arkens ursprungliga ordning är osäker; transkriptioner och beskrivningar visas i sektionen Småarken."
         },
@@ -1707,7 +1708,7 @@
           "type": "page",
           "page": 6,
           "label": "Dokumentationsbild 6",
-          "image": "letters/1976/1976-13-30/page-06.jpg",
+          "image": "letters/1976/1976-12-30/page-06.jpg",
           "transcription": "",
           "description": "Dokumentationsbild 6 av brevets 26 lösa småark. Arkens ursprungliga ordning är osäker; transkriptioner och beskrivningar visas i sektionen Småarken."
         }
@@ -2939,10 +2940,6 @@
       "toPlace": "Mölndal",
       "summary": "Urban skriver att han läste Ulfs brev med ett leende och erkänner att han faktiskt har börjat uppskatta Birgittas och Catarinas inlägg i breven. Det ska dock hållas hemligt för dem – de ska tvärtom få höra att han inte gillar det, så att de inte slutar skriva.\n\nUrban berättar också att han och Hurtig har spelat minigolf och slutat exakt lika, 73–73. Därefter åkte de och badade i Hamnviken.\n\nKrister B, alias Holger, hälsar. Urban ber Ulf att inte skicka mer än tre tioöringar per brev. Vykortet med torpedbåten fick Urban när han var och tittade på just denna båt.\n\nHan avslutar med ”Gudbaj från Urban” och lägger till att Hurtig hälsar.",
       "sections": [
-        {
-          "title": "Metadata",
-          "content": "- Datum: 1976-08-18\n- Poststämplat: 1976-08-18\n- Typ: Vykort\n- Avsändare: Urban Sandlund\n- Mottagare: Ulf Sandlund\n- Avsändarens ålder: 13 år\n- Från: Piteå\n- Till: Mölndal"
-        },
         {
           "title": "Vykort",
           "content": "## Framsida\n\nFärgfotografi av en svensk torpedbåt av typ Spica i hög fart på öppet vatten. Fartyget har nummer 117 på skrovet.\n\n## Baksida\n\nVykort med tryckt information om torpedbåt av typ Spica och Karlskrona Varvet AB.\n\nAdresserat till:\n\nUlf Sandlund  \nSafjällsgatan 16  \n431 39 Mölndal\n\nFrimärke: 85 öre, Sverige, med motiv av fåglar.\n\nPoststämplat 18.8.76.\n\nVykortet är handskrivet med blyerts och delvis svårläst. Uppe till vänster finns små färgade teckningar/klistermärkesliknande figurer och längst ned en liten färgad dekoration."
