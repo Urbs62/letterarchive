@@ -147,3 +147,57 @@ Bak`);
 
   assert.equal(letter.items.some((item) => item.type === "envelope-inside"), false);
 });
+
+test("parses the Swedish finished-letter format", () => {
+  const letter = parseArchiveMarkdown(`Datum: 1978-08-24
+Poststämplat: 1978-08-24
+Typ: Brev
+Avsändare: Urban Sandlund
+Mottagare: Ulf Sandlund
+Urbans ålder: 15 år
+Från: Piteå
+Till: Mölndal
+
+# Kuvert
+## Framsida
+**Transkription:**
+
+Framtext
+
+**Beskrivning:**
+
+Frambeskrivning
+
+# Brev
+## Sida 1
+**Transkription:**
+
+Sidtext
+
+# Bilagor
+## Bilaga 1
+**Beskrivning:**
+
+Bilagebeskrivning
+
+# Sammanfattning
+En sammanfattning.`, {
+    fileName: "letter.md",
+    folder: "letters/1978/1978-08-24/",
+    attachmentImages: ["attachments/attachment-01-labyrinth.jpg"]
+  });
+
+  assert.equal(letter.id, "1978-08-24");
+  assert.equal(letter.from, "Urban Sandlund");
+  assert.equal(letter.to, "Ulf Sandlund");
+  assert.equal(letter.senderAge, 15);
+  assert.equal(letter.postmarked, "1978-08-24");
+  assert.equal(letter.fromPlace, "Piteå");
+  assert.equal(letter.toPlace, "Mölndal");
+  assert.deepEqual(letter.items.map(({ type }) => type), ["envelope-front", "page", "attachment"]);
+  assert.equal(letter.items[0].transcription, "Framtext");
+  assert.equal(letter.items[0].description, "Frambeskrivning");
+  assert.equal(letter.items[1].transcription, "Sidtext");
+  assert.equal(letter.items[2].image, "letters/1978/1978-08-24/attachments/attachment-01-labyrinth.jpg");
+  assert.equal(letter.items[2].description, "Bilagebeskrivning");
+});

@@ -27,11 +27,33 @@ function field(markdown, name) {
   return section(markdown, name, "##");
 }
 
+function lineField(markdown, names) {
+  for (const name of names) {
+    const match = markdown.match(new RegExp(`^${name}:\\s*(.+?)\\s*$`, "im"));
+    if (match) return match[1].trim();
+  }
+  return "";
+}
+
+function metadataField(markdown, englishName, lineNames = []) {
+  return field(markdown, englishName) || lineField(markdown, lineNames);
+}
+
 function itemContent(markdown, heading) {
   const block = section(markdown, heading);
+  const labelled = (names) => {
+    const escaped = names.map((name) => name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
+    const match = block.match(new RegExp(
+      `\\*\\*(?:${escaped}):?\\*\\*\\s*\\n+([\\s\\S]*?)(?=\\n+\\*\\*[^\\n]+:?\\*\\*|$)`,
+      "i"
+    ));
+    return match?.[1].trim() || "";
+  };
+  const transcription = section(block, "Transcription", "###") || labelled(["Transkription", "Transcription"]);
+  const description = section(block, "Description", "###") || labelled(["Beskrivning", "Description"]);
   return {
-    transcription: section(block, "Transcription", "###") || block.replace(/^###\s+.*$/gim, "").trim(),
-    description: section(block, "Description", "###")
+    transcription: transcription || (description ? "" : block.replace(/^###\s+.*$/gim, "").trim()),
+    description
   };
 }
 
@@ -69,7 +91,7 @@ function topLevelSections(markdown) {
   });
 }
 
-function parseLetter(markdown, folder) {
+function parseLetter(markdown, folder, attachmentImages = []) {
   const items = [];
   const envelopeSection = aliasedSection(markdown, ["Envelope", "Kuvert"], "#");
   const envelopeItems = [
@@ -107,7 +129,7 @@ function parseLetter(markdown, folder) {
     }
   }
 
-  const pagePattern = /^##\s+Page\s+(\d+)\s*$/gim;
+  const pagePattern = /^##\s+(?:Page|Sida)\s+(\d+)\s*$/gim;
   for (const match of markdown.matchAll(pagePattern)) {
     const page = Number(match[1]);
     items.push({
@@ -115,7 +137,19 @@ function parseLetter(markdown, folder) {
       page,
       label: `Sida ${page}`,
       image: `${folder}page-${String(page).padStart(2, "0")}.jpg`,
-      ...itemContent(markdown, `Page ${page}`)
+      ...itemContent(markdown, match[0].replace(/^##\s+/, "").trim())
+    });
+  }
+
+  const attachmentPattern = /^##\s+(?:Attachment|Bilaga)\s+(\d+)\s*$/gim;
+  for (const match of markdown.matchAll(attachmentPattern)) {
+    const number = Number(match[1]);
+    const defaultImage = `attachments/attachment-${String(number).padStart(2, "0")}.jpg`;
+    items.push({
+      type: "attachment",
+      label: `Bilaga ${number}`,
+      image: `${folder}${attachmentImages[number - 1] || defaultImage}`,
+      ...itemContent(markdown, match[0].replace(/^##\s+/, "").trim())
     });
   }
   return items;
@@ -144,31 +178,45 @@ function parsePostcard(markdown, folder) {
 }
 
 /** Parse either a legacy letter.md or a postcard.md into the JSON data shape. */
-export function parseArchiveMarkdown(markdown, { fileName, folder = "", id } = {}) {
+export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, attachmentImages = [] } = {}) {
   const type = DOCUMENT_FILES[path.basename(fileName || "").toLowerCase()];
   if (!type) throw new Error("Expected a file named letter.md or postcard.md");
 
-  const date = field(markdown, "Date");
+  const date = metadataField(markdown, "Date", ["Datum"]);
+  const age = metadataField(markdown, "Sender Age", ["Urbans ålder", "Avsändarens ålder"]);
+  const sourceType = metadataField(markdown, "Type", ["Typ"]);
   return {
     id: id || date,
     date,
-    from: field(markdown, "From"),
-    to: field(markdown, "To"),
-    senderAge: Number(field(markdown, "Sender Age")) || undefined,
-    type,
-    writingType: field(markdown, "Writing Type") || undefined,
+    from: metadataField(markdown, "From", ["Avsändare"]),
+    to: metadataField(markdown, "To", ["Mottagare"]),
+    senderAge: Number.parseInt(age, 10) || undefined,
+    type: /vykort|postcard/i.test(sourceType) ? "postcard" : type,
+    writingType: metadataField(markdown, "Writing Type", ["Skrivtyp"]) || undefined,
     folder,
+    postmarked: lineField(markdown, ["Poststämplat"]) || undefined,
+    fromPlace: lineField(markdown, ["Från"]) || undefined,
+    toPlace: lineField(markdown, ["Till"]) || undefined,
     summary: section(markdown, "Summary", "#") || section(markdown, "Sammanfattning", "#"),
     sections: topLevelSections(markdown),
-    items: type === "postcard" ? parsePostcard(markdown, folder) : parseLetter(markdown, folder)
+    items: type === "postcard" ? parsePostcard(markdown, folder) : parseLetter(markdown, folder, attachmentImages)
   };
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
-  const { readFile } = await import("node:fs/promises");
+  const { readFile, readdir } = await import("node:fs/promises");
   const sourcePath = process.argv[2];
   if (!sourcePath) throw new Error("Usage: node archive-markdown.mjs <letter.md|postcard.md>");
   const markdown = await readFile(sourcePath, "utf8");
   const folder = `${path.dirname(sourcePath).replaceAll("\\", "/")}/`;
-  console.log(JSON.stringify(parseArchiveMarkdown(markdown, { fileName: sourcePath, folder }), null, 2));
+  let attachmentImages = [];
+  try {
+    attachmentImages = (await readdir(path.join(path.dirname(sourcePath), "attachments")))
+      .filter((name) => /^attachment-\d+/i.test(name))
+      .sort()
+      .map((name) => `attachments/${name}`);
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+  console.log(JSON.stringify(parseArchiveMarkdown(markdown, { fileName: sourcePath, folder, attachmentImages }), null, 2));
 }
