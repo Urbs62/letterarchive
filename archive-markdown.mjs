@@ -80,18 +80,28 @@ function topLevelSections(markdown) {
     if (match) headings.push({ title: match[1], line: index });
   });
 
-  return headings.map((heading, index) => {
-    const end = headings[index + 1]?.line ?? lines.length;
-    const content = lines
-      .slice(heading.line + 1, end)
-      .join("\n")
-      .replace(/^---\s*$/gm, "")
-      .trim();
-    return { title: heading.title, content };
-  });
+  return headings
+    .map((heading, index) => {
+      const end = headings[index + 1]?.line ?? lines.length;
+      const content = lines
+        .slice(heading.line + 1, end)
+        .join("\n")
+        .replace(/^---\s*$/gm, "")
+        .trim();
+      return { title: heading.title, content };
+    })
+    .filter(({ title }) => title.toLowerCase() !== "metadata");
 }
 
-function parseLetter(markdown, folder, attachmentImages = []) {
+function discoveredImage(defaultName, documentImages) {
+  const stem = path.parse(defaultName).name.toLowerCase();
+  return documentImages.find((name) =>
+    [".jpg", ".jpeg"].includes(path.extname(name).toLowerCase()) &&
+    path.parse(name).name.toLowerCase() === stem
+  ) || defaultName;
+}
+
+function parseLetter(markdown, folder, attachmentImages = [], documentImages = []) {
   const items = [];
   const envelopeSection = aliasedSection(markdown, ["Envelope", "Kuvert"], "#");
   const envelopeItems = [
@@ -122,7 +132,7 @@ function parseLetter(markdown, folder, attachmentImages = []) {
         items.push({
           type,
           label,
-          image: `${folder}${image}`,
+          image: `${folder}${discoveredImage(image, documentImages)}`,
           ...itemContent(envelopeSection.content, itemSection.heading)
         });
       }
@@ -136,7 +146,7 @@ function parseLetter(markdown, folder, attachmentImages = []) {
       type: "page",
       page,
       label: `Sida ${page}`,
-      image: `${folder}page-${String(page).padStart(2, "0")}.jpg`,
+      image: `${folder}${discoveredImage(`page-${String(page).padStart(2, "0")}.jpg`, documentImages)}`,
       ...itemContent(markdown, match[0].replace(/^##\s+/, "").trim())
     });
   }
@@ -155,7 +165,7 @@ function parseLetter(markdown, folder, attachmentImages = []) {
   return items;
 }
 
-function parsePostcard(markdown, folder) {
+function parsePostcard(markdown, folder, documentImages = []) {
   const frontSection = aliasedSection(markdown, ["Front", "Framsida"], "##");
   const backSection = aliasedSection(markdown, ["Back", "Baksida"], "##");
   const frontHeading = frontSection?.heading || "Front";
@@ -176,14 +186,14 @@ function parsePostcard(markdown, folder) {
     {
       type: "front",
       label: "Front",
-      image: `${folder}postcard-front.jpg`,
+      image: `${folder}${discoveredImage("postcard-front.jpg", documentImages)}`,
       transcription: front.transcription,
       description: front.description
     },
     {
       type: "back",
       label: "Back",
-      image: `${folder}postcard-back.jpg`,
+      image: `${folder}${discoveredImage("postcard-back.jpg", documentImages)}`,
       transcription: transcription || back.transcription,
       description: back.description
     }
@@ -191,7 +201,7 @@ function parsePostcard(markdown, folder) {
 }
 
 /** Parse either a legacy letter.md or a postcard.md into the JSON data shape. */
-export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, attachmentImages = [] } = {}) {
+export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, attachmentImages = [], documentImages = [] } = {}) {
   const type = DOCUMENT_FILES[path.basename(fileName || "").toLowerCase()];
   if (!type) throw new Error("Expected a file named letter.md or postcard.md");
 
@@ -212,7 +222,9 @@ export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, atta
     toPlace: lineField(markdown, ["Till"]) || undefined,
     summary: section(markdown, "Summary", "#") || section(markdown, "Sammanfattning", "#"),
     sections: topLevelSections(markdown),
-    items: type === "postcard" ? parsePostcard(markdown, folder) : parseLetter(markdown, folder, attachmentImages)
+    items: type === "postcard"
+      ? parsePostcard(markdown, folder, documentImages)
+      : parseLetter(markdown, folder, attachmentImages, documentImages)
   };
 }
 
@@ -222,6 +234,9 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
   if (!sourcePath) throw new Error("Usage: node archive-markdown.mjs <letter.md|postcard.md>");
   const markdown = await readFile(sourcePath, "utf8");
   const folder = `${path.dirname(sourcePath).replaceAll("\\", "/")}/`;
+  const documentImages = (await readdir(path.dirname(sourcePath)))
+    .filter((name) => [".jpg", ".jpeg"].includes(path.extname(name).toLowerCase()))
+    .sort();
   let attachmentImages = [];
   try {
     attachmentImages = (await readdir(path.join(path.dirname(sourcePath), "attachments")))
@@ -231,5 +246,10 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
   } catch (error) {
     if (error.code !== "ENOENT") throw error;
   }
-  console.log(JSON.stringify(parseArchiveMarkdown(markdown, { fileName: sourcePath, folder, attachmentImages }), null, 2));
+  console.log(JSON.stringify(parseArchiveMarkdown(markdown, {
+    fileName: sourcePath,
+    folder,
+    attachmentImages,
+    documentImages
+  }), null, 2));
 }

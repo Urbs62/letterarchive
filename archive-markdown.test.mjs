@@ -236,7 +236,61 @@ Vykortstext`, {
   assert.equal(postcard.fromPlace, "Piteå");
   assert.equal(postcard.toPlace, "Mölndal");
   assert.equal(postcard.type, "postcard");
+  assert.equal(postcard.sections.some(({ title }) => title === "Metadata"), false);
   assert.equal(postcard.items[0].description, "Framsidesbeskrivning");
   assert.equal(postcard.items[1].description, "Baksidesbeskrivning");
   assert.equal(postcard.items[1].transcription, "Vykortstext");
+});
+
+test("keeps legacy metadata before the first heading working", () => {
+  const letter = parseArchiveMarkdown(`Datum: 1977-01-18
+Poststämplat: 1977-01-18
+Typ: Brev
+Avsändare: Urban Sandlund
+Mottagare: Ulf Sandlund
+Urbans ålder: 14 år
+
+# Sammanfattning
+Äldre format.`, {
+    fileName: "letter.md",
+    folder: "letters/1977/1977-01-18/"
+  });
+
+  assert.equal(letter.date, "1977-01-18");
+  assert.equal(letter.postmarked, "1977-01-18");
+  assert.equal(letter.from, "Urban Sandlund");
+  assert.equal(letter.to, "Ulf Sandlund");
+  assert.equal(letter.senderAge, 14);
+  assert.deepEqual(letter.sections.map(({ title }) => title), ["Sammanfattning"]);
+});
+
+test("uses discovered JPEG filenames for letter envelopes and pages", () => {
+  const letter = parseArchiveMarkdown(`${metadata}
+
+# Envelope
+## Front
+Front
+## Back
+Back
+# Letter
+## Page 1
+First page
+## Page 2
+Second page`, {
+    fileName: "letter.md",
+    folder: "letters/1980/1980-03-11/",
+    documentImages: [
+      "envelope-front.jpeg",
+      "envelope-back.jpeg",
+      "page-01.jpeg",
+      "page-02.jpeg"
+    ]
+  });
+
+  assert.deepEqual(letter.items.map(({ image }) => image), [
+    "letters/1980/1980-03-11/envelope-front.jpeg",
+    "letters/1980/1980-03-11/envelope-back.jpeg",
+    "letters/1980/1980-03-11/page-01.jpeg",
+    "letters/1980/1980-03-11/page-02.jpeg"
+  ]);
 });
