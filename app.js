@@ -71,6 +71,7 @@ let activeLetter = null;
 let activeImageIndex = 0;
 let touchStartX = 0;
 let lastFocusedElement = null;
+let archiveScrollPosition = null;
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
   day: "numeric",
@@ -253,7 +254,18 @@ function renderArchive() {
     });
 
   app.replaceChildren(section);
+  section.querySelectorAll(".open-letter").forEach((link) => {
+    link.addEventListener("click", () => {
+      archiveScrollPosition = window.scrollY;
+    });
+  });
   app.focus({ preventScroll: true });
+
+  if (archiveScrollPosition !== null) {
+    const scrollPosition = archiveScrollPosition;
+    archiveScrollPosition = null;
+    requestAnimationFrame(() => window.scrollTo(0, scrollPosition));
+  }
 }
 
 function createOriginalImage(item) {
