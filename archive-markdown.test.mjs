@@ -16,7 +16,8 @@ test("uses postmark for identity while preserving writing date and explicit id",
   const source = "Datum: 1981-02-03\nPoststämplat: 1981-02-09";
   const options = { fileName: "letter.md" };
   assert.equal(parseArchiveMarkdown(source, options).id, "1981-02-09");
-  assert.equal(parseArchiveMarkdown(source, options).date, "1981-02-03");
+  assert.equal(parseArchiveMarkdown(source, options).date, "1981-02-09");
+  assert.equal(parseArchiveMarkdown(source, options).writtenDate, "1981-02-03");
   assert.equal(parseArchiveMarkdown(source, { ...options, id: "custom" }).id, "custom");
   assert.equal(parseArchiveMarkdown("Datum: 1981-02-03", options).id, "1981-02-03");
 });
@@ -301,6 +302,22 @@ Urbans ålder: 14 år
   assert.equal(letter.to, "Ulf Sandlund");
   assert.equal(letter.senderAge, 14);
   assert.deepEqual(letter.sections.map(({ title }) => title), ["Sammanfattning"]);
+});
+
+test("uses the postmark as the main date and preserves a different writing date", () => {
+  const letter = parseArchiveMarkdown(`Datum: 1979-04-10
+Poststämplat: 1979-04-30
+Typ: Brev
+Avsändare: Urban Sandlund
+Mottagare: Ulf Sandlund`, {
+    fileName: "letter.md",
+    folder: "letters/1979/1979-04-30/"
+  });
+
+  assert.equal(letter.id, "1979-04-30");
+  assert.equal(letter.date, "1979-04-30");
+  assert.equal(letter.writtenDate, "1979-04-10");
+  assert.equal(letter.postmarked, "1979-04-30");
 });
 
 test("uses discovered JPEG filenames for letter envelopes and pages", () => {

@@ -223,13 +223,15 @@ export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, atta
   const type = DOCUMENT_FILES[path.basename(fileName || "").toLowerCase()];
   if (!type) throw new Error("Expected a file named letter.md or postcard.md");
 
-  const date = metadataField(markdown, "Date", ["Datum"]);
+  const writtenDate = metadataField(markdown, "Date", ["Datum"]);
   const postmarked = lineField(markdown, ["Poststämplat"]);
+  const date = postmarked || writtenDate;
   const age = metadataField(markdown, "Sender Age", ["Urbans ålder", "Avsändarens ålder"]);
   const sourceType = metadataField(markdown, "Type", ["Typ"]);
   return {
-    id: id || postmarked || date,
+    id: id || date,
     date,
+    writtenDate: writtenDate && writtenDate !== date ? writtenDate : undefined,
     from: metadataField(markdown, "From", ["Avsändare"]),
     to: metadataField(markdown, "To", ["Mottagare"]),
     senderAge: Number.parseInt(age, 10) || undefined,
