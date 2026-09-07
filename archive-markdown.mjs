@@ -139,6 +139,24 @@ function parseLetter(markdown, folder, attachmentImages = [], documentImages = [
     }
   }
 
+  const notepadSection = aliasedSection(markdown, ["Anteckningsblock", "Notepad"], "#");
+  if (notepadSection) {
+    for (const [headings, side, label] of [
+      [["Framsida", "Front"], "front", "Anteckningsblock framsida"],
+      [["Baksida", "Back"], "back", "Anteckningsblock baksida"]
+    ]) {
+      const cover = aliasedSection(notepadSection.content, headings, "##");
+      if (cover) {
+        items.push({
+          type: "attachment",
+          label,
+          image: `${folder}${discoveredImage(`notepad-${side}.jpg`, documentImages)}`,
+          ...itemContent(notepadSection.content, cover.heading)
+        });
+      }
+    }
+  }
+
   const pagePattern = /^##\s+(?:Page|Sida)\s+(\d+)\s*$/gim;
   for (const match of markdown.matchAll(pagePattern)) {
     const page = Number(match[1]);
@@ -206,10 +224,11 @@ export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, atta
   if (!type) throw new Error("Expected a file named letter.md or postcard.md");
 
   const date = metadataField(markdown, "Date", ["Datum"]);
+  const postmarked = lineField(markdown, ["Poststämplat"]);
   const age = metadataField(markdown, "Sender Age", ["Urbans ålder", "Avsändarens ålder"]);
   const sourceType = metadataField(markdown, "Type", ["Typ"]);
   return {
-    id: id || date,
+    id: id || postmarked || date,
     date,
     from: metadataField(markdown, "From", ["Avsändare"]),
     to: metadataField(markdown, "To", ["Mottagare"]),
@@ -217,7 +236,7 @@ export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, atta
     type: /vykort|postcard/i.test(sourceType) ? "postcard" : type,
     writingType: metadataField(markdown, "Writing Type", ["Skrivtyp"]) || undefined,
     folder,
-    postmarked: lineField(markdown, ["Poststämplat"]) || undefined,
+    postmarked: postmarked || undefined,
     fromPlace: lineField(markdown, ["Från"]) || undefined,
     toPlace: lineField(markdown, ["Till"]) || undefined,
     summary: section(markdown, "Summary", "#") || section(markdown, "Sammanfattning", "#"),

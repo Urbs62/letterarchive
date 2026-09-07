@@ -12,6 +12,45 @@ Urban
 ## To
 Ulf`;
 
+test("uses postmark for identity while preserving writing date and explicit id", () => {
+  const source = "Datum: 1981-02-03\nPoststämplat: 1981-02-09";
+  const options = { fileName: "letter.md" };
+  assert.equal(parseArchiveMarkdown(source, options).id, "1981-02-09");
+  assert.equal(parseArchiveMarkdown(source, options).date, "1981-02-03");
+  assert.equal(parseArchiveMarkdown(source, { ...options, id: "custom" }).id, "custom");
+  assert.equal(parseArchiveMarkdown("Datum: 1981-02-03", options).id, "1981-02-03");
+});
+
+test("imports notepad covers separately from envelope and preserves page order", () => {
+  for (const [heading, front, back] of [
+    ["Anteckningsblock", "Framsida", "Baksida"],
+    ["Notepad", "Front", "Back"]
+  ]) {
+    const letter = parseArchiveMarkdown(`# Kuvert
+## Framsida
+Kuverttext
+# ${heading}
+## ${front}
+Omslag fram
+## ${back}
+Omslag bak
+## Sida 2
+Andra sidan
+## Sida 1
+Första sidan`, {
+      fileName: "letter.md", folder: "letters/example/",
+      documentImages: ["notepad-front.jpeg", "notepad-back.jpg"]
+    });
+    assert.deepEqual(letter.items.map(({ type }) => type),
+      ["envelope-front", "attachment", "attachment", "page", "page"]);
+    assert.deepEqual(letter.items.map(({ transcription }) => transcription),
+      ["Kuverttext", "Omslag fram", "Omslag bak", "Andra sidan", "Första sidan"]);
+    assert.equal(letter.items[1].image, "letters/example/notepad-front.jpeg");
+    assert.equal(letter.items[2].image, "letters/example/notepad-back.jpg");
+    assert.deepEqual(letter.items.filter(item => item.type === "page").map(item => item.page), [2, 1]);
+  }
+});
+
 function parse(markdown) {
   return parseArchiveMarkdown(`${metadata}\n\n${markdown}`, {
     fileName: "letter.md",
