@@ -90,9 +90,16 @@ function dateTimeAttribute(date) {
 }
 
 function senderLabel(letter) {
-  return Number.isFinite(letter.senderAge)
-    ? `${letter.from}, ${letter.senderAge} år`
-    : letter.from;
+  if (!Number.isFinite(letter.senderAge)) return letter.from;
+
+  const compositeSender = String(letter.from).match(
+    /^(.+?)(\s+(?:och|and)\s+|\s*[,\u0026]\s*)(.+)$/i
+  );
+  if (compositeSender) {
+    return `${compositeSender[1]} (${letter.senderAge} år)${compositeSender[2]}${compositeSender[3]}`;
+  }
+
+  return `${letter.from}, ${letter.senderAge} år`;
 }
 
 function correspondenceDirection(letter) {
@@ -101,8 +108,11 @@ function correspondenceDirection(letter) {
     .toLocaleLowerCase("sv-SE");
   const from = normalizeName(letter.from);
   const to = normalizeName(letter.to);
-  const isUrban = (name) => name === "urban" || name === "urban sandlund";
-  const isUlf = (name) => name === "ulf" || name === "ulf sandlund";
+  const includesPerson = (names, firstName) => names
+    .split(/\s+(?:och|and)\s+|\s*[,\u0026]\s*/)
+    .some((name) => name === firstName || name === `${firstName} sandlund`);
+  const isUrban = (name) => includesPerson(name, "urban");
+  const isUlf = (name) => includesPerson(name, "ulf");
 
   if (isUrban(from) && isUlf(to)) return "urban-to-ulf";
   if (isUlf(from) && isUrban(to)) return "ulf-to-urban";

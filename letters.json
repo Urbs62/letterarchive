@@ -3357,6 +3357,45 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1982-08-06",
+      "date": "1982-08-06",
+      "from": "Ulf och Annette",
+      "to": "Urban",
+      "senderAge": 20,
+      "type": "postcard",
+      "summary": "Vykort från Danmark med en kort hälsning om resan och vistelsen i Blokhus och Løkken.",
+      "sections": [
+        {
+          "title": "Personer",
+          "content": "- **Ulf Sandlund** – vykortets avsändare och Urbans kusin.\n- **Annette** – medavsändare.\n- **Urban Sandlund** – vykortets mottagare."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "- Vykortet är daterat 4/8 1982, medan poststämpeln är från 6/8 1982.\n- Formuleringen \"sista vecka i frihet\" sticker ut, men vykortet förklarar inte vad Ulf syftar på.\n- Hälsningen är handskriven och avslutas med både Ulf och Annette som avsändare."
+        },
+        {
+          "title": "Platser",
+          "content": "- **Løkken** – plats som anges på vykortet och där hälsningen skrivs.\n- **Blokhus** – plats där avsändarna uppger att de vistats i två nätter.\n- **Danmark** – landet som resan går till.\n- **Piteå** – vykortets destination."
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Framsida",
+          "image": "letters/1982/1982-08-06/postcard-front.jpeg",
+          "transcription": "",
+          "description": "Fotografi av havet vid solnedgång. Solen syns lågt över horisonten och vågor bryter i förgrunden."
+        },
+        {
+          "type": "back",
+          "label": "Baksida",
+          "image": "letters/1982/1982-08-06/postcard-back.jpeg",
+          "transcription": "Løkken 4/8 - 1982\n\nHej!\n\nTill slut kom vi till\nDanmark, och min\nsista vecka i frihet\nblir en skön sådan.\n\nI två nätter var vi\ni Blokhus, igår och\nidag, sista dagen\när vi i Løkken. I\neftermiddag tar vi\noss hem igen.\n\nHälsningar Ulf\nAnnette",
+          "description": "Vykortets baksida innehåller en handskriven hälsning på vänster sida. Till höger finns mottagarens namn och adress samt frimärke och poststämpel."
+        }
+      ]
     }
   ]
 }
