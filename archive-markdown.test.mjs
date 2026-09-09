@@ -282,6 +282,31 @@ Vykortstext`, {
   assert.equal(postcard.items[1].transcription, "Vykortstext");
 });
 
+test("keeps an explicitly labelled transcription under a Swedish postcard back", () => {
+  const postcard = parseArchiveMarkdown(`# Metadata
+
+- Datum: 1978-12-01
+- Typ: Vykort
+
+# Vykort
+## Framsida
+**Beskrivning:**
+
+Framsidesbild
+
+## Baksida
+**Transkription:**
+
+Vykortstext`, {
+    fileName: "postcard.md",
+    folder: "letters/1978/1978-12-xx/"
+  });
+
+  assert.equal(postcard.items[0].description, "Framsidesbild");
+  assert.equal(postcard.items[1].transcription, "Vykortstext");
+  assert.equal(postcard.items[1].description, "");
+});
+
 test("keeps legacy metadata before the first heading working", () => {
   const letter = parseArchiveMarkdown(`Datum: 1977-01-18
 Poststämplat: 1977-01-18

@@ -194,7 +194,8 @@ function parsePostcard(markdown, folder, documentImages = []) {
     front.description = frontSection.content;
     front.transcription = "";
   }
-  if (backHeading === "Baksida" && !back.description) {
+  const backHasExplicitTranscription = /^\*\*(?:Transkription|Transcription):?\*\*/im.test(backSection?.content || "");
+  if (backHeading === "Baksida" && !back.description && !backHasExplicitTranscription) {
     back.description = backSection.content;
     back.transcription = "";
   }

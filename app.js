@@ -83,6 +83,14 @@ const swedishDate = new Intl.DateTimeFormat("sv-SE", {
 function formatDate(date) {
   const unknownDate = date.match(/^(\d{4})-unknown(?:-\d+)?$/);
   if (unknownDate) return `Troligen ${unknownDate[1]}`;
+  const unknownDay = date.match(/^(\d{4})-(\d{2})-xx$/);
+  if (unknownDay) {
+    return new Intl.DateTimeFormat("sv-SE", {
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC"
+    }).format(new Date(`${unknownDay[1]}-${unknownDay[2]}-01T12:00:00Z`));
+  }
   return swedishDate.format(new Date(`${date}T12:00:00Z`));
 }
 
