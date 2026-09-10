@@ -158,6 +158,15 @@ Sidan visar en tydlig platshållare om en bild ännu inte finns.
 Ett brevs `writingType` kan vara `handwritten`, `typewritten` eller `mixed`, vilka visas
 som Handskrivet, Maskinskrivet respektive Blandat i gränssnittet.
 
+### Kompletterande arkivbilder
+
+En arkivdel kan ha `relatedImages`, en lista med `label`, `image`, `caption`
+och valfritt `afterText`. Bilderna visas separat under den valda originalbilden
+och efter den angivna texten i transkriptionen (annars efter sidans text).
+De använder arkivets befintliga bildvisare och räknas inte som originalsidor
+eller fysiska bilagor. Lägg bildfilerna i försändelsens `related/`-mapp och
+bevara `relatedImages` i `letters.json` vid eventuell ny import av brevtexten.
+
 ## Hur vykort lagras
 
 Ett vykort använder `postcard.md` och har två bildobjekt, `front` och `back`.

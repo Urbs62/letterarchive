@@ -320,6 +320,19 @@ function imagePositionLabel(letter, index) {
   return `${item.label} · ${index + 1} av ${letter.items.length}`;
 }
 
+function createRelatedImage(image) {
+  const section = document.createElement("aside");
+  section.className = "historical-archive-photo related-image";
+  const heading = document.createElement("h2");
+  heading.textContent = "Kompletterande arkivbild";
+  const figure = document.createElement("figure");
+  const caption = document.createElement("figcaption");
+  caption.textContent = image.caption;
+  figure.append(createOriginalImage(image), caption);
+  section.append(heading, figure);
+  return section;
+}
+
 function updateItem() {
   const item = activeLetter.items[activeImageIndex];
   const stage = app.querySelector(".original-stage");
@@ -328,6 +341,9 @@ function updateItem() {
     stage.append(createItemHeading(item));
   }
   stage.append(createOriginalImage(item));
+  for (const image of item.relatedImages || []) {
+    stage.append(createRelatedImage(image));
+  }
   updateTranscription(item);
   app.querySelector(".image-position").textContent =
     imagePositionLabel(activeLetter, activeImageIndex);
@@ -400,6 +416,22 @@ function updateTranscription(item) {
     transcription.className = "transcription-text";
     transcription.textContent = item.transcription;
     transcriptionSection.append(transcriptionHeading, transcription);
+    let remainingText = item.transcription;
+    let currentText = transcription;
+    for (const image of item.relatedImages || []) {
+      const anchor = image.afterText ? remainingText.indexOf(image.afterText) : -1;
+      if (anchor < 0) {
+        transcriptionSection.append(createRelatedImage(image));
+        continue;
+      }
+      const end = anchor + image.afterText.length;
+      currentText.textContent = remainingText.slice(0, end);
+      remainingText = remainingText.slice(end);
+      currentText = document.createElement("p");
+      currentText.className = "transcription-text";
+      currentText.textContent = remainingText;
+      transcriptionSection.append(createRelatedImage(image), currentText);
+    }
     article.append(transcriptionSection);
   }
 

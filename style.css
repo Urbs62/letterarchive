@@ -580,6 +580,19 @@ button:focus-visible {
   line-height: 1.45;
 }
 
+.related-image {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+}
+
+.related-image .original-frame img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
 .transcription-note {
   margin: 0 0 2rem;
   padding: 0.85rem 1rem;
