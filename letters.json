@@ -3753,6 +3753,74 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1978-08-16-korsordsfacit",
+      "type": "artifact",
+      "title": "Korsordsfacit",
+      "date": "1978-08-16",
+      "dateLabel": "1978-08-16",
+      "sortDate": "1978-08-16",
+      "archiveYear": "1978",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
+      "fromPlace": "Piteå",
+      "toPlace": "Mölndal",
+      "folder": "archive-finds/1978-08-16-korsordsfacit/",
+      "metadata": [
+        {
+          "label": "Datum",
+          "value": "1978-08-16"
+        },
+        {
+          "label": "Typ",
+          "value": "Arkivfynd"
+        },
+        {
+          "label": "Avsändare",
+          "value": "Urban Sandlund"
+        },
+        {
+          "label": "Mottagare",
+          "value": "Ulf Sandlund"
+        },
+        {
+          "label": "Från",
+          "value": "Piteå"
+        },
+        {
+          "label": "Till",
+          "value": "Mölndal"
+        }
+      ],
+      "summary": "Ett hemmagjort korsord som Urban ursprungligen skapade den 30 oktober 1977 och senare fyllde i med svar. Den 16 augusti 1978 skickar han facitet till Ulf och påminner samtidigt Ulf om att skicka svar på två korsord som Ulf själv har gjort.",
+      "sections": [
+        {
+          "title": "Sammanfattning",
+          "content": "Ett hemmagjort korsord som Urban ursprungligen skapade den 30 oktober 1977 och senare fyllde i med svar. Den 16 augusti 1978 skickar han facitet till Ulf och påminner samtidigt Ulf om att skicka svar på två korsord som Ulf själv har gjort."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Det bevarade arket har två tydligt åtskilda dateringar. Själva korsordet är signerat \"Urban.Sandlund 77.10.30.\" längst ned på arket. Den senare kommentaren till höger är signerad \"US 78.08.16.\" och visar att arket då användes som facit. Försändelsetillhörigheten är inte fastställd.\n\nKorsordet är helt hemmagjort med handritat rutnät, pilar, delade ledordsrutor och en större tecknad bildruta i mitten. Ledorden blandar vanliga korsordsfrågor med ordlekar, teckningar och sådant som bygger på gemensamma kunskaper och skämt mellan Urban och Ulf.\n\nBland de personliga ledorden finns \"Brukade Pompe och Fredrik.B. äta?\", \"Sandlund Racing Support Club\", \"Brukar Gena säga\" och \"Är detta korsord\". Andra ledord anknyter till sådant Urban läste och kände till, bland annat MAD och Kojak.\n\nUrban påpekar i den senare kommentaren att han upptäckt småfel i korsordet, exempelvis att \"KNALL\" har stavats \"KNNAL\", men ber Ulf bortse från dem. Ovanför korsordet finns också ett förtydligande om att ett ledord lyder \"KAN vara en sjukdom\"."
+        },
+        {
+          "title": "Personer",
+          "content": "**Urban Sandlund** – korsordets upphovsman och den som senare fyllt i och skickat facitet.\n\n**Ulf Sandlund** – mottagare; har enligt Urbans kommentar själv gjort två korsord som Urban väntar på svar till.\n\n**Pompe** – nämns tillsammans med Fredrik B. i ett personligt ledord.\n\n**Gena** – förekommer i ledordet \"Brukar Gena säga\"."
+        },
+        {
+          "title": "Platser",
+          "content": "**Piteå** – Urbans hemort och platsen där korsordet sannolikt skapades och facitet skrevs.\n\n**Mölndal** – Ulfs hemort och facitets sannolika destination."
+        }
+      ],
+      "items": [
+        {
+          "type": "image",
+          "label": "Framsida",
+          "image": "archive-finds/1978-08-16-korsordsfacit/korsordsfacit.jpg",
+          "transcription": "UPPTÄCKTE EN DEL SMÅFEL MEN SÅNT\nFÅR DU STRUNDA I. T.EX ATT KNALL\nSTAVAS KNNAL.\n\nEFTERSOM JAG\nNU SKICKAT\nSVAR TILL\nDETTA SÅ\nFÅR DU SKICKA\nSVAR TILL DOM\nTVÅ DU HAN\nGJORT\n\nUS\n78.08.16.\n\nUrban.Sandlund\n77.10.30.",
+          "description": ""
+        }
+      ]
     }
   ]
 }
