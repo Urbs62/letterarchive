@@ -3821,6 +3821,74 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1974-after-eurovision-abba",
+      "type": "artifact",
+      "title": "ABBA och melodifestivalen",
+      "date": "Efter Eurovision 1974",
+      "dateLabel": "Efter Eurovision 1974",
+      "sortDate": "1974",
+      "archiveYear": "1974",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
+      "fromPlace": "Piteå",
+      "toPlace": "Mölndal",
+      "folder": "archive-finds/1974-after-eurovision-abba/",
+      "metadata": [
+        {
+          "label": "Datum",
+          "value": "Efter Eurovision 1974"
+        },
+        {
+          "label": "Typ",
+          "value": "Arkivfynd"
+        },
+        {
+          "label": "Avsändare",
+          "value": "Urban Sandlund"
+        },
+        {
+          "label": "Mottagare",
+          "value": "Ulf Sandlund"
+        },
+        {
+          "label": "Från",
+          "value": "Piteå"
+        },
+        {
+          "label": "Till",
+          "value": "Mölndal"
+        }
+      ],
+      "summary": "Urban frågar Ulf vilken melodi han tyckte bäst om i melodifestivalen och berättar att han själv föredrog ABBA. Han har spelat in låten på band, har texten och ber Ulf fylla i lappen och lägga den i sitt nästa brev.",
+      "sections": [
+        {
+          "title": "Sammanfattning",
+          "content": "Urban frågar Ulf vilken melodi han tyckte bäst om i melodifestivalen och berättar att han själv föredrog ABBA. Han har spelat in låten på band, har texten och ber Ulf fylla i lappen och lägga den i sitt nästa brev."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Lappen fungerar som ett hemmagjort svarsformulär. Ulf ska kryssa i numrerade rutor beroende på om han vill ha texten, om han tyckte ABBA var bäst och om han överhuvudtaget såg festivalen. Urban instruerar honom uttryckligen att lägga tillbaka lappen i nästa brev.\n\nAtt Urban redan har spelat in ABBA-låten på band och har texten visar hur musik från TV kunde fångas och sparas hemma. Entusiasmen för ABBA märks också grafiskt: gruppnamnet skrivs stort och upprepas fem gånger längst ned på lappen.\n\nLappen är odaterad men bedöms av Urban vara skriven kort efter ABBAs seger 1974, troligen efter Eurovision Song Contest. Någon koppling till en bestämd bevarad försändelse har inte kunnat fastställas."
+        },
+        {
+          "title": "Personer",
+          "content": "**Urban Sandlund** – lappens avsändare.\n\n**Ulf Sandlund** – mottagare och den som ska fylla i och returnera lappen."
+        },
+        {
+          "title": "Platser",
+          "content": "**Piteå** – Urbans hemort och platsen där lappen sannolikt skrevs.\n\n**Mölndal** – Ulfs hemort och lappens sannolika destination."
+        }
+      ],
+      "items": [
+        {
+          "type": "image",
+          "label": "Framsida",
+          "image": "archive-finds/1974-after-eurovision-abba/abba-melodifestivalen.jpg",
+          "transcription": "P.S. Lägg denna lapp i ditt nästa brev.\nGlöm inte det!!!!!!!!\n\nVilken melodi tyckte du var bäst på melodifestivalen\ni TV? (om du såg den) Jag tyckte ABBA var bäst. Jag spelade\nin den på band och har texten. Om du vill ha den så\nkryssa för det i ruta* där nere på detta papperet.\nkryssa också för i nedre högra hörnet på den\nsidan fliken på BREVET är. Om du tyckte\nABBA var bäst i festivalen så kryssa för det\ni ruta 2. Om du inte tyckte det, så skriv namnet\npå den du tyckte va' bäst på raden nedan.\nSåg du inte festivalen så kryssa i ruta 3\n\nRuta 1: Texten\nSVAR\n\nRuta 2: ABBA\nSVAR\n\nRuta 3: inte såg\nSVAR\n\nABBA ABBA ABBA ABBA ABBA\n\nnamn på den du tyckte va' bäst. Om du inte tyckte om ABBA",
+          "description": ""
+        }
+      ]
     }
   ]
 }

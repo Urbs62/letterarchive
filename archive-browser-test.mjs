@@ -74,11 +74,11 @@ try {
     };
     const originalOrder = letters.filter(l => l.type !== 'artifact').slice().sort((a,b) => a.date.localeCompare(b.date)).map(l => l.id);
     check(JSON.stringify(letters.filter(l => l.type !== 'artifact').slice().sort((a,b) => sortValue(a).localeCompare(sortValue(b))).map(l => l.id)) === JSON.stringify(originalOrder), 'legacy chronological order');
-    const card = [...document.querySelectorAll('.letter-card')].find(c => c.textContent.includes('Arkivfynd'));
+    const card = [...document.querySelectorAll('.letter-card')].find(c => c.querySelector('a')?.getAttribute('href') === '#brev/1977-unknown-intelligenstest');
     check(card && card.textContent.includes('Efter 1977-04-08'), 'artifact card and date');
     check(card.closest('.year-group').querySelector('h2').textContent === '1977', 'artifact grouped in 1977');
     check(!card.querySelector('time').hasAttribute('datetime'), 'no invented exact datetime');
-    for (const [id, kind] of [['1977-04-04', 'letter'], ['1977-04-09', 'postcard'], ['1977-unknown-intelligenstest', 'artifact']]) {
+    for (const [id, kind] of [['1977-04-04', 'letter'], ['1977-04-09', 'postcard'], ['1977-unknown-intelligenstest', 'artifact'], ['1978-08-16-korsordsfacit', 'artifact'], ['1974-after-eurovision-abba', 'artifact']]) {
       history.replaceState(null, '', '#brev/' + id);
       handleRoute();
       check(activeLetter.type === kind, id + ' type and route');
@@ -109,12 +109,21 @@ try {
           check(section.open, title + ' expands');
         }
         check(!document.querySelector('.letter-view').textContent.includes('Urbans ålder'), 'artifact age omitted');
-        check(document.querySelector('h1').textContent === 'Efter 1977-04-08', 'artifact date preserved');
+        const expectedDate = { '1977-unknown-intelligenstest': 'Efter 1977-04-08', '1978-08-16-korsordsfacit': '1978-08-16', '1974-after-eurovision-abba': 'Efter Eurovision 1974' }[id];
+        check(document.querySelector('h1').textContent === expectedDate, 'artifact date preserved');
         for (const field of current.metadata) check(document.querySelector('.letter-view').textContent.includes(field.label + ': ' + field.value), 'artifact field ' + field.label);
       }
       history.replaceState(null, '', location.pathname); handleRoute();
       check(!!document.querySelector('.letter-card'), 'return to archive');
     }
+    const abbaCard = document.querySelector('a[href="#brev/1974-after-eurovision-abba"]').closest('.letter-card');
+    check(abbaCard.closest('.year-group').querySelector('h2').textContent === '1974', 'ABBA grouped in 1974');
+    check(abbaCard.textContent.includes('Efter Eurovision 1974'), 'ABBA descriptive card date');
+    check(!abbaCard.querySelector('time').hasAttribute('datetime'), 'ABBA no invented exact date');
+    check(abbaCard.closest('.year-group').querySelector('.letter-card') === abbaCard, 'ABBA year-only sorting placement');
+    const abba = letters.find(l => l.id === '1974-after-eurovision-abba');
+    check(sortValue(abba) === '1974', 'ABBA year-only sort key');
+    check(abba.items[0].image === 'archive-finds/1974-after-eurovision-abba/abba-melodifestivalen.jpg', 'ABBA discovered image');
     for (const date of ['1977', '1977-04', 'Okänt']) {
       const item = { id: 'temporary', type: 'artifact', title: 'Karta', date, dateLabel: date, items: [] };
       renderLetter(item);
