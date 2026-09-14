@@ -1,9 +1,11 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { parseArtifact } from "./archive-artifact.mjs";
 
 const DOCUMENT_FILES = {
   "letter.md": "letter",
-  "postcard.md": "postcard"
+  "postcard.md": "postcard",
+  "artifact.md": "artifact"
 };
 
 function section(markdown, heading, level = "#{1,3}") {
@@ -219,10 +221,11 @@ function parsePostcard(markdown, folder, documentImages = []) {
   ];
 }
 
-/** Parse either a legacy letter.md or a postcard.md into the JSON data shape. */
+/** Parse a letter.md, postcard.md or artifact.md into the archive JSON shape. */
 export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, attachmentImages = [], documentImages = [] } = {}) {
   const type = DOCUMENT_FILES[path.basename(fileName || "").toLowerCase()];
-  if (!type) throw new Error("Expected a file named letter.md or postcard.md");
+  if (!type) throw new Error("Expected letter.md, postcard.md or artifact.md");
+  if (type === "artifact") return parseArtifact(markdown, { folder, id, documentImages });
 
   const writtenDate = metadataField(markdown, "Date", ["Datum"]);
   const postmarked = lineField(markdown, ["Poststämplat"]);
@@ -253,11 +256,11 @@ export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, atta
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   const { readFile, readdir } = await import("node:fs/promises");
   const sourcePath = process.argv[2];
-  if (!sourcePath) throw new Error("Usage: node archive-markdown.mjs <letter.md|postcard.md>");
+  if (!sourcePath) throw new Error("Usage: node archive-markdown.mjs <letter.md|postcard.md|artifact.md>");
   const markdown = await readFile(sourcePath, "utf8");
   const folder = `${path.dirname(sourcePath).replaceAll("\\", "/")}/`;
   const documentImages = (await readdir(path.dirname(sourcePath)))
-    .filter((name) => [".jpg", ".jpeg"].includes(path.extname(name).toLowerCase()))
+    .filter((name) => /\.(jpe?g|png|webp|gif)$/i.test(name))
     .sort();
   let attachmentImages = [];
   try {

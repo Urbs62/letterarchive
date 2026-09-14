@@ -3678,6 +3678,81 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1977-unknown-intelligenstest",
+      "type": "artifact",
+      "title": "Intelligenstest",
+      "date": "Efter 1977-04-08",
+      "dateLabel": "Efter 1977-04-08",
+      "sortDate": "1977-04-08",
+      "archiveYear": "1977",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
+      "fromPlace": "Piteå",
+      "toPlace": "Mölndal",
+      "folder": "archive-finds/1977-unknown-intelligenstest/",
+      "metadata": [
+        {
+          "label": "Datum",
+          "value": "Efter 1977-04-08"
+        },
+        {
+          "label": "Typ",
+          "value": "Arkivfynd"
+        },
+        {
+          "label": "Avsändare",
+          "value": "Urban Sandlund"
+        },
+        {
+          "label": "Mottagare",
+          "value": "Ulf Sandlund"
+        },
+        {
+          "label": "Från",
+          "value": "Piteå"
+        },
+        {
+          "label": "Till",
+          "value": "Mölndal"
+        }
+      ],
+      "summary": "Ett kort hemmagjort intelligenstest med fem skämtsamma frågor och facit på baksidan. Frågorna bygger på ordlekar, gåtor och gemensamma minnen mellan Urban och Ulf, däribland raketbilen som Urban var med och byggde den 8 april 1977.",
+      "sections": [
+        {
+          "title": "Sammanfattning",
+          "content": "Ett kort hemmagjort intelligenstest med fem skämtsamma frågor och facit på baksidan. Frågorna bygger på ordlekar, gåtor och gemensamma minnen mellan Urban och Ulf, däribland raketbilen som Urban var med och byggde den 8 april 1977."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Testet hör sannolikt till den serie intelligenstester Urban skickade till Ulf våren 1977. Intelligenstest 1 och 2 finns bevarade i försändelsen 1977-03-02 och Intelligenstest 3 omnämns den 3 april. Detta exemplar saknar nummer och kan inte knytas till någon bestämd försändelse.\n\nFrågan \"Vad gjorde jag 77-04-08?\" visar att testet skrevs efter den 8 april 1977. Händelsen går att återfinna i den bevarade korrespondensen, där Urban berättar om bilen/raketbilen som byggdes tillsammans med Boman och andra kamrater.\n\nTestet blandar traditionella skämtfrågor med en personlig kontrollfråga som bara någon som följt Urbans brev rimligen kunde känna till. Kommentaren \"(nu pratar anita med katarina)\" är samtidigt ett spontant ögonblick från situationen när testet skrevs."
+        },
+        {
+          "title": "Personer",
+          "content": "**Urban Sandlund** – testets upphovsman.\n\n**Ulf Sandlund** – mottagare och den som förväntas göra testet.\n\n**Mikael Boman** – Urbans kamrat; nämns i svaret om raketbilen.\n\n**Anita Sandlund** – Urbans storasyster; nämns i en parentes medan testet skrivs.\n\n**Catarina Sandlund** – Ulfs storasyster och Urbans kusin; nämns tillsammans med Anita."
+        },
+        {
+          "title": "Platser",
+          "content": "**Piteå** – platsen där Urban bodde och testet sannolikt skrevs.\n\n**Mölndal** – Ulfs hemort och testets sannolika destination."
+        }
+      ],
+      "items": [
+        {
+          "type": "image",
+          "label": "Framsida",
+          "image": "archive-finds/1977-unknown-intelligenstest/intelligenstest-front.jpg",
+          "transcription": "Intelligenstest.\nTid:56 sekunder.\n\n1.Vad är det för likhet mellan en expedit och en köksa?\n2.Vet du vad som kan förvandla tur till otur?\n(nu pratar anita med katarina)\n3.Vet du varför vi måste uppsöka sängen ibland?\n4.Vad gjorde jag 77-04-08?\n5.Vad måste man vara för att få statsbegravning?",
+          "description": ""
+        },
+        {
+          "type": "image",
+          "label": "Baksida",
+          "image": "archive-finds/1977-unknown-intelligenstest/intelligenstest-back.jpg",
+          "transcription": "Svar.\n\n1.Båda två har diskvana.\n2.Bokstaven o.\n3.Därför att sängen inte uppsöker oss.\n4.Var med boman och gjorde en raketbil.\n5.Helst död.",
+          "description": ""
+        }
+      ]
     }
   ]
 }

@@ -17,6 +17,13 @@ const documentTypes = {
     openLabel: "Öppna brevet",
     previewItemTypes: ["envelope-front", "envelope-back", "page"]
   },
+  artifact: {
+    label: "Arkivfynd",
+    badge: "Arkivfynd",
+    icon: "📎",
+    openLabel: "Öppna arkivfyndet",
+    previewItemTypes: ["image"]
+  },
   postcard: {
     label: "Vykort",
     badge: "Postcard",
@@ -83,7 +90,7 @@ const swedishDate = new Intl.DateTimeFormat("sv-SE", {
 function formatDate(date) {
   const unknownDate = date.match(/^(\d{4})-unknown(?:-\d+)?$/);
   if (unknownDate) return `Troligen ${unknownDate[1]}`;
-  const unknownDay = date.match(/^(\d{4})-(\d{2})-xx$/);
+  const unknownDay = date.match(/^(\d{4})-(\d{2})(?:-xx)?$/);
   if (unknownDay) {
     return new Intl.DateTimeFormat("sv-SE", {
       month: "long",
@@ -91,7 +98,25 @@ function formatDate(date) {
       timeZone: "UTC"
     }).format(new Date(`${unknownDay[1]}-${unknownDay[2]}-01T12:00:00Z`));
   }
-  return swedishDate.format(new Date(`${date}T12:00:00Z`));
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return date || "Okänt";
+  const parsed = new Date(`${date}T12:00:00Z`);
+  return Number.isNaN(parsed.valueOf()) ? date : swedishDate.format(parsed);
+}
+
+function displayDate(letter) {
+  return letter.dateLabel || formatDate(letter.date);
+}
+
+function archiveYear(letter) {
+  return letter.archiveYear || (letter.date || "").match(/^\d{4}/)?.[0] || "Okänt år";
+}
+
+function sortValue(letter) {
+  return letter.sortDate || letter.date || "";
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
 }
 
 function dateTimeAttribute(date) {
@@ -190,7 +215,7 @@ function createArchiveImage(letter) {
 function renderArchive() {
   activeLetter = null;
   document.title = "LetterArchive – Arkiv";
-  const years = letters.map((letter) => letter.date.slice(0, 4));
+  const years = letters.map(archiveYear).filter(year => /^\d{4}$/.test(year));
   const yearRange = years.length
     ? `${Math.min(...years)}${Math.min(...years) === Math.max(...years) ? "" : `–${Math.max(...years)}`}`
     : "Inga årtal";
@@ -201,7 +226,7 @@ function renderArchive() {
     <header class="archive-introduction">
       <div class="archive-introduction-copy">
         <h1 id="archive-heading">Arkiv</h1>
-        <p>En samling försändelser från Urban till kusinen Ulf.<br>Original, bilagor och transkriberad text.</p>
+        <p>En samling försändelser från Urban till kusinen Ulf.<br>Original, bilagor, fristående arkivfynd och transkriberad text.</p>
         <p class="archive-statistics">${letters.length} objekt <span aria-hidden="true">•</span> ${yearRange}</p>
       </div>
       <figure class="archive-portrait">
@@ -212,9 +237,9 @@ function renderArchive() {
   `;
 
   const byYear = Map.groupBy
-    ? Map.groupBy(letters, (letter) => letter.date.slice(0, 4))
+    ? Map.groupBy(letters, archiveYear)
     : letters.reduce((groups, letter) => {
-        const year = letter.date.slice(0, 4);
+        const year = archiveYear(letter);
         if (!groups.has(year)) groups.set(year, []);
         groups.get(year).push(letter);
         return groups;
@@ -230,7 +255,7 @@ function renderArchive() {
       grid.className = "letter-grid";
 
       yearLetters
-        .sort((a, b) => a.date.localeCompare(b.date))
+        .sort((a, b) => sortValue(a).localeCompare(sortValue(b)))
         .forEach((letter) => {
           const attachments = attachmentCount(letter);
           const kind = documentType(letter);
@@ -242,9 +267,10 @@ function renderArchive() {
           details.className = "card-details";
           details.innerHTML = `
             <p class="document-type"><span aria-hidden="true">${kind.icon}</span> ${kind.badge}</p>
-            <time${dateTimeAttribute(letter.date)}>${formatDate(letter.date)}</time>
+            <time${dateTimeAttribute(letter.date)}>${escapeHtml(displayDate(letter))}</time>
             <ul>
-              <li>${senderLabel(letter)}</li>
+              ${letter.type === "artifact" ? `<li>${escapeHtml(letter.title)}</li>` : ""}
+              ${letter.from ? `<li>${escapeHtml(senderLabel(letter))}</li>` : ""}
               ${letter.type === "letter" ? `<li>${letterPageCount(letter)} sidor</li>` : ""}
               ${attachments ? `<li>${attachments} ${attachments === 1 ? "bilaga" : "bilagor"}</li>` : ""}
               ${letter.writingType ? `<li>${writingTypeLabels[letter.writingType] || letter.writingType}</li>` : ""}
@@ -337,6 +363,14 @@ function updateItem() {
   const item = activeLetter.items[activeImageIndex];
   const stage = app.querySelector(".original-stage");
   stage.replaceChildren();
+  if (!item) {
+    stage.textContent = "Inga bilder registrerade.";
+    app.querySelector(".transcription-page").replaceChildren();
+    app.querySelector(".image-position").textContent = "0 bilder";
+    app.querySelector(".previous-image").disabled = true;
+    app.querySelector(".next-image").disabled = true;
+    return;
+  }
   if (item.type === "attachment") {
     stage.append(createItemHeading(item));
   }
@@ -557,7 +591,7 @@ function appendAdditionalSections(view, letter) {
 function renderLetter(letter) {
   activeLetter = letter;
   activeImageIndex = 0;
-  document.title = `${formatDate(letter.date)} – LetterArchive`;
+  document.title = `${displayDate(letter)} – LetterArchive`;
 
   const kind = documentType(letter);
   const detailMeta = letter.type === "letter"
@@ -569,8 +603,8 @@ function renderLetter(letter) {
     <a class="back-link" href="#"><span aria-hidden="true">←</span> Tillbaka till arkivet</a>
     <header class="letter-heading">
       <p class="eyebrow">${detailMeta}</p>
-      <h1><time${dateTimeAttribute(letter.date)}>${formatDate(letter.date)}</time></h1>
-      <p>${senderLabel(letter)} <span aria-hidden="true">→</span> ${letter.to}</p>
+      <h1><time${dateTimeAttribute(letter.date)}>${escapeHtml(displayDate(letter))}</time></h1>
+      ${letter.type === "artifact" ? `<p>${escapeHtml(letter.title)}</p>` : `<p>${senderLabel(letter)} <span aria-hidden="true">→</span> ${letter.to}</p>`}
     </header>
     <div class="mode-tabs" role="tablist" aria-label="Välj visningsläge">
       <button id="original-tab" class="mode-tab is-active" role="tab" aria-selected="true" aria-controls="original-panel" type="button">Original</button>
@@ -594,13 +628,17 @@ function renderLetter(letter) {
 
   const navigation = document.createElement("nav");
   navigation.className = "image-navigation";
-  navigation.setAttribute("aria-label", `Bläddra bland ${kind.label.toLowerCase()}ets delar`);
+  navigation.setAttribute("aria-label", letter.type === "artifact" ? "Bläddra bland arkivfyndets bilder" : `Bläddra bland ${kind.label.toLowerCase()}ets delar`);
   navigation.innerHTML = `
     <button class="previous-image" type="button"><span aria-hidden="true">←</span> Föregående</button>
     <p class="image-position" aria-live="polite"></p>
     <button class="next-image" type="button">Nästa <span aria-hidden="true">→</span></button>
   `;
   view.append(navigation);
+
+  if (letter.type === "artifact" && letter.metadata?.length) {
+    view.append(createCollapsibleSection("Arkivuppgifter", letter.metadata.map(({ label, value }) => `${label}: ${value}`).join("\n"), false));
+  }
 
   if (letter.summary) {
     view.append(createCollapsibleSection("Sammanfattning", letter.summary, false));

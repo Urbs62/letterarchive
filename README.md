@@ -204,6 +204,91 @@ node archive-markdown.mjs letters/1977/1977-06-10/letter.md
 node archive-markdown.mjs letters/1978/1978-07-01-postcard/postcard.md
 ```
 
+## Fristående arkivfynd
+
+Arkivfynd lagras i `archive-finds/<objektmapp>/artifact.md` med bilderna i samma
+mapp. De importeras som `type: "artifact"` till den befintliga listan `letters`
+i `letters.json`. De visas som **Arkivfynd** bland övriga objekt i respektive
+årsgrupp och använder samma detaljvy, textläge och bildvisare. Arkivet har inga
+separata typfilter; alla tre dokumenttyperna visas tillsammans.
+
+Metadata skrivs som `Namn: värde` före första huvudrubriken eller under
+`# Metadata`. Alla metadatafält bevaras och visas i detaljvyn. `Titel:` är
+valfritt; annars används den första innehållsrubriken som titel. Exempel:
+
+```md
+Datum: Efter 1977-04-08
+Typ: Arkivfynd
+
+# Karta
+
+## Översikt
+
+Text på första bilden.
+
+## Detalj
+
+Text på andra bilden.
+
+# Sammanfattning
+
+Sammanfattning av fyndet.
+
+# Iakttagelser
+
+Analys av materialet.
+```
+
+Innehållets huvudrubrik är fri. Underrubrikerna under den första
+innehållsrubriken blir bilddelar i Markdown-ordning. Övriga huvudavsnitt,
+inklusive egna analysavsnitt, bevaras. `Sammanfattning`, `Iakttagelser`,
+`Personer` och `Platser` är valfria. Transkriptionernas radbrytningar,
+avdelare och specialtecken bevaras; CRLF normaliseras till LF i importerad
+text. `### Transkription` och `### Beskrivning` kan användas för att hålla
+text och bildbeskrivning separata.
+
+Alla JPG/JPEG-, PNG-, WebP- och GIF-bilder direkt i objektmappen upptäcks.
+Filnamn sorteras naturligt (`bild-2` före `bild-10`), med `front`/`framsida`
+före motsvarande `back`/`baksida`. Bilddelarna kopplas till bilderna i denna
+ordning. För andra namn eller en särskild koppling kan varje underrubrik
+innehålla en bildlänk, exempelvis `![Översikt](karta-stor.jpg)`. Då styr länken
+vilken bild som hör till texten. Sådana bildlänkar kan även användas under
+andra innehållsrubriker. Extra bilder visas efter textens bilddelar som
+`Bild N`. Det finns ingen gräns på två bilder; även fynd utan bilder stöds.
+
+`dateLabel` bevarar datumtexten ordagrant, exempelvis `Efter 1977-04-08`,
+`1977`, `1977-04` eller `Okänt`. Ett separat `sortDate` använder den första
+dateringen i texten som sorteringsankare, med endast den precision som finns
+i källan. Årtalet används för årsgruppering. Ankaret är inte ett fastställt
+datum för föremålet och visas inte som sådant. Utan årtal hamnar fyndet under
+`Okänt år`. Befintliga brev och vykort behåller sin datumvisning och ordning.
+
+```sh
+# Lista källfiler under både letters/ och archive-finds/:
+node archive-import.mjs --list
+
+# Förhandsgranska en post utan att skriva:
+node archive-markdown.mjs archive-finds/1977-unknown-intelligenstest/artifact.md
+
+# Importera den angivna posten till letters.json:
+node archive-import.mjs --write archive-finds/1977-unknown-intelligenstest/artifact.md
+```
+
+Importen lägger endast till den angivna posten och vägrar skriva över ett
+befintligt id. Den importerar inte om andra källfiler och bevarar därmed
+tidigare manuella kompletteringar. Arkivfyndets id hämtas från objektmappen.
+
+Kontroller (inget byggsteg behövs):
+
+```sh
+node --test archive-markdown.test.mjs archive-artifact.test.mjs
+node archive-browser-test.mjs
+```
+
+Webbläsartestet använder installerad Chrome på Windows utan npm-beroenden.
+Ange `LETTERARCHIVE_BROWSER` för en annan Chromium-installation. Det startar
+en tillfällig lokal server och en separat webbläsarprofil i systemets tempmapp.
+
 ## Visa webbplatsen lokalt
 
 Eftersom JavaScript läser `letters.json` med `fetch` behöver projektet öppnas
