@@ -3889,6 +3889,74 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1976-unknown-canned-heat-puzzle",
+      "type": "artifact",
+      "title": "Hemmagjort pussel",
+      "date": "Troligen 1976",
+      "dateLabel": "Troligen 1976",
+      "sortDate": "1976",
+      "archiveYear": "1976",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
+      "fromPlace": "Piteå",
+      "toPlace": "Mölndal",
+      "folder": "archive-finds/1976-unknown-canned-heat-puzzle/",
+      "metadata": [
+        {
+          "label": "Datum",
+          "value": "Troligen 1976"
+        },
+        {
+          "label": "Typ",
+          "value": "Arkivfynd"
+        },
+        {
+          "label": "Avsändare",
+          "value": "Urban Sandlund"
+        },
+        {
+          "label": "Mottagare",
+          "value": "Ulf Sandlund"
+        },
+        {
+          "label": "Från",
+          "value": "Piteå"
+        },
+        {
+          "label": "Till",
+          "value": "Mölndal"
+        }
+      ],
+      "summary": "Ett hemmagjort pussel som Urban gjorde och skickade till Ulf, tillverkat av en bild av fantasibilen \"Canned Heat\" från en Revell-byggsats.",
+      "sections": [
+        {
+          "title": "Sammanfattning",
+          "content": "Ett hemmagjort pussel som Urban gjorde och skickade till Ulf, tillverkat av en bild av fantasibilen \"Canned Heat\" från en Revell-byggsats."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "I korrespondensen berättar Urban att han köpt byggsatsen \"Canned Heat\" på Lek & Hobby och börjat bygga den. Det bevarade pusslet har exakt samma modell som motiv, vilket gör byggsatsens förpackning till en sannolik källa till pusselbilden. Någon uppgift om när bilden klipptes till pussel eller i vilken försändelse det skickades har däremot inte hittats.\n\nPusslet är enkelt hemmagjort genom att den tryckta bilden klippts i oregelbundna bitar. Det bevarades i ett enkelt kuvert märkt \"Ett pussel. Nå va då?\". Kuvertet har inte tagits med som separat arkivbild.\n\nAndra pussel förekommer i brevväxlingen mellan Urban och Ulf, men inget av de identifierade omnämnandena kan säkert knytas till just detta pussel."
+        },
+        {
+          "title": "Personer",
+          "content": "**Urban Sandlund** – gjorde pusslet och skickade det till Ulf.\n\n**Ulf Sandlund** – mottagare av pusslet."
+        },
+        {
+          "title": "Platser",
+          "content": "**Piteå** – Urbans hemort och platsen där pusslet sannolikt tillverkades.\n\n**Mölndal** – Ulfs hemort och pusslets destination."
+        }
+      ],
+      "items": [
+        {
+          "type": "image",
+          "label": "Pussel",
+          "image": "archive-finds/1976-unknown-canned-heat-puzzle/canned-heat-puzzle.jpg",
+          "transcription": "Ett hemmagjort pussel tillverkat av en bild från förpackningen till en Revell-byggsats. Motivet föreställer den gula fantasibilen \"Canned Heat\". Bilden har klippts i ett antal oregelbundna pusselbitar.",
+          "description": ""
+        }
+      ]
     }
   ]
 }
