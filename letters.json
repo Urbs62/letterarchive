@@ -3957,6 +3957,62 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1974-unknown-cycle-path-map",
+      "type": "artifact",
+      "title": "Karta över cykelstigar",
+      "date": "Tidigt 1970-tal",
+      "dateLabel": "Tidigt 1970-tal",
+      "sortDate": "1974-12-31",
+      "archiveYear": "1974",
+      "from": "",
+      "to": "",
+      "fromPlace": "",
+      "toPlace": "",
+      "folder": "archive-finds/1974-unknown-cycle-path-map/",
+      "metadata": [
+        {
+          "label": "Datum",
+          "value": "Tidigt 1970-tal"
+        },
+        {
+          "label": "Typ",
+          "value": "Arkivfynd"
+        },
+        {
+          "label": "Upphovsman",
+          "value": "Okänd"
+        }
+      ],
+      "summary": "Handritad karta över de stigar och småvägar där Urban och Ulf brukade cykla när de lekte hos farmor och farfar. Kartan visar den egna namngivning de hade på olika delar av området.",
+      "sections": [
+        {
+          "title": "Sammanfattning",
+          "content": "Handritad karta över de stigar och småvägar där Urban och Ulf brukade cykla när de lekte hos farmor och farfar. Kartan visar den egna namngivning de hade på olika delar av området."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Kartan dokumenterar den egna geografi som växte fram kring Urban och Ulfs cykling hos farmor och farfar. Stigar och småvägar har fått namn som ARTHURGATAN, LINNEASTIGEN, BROGATAN, TALLSTIGEN, GRANSTIGEN, ORMSTIGEN, DIKVÄGEN, BJÖRNGATAN och KOTTVÄGEN. Även beteckningen F-90 finns på kartan.\n\nNamnen blandar vanliga gat- och stigformer med mer lokala och lekfulla beteckningar och visar hur väl området var känt för dem. Kartan blir därmed inte bara en vägbeskrivning utan också en dokumentation av en liten egen namngiven värld kring barndomens cykling.\n\nKartans datum och upphovsman är okända. Urban minns den som tidig, sannolikt från början av 1970-talet, och har en minnesbild av att någon annan kan ha gjort kartan åt honom och Ulf.\n\nI den bevarade korrespondensen har ingen direkt hänvisning till just kartan hittats. Däremot skriver Urban den 1 juli 1975 om att cykla i skogen hos farmor, vilket belägger cyklingen i samma miljö men inte daterar kartan."
+        },
+        {
+          "title": "Personer",
+          "content": "**Urban Sandlund** – använde stigarna och vägarna tillsammans med Ulf.\n\n**Ulf Sandlund** – Urbans kusin och lekkamrat; cyklade tillsammans med Urban i området."
+        },
+        {
+          "title": "Platser",
+          "content": "**Farmor och farfars hemtrakter** – området som kartan avbildar och där Urban och Ulf brukade cykla."
+        }
+      ],
+      "items": [
+        {
+          "type": "image",
+          "label": "Karta",
+          "image": "archive-finds/1974-unknown-cycle-path-map/cycle-path-map.jpg",
+          "transcription": "Handritad karta på rutat papper över stigar och vägar i området kring farmor och farfars hus.\n\nNamn och beteckningar som går att läsa på kartan:\n\n- ARTHURGATAN\n- LINNEASTIGEN\n- BROGATAN\n- TALLSTIGEN\n- GRANSTIGEN\n- ORMSTIGEN\n- F-90\n- DIKVÄGEN\n- BJÖRNGATAN\n- KOTTVÄGEN",
+          "description": ""
+        }
+      ]
     }
   ]
 }
