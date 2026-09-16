@@ -4013,6 +4013,62 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1977-skyltsöndag-farmor-hälsning",
+      "type": "artifact",
+      "title": "Hälsning från farmor",
+      "date": "Skyltsöndagen 1977",
+      "dateLabel": "Skyltsöndagen 1977",
+      "sortDate": "1977-12-31",
+      "archiveYear": "1977",
+      "from": "",
+      "to": "Ulf Sandlund",
+      "fromPlace": "",
+      "toPlace": "",
+      "folder": "archive-finds/1977-skyltsöndag-farmor-hälsning/",
+      "metadata": [
+        {
+          "label": "Datum",
+          "value": "Skyltsöndagen 1977"
+        },
+        {
+          "label": "Typ",
+          "value": "Arkivfynd"
+        },
+        {
+          "label": "Upphovsman",
+          "value": "Farmor"
+        },
+        {
+          "label": "Mottagare",
+          "value": "Ulf Sandlund"
+        }
+      ],
+      "summary": "Farmor ber Ulf att beställa ett kort åt henne och farfar Arthur. Lappen gavs till Urban på skyltsöndagen 1977 för att vidarebefordras till Ulf.",
+      "sections": [
+        {
+          "title": "Sammanfattning",
+          "content": "Farmor ber Ulf att beställa ett kort åt henne och farfar Arthur. Lappen gavs till Urban på skyltsöndagen 1977 för att vidarebefordras till Ulf."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Huvudtexten är skriven av farmor. Med \"oss\" avser hon sig själv och farfar Arthur.\n\nUrban har senare lagt till: \"P.S. Detta fick jag av farmor på skyltsöndag -77 / skäms Urban\". Anteckningen visar när han fick lappen och antyder samtidigt att han dröjde med att vidarebefordra den.\n\nUrban minns idag att lappen sannolikt inte skickades till Ulf förrän någon gång under 1978. Något exakt datum för vidarebefordran är inte känt. Fyndet dateras därför efter den dokumenterade uppgiften på själva lappen: skyltsöndagen 1977.\n\nLappen bevarar också tre led i familjens kommunikation: farmor skriver till Ulf, lämnar meddelandet till Urban för vidarebefordran och Urban lägger senare till sin egen självkritiska kommentar."
+        },
+        {
+          "title": "Personer",
+          "content": "**Farmor** – Urban och Ulfs farmor; skrev lappen och bad Ulf beställa ett kort åt henne och farfar.\n\n**Arthur** – Urban och Ulfs farfar; den andre personen som avses med farmors \"oss\".\n\n**Urban Sandlund** – fick lappen av farmor på skyltsöndagen 1977 för att vidarebefordra den och skrev senare tillägget \"skäms Urban\".\n\n**Ulf Sandlund** – lappens mottagare och den som ombeds beställa kortet."
+        }
+      ],
+      "items": [
+        {
+          "type": "image",
+          "label": "Lapp",
+          "image": "archive-finds/1977-skyltsöndag-farmor-hälsning/farmor-halsning.jpg",
+          "transcription": "Snälla Ulf! Beställ ett kort åt oss\när du.\n\nTack på förhand\n\nFarmor\n\nP.S. Detta fick jag av farmor på skyltsöndag -77\nskäms Urban",
+          "description": ""
+        }
+      ]
     }
   ]
 }
