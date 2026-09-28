@@ -4057,6 +4057,54 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "197x-agfamatic-kamera",
+      "type": "artifact",
+      "title": "Agfamatic-kamera",
+      "date": "Okänt",
+      "dateLabel": "Okänt",
+      "sortDate": null,
+      "archiveYear": null,
+      "from": "",
+      "to": "",
+      "fromPlace": "",
+      "toPlace": "",
+      "folder": "archive-finds/197x-agfamatic-kamera/",
+      "metadata": [
+        {
+          "label": "Datum",
+          "value": "Okänt"
+        },
+        {
+          "label": "Typ",
+          "value": "Arkivfynd"
+        }
+      ],
+      "summary": "Bevarad Agfamatic-kamera från Urbans ungdomstid.",
+      "sections": [
+        {
+          "title": "Sammanfattning",
+          "content": "Bevarad Agfamatic-kamera från Urbans ungdomstid."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Fotografering förekommer återkommande i korrespondensen mellan Urban och Ulf. Kameran är ett bevarat föremål från samma period och ger en konkret koppling till det fotointresse som förekommer i breven.\n\nAgfamatic-seriens små pocketkameror var gjorda för 110-film och var enkla att bära med sig.\n\nAtt kameran finns kvar tillsammans med annat material från perioden gör den till ett konkret föremål från den miljö som dokumenteras i brevarkivet."
+        },
+        {
+          "title": "Personer",
+          "content": "Urban Sandlund – kamerans ägare och användare."
+        }
+      ],
+      "items": [
+        {
+          "type": "image",
+          "label": "Bild",
+          "image": "archive-finds/197x-agfamatic-kamera/agfamatic-2000.jpg",
+          "transcription": "",
+          "description": "Agfa Agfamatic 2000 Pocket Sensor, en kompakt kamera för 110-film.\n\nKameran tillhörde Urban och användes under ungdomsåren. Den finns fortfarande bevarad."
+        }
+      ]
     }
   ]
 }
