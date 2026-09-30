@@ -7,8 +7,8 @@
   --line: #d8cebd;
   --accent: #77513d;
   --accent-dark: #563828;
-  --direction-urban-to-ulf: #8aa7bd;
-  --direction-ulf-to-urban: #aa98b8;
+  --direction-urban-to-ulf: #587f9d;
+  --direction-ulf-to-urban: #89679f;
   --shadow: 0 18px 44px rgba(61, 47, 34, 0.09);
   font-family: Georgia, "Times New Roman", serif;
 }
@@ -161,6 +161,34 @@ button:focus-visible {
   gap: 2rem;
 }
 
+.year-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.year-chevron {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.year-toggle[aria-expanded="true"] .year-chevron {
+  transform: rotate(45deg);
+}
+
+.letter-grid[hidden] {
+  display: none;
+}
+
 .letter-card {
   overflow: hidden;
   background: var(--paper-light);
@@ -171,12 +199,12 @@ button:focus-visible {
 
 .letter-card.urban-to-ulf {
   border-color: var(--direction-urban-to-ulf);
-  border-left-width: 3px;
+  border-width: 3px;
 }
 
 .letter-card.ulf-to-urban {
   border-color: var(--direction-ulf-to-urban);
-  border-left-width: 3px;
+  border-width: 3px;
 }
 
 .letter-view.urban-to-ulf {
@@ -368,6 +396,37 @@ button:focus-visible {
 
 .letter-collapsible-section {
   padding: 0;
+}
+
+.preserved-object {
+  width: 100%;
+}
+
+.preserved-object-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.preserved-object-content > div {
+  flex: 1 1 14rem;
+}
+
+.preserved-object h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.preserved-object .original-frame {
+  flex: 0 0 auto;
+  width: 7rem;
+  padding: 0.35rem;
+}
+
+.preserved-object .original-frame img {
+  height: 7rem;
 }
 
 .letter-collapsible-toggle {

@@ -609,8 +609,8 @@
       "from": "Urban",
       "to": "Ulf",
       "senderAge": 11,
-      "type": "handwritten",
-      "summary": "Detta brev är skrivet den 17 september 1974 och präglas av Urbans karakteristiska blandning av humor, fantasi och vardagsberättelser.\n\nBrevet inleds med ett skämtsamt försök att skriva på pitemål innan Urban övergår till vanlig svenska. Den största delen handlar om familjens katt Frasse, som beskrivs som en blivande astronom och vetenskapsman. Med hjälp av teckningar berättar Urban hur Frasse sitter på taket och studerar stjärnhimlen, undersöker världen genom att titta, lyssna, smaka och känna på vatten samt har fått en ny kattkompis, Putte.\n\nI den andra delen berättar Urban om skolans friluftsdag där hans volleybollag vann tre av fyra matcher. Han visar även med ritningar hur han möblerat om sitt rum och utmanar Ulf att hitta ett tredje sätt att placera möblerna. Brevet avslutas med kommentarer om ett fysikprov, flera humoristiska post scriptum och en hälsning till Torbjörn.\n\nBreven visar tydligt hur Urban vid tolv års ålder gärna blandade berättelser, ordvitsar, dialekt, illustrationer och små uppgifter till mottagaren för att göra breven underhållande.",
+      "type": "letter",
+      "summary": "Urban berättar framför allt om katten Frasse, som i brevet får rollen som astronom och vetenskapsman, och om hans nye kattkompis Putte. Han skriver också om en friluftsdag med volleyboll, ommöbleringen av sitt rum och ett fysikprov. Brevet är lekfullt och rikt illustrerat, med skämt, dialekt och små uppgifter riktade till Ulf.",
       "items": [
         {
           "type": "envelope-front",
@@ -631,7 +631,7 @@
           "page": 1,
           "label": "Sida 1",
           "image": "letters/1974/1974-09-17/page-01.jpg",
-          "transcription": "Hej! längeeda man skrev.\n\nHoppes ni må bra denja, ner i\nSverige. Under du varför je skriv\nsöjna? Ja he, kan man fråg se.\n\nNe, allvarlig(t) talat. Hej som vanligt,\nsom vanligt, o.s.v. Först ska jag tala om att\nFrasse (hoppas du inte glömt bort honom) har blivit\nen astronom och en vetenskapsman. Han\nsitter på taket och tittar på stjärnor.\nHan tittar när det droppar i tvättstället.\nUndersöker: tittar, lyssnar, smakar,\nkänner på vattnet. När Frasse var\nmindre brukade jag fråga honom\nvad han ska bli då, sa\nhan, jägare i Lingon-\nskogen. Nu vill han\nbli amerikansk rymd-\nforskare. Frasse har\nfått en kompis.\nPutte, en liten\ntuff bondkatt\nsom troligen\ninte har\nnågot\nhem.\n\nPutte ska bli en Kock.\n\nNog med Katter för idag.",
+          "transcription": "Hej! längeeda man skrev.\n\nHoppes ni må bra denja, ner i Sverige.\nUnder du varför je skriv söjna? Ja he, kan man fråg se.\n\nNe, allvarlig(t) talat. Hej som vanligt, som vanligt, o.s.v.\nFörst ska jag tala om att Frasse (hoppas du inte glömt bort honom)\nhar blivit en astronom och en vetenskapsman.\nHan sitter på taket och tittar på stjärnor. Han tittar när det\ndroppar i tvättstället.\nUndersöker: tittar, lyssnar, smakar, känner på vattnet.\nNär Frasse var mindre brukade jag fråga honom vad han ska bli\ndå, sa han, jägare i Lingon-skogen. Nu vill han bli amerikansk rymd-forskare.\nFrasse har fått en kompis. Putte, en liten tuff bondkatt som troligen\ninte har något hem. Putte ska bli en Kock.\n\nNog med Katter för idag.",
           "description": "Illustrationer på sidan:\n\nKarlavagnen.\nFrasse på taket som tittar mot Karlavagnen.\nTeckning av Frasse bredvid ett tvättställ med droppande \"blup blup\".\nPutte."
         },
         {
@@ -639,8 +639,24 @@
           "page": 2,
           "label": "Sida 2",
           "image": "letters/1974/1974-09-17/page-02.jpg",
-          "transcription": "Jag hinner\ninte (uppehåll, satans katt dra inte iväg\npennan) skriva på grund av\nläxor. För en vecka sen hade vi en\nfriluftsdag, jag valde volleyboll. Vårat lag\nvann 3 av 4 matcher alltså 3 fjärdedelar.\nEftersom din mamma vill veta vad det\när för vinster så vet jag inte de. Men\nalltid ska jag väl kunna kamma ihop\nnåt pris men du vet ju mitt hår.\n\nIdag har jag möblerat om i mitt rum\nså här ser det ut. Nu ska du hitta\npå ett tredje sätt att\nmöblera. Här får du veta måtten.\n\n(Tre skisser över rummet med mått.)\n\nRum: ca 2,3 × 2,75 m\nSäng: 2 m\nFönster markerat\nSkiss med sängens mått: 1,80 m\n(80 cm + 1 m + 40 cm)\n\nIdag hade vi prov i Fysik. Det gick\nbrrrrrrrrrrrrrrrrrrrrrraaaaaaaaa.\n\nHej då från mej till dej.\n\nUrban Sandlund\n\nP.S. Tips till katt-tävlingen.\nFrasses öra är 4,2 cm.\n\nP.S. Hoppes du kan\nläsa och förstå brevet lite konstigt\nmen i skrev he på 25 min.\n\nP.S. Hälsa TORBJÖRN från alla.\n\nTJING",
+          "transcription": "Jag hinner inte (uppehåll, satans katt dra inte iväg pennan) skriva på grund av\nläxor. För en vecka sen hade vi en friluftsdag, jag valde volleyboll. Vårat lag\nvann 3 av 4 matcher alltså 3 fjärdedelar.\n\nEftersom din mamma vill veta vad det är för vinster så vet jag inte de.\nMen alltid ska jag väl kunna kamma ihop nåt pris men du vet ju mitt hår.\n\nIdag har jag möblerat om i mitt rum så här ser det ut. Nu ska du hitta\npå ett tredje sätt att möblera. Här får du veta måtten.\n\n**(Tre skisser över rummet med mått.)**\n\n- Rum: ca 2,3 × 2,75 m\n- Säng: 2 m\n- Fönster markerat\n- Skiss med sängens mått: 1,80 m\n  (80 cm + 1 m + 40 cm)\n\nIdag hade vi prov i Fysik. Det gick\nbrrrrrrrrrrrrrrrrrrrrrraaaaaaaaa.\n\nHej då från mej till dej.\n\nUrban Sandlund\n\nP.S. Tips till katt-tävlingen. Frasses öra är 4,2 cm.\n\nP.S. Hoppes du kan läsa och förstå brevet lite konstigt\nmen i skrev he på 25 min.\n\nP.S. Hälsa TORBJÖRN från alla.\n\nTJING",
           "description": "Illustrationer på sidan:\n\nCirkel som visar att laget vann tre fjärdedelar av sina matcher (75 % markerat, en fjärdedel omarkerad).\nTre skisser som visar hur rummet möblerats, med mått och ett uppdrag till Ulf att hitta ett tredje sätt att möblera."
+        }
+      ],
+      "writingType": "handwritten",
+      "postmarked": "1974-09-17",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "- Frasse får en tydlig personlighet och en egen fantasivärld: från tidigare planer på att bli ”jägare i Lingon-skogen” till att nu vilja bli amerikansk rymdforskare.\n- Text och teckningar samspelar genom hela brevet, bland annat med Frasse på taket, Karlavagnen, volleybollresultatet och skisserna över Urbans rum.\n- Urban gör Ulf delaktig i brevet genom att be honom hitta ett tredje sätt att möblera rummet och genom tipset om Frasses öronmått till en ”katt-tävling”.\n- Brevet är skrivet snabbt och spontant; Urban uppger själv att det tog 25 minuter och kommenterar samtidigt läxor och katten som försöker dra iväg pennan.\n- Inledningen på pitemål, ordlekarna och de många post scriptum-delarna ger brevet en tydligt lekfull form."
+        },
+        {
+          "title": "Personer",
+          "content": "- **Urban Sandlund** – brevets avsändare.\n- **Ulf Sandlund** – brevets mottagare och Urbans kusin.\n- **Torbjörn** – vän till Ulf som Urban ber honom hälsa till."
+        },
+        {
+          "title": "Djur",
+          "content": "- **Frasse** – familjens katt och en central figur i brevet, där Urban skämtsamt beskriver honom som astronom och vetenskapsman.\n- **Putte** – en liten bondkatt som blivit kompis med Frasse och som Urban skriver troligen saknar hem."
         }
       ]
     },

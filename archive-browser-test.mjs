@@ -1,7 +1,7 @@
 // Real browser smoke test, using Chrome's DevTools pipe; no npm dependencies.
 import { spawn } from "node:child_process";
 import { createServer } from "node:http";
-import { readFile, mkdtemp } from "node:fs/promises";
+import { readFile, mkdtemp, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import assert from "node:assert/strict";
@@ -63,6 +63,102 @@ try {
   }
   if (!ready) throw new Error(await evaluate(`document.documentElement.outerHTML`));
   console.log('Archive loaded');
+  await cdp('Page.bringToFront', {}, sessionId);
+  for (const width of [1280, 390]) {
+    await cdp("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 }, sessionId);
+    await cdp('Page.reload', {}, sessionId);
+    await new Promise(resolve => setTimeout(resolve, 200));
+    for (let attempt = 0; attempt < 50 && !await evaluate(`!!document.querySelector('.year-toggle')`); attempt++) await new Promise(resolve => setTimeout(resolve, 100));
+    assert.equal(await evaluate(`[...document.querySelectorAll('.year-group')].every(group => {
+      const grid = group.querySelector('.letter-grid');
+      return grid.hidden && getComputedStyle(grid).display === 'none' && group.querySelector('button').getAttribute('aria-expanded') === 'false';
+    })`), true);
+    const collapsedScreenshot = await cdp('Page.captureScreenshot', { format: 'png' }, sessionId);
+    await writeFile(path.join(profile, `collapsed-${width}.png`), Buffer.from(collapsedScreenshot.data, 'base64'));
+    await evaluate(`document.querySelectorAll('.year-toggle').forEach(toggle => toggle.click())`);
+    const overview = await evaluate(`(() => {
+      const groups = [...document.querySelectorAll('.year-group')];
+      if (groups.length < 3) throw new Error('Expected several years');
+      const links = [...document.querySelectorAll('.open-letter')].map(a => a.getAttribute('href'));
+      for (const group of groups.slice(0, 3)) {
+        const toggle = group.querySelector('button');
+        const grid = group.querySelector('.letter-grid');
+        if (grid.hidden || toggle.getAttribute('aria-controls') !== grid.id) throw new Error('Initial state or control association');
+        toggle.click();
+        if (!grid.hidden || getComputedStyle(grid).display !== 'none' || toggle.getAttribute('aria-expanded') !== 'false') throw new Error('Collapse');
+        toggle.click();
+        if (grid.hidden || toggle.getAttribute('aria-expanded') !== 'true') throw new Error('Expand');
+      }
+      if (JSON.stringify(links) !== JSON.stringify([...document.querySelectorAll('.open-letter')].map(a => a.getAttribute('href')))) throw new Error('Links changed');
+      const borders = ['urban-to-ulf', 'ulf-to-urban'].map(direction => {
+        const cards = [...document.querySelectorAll('.letter-card.' + direction)];
+        if (!cards.length) throw new Error('Missing direction ' + direction);
+        for (const card of cards) {
+          const style = getComputedStyle(card);
+          if (['Top', 'Right', 'Bottom', 'Left'].some(side => style['border' + side + 'Width'] !== '3px')) throw new Error('Border width');
+        }
+        return getComputedStyle(cards[0]).borderColor;
+      });
+      if (borders[0] === borders[1]) throw new Error('Direction colors identical');
+      if (document.documentElement.scrollWidth > innerWidth) throw new Error('Horizontal overflow');
+      groups[0].querySelector('button').focus();
+      return { years: groups.length, items: links.length, borders };
+    })()`);
+    await cdp('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Enter', code: 'Enter', text: '\r', windowsVirtualKeyCode: 13 }, sessionId);
+    await cdp('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Enter', code: 'Enter', windowsVirtualKeyCode: 13 }, sessionId);
+    assert.equal(await evaluate(`document.querySelector('.letter-grid').hidden`), true);
+    await evaluate(`document.querySelectorAll('.year-group')[1].querySelector('.open-letter').click()`);
+    for (let attempt = 0; attempt < 50 && !await evaluate(`!!document.querySelector('.back-link')`); attempt++) await new Promise(resolve => setTimeout(resolve, 100));
+    assert.equal(await evaluate(`!!document.querySelector('.original-frame')`), true);
+    await evaluate(`document.querySelector('.back-link').click()`);
+    for (let attempt = 0; attempt < 50 && !await evaluate(`!!document.querySelector('.year-toggle')`); attempt++) await new Promise(resolve => setTimeout(resolve, 100));
+    assert.equal(await evaluate(`document.querySelector('.letter-grid').hidden`), true);
+    await evaluate(`document.querySelector('.year-toggle').click()`);
+    await evaluate(`document.querySelector('.year-group').scrollIntoView({ behavior: 'instant' })`);
+    const screenshot = await cdp('Page.captureScreenshot', { format: 'png' }, sessionId);
+    await writeFile(path.join(profile, `overview-${width}.png`), Buffer.from(screenshot.data, 'base64'));
+    console.log('Overview passed:', width, overview);
+  }
+  for (const width of [1280, 390]) {
+    await cdp('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 }, sessionId);
+    for (const id of ['1972-12-10', '1974-09-17']) {
+    await evaluate(`(async () => {
+      const letter = letters.find(letter => letter.id === '${id}');
+      const unchanged = JSON.stringify(letter);
+      renderLetter(letter);
+      const reference = document.querySelector('.preserved-object');
+      const isSafe = letter.id === '1972-12-10';
+      if (reference.querySelector('h2').textContent !== (isSafe ? 'Bevarat föremål' : 'Personer i brevet')) throw new Error('Reference heading');
+      if (reference.querySelector('h3').textContent !== (isSafe ? 'Barnkassaskåp – Junior-Safe' : 'Urban och Frasse')) throw new Error('Reference title');
+      if (!reference || reference.nextElementSibling.querySelector('summary').textContent !== 'Sammanfattning') throw new Error('Reference placement');
+      const thumbnail = reference.querySelector('img');
+      if (!thumbnail.getAttribute('src').endsWith(isSafe ? '/artifact-junior-safe.jpg' : '/urban-frasse.jpg')) throw new Error('Reference image');
+      await thumbnail.decode();
+      if (!thumbnail.naturalWidth || thumbnail.getBoundingClientRect().width > 112) throw new Error('Thumbnail size or image');
+      document.querySelector('#transcription-tab').click();
+      while (activeLetter.items[activeImageIndex].type !== 'page') moveImage(1);
+      if (document.querySelector('.transcription-text').textContent !== letter.items[activeImageIndex].transcription) throw new Error('Transcription changed');
+      const button = reference.querySelector('button');
+      button.focus(); button.click();
+      await viewerContent.querySelector('img').decode();
+      if (viewer.hidden || viewerContent.querySelector('img').getAttribute('src') !== thumbnail.getAttribute('src')) throw new Error('Enlargement');
+      closeViewer();
+      if (!viewer.hidden || document.activeElement !== button) throw new Error('Viewer close or focus');
+      if (JSON.stringify(letter) !== unchanged) throw new Error('Letter data changed');
+      if (document.documentElement.scrollWidth > innerWidth) throw new Error('Reference overflow');
+    })()`);
+    await evaluate(`new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))`);
+    await evaluate(`document.querySelector('.preserved-object').scrollIntoView({ behavior: 'instant', block: 'center' })`);
+    const screenshot = await cdp('Page.captureScreenshot', { format: 'png' }, sessionId);
+    await writeFile(path.join(profile, `context-${id}-${width}.png`), Buffer.from(screenshot.data, 'base64'));
+    }
+    await evaluate(`for (const letter of letters.filter(letter => !['1972-12-10', '1974-09-17'].includes(letter.id))) {
+      renderLetter(letter);
+      if (document.querySelector('.preserved-object')) throw new Error('Reference on another letter');
+    }
+    renderArchive();`);
+    console.log('Both contextual images passed:', width);
+  }
   const results = await evaluate(`(async () => {
     const checks = [];
     function check(value, label) { if (!value) throw new Error(label); checks.push(label); }

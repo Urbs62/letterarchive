@@ -79,6 +79,7 @@ let activeImageIndex = 0;
 let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
+const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
   day: "numeric",
@@ -247,12 +248,21 @@ function renderArchive() {
 
   [...byYear.entries()]
     .sort(([a], [b]) => a.localeCompare(b))
-    .forEach(([year, yearLetters]) => {
+    .forEach(([year, yearLetters], yearIndex) => {
       const yearSection = document.createElement("section");
       yearSection.className = "year-group";
-      yearSection.innerHTML = `<h2><span>${year}</span></h2>`;
+      yearSection.innerHTML = `<h2><button class="year-toggle" type="button" aria-expanded="${!collapsedArchiveYears.has(year)}" aria-controls="archive-year-${yearIndex}"><span>${escapeHtml(year)}</span><span class="year-chevron" aria-hidden="true"></span></button></h2>`;
       const grid = document.createElement("div");
       grid.className = "letter-grid";
+      grid.id = `archive-year-${yearIndex}`;
+      grid.hidden = collapsedArchiveYears.has(year);
+      const toggle = yearSection.querySelector(".year-toggle");
+      toggle.addEventListener("click", () => {
+        grid.hidden = !grid.hidden;
+        toggle.setAttribute("aria-expanded", String(!grid.hidden));
+        if (grid.hidden) collapsedArchiveYears.add(year);
+        else collapsedArchiveYears.delete(year);
+      });
 
       yearLetters
         .sort((a, b) => sortValue(a).localeCompare(sortValue(b)))
@@ -636,6 +646,35 @@ function renderLetter(letter) {
   `;
   view.append(navigation);
 
+  // Two isolated contextual-image experiments, sharing the same presentation.
+  if (letter.id === "1972-12-10" || letter.id === "1974-09-17") {
+    const isSafe = letter.id === "1972-12-10";
+    const heading = isSafe ? "Bevarat föremål" : "Personer i brevet";
+    const title = isSafe ? "Barnkassaskåp – Junior-Safe" : "Urban och Frasse";
+    const text = isSafe
+      ? "Kassaskåpet som Urban skriver om i brevet finns fortfarande bevarat."
+      : "Urban och Frasse, fotograferade under samma period som brevet skrevs.";
+    const reference = document.createElement("section");
+    reference.className = "letter-summary preserved-object";
+    reference.setAttribute("aria-labelledby", "preserved-object-heading");
+    reference.innerHTML = `
+      <h2 id="preserved-object-heading">${heading}</h2>
+      <div class="preserved-object-content">
+        <div>
+          <h3>${title}</h3>
+          <p>${text}</p>
+        </div>
+      </div>
+    `;
+    reference.querySelector(".preserved-object-content").prepend(createOriginalImage({
+      label: title,
+      image: isSafe
+        ? "letters/1972/1972-12-10/artifact-junior-safe.jpg"
+        : "letters/1974/1974-09-17/urban-frasse.jpg"
+    }));
+    view.append(reference);
+  }
+
   if (letter.type === "artifact" && letter.metadata?.length) {
     view.append(createCollapsibleSection("Arkivuppgifter", letter.metadata.map(({ label, value }) => `${label}: ${value}`).join("\n"), false));
   }
@@ -714,6 +753,7 @@ async function loadArchive() {
     if (!response.ok) throw new Error("Kunde inte läsa letters.json");
     const data = await response.json();
     letters = data.letters.map(normalizeLetter);
+    letters.forEach(letter => collapsedArchiveYears.add(archiveYear(letter)));
     handleRoute();
   } catch (error) {
     app.innerHTML = `
