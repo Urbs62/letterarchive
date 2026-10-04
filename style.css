@@ -671,6 +671,114 @@ button:focus-visible {
   margin-top: 1.5rem;
 }
 
+/* Isolated continuous reader; existing paper, ink and rule colors. */
+.continuous-reading .original-panel,
+.continuous-reading .transcription-panel {
+  width: 100%;
+  min-width: 0;
+}
+
+.continuous-original-page + .continuous-original-page {
+  margin-top: 2.5rem;
+}
+
+.continuous-reading .original-stage > .continuous-original-page .original-frame img {
+  height: auto;
+  max-height: none;
+}
+
+.continuous-reading .original-frame {
+  padding: clamp(0.4rem, 2vw, 1.2rem);
+}
+
+.continuous-document .continuous-text-page > h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.75rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.continuous-document .continuous-text-page:first-child > h2 {
+  margin-top: 0;
+}
+
+.continuous-document .continuous-text-page > h2::before,
+.continuous-document .continuous-text-page > h2::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--line);
+}
+
+.continuous-document .item-transcription > h3 {
+  display: none;
+}
+
+.continuous-document .item-transcription {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.continuous-page-description {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.continuous-page-description > summary {
+  cursor: pointer;
+}
+
+.continuous-reading .transcription-text {
+  overflow-wrap: anywhere;
+}
+
+.continuous-paragraph {
+  display: block;
+  white-space: normal;
+}
+
+.continuous-paragraph + .continuous-paragraph {
+  margin-top: 1em;
+}
+
+.continuous-document .inline-context-photo {
+  max-width: 28rem;
+  margin: 1.25rem 0;
+  padding: 1rem;
+}
+
+.continuous-document .inline-context-photo h2 {
+  margin: 0 0 0.65rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.continuous-document .inline-context-photo .preserved-object-content > div {
+  flex-basis: 12rem;
+}
+
+.continuous-document .inline-context-photo p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.continuous-material {
+  margin-top: 2rem;
+}
+
+.continuous-material > summary {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.continuous-material[open] > summary {
+  margin-bottom: 1.5rem;
+}
+
 .transcription-page h2 {
   margin: 0 0 1.5rem;
   color: var(--accent);

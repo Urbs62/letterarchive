@@ -130,14 +130,23 @@ try {
       const isSafe = letter.id === '1972-12-10';
       if (reference.querySelector('h2').textContent !== (isSafe ? 'Bevarat föremål' : 'Personer i brevet')) throw new Error('Reference heading');
       if (reference.querySelector('h3').textContent !== (isSafe ? 'Barnkassaskåp – Junior-Safe' : 'Urban och Frasse')) throw new Error('Reference title');
-      if (!reference || reference.nextElementSibling.querySelector('summary').textContent !== 'Sammanfattning') throw new Error('Reference placement');
+      if (isSafe ? reference.nextElementSibling.querySelector('summary').textContent !== 'Sammanfattning' :
+        !reference.closest('.continuous-text-page') || reference.nextElementSibling.textContent.trim() !== 'Nog med Katter för idag.') throw new Error('Reference placement');
+      document.querySelector('#transcription-tab').click();
       const thumbnail = reference.querySelector('img');
       if (!thumbnail.getAttribute('src').endsWith(isSafe ? '/artifact-junior-safe.jpg' : '/urban-frasse.jpg')) throw new Error('Reference image');
       await thumbnail.decode();
       if (!thumbnail.naturalWidth || thumbnail.getBoundingClientRect().width > 112) throw new Error('Thumbnail size or image');
       document.querySelector('#transcription-tab').click();
-      while (activeLetter.items[activeImageIndex].type !== 'page') moveImage(1);
-      if (document.querySelector('.transcription-text').textContent !== letter.items[activeImageIndex].transcription) throw new Error('Transcription changed');
+      if (document.querySelector('.continuous-reading')) {
+        const pages = letter.items.filter(item => item.type === 'page');
+        const texts = [...document.querySelectorAll('.continuous-document .continuous-text-page')]
+          .map(page => [...page.querySelectorAll('.transcription-text')].map(text => text.textContent).join(''));
+        if (JSON.stringify(texts) !== JSON.stringify(pages.map(page => page.transcription))) throw new Error('Continuous transcription changed');
+      } else {
+        while (activeLetter.items[activeImageIndex].type !== 'page') moveImage(1);
+        if (document.querySelector('.transcription-text').textContent !== letter.items[activeImageIndex].transcription) throw new Error('Transcription changed');
+      }
       const button = reference.querySelector('button');
       button.focus(); button.click();
       await viewerContent.querySelector('img').decode();

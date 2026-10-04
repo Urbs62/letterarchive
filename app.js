@@ -79,6 +79,8 @@ let activeImageIndex = 0;
 let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
+// Reading experiment: keep this isolated until the prototype is reviewed.
+const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -415,6 +417,7 @@ function createItemHeading(item) {
 
 function moveImage(direction) {
   if (!activeLetter) return;
+  if (continuousReadingLetterIds.has(activeLetter.id)) return;
   const nextIndex = activeImageIndex + direction;
   if (nextIndex < 0 || nextIndex >= activeLetter.items.length) return;
   activeImageIndex = nextIndex;
@@ -429,8 +432,7 @@ function createTranscription() {
   return panel;
 }
 
-function updateTranscription(item) {
-  const article = app.querySelector(".transcription-page");
+function updateTranscription(item, article = app.querySelector(".transcription-page")) {
   article.replaceChildren();
 
   const heading = document.createElement("h2");
@@ -598,6 +600,84 @@ function appendAdditionalSections(view, letter) {
   });
 }
 
+function renderContinuousLetter(letter, view) {
+  view.classList.add("continuous-reading");
+  view.querySelector(".image-navigation").remove();
+  const originals = view.querySelector(".original-stage");
+  const text = view.querySelector(".transcription-page");
+  text.classList.add("continuous-document");
+  const pages = letter.items.filter(item => item.type === "page");
+  const otherItems = letter.items.filter(item => item.type !== "page");
+
+  function appendItem(item, originalTarget, textTarget) {
+    const original = document.createElement("section");
+    original.className = "continuous-original-page";
+    original.append(createItemHeading(item), createOriginalImage(item));
+    for (const image of item.relatedImages || []) original.append(createRelatedImage(image));
+    originalTarget.append(original);
+    const transcription = document.createElement("section");
+    transcription.className = "continuous-text-page";
+    updateTranscription(item, transcription);
+    if (item.type === "page") {
+      // Reflow physical line endings while keeping the exact source text in
+      // the DOM, including paragraph breaks and transcription annotations.
+      transcription.querySelectorAll(".transcription-text").forEach(text => {
+        const paragraphs = text.textContent.match(/[^]+?(?:\n\s*\n|$)/g) || [];
+        text.replaceChildren(...paragraphs.map(content => {
+          const paragraph = document.createElement("span");
+          paragraph.className = "continuous-paragraph";
+          paragraph.textContent = content;
+          return paragraph;
+        }));
+      });
+      const description = transcription.querySelector(".item-description");
+      if (description) {
+        const details = document.createElement("details");
+        details.className = "continuous-page-description";
+        const summary = document.createElement("summary");
+        summary.textContent = "Beskrivning av sidan";
+        details.append(summary, description);
+        transcription.append(details);
+      }
+    }
+    textTarget.append(transcription);
+  }
+
+  pages.forEach(item => appendItem(item, originals, text));
+  if (letter.id === "1974-09-17") {
+    const reference = view.querySelector(".preserved-object");
+    const closingParagraph = [...text.querySelectorAll(".continuous-paragraph")]
+      .find(paragraph => paragraph.textContent.trim() === "Nog med Katter för idag.");
+    if (reference && closingParagraph) {
+      // Move only the rendered card, between complete source paragraphs.
+      // Keep caption text out of the transcription's text containers.
+      const before = closingParagraph.parentElement;
+      const after = document.createElement("p");
+      after.className = "transcription-text";
+      while (closingParagraph.nextSibling) after.append(closingParagraph.nextSibling);
+      after.prepend(closingParagraph);
+      reference.classList.add("inline-context-photo");
+      before.after(reference, after);
+    }
+  }
+  if (otherItems.length) {
+    const makeMaterial = () => {
+      const section = document.createElement("details");
+      section.className = "continuous-material";
+      const summary = document.createElement("summary");
+      summary.textContent = "Kuvert och övrigt material";
+      section.append(summary);
+      return section;
+    };
+    const originalMaterial = makeMaterial();
+    const textMaterial = makeMaterial();
+    textMaterial.classList.add("transcription-page");
+    otherItems.forEach(item => appendItem(item, originalMaterial, textMaterial));
+    view.querySelector("#original-panel").append(originalMaterial);
+    view.querySelector("#transcription-panel").append(textMaterial);
+  }
+}
+
 function renderLetter(letter) {
   activeLetter = letter;
   activeImageIndex = 0;
@@ -692,9 +772,14 @@ function renderLetter(letter) {
   view.querySelectorAll(".mode-tab").forEach((tab) => {
     tab.addEventListener("click", () => setMode(tab.id === "original-tab"));
   });
-  updateItem();
+  if (continuousReadingLetterIds.has(letter.id)) renderContinuousLetter(letter, view);
+  else updateItem();
   app.focus({ preventScroll: true });
-  requestAnimationFrame(() => window.scrollTo(0, 0));
+  requestAnimationFrame(() => window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: continuousReadingLetterIds.has(letter.id) ? "instant" : "auto"
+  }));
 }
 
 function setMode(showOriginal) {
@@ -726,7 +811,7 @@ function closeViewer() {
   viewer.hidden = true;
   viewerContent.replaceChildren();
   document.body.classList.remove("viewer-open");
-  lastFocusedElement?.focus();
+  lastFocusedElement?.focus({ preventScroll: true });
 }
 
 function handleRoute() {
