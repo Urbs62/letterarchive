@@ -4233,6 +4233,57 @@
           "description": ""
         }
       ]
+    },
+    {
+      "id": "1977-05-24",
+      "date": "1977-05-24",
+      "from": "Ulf Sandlund",
+      "to": "Urban Sandlund",
+      "senderAge": 15,
+      "type": "postcard",
+      "folder": "letters/1977/1977-05-24/",
+      "postmarked": "1977-05-24",
+      "fromPlace": "Mölndal",
+      "toPlace": "Piteå",
+      "summary": "Vykortet innehåller en skämtsam gratulation samt besked om att ett brev kommer inom kort. Ulf bjuder också in Urban att komma till honom under sommaren och lovar närmare information i brevet.",
+      "sections": [
+        {
+          "title": "Vykort",
+          "content": "Vykort gjort av en avriven kartongbit med handskriven text på framsidan.\n\n## Framsida\n\nGRATTIS\nDU DIN\nSTÄDADE\n\n## Baksida\n\nMÖLNDAL 1977-05-24\n\nHOPPAS ATT DETTA KOMMER\nFRAM I TID. BREVET — ¨ —  [nedflyttningstecken]\nI MORRON ELLER I ÖVERMORRON\n\nINBJUDAN: DU FÅR KOMMA\nTILL MEJ I SOMMAR. JAG SKICKAR\nNÄRMARE INFORMATION\nI BREVET!\n\nHej då din [överstruket/oläsligt]\n\nULF SANDLUND\nUlf Sandlund\n\n\nUrban Sandlund\nDegermansg. 3\n94100 PITEÅ 1\n\n\n[Klisterlapp med text: EXPRESS-UTDELNING EXPRÈS]"
+        },
+        {
+          "title": "Sammanfattning",
+          "content": "Vykortet innehåller en skämtsam gratulation samt besked om att ett brev kommer inom kort. Ulf bjuder också in Urban att komma till honom under sommaren och lovar närmare information i brevet."
+        },
+        {
+          "title": "Personer",
+          "content": "- Ulf Sandlund – avsändare och kusin till Urban Sandlund.\n- Urban Sandlund – mottagare och kusin till Ulf Sandlund."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "Vykortet är hemmagjort av en avriven kartongbit och har skickats med expressutdelning."
+        },
+        {
+          "title": "Platser",
+          "content": "- Mölndal – avsändarort.\n- Piteå – mottagarort."
+        }
+      ],
+      "items": [
+        {
+          "type": "front",
+          "label": "Front",
+          "image": "letters/1977/1977-05-24/postcard-front.jpeg",
+          "transcription": "",
+          "description": "GRATTIS\nDU DIN\nSTÄDADE"
+        },
+        {
+          "type": "back",
+          "label": "Back",
+          "image": "letters/1977/1977-05-24/postcard-back.jpeg",
+          "transcription": "",
+          "description": "MÖLNDAL 1977-05-24\n\nHOPPAS ATT DETTA KOMMER\nFRAM I TID. BREVET — ¨ —  [nedflyttningstecken]\nI MORRON ELLER I ÖVERMORRON\n\nINBJUDAN: DU FÅR KOMMA\nTILL MEJ I SOMMAR. JAG SKICKAR\nNÄRMARE INFORMATION\nI BREVET!\n\nHej då din [överstruket/oläsligt]\n\nULF SANDLUND\nUlf Sandlund\n\n\nUrban Sandlund\nDegermansg. 3\n94100 PITEÅ 1\n\n\n[Klisterlapp med text: EXPRESS-UTDELNING EXPRÈS]"
+        }
+      ]
     }
   ]
 }
