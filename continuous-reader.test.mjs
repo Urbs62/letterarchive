@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -67,12 +67,42 @@ try {
  check(JSON.stringify([...document.querySelectorAll('.continuous-document .continuous-text-page')].map(page=>[...page.querySelectorAll('.transcription-text')].map(p=>p.textContent).join('')))===JSON.stringify(pages.map(i=>i.transcription)),'exact text');
  const headings=[...document.querySelectorAll('.continuous-document .continuous-text-page > h2')];check(headings.length===pages.length&&headings.every((h,i)=>h.textContent===pages[i].label&&getComputedStyle(h).fontSize==='12.8px'),'subtle page labels in order');
  headings.forEach((h,i)=>check(h.parentElement.firstElementChild===h,'separator precedes page '+i));
- check([...document.querySelectorAll('.continuous-document .continuous-paragraph')].every(p=>getComputedStyle(p).whiteSpace==='normal'),'prose reflows');
- const descriptions=[...document.querySelectorAll('.continuous-document .item-description p')];check(JSON.stringify(descriptions.map(p=>p.textContent))===JSON.stringify(pages.map(p=>p.description)),'exact illustration descriptions');
+ check([...document.querySelectorAll('.continuous-document .continuous-paragraph:not(.continuous-positioned)')].every(p=>getComputedStyle(p).whiteSpace==='normal'),'prose reflows');
+ const descriptions=[...document.querySelectorAll('.continuous-document .item-description p')];check(JSON.stringify(descriptions.map(p=>p.textContent))===JSON.stringify(pages.filter(p=>p.description).map(p=>p.description)),'exact illustration descriptions');
  headings[headings.length-1].scrollIntoView({behavior:'instant',block:'center'});const y=scrollY;moveImage(1);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));check(Math.abs(scrollY-y)<2,'stable reading scroll');
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===2,'envelope text');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1972-12-10') {
+   check(pages.length===1&&frames.length===1,'single physical page');
+   check(!document.querySelector('.letter-additional-section'),'no duplicate raw envelope aftertext');
+   check(![...document.querySelectorAll('.letter-view h2, .letter-view summary')].some(h=>/^(Envelope|Front|Back|Description|Attachments)$/.test(h.textContent.trim())),'no source structure rendered as content');
+   check(!document.querySelector('.letter-view').textContent.includes('Bild:')&&!document.querySelector('.letter-view').textContent.includes(String.fromCharCode(96)),'no raw image references or code markers');
+   check(!l.sections.some(s=>s.title==='Attachments'),'no empty attachments section');
+   for (const panel of [document.querySelector('#original-panel'),document.querySelector('#transcription-panel')]) {
+     const envelope=panel.querySelector('.continuous-material');
+     check(envelope.parentElement===panel&&envelope===panel.lastElementChild,'normal envelope material follows pages inside reader');
+     check(envelope.querySelector('summary').textContent==='Kuvert och övrigt material','existing envelope disclosure');
+     check(JSON.stringify([...envelope.querySelectorAll('h2')].map(h=>h.textContent))===JSON.stringify(['Kuvert framsida','Kuvert baksida']),'envelope sides rendered with normal headings');
+   }
+   check(JSON.stringify([...originals.querySelectorAll('img')].map(i=>i.getAttribute('src')))===JSON.stringify(l.items.filter(i=>i.type!=='page').map(i=>i.image)),'normal envelope originals and order');
+   check(document.querySelectorAll('.letter-view > details').length===1,'only summary follows safe card');
+   check(!l.summary.includes('äldsta')&&l.writtenDate==='1972-12-08','new summary and writing date');
+   const photo=document.querySelector('.preserved-object');
+   check(document.querySelectorAll('.preserved-object').length===1&&photo.parentElement===document.querySelector('.letter-view'),'one separate safe card');
+   check(document.querySelector('#transcription-panel').nextElementSibling===photo&&photo.nextElementSibling.querySelector('summary').textContent==='Sammanfattning','safe follows all material before analysis');
+   document.querySelector('#transcription-tab').click();
+   const positioned=[...document.querySelectorAll('.continuous-positioned')];
+   check(positioned.length===4&&positioned.every(p=>getComputedStyle(p).whiteSpace==='pre-line'),'four positioned blocks preserve line breaks');
+   check(positioned[0].textContent.trim()==='8/12-72'&&getComputedStyle(positioned[0]).textAlign==='right','positioned date');
+   check(positioned.slice(1).every(p=>getComputedStyle(p).textAlign==='center'),'greetings and signature alignment');
+   check(positioned[1].textContent.trim()==='HEJ!'&&positioned[2].textContent.trim()==='HEJDÅ'&&positioned[3].textContent.includes('Hälsningar')&&positioned[3].textContent.includes('                    Urban Sandlund'),'intentional headings and signature');
+   const image=photo.querySelector('img');await image.decode();
+   check(image.getAttribute('src')==='letters/1972/1972-12-10/artifact-junior-safe.jpg','existing safe image');
+   check(photo.querySelector('h3').textContent==='Barnkassaskåp – Junior-Safe'&&photo.querySelector('.preserved-object-content p').textContent==='Kassaskåpet som Urban skriver om i brevet finns fortfarande bevarat.','existing safe caption');
+   const button=photo.querySelector('button');button.scrollIntoView({behavior:'instant',block:'center'});button.focus({preventScroll:true});const y=scrollY;button.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden&&viewerContent.querySelector('img').getAttribute('src')===image.getAttribute('src'),'safe enlargement');closeViewer();check(document.activeElement===button&&Math.abs(scrollY-y)<2,'safe focus and scroll restoration');
+   check(document.documentElement.scrollWidth<=innerWidth,'positioned text and safe no overflow');
+ }
  if(l.id==='1974-09-17') {
    const photo=document.querySelector('.preserved-object');
    const summaries=[...document.querySelectorAll('.letter-view > details')];
@@ -95,7 +125,7 @@ try {
    check(JSON.stringify(l)===before,'all contextual data unchanged');
  }
  if(l.id==='1975-08-27')check(!document.querySelector('.inline-context-photo'),'first prototype unchanged');
- document.querySelector('#transcription-tab').click();headings[1].scrollIntoView({behavior:'instant',block:'start'});
+ document.querySelector('#transcription-tab').click();headings[Math.min(1,headings.length-1)].scrollIntoView({behavior:'instant',block:'start'});
  return 'text, order, images, envelopes, scroll, layout passed';
  })()`));
  const shot=await cdp('Page.captureScreenshot',{format:'png'},sessionId);await writeFile(path.join(profile,`reader-${id}-${width}.png`),Buffer.from(shot.data,'base64'));
@@ -106,5 +136,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1975-05-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1974-09-17,1975-08-27'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1972-12-10,1974-09-17,1975-08-27'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

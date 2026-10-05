@@ -54,7 +54,7 @@ function itemContent(markdown, heading) {
   const transcription = section(block, "Transcription", "###") || labelled(["Transkription", "Transcription"]);
   const description = section(block, "Description", "###") || labelled(["Beskrivning", "Description"]);
   return {
-    transcription: transcription || (description ? "" : block.replace(/^###\s+.*$/gim, "").trim()),
+    transcription: transcription.match(/^```(?:text)?\n([\s\S]*?)\n```$/)?.[1] ?? (transcription || (description ? "" : block.replace(/^###\s+.*$/gim, "").trim())),
     description
   };
 }

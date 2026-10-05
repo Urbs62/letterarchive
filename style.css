@@ -740,6 +740,18 @@ button:focus-visible {
   white-space: normal;
 }
 
+.continuous-paragraph.continuous-positioned {
+  white-space: pre-line;
+}
+
+.continuous-positioned.positioned-date {
+  text-align: right;
+}
+
+.continuous-positioned.positioned-signoff {
+  text-align: center;
+}
+
 .continuous-paragraph + .continuous-paragraph {
   margin-top: 1em;
 }

@@ -1,34 +1,25 @@
-# Brev 1972-12-10
+# Metadata
 
-## Metadata
-
-- **Datum (poststämpel):** 1972-12-10
-- **Datum i brevet:** 1972-12-08
-- **Plats:** Piteå
-- **Avsändare:** Urban Sandlund
-- **Mottagare:** Ulf Sandlund
-- **Antal sidor:** 1
-- **Bilagor:** Inga
-
----
-
-# Sammanfattning
-
-Detta är det äldsta bevarade brevet i samlingen och skrevs när Urban nyligen fyllt tio år.
-
-Brevet består av en vardaglig uppdatering om livet i Piteå inför julen 1972. Urban berättar att han nyligen sett cowboyfilmen *Med snaran om halsen*, att den ordinarie läraren är sjuk och att klassen därför har en vikarie. Han nämner också att skolan fått både matsal och gymnastiksal.
-
-Julen närmar sig och Urban längtar mycket till julafton, även om familjen inte ska bjuda hem några gäster, något han beskriver som "trist". Han berättar också om sina födelsedagspresenter: ett kassaskåp, en tjock Tarzanbok, två pysselböcker, en halskedja med sitt stjärntecken (Skorpionen), en pannlampa och ett par skidhandskar.
-
-Brevet avslutas med ett stort handritat **HEJDÅ**, vilket redan här visar den lekfullhet som senare kommer att prägla många av breven till kusinen Ulf.
+- Poststämplat: 1972-12-10
+- Datum: 1972-12-08
+- Från: Piteå
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Antal sidor: 1
+- Bilagor: Inga
+- Typ: Brev
+- Skrivtyp: handwritten
+- Urbans ålder: 10 år
 
 ---
 
-# Envelope Front
+# Envelope
+
+## Front
 
 **Bild:** `envelope-front.jpg`
 
-## Beskrivning
+### Description
 
 Brunt kuvert adresserat för hand till:
 
@@ -44,15 +35,15 @@ Poststämplat:
 
 ---
 
-# Envelope Back
+## Back
 
 **Bild:** `envelope-back.jpg`
 
-## Beskrivning
+### Description
 
 Kuvertets baksida innehåller endast avsändaradressen.
 
-## Transkription
+### Transcription
 
 A.V.S.
 
@@ -62,11 +53,13 @@ Degermansgatan 3
 
 ---
 
-# Page 1
+# Letter
+
+## Page 1
 
 **Bild:** `page-01.jpg`
 
-## Transkription
+### Transcription
 
 ```text
                                    8/12-72
@@ -76,18 +69,14 @@ Degermansgatan 3
 Förlåt att jag inte skrivit tidigare. Jag hade börjat med
 ett men jag ides inte. Jag har nyss sett Cowboyfilmen
 Med snaran om halsen. Den var bra. Den handlade om en Mexikan.
-Våran fröken är sjuk så vi har en annan, våran
-riktiga fröken heter Gun Erikson som är jättebussig.
-Hon kommer på Måndag. Vi har fått en matsal och en
-gymnastiksal. Jag längtar till Julafton jättemycket.
-Vi ska inte bjuda någon. Trist. Mycket trist.
-Jätte mycket trist. Nyss har jag fyllt år. Kuligt.
-Mycket kuligt. Jätte mycket kuligt. Jag fick
-ett kassaskåp, en tjock Tarzanbok, två pyssel-
-böcker, en halskedja med mitt stjärntecken som är
-en skorpion, en pannlampa och ett par skidhandskar till present.
+Våran fröken är sjuk så vi har en annan, våran riktiga fröken heter Gun Erikson som är jättebussig. Hon kommer på Måndag.
+Vi har fått en matsal och en gymnastiksal.
+Jag längtar till Julafton jättemycket. Vi ska inte bjuda någon. Trist. Mycket trist. Jätte mycket trist.
+Nyss har jag fyllt år. Kuligt. Mycket kuligt. Jätte mycket kuligt.
+Jag fick ett kassaskåp, en tjock Tarzanbok, två pyssel-böcker, en halskedja med mitt stjärntecken som är en skorpion, en pannlampa och ett par skidhandskar till present.
 Jag har skidträning två gånger i veckan.
-Snart ska jag börja köpa julklappar. Nu kan jag
+Snart ska jag börja köpa julklappar.
+Nu kan jag
 inte hitta på någonting mer.
 
 Hejdå. Mycket hejdå. Jätte mycket hejdå.
@@ -97,3 +86,7 @@ Hejdå. Mycket hejdå. Jätte mycket hejdå.
                       Hälsningar
                     Urban Sandlund
 ```
+
+# Sammanfattning
+
+Urban skriver till Ulf om vardagen i Piteå, sin födelsedag och förväntningarna inför julen.

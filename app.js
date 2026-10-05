@@ -44,6 +44,10 @@ const primarySectionTitles = new Set([
   "baksida",
   "vykortets baksida",
   "kuvert",
+  "envelope",
+  "envelope front",
+  "envelope back",
+  "attachments",
   "bilagor",
   "transcription",
   "transkribering",
@@ -80,7 +84,7 @@ let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
-const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17"]);
+const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -626,6 +630,11 @@ function renderContinuousLetter(letter, view) {
         text.replaceChildren(...paragraphs.map(content => {
           const paragraph = document.createElement("span");
           paragraph.className = "continuous-paragraph";
+          if (letter.id === "1972-12-10" && /^[ \t]+\S/m.test(content)) {
+            // Preserve positioned headings/sign-off as separate blocks; prose reflows.
+            paragraph.classList.add("continuous-positioned");
+            paragraph.classList.add(content.trim() === "8/12-72" ? "positioned-date" : "positioned-signoff");
+          }
           paragraph.textContent = content;
           return paragraph;
         }));

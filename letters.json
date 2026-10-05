@@ -55,24 +55,43 @@
     {
       "id": "1972-12-10",
       "date": "1972-12-10",
-      "from": "Urban",
-      "to": "Ulf",
+      "writtenDate": "1972-12-08",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
       "senderAge": 10,
-      "type": "handwritten",
-      "summary": "Detta är det äldsta bevarade brevet i samlingen och skrevs när Urban nyligen fyllt tio år.\n\nBrevet består av en vardaglig uppdatering om livet i Piteå inför julen 1972. Urban berättar att han nyligen sett cowboyfilmen Med snaran om halsen, att den ordinarie läraren är sjuk och att klassen därför har en vikarie. Han nämner också att skolan fått både matsal och gymnastiksal.\n\nJulen närmar sig och Urban längtar mycket till julafton, även om familjen inte ska bjuda hem några gäster, något han beskriver som \"trist\". Han berättar också om sina födelsedagspresenter: ett kassaskåp, en tjock Tarzanbok, två pysselböcker, en halskedja med sitt stjärntecken (Skorpionen), en pannlampa och ett par skidhandskar.\n\nBrevet avslutas med ett stort handritat HEJDÅ, vilket redan här visar den lekfullhet som senare kommer att prägla många av breven till kusinen Ulf.",
+      "type": "letter",
+      "writingType": "handwritten",
+      "folder": "letters/1972/1972-12-10/",
+      "postmarked": "1972-12-10",
+      "fromPlace": "Piteå",
+      "summary": "Urban skriver till Ulf om vardagen i Piteå, sin födelsedag och förväntningarna inför julen.",
+      "sections": [
+        {
+          "title": "Envelope",
+          "content": "## Front\n\n**Bild:** `envelope-front.jpg`\n\n### Description\n\nBrunt kuvert adresserat för hand till:\n\n> Ulf Sandlund  \n> Safjällsgatan 16  \n> 431 39 Mölndal\n\nFrankerat med ett svenskt 75-öres frimärke med motiv av en väderkvarn.\n\nPoststämplat:\n\n**Piteå 1972-12-10**\n\n\n## Back\n\n**Bild:** `envelope-back.jpg`\n\n### Description\n\nKuvertets baksida innehåller endast avsändaradressen.\n\n### Transcription\n\nA.V.S.\n\nUrban Sandlund  \nDegermansgatan 3  \n941 00 Piteå"
+        },
+        {
+          "title": "Letter",
+          "content": "## Page 1\n\n**Bild:** `page-01.jpg`\n\n### Transcription\n\n```text\n                                   8/12-72\n\n                         HEJ!\n\nFörlåt att jag inte skrivit tidigare. Jag hade börjat med\nett men jag ides inte. Jag har nyss sett Cowboyfilmen\nMed snaran om halsen. Den var bra. Den handlade om en Mexikan.\nVåran fröken är sjuk så vi har en annan, våran riktiga fröken heter Gun Erikson som är jättebussig. Hon kommer på Måndag.\nVi har fått en matsal och en gymnastiksal.\nJag längtar till Julafton jättemycket. Vi ska inte bjuda någon. Trist. Mycket trist. Jätte mycket trist.\nNyss har jag fyllt år. Kuligt. Mycket kuligt. Jätte mycket kuligt.\nJag fick ett kassaskåp, en tjock Tarzanbok, två pyssel-böcker, en halskedja med mitt stjärntecken som är en skorpion, en pannlampa och ett par skidhandskar till present.\nJag har skidträning två gånger i veckan.\nSnart ska jag börja köpa julklappar.\nNu kan jag\ninte hitta på någonting mer.\n\nHejdå. Mycket hejdå. Jätte mycket hejdå.\n\n                          HEJDÅ\n\n                      Hälsningar\n                    Urban Sandlund\n```"
+        },
+        {
+          "title": "Sammanfattning",
+          "content": "Urban skriver till Ulf om vardagen i Piteå, sin födelsedag och förväntningarna inför julen."
+        }
+      ],
       "items": [
         {
           "type": "envelope-front",
           "label": "Kuvert framsida",
           "image": "letters/1972/1972-12-10/envelope-front.jpg",
-          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal\n\nPiteå 1972-12-10",
-          "description": "Brunt kuvert adresserat för hand till Ulf Sandlund i Mölndal. Frankerat med ett svenskt 75-öres frimärke med motiv av en väderkvarn och poststämplat Piteå 1972-12-10."
+          "transcription": "",
+          "description": "Brunt kuvert adresserat för hand till:\n\n> Ulf Sandlund  \n> Safjällsgatan 16  \n> 431 39 Mölndal\n\nFrankerat med ett svenskt 75-öres frimärke med motiv av en väderkvarn.\n\nPoststämplat:\n\n**Piteå 1972-12-10**"
         },
         {
           "type": "envelope-back",
           "label": "Kuvert baksida",
           "image": "letters/1972/1972-12-10/envelope-back.jpg",
-          "transcription": "A.V.S.\n\nUrban Sandlund\nDegermansgatan 3\n941 00 Piteå",
+          "transcription": "A.V.S.\n\nUrban Sandlund  \nDegermansgatan 3  \n941 00 Piteå",
           "description": "Kuvertets baksida innehåller endast avsändaradressen."
         },
         {
@@ -80,7 +99,7 @@
           "page": 1,
           "label": "Sida 1",
           "image": "letters/1972/1972-12-10/page-01.jpg",
-          "transcription": "8/12-72\n\nHEJ!\n\nFörlåt att jag inte skrivit tidigare. Jag hade börjat med\nett men jag ides inte. Jag har nyss sett Cowboyfilmen\nMed snaran om halsen. Den var bra. Den handlade om en Mexikan.\nVåran fröken är sjuk så vi har en annan, våran\nriktiga fröken heter Gun Erikson som är jättebussig.\nHon kommer på Måndag. Vi har fått en matsal och en\ngymnastiksal. Jag längtar till Julafton jättemycket.\nVi ska inte bjuda någon. Trist. Mycket trist.\nJätte mycket trist. Nyss har jag fyllt år. Kuligt.\nMycket kuligt. Jätte mycket kuligt. Jag fick\nett kassaskåp, en tjock Tarzanbok, två pyssel-\nböcker, en halskedja med mitt stjärntecken som är\nen skorpion, en pannlampa och ett par skidhandskar till present.\nJag har skidträning två gånger i veckan.\nSnart ska jag börja köpa julklappar. Nu kan jag\ninte hitta på någonting mer.\n\nHejdå. Mycket hejdå. Jätte mycket hejdå.\n\nHEJDÅ\n\nHälsningar\nUrban Sandlund",
+          "transcription": "                                   8/12-72\n\n                         HEJ!\n\nFörlåt att jag inte skrivit tidigare. Jag hade börjat med\nett men jag ides inte. Jag har nyss sett Cowboyfilmen\nMed snaran om halsen. Den var bra. Den handlade om en Mexikan.\nVåran fröken är sjuk så vi har en annan, våran riktiga fröken heter Gun Erikson som är jättebussig. Hon kommer på Måndag.\nVi har fått en matsal och en gymnastiksal.\nJag längtar till Julafton jättemycket. Vi ska inte bjuda någon. Trist. Mycket trist. Jätte mycket trist.\nNyss har jag fyllt år. Kuligt. Mycket kuligt. Jätte mycket kuligt.\nJag fick ett kassaskåp, en tjock Tarzanbok, två pyssel-böcker, en halskedja med mitt stjärntecken som är en skorpion, en pannlampa och ett par skidhandskar till present.\nJag har skidträning två gånger i veckan.\nSnart ska jag börja köpa julklappar.\nNu kan jag\ninte hitta på någonting mer.\n\nHejdå. Mycket hejdå. Jätte mycket hejdå.\n\n                          HEJDÅ\n\n                      Hälsningar\n                    Urban Sandlund",
           "description": ""
         }
       ]

@@ -375,3 +375,9 @@ Second page`, {
     "letters/1980/1980-03-11/page-02.jpeg"
   ]);
 });
+
+ test("preserves positioned text inside an existing fenced transcription", () => {
+ const text = "                                   8/12-72\n\n                         HEJ!\n\nProse line\nnext line.\n\n                      Hälsningar\n                    Urban Sandlund";
+ const letter = parse("# Letter\n\n## Page 1\n\n### Transcription\n\n" + "```text\n" + text + "\n```");
+ assert.equal(letter.items[0].transcription, text);
+ });

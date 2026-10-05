@@ -14,6 +14,7 @@ The continuous reader has so far been prototyped on:
 
 - 1975-08-27
 - 1974-09-17
+- 1972-12-10 (2026-10-05: one page, positioned date/headings/signature, separate safe photo)
 
 Contextual-photo placement was finalized with Ulf on 2026-10-05: supplementary archival photos appear after the complete letter reader and letter material, before summary and analysis sections. They remain visually and structurally separate from the transcription, even when related to a particular passage. The 1974-09-17 prototype uses this preferred design; the inline-placement experiment has been removed. Contextual-photo placement was excluded from the original audit.
 
@@ -42,7 +43,7 @@ Each date below identifies its folder: `letters/YYYY/date/`. Page references fol
 
 | Date/folder | Relevant pages | Reason and extent |
 |---|---|---|
-| 1972-12-10 | 1 | Source transcription uses a fenced text block and positioned heading/signature. JSON has already simplified this. Check those local elements; body is prose. |
+| 1972-12-10 | 1 | Source transcription uses a fenced text block and positioned heading/signature. The third prototype now imports that spacing intact; prose reflows while the date, greetings and signature stay separately aligned. The safe photo follows all letter material. |
 | 1974-03-05 | 1–2 | Drawing labels, a “Historia” heading and numbered replies. Preserve the local list structure. |
 | 1974-08-23 | 1–3, especially 3 | Wordplay entries and deliberately broken farewell lines. Three attachments remain separate. |
 | 1974-09-17 | 2 | Room-dimension list and an indented calculation. Page 1 is ordinary prose. |
