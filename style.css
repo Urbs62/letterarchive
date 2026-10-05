@@ -744,28 +744,6 @@ button:focus-visible {
   margin-top: 1em;
 }
 
-.continuous-document .inline-context-photo {
-  max-width: 28rem;
-  margin: 1.25rem 0;
-  padding: 1rem;
-}
-
-.continuous-document .inline-context-photo h2 {
-  margin: 0 0 0.65rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-}
-
-.continuous-document .inline-context-photo .preserved-object-content > div {
-  flex-basis: 12rem;
-}
-
-.continuous-document .inline-context-photo p {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
 .continuous-material {
   margin-top: 2rem;
 }

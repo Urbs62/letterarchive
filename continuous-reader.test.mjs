@@ -76,17 +76,17 @@ try {
  if(l.id==='1974-09-17') {
    const photo=document.querySelector('.preserved-object');
    const summaries=[...document.querySelectorAll('.letter-view > details')];
-   check(photo.closest('.continuous-text-page')===headings[0].parentElement,'context photo in page 1');
-   check(photo.previousElementSibling.textContent.trim().endsWith('Putte ska bli en Kock.'),'context photo follows cat passage');
-   check(photo.nextElementSibling.textContent.trim()==='Nog med Katter för idag.','reading resumes after context photo');
-   check(document.querySelectorAll('.preserved-object').length===1&&!document.querySelector('.letter-view > .preserved-object'),'no duplicate or old photo placement');
-   check(document.querySelector('#transcription-panel').nextElementSibling.querySelector('summary').textContent==='Sammanfattning','summary still after reader');
+   check(!photo.closest('#transcription-panel')&&!photo.closest('#original-panel'),'context photo outside complete letter material');
+   check(document.querySelectorAll('.preserved-object').length===1&&photo.parentElement===document.querySelector('.letter-view'),'one separate contextual card');
+   check(document.querySelector('#transcription-panel').nextElementSibling===photo,'context photo follows complete reader');
+   check(photo.nextElementSibling===summaries[0]&&summaries[0].querySelector('summary').textContent==='Sammanfattning','context photo before summary and analysis');
+   check(!document.querySelector('.inline-context-photo'),'no experimental inline placement');
    check(photo.querySelector('h3').textContent==='Urban och Frasse','context title unchanged');
    check(JSON.stringify(summaries.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Djur']),'analysis sections order');
    document.querySelector('#transcription-tab').click();
    const contextImage=photo.querySelector('img');await contextImage.decode();check(contextImage.getAttribute('src')==='letters/1974/1974-09-17/urban-frasse.jpg','context image unchanged');
    check(photo.querySelector('.preserved-object-content p').textContent==='Urban och Frasse, fotograferade under samma period som brevet skrevs.','caption unchanged');
-   check(photo.getBoundingClientRect().width<=448&&!photo.closest('.original-stage'),'small archival card distinct from originals');
+   check(!photo.closest('.original-stage'),'archival card distinct from originals');
    check(contextImage.getBoundingClientRect().width<=112,'context thumbnail size unchanged');
    document.querySelector('#transcription-tab').click();
    const button=photo.querySelector('button');button.scrollIntoView({behavior:'instant',block:'center'});button.focus({preventScroll:true});const y=scrollY;button.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden&&viewerContent.querySelector('img').getAttribute('src')===contextImage.getAttribute('src'),'context enlargement');closeViewer();check(document.activeElement===button&&Math.abs(scrollY-y)<2,'context close restores focus and scroll');

@@ -158,6 +158,17 @@ Sidan visar en tydlig platshållare om en bild ännu inte finns.
 Ett brevs `writingType` kan vara `handwritten`, `typewritten` eller `mixed`, vilka visas
 som Handskrivet, Maskinskrivet respektive Blandat i gränssnittet.
 
+### Kontextuella arkivfoton
+
+Beslut fastställt med Ulf 2026-10-05: kontextuella arkivfoton är kompletterande
+arkivmaterial och hör inte till det ursprungliga fysiska brevet. Den föredragna
+placeringen är efter hela brevläsaren, inklusive kuvert och övrigt brevmaterial,
+och före sammanfattning och analys. Fotona ska vara visuellt och strukturellt
+åtskilda från transkriberingen även när de anknyter till ett särskilt textavsnitt.
+Behåll det separata fotokortet, bildtexten och möjligheten att förstora bilden.
+1974-09-17 följer detta beslut. Befintlig lagring och hantering av
+kompletterande bilder enligt nedan är oförändrad.
+
 ### Kompletterande arkivbilder
 
 En arkivdel kan ha `relatedImages`, en lista med `label`, `image`, `caption`

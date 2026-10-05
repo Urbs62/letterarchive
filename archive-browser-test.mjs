@@ -130,8 +130,9 @@ try {
       const isSafe = letter.id === '1972-12-10';
       if (reference.querySelector('h2').textContent !== (isSafe ? 'Bevarat föremål' : 'Personer i brevet')) throw new Error('Reference heading');
       if (reference.querySelector('h3').textContent !== (isSafe ? 'Barnkassaskåp – Junior-Safe' : 'Urban och Frasse')) throw new Error('Reference title');
-      if (isSafe ? reference.nextElementSibling.querySelector('summary').textContent !== 'Sammanfattning' :
-        !reference.closest('.continuous-text-page') || reference.nextElementSibling.textContent.trim() !== 'Nog med Katter för idag.') throw new Error('Reference placement');
+      if (reference.parentElement !== document.querySelector('.letter-view') ||
+        reference.nextElementSibling.querySelector('summary').textContent !== 'Sammanfattning' ||
+        (!isSafe && document.querySelector('#transcription-panel').nextElementSibling !== reference)) throw new Error('Reference placement');
       document.querySelector('#transcription-tab').click();
       const thumbnail = reference.querySelector('img');
       if (!thumbnail.getAttribute('src').endsWith(isSafe ? '/artifact-junior-safe.jpg' : '/urban-frasse.jpg')) throw new Error('Reference image');

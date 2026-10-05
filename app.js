@@ -644,22 +644,6 @@ function renderContinuousLetter(letter, view) {
   }
 
   pages.forEach(item => appendItem(item, originals, text));
-  if (letter.id === "1974-09-17") {
-    const reference = view.querySelector(".preserved-object");
-    const closingParagraph = [...text.querySelectorAll(".continuous-paragraph")]
-      .find(paragraph => paragraph.textContent.trim() === "Nog med Katter för idag.");
-    if (reference && closingParagraph) {
-      // Move only the rendered card, between complete source paragraphs.
-      // Keep caption text out of the transcription's text containers.
-      const before = closingParagraph.parentElement;
-      const after = document.createElement("p");
-      after.className = "transcription-text";
-      while (closingParagraph.nextSibling) after.append(closingParagraph.nextSibling);
-      after.prepend(closingParagraph);
-      reference.classList.add("inline-context-photo");
-      before.after(reference, after);
-    }
-  }
   if (otherItems.length) {
     const makeMaterial = () => {
       const section = document.createElement("details");
@@ -726,7 +710,7 @@ function renderLetter(letter) {
   `;
   view.append(navigation);
 
-  // Two isolated contextual-image experiments, sharing the same presentation.
+  // Supplementary archival cards follow the complete letter, before analysis.
   if (letter.id === "1972-12-10" || letter.id === "1974-09-17") {
     const isSafe = letter.id === "1972-12-10";
     const heading = isSafe ? "Bevarat föremål" : "Personer i brevet";

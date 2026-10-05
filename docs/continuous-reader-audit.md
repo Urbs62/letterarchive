@@ -15,7 +15,7 @@ The continuous reader has so far been prototyped on:
 - 1975-08-27
 - 1974-09-17
 
-The contextual-photo placement experiment in 1974-09-17 is still being evaluated and should not be treated as a finalized design decision. Contextual-photo placement was excluded from this audit.
+Contextual-photo placement was finalized with Ulf on 2026-10-05: supplementary archival photos appear after the complete letter reader and letter material, before summary and analysis sections. They remain visually and structurally separate from the transcription, even when related to a particular passage. The 1974-09-17 prototype uses this preferred design; the inline-placement experiment has been removed. Contextual-photo placement was excluded from the original audit.
 
 ## Audit scope and totals
 
