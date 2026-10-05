@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -86,7 +86,7 @@ try {
      check(JSON.stringify([...envelope.querySelectorAll('h2')].map(h=>h.textContent))===JSON.stringify(['Kuvert framsida','Kuvert baksida']),'envelope sides rendered with normal headings');
    }
    check(JSON.stringify([...originals.querySelectorAll('img')].map(i=>i.getAttribute('src')))===JSON.stringify(l.items.filter(i=>i.type!=='page').map(i=>i.image)),'normal envelope originals and order');
-   check(document.querySelectorAll('.letter-view > details').length===1,'only summary follows safe card');
+   check(document.querySelectorAll('.letter-view > details').length===2,'summary and People follow safe card');
    check(!l.summary.includes('äldsta')&&l.writtenDate==='1972-12-08','new summary and writing date');
    const photo=document.querySelector('.preserved-object');
    check(document.querySelectorAll('.preserved-object').length===1&&photo.parentElement===document.querySelector('.letter-view'),'one separate safe card');
@@ -102,6 +102,23 @@ try {
    check(photo.querySelector('h3').textContent==='Barnkassaskåp – Junior-Safe'&&photo.querySelector('.preserved-object-content p').textContent==='Kassaskåpet som Urban skriver om i brevet finns fortfarande bevarat.','existing safe caption');
    const button=photo.querySelector('button');button.scrollIntoView({behavior:'instant',block:'center'});button.focus({preventScroll:true});const y=scrollY;button.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden&&viewerContent.querySelector('img').getAttribute('src')===image.getAttribute('src'),'safe enlargement');closeViewer();check(document.activeElement===button&&Math.abs(scrollY-y)<2,'safe focus and scroll restoration');
    check(document.documentElement.scrollWidth<=innerWidth,'positioned text and safe no overflow');
+ }
+
+ if(l.id==='1971-01-31') {
+   check(pages.length===1&&frames.length===1,'single original page');
+   check(pages[0].transcription==="Hej Ulf\\n\\nja jag vill turas om att skriva  \\nbrev. I söndas åkte pappa  \\nAndörjan (4,5 mil) han blev  \\n95 av 668 stycken men tråkit nog  \\nvar jag sjuk jag hade ont i magen  \\noch kräktes så jag hade inte så  \\nrolit jag har inte tagit något  \\nmärke vist är det spännande att se  \\npå ishockey men synd att sverige förlorade  \\nishocky mot finland\\n\\nskriv snart\\n\\nURBAN",'reviewed source transcription preserved exactly');
+   check(!document.querySelector('.preserved-object'),'no contextual photo');
+   check(!document.querySelector('.letter-additional-section'),'no raw source sections');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer']),'aftertext order and no Places');
+   check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext follows complete material');
+   check(!/###|Bild:/.test(document.querySelector('.letter-view').textContent)&&!document.querySelector('.letter-view').textContent.includes(String.fromCharCode(96)),'no raw Markdown');
+   sections.forEach(s=>s.open=true);
+   const people=sections[2].textContent;
+   check(people.includes('Urban Sandlund')&&people.includes('Ulf Sandlund')&&people.includes('Urbans kusin')&&people.includes('Pappa'),'People identities and relationship');
+   check(!l.sections.some(s=>s.title==='Platser'),'no Places data');
+   check(l.summary.length<200,'concise summary');
+   check(document.documentElement.scrollWidth<=innerWidth,'expanded aftertext no overflow');
  }
  if(l.id==='1974-09-17') {
    const photo=document.querySelector('.preserved-object');
@@ -136,5 +153,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1975-05-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1972-12-10,1974-09-17,1975-08-27'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-09-17,1975-08-27'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

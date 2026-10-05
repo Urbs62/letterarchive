@@ -7,24 +7,35 @@
     {
       "id": "1971-01-31",
       "date": "1971-01-31",
-      "from": "Urban",
-      "to": "Ulf",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
       "senderAge": 8,
       "type": "letter",
       "writingType": "handwritten",
+      "folder": "letters/1971/1971-01-31/",
+      "postmarked": "1971-01-31",
+      "fromPlace": "Piteå",
       "summary": "Urban vill att han och Ulf ska turas om att skriva brev. Han berättar om pappas deltagande i Andörjan, att han själv varit magsjuk och om Sveriges förlust mot Finland i ishockey.",
       "sections": [
         {
+          "title": "Kuvert",
+          "content": "## Framsida\n\n**Bild:** `envelopet-front.jpg`\n\n### Transcription\n\nUlf Sandlund  \nSaftjällsgatan 16  \n431 39 Mölndal 3\n\nPITEÅ 1 31.1.71\n\n### Description\n\nRött svenskt frimärke.\n\nAdressen på kuvertet är skriven med en annan och betydligt vuxnare handstil än själva brevet. Den kan ha skrivits av Urbans mamma.\n\n## Baksida\n\n### Description\n\nKuvertets baksida saknar text och personliga anteckningar.\n\nDet rosa innerfodret är synligt där kuvertet har öppnats."
+        },
+        {
+          "title": "Letter",
+          "content": "## Page 1\n\n### Transcription\n\n```text\nHej Ulf\n\nja jag vill turas om att skriva  \nbrev. I söndas åkte pappa  \nAndörjan (4,5 mil) han blev  \n95 av 668 stycken men tråkit nog  \nvar jag sjuk jag hade ont i magen  \noch kräktes så jag hade inte så  \nrolit jag har inte tagit något  \nmärke vist är det spännande att se  \npå ishockey men synd att sverige förlorade  \nishocky mot finland\n\nskriv snart\n\nURBAN\n```"
+        },
+        {
+          "title": "Sammanfattning",
+          "content": "Urban vill att han och Ulf ska turas om att skriva brev. Han berättar om pappas deltagande i Andörjan, att han själv varit magsjuk och om Sveriges förlust mot Finland i ishockey."
+        },
+        {
           "title": "Iakttagelser",
-          "content": "Detta är hittills det äldsta bevarade brevet i samlingen. Urban är åtta år gammal. Brevet är skrivet med blyerts och dekorerat med två små färgade klisterbilder.\n\nDen inledande formuleringen \"ja jag vill turas om att skriva brev\" antyder att Urban svarar på ett förslag från Ulf. Det kan alltså ha funnits någon form av korrespondens redan före detta brev, även om något tidigare brev från Urban inte finns bevarat.\n\nSom första bevarade brev blir formuleringen också en naturlig startpunkt för den fortsatta brevväxlingen. Jämfört med de senare breven är formen mycket enkel: några korta rader om familjen, den egna vardagen och ishockey, följt av \"skriv snart\". Här finns ännu inte den humor, de teckningar, långa redogörelser och bilagor som senare blir typiska för breven.\n\nAndörjan beskrivs som ett 4,5 mil långt lopp med 668 deltagare, där Urbans pappa enligt brevet blev 95:a. Urban skriver också att han inte har \"tagit något märke\", men vilket märke han syftar på framgår inte.\n\nBrevet visar också att ishockey redan är ett intresse. Urban tycker att det är spännande att titta på och beklagar Sveriges förlust mot Finland.\n\nHandstilen på kuvertets framsida är betydligt vuxnare än Urbans handstil i brevet. Adressen kan ha skrivits av Urbans mamma.\n\nStavning och meningsbyggnad är bevarade som Urban skrev den, bland annat \"söndas\", \"tråkit\", \"rolit\", \"vist\" och \"ishocky\".\n\nRedan här finns ändå själva kärnan i brevväxlingen: Urban berättar för Ulf om det som händer i hans värld och avslutar med en önskan om att få ett brev tillbaka: \"skriv snart\"."
+          "content": "Detta är hittills det äldsta bevarade brevet i samlingen. Brevet är skrivet med blyerts och dekorerat med två små färgade klisterbilder.\n\nInledningen ”ja jag vill turas om att skriva brev” antyder att Urban svarar på ett tidigare förslag från Ulf. Något tidigare brev från Urban finns inte bevarat i den kända samlingen.\n\nFormen är ovanligt enkel jämfört med senare brev: en kort vardagsskildring och uppmaningen ”skriv snart”, utan de längre redogörelser och bilagor som senare förekommer.\n\nDet framgår inte vad Urban syftar på med ”tagit något märke”.\n\nAdressen på kuvertets framsida är skriven med en betydligt vuxnare handstil än själva brevet. Den kan ha skrivits av Urbans mamma."
         },
         {
           "title": "Personer",
-          "content": "**Urban Sandlund**  \nAvsändare.\n\n**Ulf Sandlund**  \nMottagare och Urbans kusin.\n\n**Pappa**  \nUrbans pappa."
-        },
-        {
-          "title": "Platser",
-          "content": "**Piteå**  \nHär postas brevet.\n\n**Mölndal**  \nDit brevet skickas."
+          "content": "- **Urban Sandlund** – brevets avsändare.\n- **Ulf Sandlund** – brevets mottagare och Urbans kusin.\n- **Pappa** – Urbans pappa."
         }
       ],
       "items": [
@@ -32,22 +43,22 @@
           "type": "envelope-front",
           "label": "Kuvert framsida",
           "image": "letters/1971/1971-01-31/envelopet-front.jpg",
-          "transcription": "Ulf Sandlund\nSaftjällsgatan 16\n431 39 Mölndal 3\n\nPITEÅ 1 31.1.71",
-          "description": "Rött svenskt frimärke. Adressen är skriven med en annan och betydligt vuxnare handstil än själva brevet. Den kan ha skrivits av Urbans mamma."
+          "transcription": "Ulf Sandlund  \nSaftjällsgatan 16  \n431 39 Mölndal 3\n\nPITEÅ 1 31.1.71",
+          "description": "Rött svenskt frimärke.\n\nAdressen på kuvertet är skriven med en annan och betydligt vuxnare handstil än själva brevet. Den kan ha skrivits av Urbans mamma."
         },
         {
           "type": "envelope-back",
           "label": "Kuvert baksida",
           "image": "letters/1971/1971-01-31/envelope-back.jpg",
           "transcription": "",
-          "description": "Kuvertets baksida saknar text och personliga anteckningar. Det rosa innerfodret är synligt där kuvertet har öppnats."
+          "description": "Kuvertets baksida saknar text och personliga anteckningar.\n\nDet rosa innerfodret är synligt där kuvertet har öppnats."
         },
         {
           "type": "page",
           "page": 1,
           "label": "Sida 1",
           "image": "letters/1971/1971-01-31/page-01.jpg",
-          "transcription": "Hej Ulf\r\n\r\nja jag vill turas om att skriva  \r\nbrev. I söndas åkte pappa  \r\nAndörjan (4,5 mil) han blev  \r\n95 av 668 stycken men tråkit nog  \r\nvar jag sjuk jag hade ont i magen  \r\noch kräktes så jag hade inte så  \r\nrolit jag har inte tagit något  \r\nmärke vist är det spännande att se  \r\npå ishockey men synd att sverige förlorade  \r\nishocky mot finland\r\n\r\nskriv snart\r\n\r\nURBAN",
+          "transcription": "Hej Ulf\n\nja jag vill turas om att skriva  \nbrev. I söndas åkte pappa  \nAndörjan (4,5 mil) han blev  \n95 av 668 stycken men tråkit nog  \nvar jag sjuk jag hade ont i magen  \noch kräktes så jag hade inte så  \nrolit jag har inte tagit något  \nmärke vist är det spännande att se  \npå ishockey men synd att sverige förlorade  \nishocky mot finland\n\nskriv snart\n\nURBAN",
           "description": ""
         }
       ]

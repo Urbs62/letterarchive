@@ -1,24 +1,28 @@
-# Brev
+# Metadata
 
-**Datum:** 1971-01-31 (poststämpel Piteå 31.1.1971)  
-**Typ:** Brev (1 sida)  
-**Ort:** Piteå  
-**Avsändare:** Urban Sandlund  
-**Mottagare:** Ulf Sandlund
-
----
+Poststämplat: 1971-01-31
+Typ: Brev
+Från: Piteå
+Avsändare: Urban Sandlund
+Mottagare: Ulf Sandlund
+Urbans ålder: 8 år
+Skrivtyp: handwritten
 
 # Kuvert
 
 ## Framsida
 
-Adress:
+**Bild:** `envelopet-front.jpg`
+
+### Transcription
 
 Ulf Sandlund  
 Saftjällsgatan 16  
 431 39 Mölndal 3
 
-Poststämpel: **PITEÅ 1 31.1.71**
+PITEÅ 1 31.1.71
+
+### Description
 
 Rött svenskt frimärke.
 
@@ -26,16 +30,19 @@ Adressen på kuvertet är skriven med en annan och betydligt vuxnare handstil ä
 
 ## Baksida
 
+### Description
+
 Kuvertets baksida saknar text och personliga anteckningar.
 
 Det rosa innerfodret är synligt där kuvertet har öppnats.
 
----
+# Letter
 
 ## Page 1
 
-### Transkription
+### Transcription
 
+```text
 Hej Ulf
 
 ja jag vill turas om att skriva  
@@ -52,8 +59,7 @@ ishocky mot finland
 skriv snart
 
 URBAN
-
----
+```
 
 # Sammanfattning
 
@@ -61,37 +67,18 @@ Urban vill att han och Ulf ska turas om att skriva brev. Han berättar om pappas
 
 # Iakttagelser
 
-Detta är hittills det äldsta bevarade brevet i samlingen. Urban är åtta år gammal. Brevet är skrivet med blyerts och dekorerat med två små färgade klisterbilder.
+Detta är hittills det äldsta bevarade brevet i samlingen. Brevet är skrivet med blyerts och dekorerat med två små färgade klisterbilder.
 
-Den inledande formuleringen "ja jag vill turas om att skriva brev" antyder att Urban svarar på ett förslag från Ulf. Det kan alltså ha funnits någon form av korrespondens redan före detta brev, även om något tidigare brev från Urban inte finns bevarat.
+Inledningen ”ja jag vill turas om att skriva brev” antyder att Urban svarar på ett tidigare förslag från Ulf. Något tidigare brev från Urban finns inte bevarat i den kända samlingen.
 
-Som första bevarade brev blir formuleringen också en naturlig startpunkt för den fortsatta brevväxlingen. Jämfört med de senare breven är formen mycket enkel: några korta rader om familjen, den egna vardagen och ishockey, följt av "skriv snart". Här finns ännu inte den humor, de teckningar, långa redogörelser och bilagor som senare blir typiska för breven.
+Formen är ovanligt enkel jämfört med senare brev: en kort vardagsskildring och uppmaningen ”skriv snart”, utan de längre redogörelser och bilagor som senare förekommer.
 
-Andörjan beskrivs som ett 4,5 mil långt lopp med 668 deltagare, där Urbans pappa enligt brevet blev 95:a. Urban skriver också att han inte har "tagit något märke", men vilket märke han syftar på framgår inte.
+Det framgår inte vad Urban syftar på med ”tagit något märke”.
 
-Brevet visar också att ishockey redan är ett intresse. Urban tycker att det är spännande att titta på och beklagar Sveriges förlust mot Finland.
-
-Handstilen på kuvertets framsida är betydligt vuxnare än Urbans handstil i brevet. Adressen kan ha skrivits av Urbans mamma.
-
-Stavning och meningsbyggnad är bevarade som Urban skrev den, bland annat "söndas", "tråkit", "rolit", "vist" och "ishocky".
-
-Redan här finns ändå själva kärnan i brevväxlingen: Urban berättar för Ulf om det som händer i hans värld och avslutar med en önskan om att få ett brev tillbaka: "skriv snart".
+Adressen på kuvertets framsida är skriven med en betydligt vuxnare handstil än själva brevet. Den kan ha skrivits av Urbans mamma.
 
 # Personer
 
-**Urban Sandlund**  
-Avsändare.
-
-**Ulf Sandlund**  
-Mottagare och Urbans kusin.
-
-**Pappa**  
-Urbans pappa. 
-
-# Platser
-
-**Piteå**  
-Här postas brevet.
-
-**Mölndal**  
-Dit brevet skickas.
+- **Urban Sandlund** – brevets avsändare.
+- **Ulf Sandlund** – brevets mottagare och Urbans kusin.
+- **Pappa** – Urbans pappa.
