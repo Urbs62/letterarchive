@@ -90,3 +90,9 @@ Hejdå. Mycket hejdå. Jätte mycket hejdå.
 # Sammanfattning
 
 Urban skriver till Ulf om vardagen i Piteå, sin födelsedag och förväntningarna inför julen.
+
+# Personer
+
+- **Urban Sandlund** – brevets avsändare.
+- **Ulf Sandlund** – brevets mottagare och Urbans kusin.
+- **Gun Erikson** – Urbans ordinarie lärare, som vid tiden för brevet är sjuk. Klassen har därför en vikarie.
