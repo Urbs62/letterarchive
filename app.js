@@ -84,7 +84,7 @@ let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
-const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05"]);
+const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -638,7 +638,7 @@ function renderContinuousLetter(letter, view) {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
-        if (letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05") {
+        if (letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05" || letter.id === "1974-08-23") {
           // SPECIAL: line structure and spacing carry meaning in the rebuses
           // and vertical text. Keep the entire reviewed transcription intact.
           text.classList.add("continuous-preserved");
@@ -751,11 +751,12 @@ function renderLetter(letter) {
   view.append(navigation);
 
   // Supplementary archival cards follow the complete letter, before analysis.
-  if (letter.id === "1972-12-10" || letter.id === "1974-09-17") {
+  if (letter.id === "1972-12-10" || letter.id === "1974-09-17" || letter.id === "1974-08-23") {
     const isSafe = letter.id === "1972-12-10";
-    const heading = isSafe ? "Bevarat föremål" : "Personer i brevet";
-    const title = isSafe ? "Barnkassaskåp – Junior-Safe" : "Urban och Frasse";
-    const text = isSafe
+    const isCamera = letter.id === "1974-08-23";
+    const heading = isSafe || isCamera ? "Bevarat föremål" : "Personer i brevet";
+    const title = isCamera ? "Agfa Agfamatic" : isSafe ? "Barnkassaskåp – Junior-Safe" : "Urban och Frasse";
+    const text = isCamera ? "Kameran som Urban skriver om i brevet, inköpt av hans föräldrar." : isSafe
       ? "Kassaskåpet som Urban skriver om i brevet finns fortfarande bevarat."
       : "Urban och Frasse, fotograferade under samma period som brevet skrevs.";
     const reference = document.createElement("section");
@@ -772,7 +773,7 @@ function renderLetter(letter) {
     `;
     reference.querySelector(".preserved-object-content").prepend(createOriginalImage({
       label: title,
-      image: isSafe
+      image: isCamera ? "letters/1974/1974-08-23/agfamatic-camera.jpeg" : isSafe
         ? "letters/1972/1972-12-10/artifact-junior-safe.jpg"
         : "letters/1974/1974-09-17/urban-frasse.jpg"
     }));

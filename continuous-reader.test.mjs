@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -74,6 +74,30 @@ try {
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1974-08-23') {
+   check(pages.length===3&&frames.length===3,'three physical pages');
+   document.querySelector('#transcription-tab').click();
+   const texts=[...document.querySelectorAll('.continuous-document .transcription-text')];
+   check(texts.length===3&&texts.every((p,i)=>p.textContent===pages[i].transcription&&p.childNodes.length===1&&getComputedStyle(p).whiteSpace==='pre-wrap'),'reviewed pages untouched without reflow');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'SPECIAL path');
+   check(texts[2].textContent.includes('OHEJDIÅFRAMIG  \\nTILLDIG\\nSKRIV SAKTA'),'reviewed graphical ending and spaces');
+   const attachments=l.items.filter(i=>i.type==='attachment');check(attachments.length===3&&originals.querySelectorAll('.continuous-original-page').length===5,'attachments separate from pages');
+   check(JSON.stringify([...originals.querySelectorAll('img')].slice(2).map(i=>i.getAttribute('src')))===JSON.stringify(attachments.map(i=>i.image)),'attachment image order');
+   for(const button of [...originals.querySelectorAll('button')].slice(2)){document.querySelector('#original-tab').click();button.scrollIntoView({behavior:'instant',block:'center'});button.focus({preventScroll:true});const y=scrollY;button.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden,'attachment enlargement');closeViewer();check(document.activeElement===button&&Math.abs(scrollY-y)<2,'attachment focus and scroll');}
+   check(JSON.stringify([...material.querySelectorAll('.continuous-text-page')].slice(2).map(p=>p.querySelector('.transcription-text')?.textContent||''))===JSON.stringify(attachments.map(a=>a.transcription)),'attachment transcription preserved');
+   const photo=document.querySelector('.preserved-object'),sections=[...document.querySelectorAll('.letter-view > details')];
+   check(document.querySelectorAll('.preserved-object').length===1&&photo.parentElement===document.querySelector('.letter-view'),'one separate existing contextual card');
+   check(document.querySelector('#transcription-panel').nextElementSibling===photo&&photo.nextElementSibling===sections[0],'camera follows complete shipment before analysis');
+   check(photo.querySelector('h3').textContent==='Agfa Agfamatic'&&photo.querySelector('.preserved-object-content p').textContent==='Kameran som Urban skriver om i brevet, inköpt av hans föräldrar.','camera title and caption');
+   const image=photo.querySelector('img');await image.decode();check(image.getAttribute('src')==='letters/1974/1974-08-23/agfamatic-camera.jpeg'&&image.getBoundingClientRect().width<=112,'supplied camera image and existing thumbnail sizing');
+   const button=photo.querySelector('button');button.scrollIntoView({behavior:'instant',block:'center'});button.focus({preventScroll:true});const y=scrollY;button.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden&&viewerContent.querySelector('img').getAttribute('src')===image.getAttribute('src'),'camera enlargement');closeViewer();check(document.activeElement===button&&Math.abs(scrollY-y)<2,'camera scroll and focus');
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer']),'aftertext order and no Places');
+   check(l.summary.length<300&&sections[0].querySelector('p').textContent===l.summary,'concise exact summary');
+   sections.slice(1).forEach((s,i)=>check(s.querySelector('p').textContent===l.sections[i].content,'aftertext exact'));
+   check(!document.querySelector('.letter-additional-section')&&!/##|Bild:/.test(document.querySelector('.letter-view').textContent),'no raw archive structure');
+   check(letters.filter(l=>l.type==='artifact'&&/agfamatic/i.test(JSON.stringify(l))).length===1,'one existing Agfamatic artifact');
+   sections.forEach(s=>s.open=true);document.querySelector('#transcription-tab').click();check(document.documentElement.scrollWidth<=innerWidth,'full entry no document overflow');
+ }
  if(l.id==='1974-03-05') {
    check(pages.length===2&&frames.length===2,'two registered originals');
    document.querySelector('#transcription-tab').click();
@@ -244,5 +268,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1975-05-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-09-17,1975-08-27,1978-09-29'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-08-27,1978-09-29'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

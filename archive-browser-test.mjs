@@ -162,7 +162,7 @@ try {
     const screenshot = await cdp('Page.captureScreenshot', { format: 'png' }, sessionId);
     await writeFile(path.join(profile, `context-${id}-${width}.png`), Buffer.from(screenshot.data, 'base64'));
     }
-    await evaluate(`for (const letter of letters.filter(letter => !['1972-12-10', '1974-09-17'].includes(letter.id))) {
+    await evaluate(`for (const letter of letters.filter(letter => !['1972-12-10', '1974-09-17', '1974-08-23'].includes(letter.id))) {
       renderLetter(letter);
       if (document.querySelector('.preserved-object')) throw new Error('Reference on another letter');
     }

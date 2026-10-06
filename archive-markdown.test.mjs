@@ -58,6 +58,23 @@ test("1974-03-05 retains legacy drawing material and uses concise aftertext", as
   assert.ok(!stored.sections.some(section => section.title === "Platser"));
 });
 
+test("1974-08-23 uses reviewed legacy source pages and concise analysis", async () => {
+  const source = await readFile("letters/1974/1974-08-23/letter.md", "utf8");
+  const archive = JSON.parse(await readFile("letters.json", "utf8"));
+  const stored = archive.letters.find(letter => letter.id === "1974-08-23");
+  for (const page of stored.items.filter(item => item.type === "page")) {
+    const block = source.split(`# Page ${page.page}`)[1].split(/^# /m)[0];
+    assert.equal(page.transcription, block.split("## Transkription")[1].replace(/\r\n/g, "\n").replace(/\n---\s*$/, "").trim());
+  }
+  const parsed = parseArchiveMarkdown(source, {fileName: "letter.md"});
+  assert.equal(parsed.summary, stored.summary);
+  assert.deepEqual(parsed.sections.filter(section => ["Iakttagelser", "Personer"].includes(section.title)), stored.sections);
+  assert.deepEqual(stored.items.map(item => item.type), ["envelope-front", "envelope-back", "page", "page", "page", "attachment", "attachment", "attachment"]);
+  assert.equal(archive.letters.filter(letter => letter.type === "artifact" && /agfamatic/i.test(JSON.stringify(letter))).length, 1);
+  assert.ok(stored.summary.length < 300);
+  assert.ok(stored.sections[0].content.includes("Avvikelsen är olöst"));
+});
+
 const metadata = `## Date
 1975-01-02
 

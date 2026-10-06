@@ -229,8 +229,8 @@
       "from": "Urban",
       "to": "Ulf",
       "senderAge": 11,
-      "type": "handwritten",
-      "summary": "Detta är ett av de tidigaste breven i samlingen och Urban är omkring tolv år gammal. Brevet består nästan helt av ordvitsar, skämt och språklekar. Inledningsvis berättar han att han haft halsfluss och att familjen köpt en kamera, men därefter övergår brevet snabbt till en lång rad humoristiska infall.\n\nStörre delen av brevet bygger på dubbeltydiga uttryck och ordassociationer, exempelvis \"nu är jag ute och cyklar igen\", \"det tjänar jag klöver på\" och \"det är inget att binda sig vid\". Brevet avslutas med ytterligare ordvitsar, ett grafiskt skämt där ordet \"SAKTA\" delas mellan två rader samt en skämtsam uppmaning om Coca-Cola.\n\nTill brevet följer dessutom tre bilagor: en förpackning till ett tuggummi med tillhörande tatuering, en handskriven instruktion samt den andra sidan av förpackningen. Bilagorna visar att brevet inte bara var ett brev utan också ett litet paket med en överraskning till kusinen Ulf.",
+      "type": "letter",
+      "summary": "Urban skriver ett lekfullt brev präglat av skämt, ordlekar och språkliga experiment. Han berättar också om halsfluss och kameran som hans föräldrar köpt åt honom. Bland bilagorna finns en liten överraskning med tuggummi och tatuering.",
       "items": [
         {
           "type": "envelope-front",
@@ -251,7 +251,7 @@
           "page": 1,
           "label": "Sida 1",
           "image": "letters/1974/1974-08-23/page-01.jpg",
-          "transcription": "Hej (Hallow) käre Ulf,\n\nÄsch Piteå 12-9-??\n\nDan efter du hade farit blidde jag sjukkk (halsfluss). Inte roligt men pappa köpte kameran för 341... äsch... 143 mark.\n\n$ Nu skärper du dig, Urban!\n\nJag klarade mig frånsamvetet, han missade. För 143 kr.\n\nVänta Ulf, måste hämta min sekreterare.\n\nKan fröken Grodkvist diktera.\n\nJag har lämnat in en rulle 12 kort och tagit tio kort. Efter det jag hade tagit 12 kort och dragit fram gick inte kameran att trycka ihop. Vad beror det på?\n\nBra gjort fröken Grodkvist.\n\nHistoriedags. Nu blev du allt rädd, va?\n\n\"För Guds skull använd båda händerna\", skrek flickan som fick lift av sin pojkvän.\n\nResten får du hitta på själv eller läsa i (G-P).\n\nSkriv istället något roligt än dumma frågor och mönster.\n\nGoddag!\n\nMitt namn är:\n\nPenna, och det kan du skriva upp.\n\nPensel, nu har jag gjort en tavla.\n\nMatematik, och det kan du räkna med.\n\nHals, och jag skall läggas in på mentalsjukhus idag.",
+          "transcription": "Hej (Hallow) käre Ulf,\n\nÄsch Piteå 12-9-??\n\nDan efter du hade farit blidde jag sjukkk (halsfluss). Inte roligt men pappa köpte kameran för 341... äsch... 143 mark.\n$ Nu skärper du dig, Urban! Jag klarade mig frånsamvetet, han missade. För 143 kr.\n\nVänta Ulf, måste hämta min sekreterare. Kan fröken Grodkvist diktera.\n\nJag har lämnat in en rulle 12 kort och tagit tio kort. Efter det jag hade tagit 12 kort och dragit fram gick inte kameran att trycka ihop. Vad beror det på?\nBra gjort fröken Grodkvist.\n\nHistoriedags. Nu blev du allt rädd, va?\n\"För Guds skull använd båda händerna\", skrek flickan som fick lift av sin pojkvän.\nResten får du hitta på själv eller läsa i (G-P).\n\nSkriv istället något roligt än dumma frågor och mönster.\n\nGoddag!\n\nMitt namn är:\n- Penna, och det kan du skriva upp.\n- Pensel, nu har jag gjort en tavla.\n- Matematik, och det kan du räkna med.\n- Hals, och jag skall läggas in på mentalsjukhus idag.",
           "description": ""
         },
         {
@@ -259,7 +259,7 @@
           "page": 2,
           "label": "Sida 2",
           "image": "letters/1974/1974-08-23/page-02.jpg",
-          "transcription": "krut, och det är jag bombsäker på.\n\nbil, och... äsch... nu är jag ute och cyklar igen.\n\nsnöre, men det är inget att binda sig vid.\n\nFärgdyna, men det behöver man väl inte stämplas för.\n\nKort, och det tjänar jag klöver på.\n\nMargarin, och det går åt som smör.\n\nUrban, men inte är jag glad för det.\n\nJag skickar med ett kort. Det får du ifall du skickar med ett kort på erat hus framifrån. \"The family\" ska sitta på trappan. (Du behöver inte göra det ifall du inte vill.)\n\nOm du ser i P-T måndagen den tjogonde ser du vad jag blev på 70-aden. Hur mycket kostar ett fodral till en kamera? Min alltså.\n\nHarald fick sin största chock när han kom hem från jobbet.\n\n– Hur i allsin dar har bilen kommit in i vardagsrummet, Hulda!?\n\n– Det var lätt. Jag svängde bara till vänster när jag kom in till köket.\n\n(håll i dej)",
+          "transcription": "- kKrut, och det är jag bombsäker på.\n- Bil, och... äsch... nu är jag ute och cyklar igen.\n- Snöre, men det är inget att binda sig vid.\n- Färgdyna, men det behöver man väl inte stämplas för.\n- Kort, och det tjänar jag klöver på.\n- Margarin, och det går åt som smör.\n- Urban, men inte är jag glad för det.\n\nJag skickar med ett kort. Det får du ifall du skickar med ett kort på erat hus framifrån. \"The family\" ska sitta på trappan. (Du behöver inte göra det ifall du inte vill.)\n\nOm du ser i P-T måndagen den tjogonde ser du vad jag blev på 70-iaden. Hur mycket kostar ett fodral till en kamera? Min alltså.\n\nHarald fick sin största chock när han kom hem från jobbet.\n– Hur i allsin dar har bilen kommit in i vardagsrummet, Hulda!?\n– Det var lätt. Jag svängde bara till vänster när jag kom in till köket.\n\n(håll i dej)",
           "description": ""
         },
         {
@@ -267,7 +267,7 @@
           "page": 3,
           "label": "Sida 3",
           "image": "letters/1974/1974-08-23/page-03.jpg",
-          "transcription": "Goddag, mitt namn är\n\nKrok, men häng inte upp er på det.\n\nStock, driver ni med mej.\n\nSudo, ska vi slåss.\n\nSnål, jag är generösast i stan.\n\nUppe, jag känner mig ganska nere.\n\nSvärd, nu sticker jag.\n\nVinter, jag känner mig ganska insnöad.\n\nSol, jag känner mig ganska varm.\n\nMat, jag är hungrig.\n\nFlod, jag är blöt.\n\nFågel, nu flyger jag.\n\nKaramell, jag är sur.\n\nStröm, jag får stötar.\n\nFisk, jag kan inte simma.\n\nKrig, jag är pank.\n\nKlocka, nu går jag.\n\nFjäder, jag känner mig så lätt.\n\nGranit, jag känner mig så tung.\n\nSaab, jag kör Volvo.\n\nStolpe, om det kan vara till någon ledning.\n\nKorv, jag äter bara biff.\n\nEn samling fina skämt.\n\nOHEJDIÅFRAMIG\nTILLDIG\n\nSKRIV SAKT-\nA\n\nP.S. Blanda lite kemikalier i coca-colan.\n\nHahahaha",
+          "transcription": "Goddag, mitt namn är\n- Krok, men häng inte upp er på det.\n- Stock, driver ni med mej.\n- Judo, ska vi slåss.\n- Snål, jag är generösast i stan.\n- Uppe, jag känner mig ganska nere.\n- Svärd, nu sticker jag.\n- Vinter, jag känner mig ganska insnöad.\n- Sol, jag känner mig ganska varm.\n- Mat, jag är hungrig.\n- Flod, jag är blöt.\n- Fågel, nu flyger jag.\n- Karamell, jag är sur.\n- Ström, jag får stötar.\n- Fisk, jag kan inte simma.\n- Krig, jag är pank.\n- Klocka, nu går jag.\n- Fjäder, jag känner mig så lätt.\n- Granit, jag känner mig så tung.\n- Saab, jag kör Volvo.\n- Stolpe, om det kan vara till någon ledning.\n- Korv, jag äter bara biff.\n\nEn samling fina skämt.\n\nOHEJDIÅFRAMIG  \nTILLDIG\nSKRIV SAKTA\n\nP.S. Blanda lite kemikalier i coca-colan.\n\nHahahaha",
           "description": ""
         },
         {
@@ -293,6 +293,17 @@
           "image": "letters/1974/1974-08-23/attachments/attachment-03.jpg",
           "transcription": "",
           "description": "Baksidan av samma tuggummiförpackning. Visar produktinformation samt texten \"Everywhere!\" och att serien omfattar 150 bilder."
+        }
+      ],
+      "writingType": "handwritten",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "- Brevet är ett tidigt tydligt exempel på korrespondensens lekfulla stil, med ordassociationer, absurda formuleringar och direkt samspel med Ulf.\n\n- Humorn är inte bara inskjutna skämt; stora delar av brevet är uppbyggda kring själva språkleken.\n\n- Kameran knyter brevet till ett bevarat föremål: Agfa Agfamatic-kameran som nu är dokumenterad i LetterArchive.\n\n- De tre bilagorna visar hur brevväxlingen kunde omfatta små fysiska överraskningar och föremål utöver den skrivna texten.\n\n- Brevets interna datering ”Äsch Piteå 12-9-??” stämmer inte med kuvertets poststämpel 1974-08-23. Avvikelsen är olöst; materialet ger inte säkert besked om varför datumen skiljer sig åt eller om kuvertet och brevet hör samman."
+        },
+        {
+          "title": "Personer",
+          "content": "- Urban Sandlund – brevets avsändare.\n- Ulf Sandlund – mottagare och Urbans kusin.\n- Rune Sandlund – Urbans pappa.\n- Barbro Sandlund – Urbans mamma."
         }
       ]
     },
