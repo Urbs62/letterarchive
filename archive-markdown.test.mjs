@@ -20,6 +20,25 @@ test(`SPECIAL ${id} source preserves the reviewed page text and aftertext`, asyn
 });
 }
 
+test("1978-09-29 keeps one logical transcription across two physical originals", async () => {
+  const parsed = await readSource("letters/1978/1978-09-29/letter.md");
+  const stored = JSON.parse(await readFile("letters.json", "utf8")).letters.find(letter => letter.id === "1978-09-29");
+  const pages = stored.items.filter(item => item.type === "page");
+  assert.equal(pages.length, 2);
+  assert.equal(pages[0].transcription, parsed.items.find(item => item.type === "page").transcription);
+  assert.equal(pages[1].transcription, "");
+  assert.deepEqual(pages.map(item => item.image), ["page-01.jpeg", "page-02.jpeg"].map(name => stored.folder + name));
+  assert.equal(stored.items.filter(item => item.type === "attachment").length, 3);
+  assert.equal(stored.summary, parsed.summary);
+  assert.deepEqual(stored.sections, parsed.sections.filter(section => ["Iakttagelser", "Personer"].includes(section.title)));
+  const observations = stored.sections[0].content, people = stored.sections[1].content;
+  assert.ok(observations.includes("29.3.78") && observations.includes("1978-09-29") && observations.includes("förklarar inte säkert"));
+  assert.ok(!observations.includes("Urban har kanske"));
+  assert.equal((people.match(/^- Birgitta S /gm) || []).length, 1);
+  assert.equal((people.match(/^- Birgitta J /gm) || []).length, 1);
+  assert.ok(!/Nirgitta|Bigitta|TOrbjörn/.test(people));
+});
+
 const metadata = `## Date
 1975-01-02
 

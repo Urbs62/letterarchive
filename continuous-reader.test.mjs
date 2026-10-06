@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -64,15 +64,40 @@ try {
  check(JSON.stringify(frames.map(f=>f.querySelector('img').getAttribute('src')))===JSON.stringify(pages.map(i=>i.image)),'original order');
  for(const f of frames){f.scrollIntoView({behavior:'instant',block:'center'});const y=scrollY;f.focus({preventScroll:true});f.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden,'lightbox');closeViewer();check(document.activeElement===f&&Math.abs(scrollY-y)<2,'lightbox scroll and focus');}
  document.querySelector('#transcription-tab').click();
- check(JSON.stringify([...document.querySelectorAll('.continuous-document .continuous-text-page')].map(page=>[...page.querySelectorAll('.transcription-text')].map(p=>p.textContent).join('')))===JSON.stringify(pages.map(i=>i.transcription)),'exact text');
- const headings=[...document.querySelectorAll('.continuous-document .continuous-text-page > h2')];check(headings.length===pages.length&&headings.every((h,i)=>h.textContent===pages[i].label&&getComputedStyle(h).fontSize==='12.8px'),'subtle page labels in order');
+ const textPages=l.id==='1978-09-29'?pages.filter(p=>p.transcription):pages;
+ check(JSON.stringify([...document.querySelectorAll('.continuous-document .continuous-text-page')].map(page=>[...page.querySelectorAll('.transcription-text')].map(p=>p.textContent).join('')))===JSON.stringify(textPages.map(i=>i.transcription)),'exact text');
+ const headings=[...document.querySelectorAll('.continuous-document .continuous-text-page > h2')];check(headings.length===textPages.length&&headings.every((h,i)=>h.textContent===(l.id==='1978-09-29'?'Brevet i läsordning':textPages[i].label)&&getComputedStyle(h).fontSize==='12.8px'),'subtle reading labels in order');
  headings.forEach((h,i)=>check(h.parentElement.firstElementChild===h,'separator precedes page '+i));
  check([...document.querySelectorAll('.continuous-document .continuous-paragraph:not(.continuous-positioned)')].every(p=>getComputedStyle(p).whiteSpace==='normal'),'prose reflows');
  const descriptions=[...document.querySelectorAll('.continuous-document .item-description p')];check(JSON.stringify(descriptions.map(p=>p.textContent))===JSON.stringify(pages.filter(p=>p.description).map(p=>p.description)),'exact illustration descriptions');
  headings[headings.length-1].scrollIntoView({behavior:'instant',block:'center'});const y=scrollY;moveImage(1);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));check(Math.abs(scrollY-y)<2,'stable reading scroll');
- const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===2,'envelope text');
+ const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1978-09-29') {
+   check(pages.length===2&&frames.length===2&&pages[0].image.endsWith('page-01.jpeg')&&pages[1].image.endsWith('page-02.jpeg'),'two physical sheets only, registered order');
+   document.querySelector('#transcription-tab').click();
+   const text=document.querySelector('.continuous-document .transcription-text');
+   check(text.childNodes.length===1&&getComputedStyle(text).whiteSpace==='pre-wrap'&&!document.querySelector('.continuous-document .continuous-paragraph'),'logical sequence preserved without reflow');
+   const dates=['1978-09-23','1978-09-24','1978-09-28','1978-10-06','1978-10-07'];
+   check(dates.every((date,i)=>text.textContent.indexOf(date)>=0&&(i===0||text.textContent.indexOf(date)>text.textContent.indexOf(dates[i-1]))),'dated sections stay in logical order');
+   check((text.textContent.match(/handritad/g)||[]).length===4&&text.textContent.includes('[överstruket medd Tipp-X: Hej då Din kusin Ulf]'),'arrows and correction annotations retained');
+   check(document.querySelector('.transcription-note').textContent===textPages[0].transcriptionNote,'authoritative reading-order annotation');
+   const attachments=l.items.filter(i=>i.type==='attachment');check(attachments.length===3,'three attachments');
+   check(originals.querySelectorAll('.continuous-original-page').length===5,'envelope and attachments separate from original stage');
+   check(JSON.stringify([...originals.querySelectorAll('img')].slice(2).map(i=>i.getAttribute('src')))===JSON.stringify(attachments.map(i=>i.image)),'attachments registered order');
+   for(const button of [...originals.querySelectorAll('button')].slice(2)) {
+     document.querySelector('#original-tab').click();button.scrollIntoView({behavior:'instant',block:'center'});button.focus({preventScroll:true});const y=scrollY;button.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden,'attachment enlargement');closeViewer();check(document.activeElement===button&&Math.abs(scrollY-y)<2,'attachment scroll and focus restoration');
+   }
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer']),'only intended aftertext');
+   check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext after complete material');
+   check(sections[0].querySelector('p').textContent===l.summary&&l.summary.startsWith('Ett långt')&&l.summary.length<250,'concise exact summary');
+   sections.slice(1).forEach((s,i)=>check(s.querySelector('p').textContent===l.sections[i].content,'exact edited aftertext'));
+   check(!document.querySelector('.letter-additional-section')&&!/##|Bild:|\\*\\*/.test(document.querySelector('.letter-view').textContent),'no raw archive structure');
+   sections.forEach(s=>s.open=true);document.querySelector('#transcription-tab').click();
+   check(document.documentElement.scrollWidth<=innerWidth,'logical transcription and expanded analysis no document overflow');
+ }
  if(l.id==='1972-12-10') {
    check(pages.length===1&&frames.length===1,'single physical page');
    check(!document.querySelector('.letter-additional-section'),'no duplicate raw envelope aftertext');
@@ -200,5 +225,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1975-05-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-09-17,1975-08-27'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-09-17,1975-08-27,1978-09-29'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

@@ -84,7 +84,7 @@ let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
-const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19"]);
+const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -619,14 +619,26 @@ function renderContinuousLetter(letter, view) {
     original.append(createItemHeading(item), createOriginalImage(item));
     for (const image of item.relatedImages || []) original.append(createRelatedImage(image));
     originalTarget.append(original);
+    // This source is one authoritative logical sequence, spanning two sheets.
+    // The second physical original has no separate transcription to render.
+    if (letter.id === "1978-09-29" && item.type === "page" && !item.transcription) return;
     const transcription = document.createElement("section");
     transcription.className = "continuous-text-page";
     updateTranscription(item, transcription);
+    if (letter.id === "1978-09-29") {
+      if (item.type === "page") transcription.querySelector("h2").textContent = "Brevet i läsordning";
+      else if (item.type.startsWith("envelope")) {
+        // Render legacy editorial bold labels without exposing Markdown syntax.
+        transcription.querySelectorAll(".transcription-text").forEach(text => {
+          text.textContent = text.textContent.replace(/\*\*([^*]+)\*\*/g, "$1");
+        });
+      }
+    }
     if (item.type === "page") {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
-        if (letter.id === "1974-02-12" || letter.id === "1974-02-19") {
+        if (letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29") {
           // SPECIAL: line structure and spacing carry meaning in the rebuses
           // and vertical text. Keep the entire reviewed transcription intact.
           text.classList.add("continuous-preserved");
