@@ -75,6 +75,18 @@ test("1974-08-23 uses reviewed legacy source pages and concise analysis", async 
   assert.ok(stored.sections[0].content.includes("Avvikelsen är olöst"));
 });
 
+test("1975-05-29 imports reviewed lines, PS text and all existing analysis", async () => {
+  const parsed = await readSource("letters/1975/1975-05-29/letter.md");
+  const stored = JSON.parse(await readFile("letters.json", "utf8")).letters.find(letter => letter.id === "1975-05-29");
+  assert.deepEqual(stored.items, parsed.items);
+  assert.equal(stored.summary, parsed.summary);
+  assert.deepEqual(stored.sections, parsed.sections.filter(section => ["Iakttagelser", "Personer", "Djur"].includes(section.title)));
+  assert.ok(stored.summary.length < 300);
+  assert.equal(stored.sections[0].content.split("\n\n").length, 5);
+  assert.equal(stored.sections[1].content.split("\n").length, 5);
+  assert.ok(stored.sections[2].content.includes("Frasse"));
+});
+
 const metadata = `## Date
 1975-01-02
 

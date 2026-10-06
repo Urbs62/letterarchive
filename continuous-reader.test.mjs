@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -74,6 +74,26 @@ try {
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1975-05-29') {
+   check(pages.length===3&&frames.length===3,'three originals in registered order');
+   document.querySelector('#transcription-tab').click();
+   const texts=[...document.querySelectorAll('.continuous-document .transcription-text')];
+   check(texts.length===3&&texts.every((p,i)=>p.textContent===pages[i].transcription&&p.childNodes.length===1&&getComputedStyle(p).whiteSpace==='pre-wrap'),'reviewed text and lines preserved without reflow');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'preservation path');
+   check(texts[0].textContent.startsWith('24/5-61')&&texts[2].textContent.includes('P.S SKRIV SNART OCH FORT.  \\nP.S Flåt stilen  \\nP.S På torsdag far vi till Kemi på skolresa'),'original date, PS lines and spaces retained');
+   check(!document.querySelector('.preserved-object'),'no new contextual image');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Djur']),'aftertext order including Animals');
+   check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext after complete letter and envelope');
+   check(sections[0].querySelector('p').textContent===l.summary&&l.summary.length<300,'short exact summary');
+   sections.slice(1).forEach((s,i)=>check(s.querySelector('p').textContent===l.sections[i].content,'analysis exact'));
+   check(l.sections[0].content.split('\\n\\n').length===5,'five selective observations');
+   check(l.sections[1].content.includes('Birgitta S')&&l.sections[1].content.includes('Mikael Johansson')&&l.sections[1].content.includes('Lasse Berghagen')&&l.sections[2].content.includes('Frasse'),'People and Animals retained');
+   check(!document.querySelector('.letter-additional-section')&&!/##|Bild:/.test(document.querySelector('.letter-view').textContent),'no raw source structure');
+   check(material.querySelectorAll('.continuous-text-page').length===2&&originals.querySelectorAll('.continuous-original-page').length===2,'normal envelope UI');
+   check(material.textContent.includes('När Roger Moore')&&material.textContent.includes('Det kom man fråga sig'),'complete reviewed envelope text');
+   sections.forEach(s=>s.open=true);check(document.documentElement.scrollWidth<=innerWidth,'expanded aftertext no document overflow');
+ }
  if(l.id==='1974-08-23') {
    check(pages.length===3&&frames.length===3,'three physical pages');
    document.querySelector('#transcription-tab').click();
@@ -267,6 +287,6 @@ try {
  }
  }
  }
- assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1975-05-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-08-27,1978-09-29'`),true);
+ assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-08-27,1978-09-29'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

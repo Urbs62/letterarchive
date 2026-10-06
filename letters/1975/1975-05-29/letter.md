@@ -51,22 +51,16 @@ På kuvertet finns även flera handskrivna, delvis svårlästa och ofullständig
 
 Hej Ulf!
 
-Törs nästan inte skriva. Det var väl  
-nästan 1 år sen du skrev.
+Törs nästan inte skriva. Det var väl nästan 1 år sen du skrev.
 
-Vi har i allafall skaffat ttakkärk=
-kattkräk! en historia "En pojk". (roli vaa  
-äkta norrländska)
+Vi har i allafall skaffat ttakkärk=kattkräk!
+en historia "En pojk". (roli vaa äkta norrländska)
 
-Just nu klättrar Frasse omkring på papperet
+Just nu klättrar Frasse omkring på papperet oooo Imorron har jag namnsdag 25/5
 
-ooooImorron har jag namnsdag 25/5
-
-Kommer ni i sommar?  
-Hur många meter är du?  
+Kommer ni i sommar?   Hur många meter är du?  
 Spelar birgitta piano eller kan hon inte spela?  
-Din bästa matsort?  
-Hur mycket avg är du på mig för att jag  
+Din bästa matsort?   Hur mycket avg är du på mig för att jag  
 inte skrivit? svara i ton.
 
 Svara
@@ -76,49 +70,32 @@ Svara
 **Transkription:**
 
 Lasse Berghagens sång
-
-Jenny Jenny Jenny, Jenny, Jenny  
-Jenny, Jenny, Jenny, Jenny o.s.v.
-
-Den urkassaste, hemskaste, dåligaste, sopigaste  
-dassigaste, äckligaste, snuskigaste, enformigaste  
+Jenny Jenny Jenny, Jenny, Jenny, Jenny, Jenny, Jenny, Jenny o.s.v. 
+Den urkassaste, hemskaste, dåligaste, sopigaste, dassigaste, äckligaste, snuskigaste, enformigaste  
 samma textigaste, melodi jag hört
 
 Idag ska vi fara till skellefteå på cykeltävling
 
 Kameran går fint (eller rättare sagt "springer").
 
-Idag har det varit Lyon loppmarknad  
-på Norrmalmia. Jag for inte dit  
-men det gjorde "micke" nyss kom han  
-hem med en korg (näver), bollkastnings-  
-ställ, en gramofon som inte funkar och  
-en TV för 6 kr som kan explodera när som  
-helst
+Idag har det varit Lyon loppmarknad på Norrmalmia. Jag for inte dit  
+men det gjorde "micke" nyss kom han hem med en korg (näver), bollkastnings-ställ, en gramofon som inte funkar och en TV för 6 kr som kan explodera när som helst
 
 ## Sida 3
 
 **Transkription:**
 
-Snart ska vi fara till Skellefteå så nu kan  
-jag inte skriva mer förutom en grym neger-  
-historia.
+Snart ska vi fara till Skellefteå så nu kan jag inte skriva mer förutom en grym neger-historia.
 
-En man gick fram till en neger och frågade  
-var apoteket var. Negern svarade;
-
+En man gick fram till en neger och frågade var apoteket var. Negern svarade;
 – Mtplhomthm hlvomom  
 – Hörrö neger svara ordentligt var är apoteket  
 – Momohlömthna  
 – Men jä-la negerjä-el var är apoteket
-
-Niggern blev smått arg på mannen och puttade  
-bort han 2 meter sen sa han
-Ja kan väl för f-n inte svara när du står  
-på underläppen
+Niggern blev smått arg på mannen och puttade bort han 2 meter sen sa han
+Ja kan väl för f-n inte svara när du står på underläppen
 
 Hejdå,
-
 Hälsningar Urban
 
 P.S SKRIV SNART OCH FORT.  
@@ -127,39 +104,19 @@ P.S På torsdag far vi till Kemi på skolresa
 
 # Sammanfattning
 
-Urban skriver till Ulf i slutet av maj 1975 efter att det enligt honom gått nästan ett år sedan Ulf senast skrev. Brevet börjar den 24 maj och postas den 29 maj.
-
-Familjen har skaffat katten Frasse, som redan gör sig påmind genom att klättra omkring på papperet medan Urban skriver. 
-
-Urban kommenterar Lasse Berghagens sång "Jenny" mycket negativt och radar upp en lång serie förstärkande omdömen om hur dålig och enformig han tycker att den är.
-
-Cyklingen är närvarande genom en kommande resa till Skellefteå för en cykeltävling. 
-
-Han berättar om en loppmarknad på Norrmalmia som lekkamrat Mikael Johansson har besökt. Micke kommer därifrån med bland annat en näverkorg, ett bollkastningsställ, en trasig grammofon och en TV.
-
-Brevet avslutas inför avresan till Skellefteå. Urban skickar med en historia och ber Ulf att skriva snart. 
+Urban återupptar kontakten med Ulf efter vad han beskriver som ett långt uppehåll i brevväxlingen. Brevet blandar vardag, frågor, cykling, musikkommentarer och humor, medan familjens nyanskaffade katt Frasse klättrar omkring på papperet när Urban skriver.
 
 # Iakttagelser
 
-- Brevet är skrivet den 24 maj 1975 men poststämplat i Piteå den 29 maj. Arkivdatumet bör därför vara 1975-05-29 enligt LetterArchives princip att försändelser dateras efter poststämpeln.
+- Första sidans datering ”24/5-61” stämmer inte med poststämpeln från 1975 eller brevets sammanhang och framstår som en felskrivning. Originalformen bevaras i transkriptionen.
 
-- Dateringen på första sidan är skriven "24/5-61". Årtalet stämmer inte med poststämpeln eller brevets sammanhang och framstår som en felskrivning, men bevaras naturligtvis oförändrat i transkriptionen.
+- Frasse förekommer som familjens nyanskaffade katt. Hans klättrande på papperet ger en konkret ögonblicksbild av själva skrivsituationen.
 
-- Frasse förekommer här som familjens nyanskaffade katt. Att han klättrar omkring på själva brevet medan Urban skriver ger en konkret vardagsbild.
+- Urban håller korrespondensen aktiv genom direkta frågor till Ulf om bland annat sommarplaner, längd, favoritmat och Birgittas pianospel.
 
-- Urban använder frågor som ett sätt att hålla igång korrespondensen. Frågorna till Ulf handlar om allt från längd och favoritmat till sommarbesök och Birgittas pianospel.
+- Även kuvertet används för skämt och ordlekar, vilket visar hur den lekfulla korrespondensen sträcker sig utanför brevsidorna.
 
-- Cyklingen är redan en viktig del av Urbans vardag. Brevet avbryts eftersom familjen ska åka till Skellefteå för en cykeltävling.
-
-- Loppmarknadsfynden är också ett intressant tidsdokument. En näverkorg, ett bollkastningsställ, en grammofon och en mycket billig gammal TV ger en konkret bild av vilka prylar som kunde byta ägare på en loppmarknad 1975.
-
-- Urbans sågning av Lasse Berghagens "Jenny" är ovanligt kategorisk och humoristisk. Uppräkningen av superlativ blir nästan en liten text i sig.
-
-- Kuvertet används även för skämt och ordvitsar. "Varför mår inte jag när Roger Moore" bygger på ljudlikheten mellan "mår" och "Moore".
-
-- Brevet innehåller en historia med rasistiska uttryck som var del av den återgivna humorn. I arkivet bevaras den ordagrant som historiskt källmaterial utan att uttrycken moderniseras.
-
-- Skolresan till Kemi i Finland visar ytterligare en aktivitet utanför den vanliga vardagen och kan bli intressant att jämföra med senare brev om resan återkommer där.
+- Den avslutande historien innehåller rasistiskt språk i den historiska originaltexten. LetterArchive bevarar transkriptionen troget utan att tyst modernisera eller sanera källan.
 
 # Personer
 
