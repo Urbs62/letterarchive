@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -120,16 +120,27 @@ try {
    check(l.summary.length<200,'concise summary');
    check(document.documentElement.scrollWidth<=innerWidth,'expanded aftertext no overflow');
  }
- if(l.id==='1974-02-12') {
+ if(l.id==='1974-02-12'||l.id==='1974-02-19') {
    check(pages.length===2&&frames.length===2,'only two registered physical pages');
    check(JSON.stringify([...document.querySelectorAll('.original-stage .continuous-original-page .item-heading h2')].map(h=>h.textContent))===JSON.stringify(pages.map(p=>p.label)),'original labels preserved');
    document.querySelector('#transcription-tab').click();
    const preserved=[...document.querySelectorAll('.continuous-document .continuous-preserved')];
-   check(preserved.length===2&&preserved.every((p,i)=>p.textContent===pages[i].transcription&&p.childNodes.length===1&&p.firstChild.nodeType===Node.TEXT_NODE),'whole reviewed pages retained as untouched text nodes');
+   check(preserved.length===2&&preserved.every((p,i)=>p.textContent===pages[i].transcription),'whole reviewed pages retained exactly');
    check(preserved.every(p=>getComputedStyle(p).whiteSpace==='pre-wrap'),'line breaks and whitespace preserved');
    check(!document.querySelector('.continuous-document .continuous-paragraph'),'SPECIAL bypasses prose splitting and reflow');
-   check(preserved[1].textContent.includes('Kriv\\nnart\\nå\\nka\\nvar\\nnart\\nändas'),'vertical wordplay retained');
-   check(preserved[1].textContent.includes('varv efter\\nvarv.')&&preserved[1].textContent.includes('Svar: 99 1/2.'),'spiral description and flap answer retained');
+   if(l.id==='1974-02-12') {
+     check(preserved.every(p=>p.childNodes.length===1&&p.firstChild.nodeType===Node.TEXT_NODE),'existing SPECIAL text nodes unchanged');
+     check(preserved[1].textContent.includes('Kriv\\nnart\\nå\\nka\\nvar\\nnart\\nändas'),'vertical wordplay retained');
+     check(preserved[1].textContent.includes('varv efter\\nvarv.')&&preserved[1].textContent.includes('Svar: 99 1/2.'),'spiral description and flap answer retained');
+   } else {
+     const recipe=document.querySelector('.continuous-recipe');
+     check(recipe.textContent==='Recept:\\n1/2 dl socker          1 tsk salt\\n1 matsked bakpulver    1 kryddmått havregryn\\noch lite mjölk eller grädde.','exact two-column recipe including all spaces');
+     check(getComputedStyle(recipe).whiteSpace==='pre'&&getComputedStyle(recipe).fontFamily==='monospace','recipe spacing uses fixed-width unwrapped text');
+     const rectAt=term=>{const start=recipe.textContent.indexOf(term);const range=document.createRange();range.setStart(recipe.firstChild,start);range.setEnd(recipe.firstChild,start+1);return range.getBoundingClientRect();};
+     const a=rectAt('1 tsk salt'),b=rectAt('1 kryddmått'),left=rectAt('1/2 dl');
+     check(Math.abs(a.left-b.left)<1&&a.left>left.left&&b.top>a.top,'ingredient columns aligned and row order intact');
+     const y=scrollY;recipe.scrollLeft=recipe.scrollWidth;check(recipe.scrollWidth<=recipe.clientWidth||recipe.scrollLeft>0,'narrow recipe can be scrolled');check(scrollY===y,'recipe scrolling does not jump document');recipe.scrollLeft=0;
+   }
    const sections=[...document.querySelectorAll('.letter-view > details')];
    check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer']),'existing aftertext order, no new sections');
    check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext follows complete letter and envelope');
@@ -143,9 +154,11 @@ try {
    }
    const probe=document.createElement('p');probe.className='transcription-text continuous-preserved';probe.textContent='  A  B\\n    C\\n\\nD';preserved[0].parentElement.append(probe);
    check(getComputedStyle(probe).whiteSpace==='pre-wrap'&&probe.textContent==='  A  B\\n    C\\n\\nD','meaningful whitespace preserved by reader styling');probe.remove();
+   if(l.id==='1974-02-12') {
    const vertical=preserved[1].textContent.indexOf('Kriv');
    const lineTops=[0,5,10,12,15,19,24].map(offset=>{const range=document.createRange();range.setStart(preserved[1].firstChild,vertical+offset);range.setEnd(preserved[1].firstChild,vertical+offset+1);return range.getBoundingClientRect().top;});
    check(lineTops.every((top,i)=>i===0||top>lineTops[i-1]),'vertical wordplay displays on distinct ordered lines');
+   }
    sections.forEach(s=>s.open=true);
    check(document.documentElement.scrollWidth<=innerWidth,'SPECIAL and expanded aftertext no overflow');
    check(JSON.stringify(l)===before,'all SPECIAL content unchanged');
@@ -176,6 +189,10 @@ try {
  return 'text, order, images, envelopes, scroll, layout passed';
  })()`));
  const shot=await cdp('Page.captureScreenshot',{format:'png'},sessionId);await writeFile(path.join(profile,`reader-${id}-${width}.png`),Buffer.from(shot.data,'base64'));
+ if(id==='1974-02-19') {
+ await evaluate(`document.querySelector('.continuous-recipe').scrollIntoView({behavior:'instant',block:'center'})`);
+ const recipe=await cdp('Page.captureScreenshot',{format:'png'},sessionId);await writeFile(path.join(profile,`recipe-${width}.png`),Buffer.from(recipe.data,'base64'));
+ }
  if(id==='1974-09-17') {
  await evaluate(`document.querySelector('.preserved-object').scrollIntoView({behavior:'instant',block:'center'})`);
  const context=await cdp('Page.captureScreenshot',{format:'png'},sessionId);await writeFile(path.join(profile,`context-${width}.png`),Buffer.from(context.data,'base64'));
@@ -183,5 +200,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1975-05-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-09-17,1975-08-27'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-09-17,1975-08-27'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

@@ -744,6 +744,16 @@ button:focus-visible {
   white-space: pre-wrap;
 }
 
+.continuous-recipe {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  overflow-wrap: normal;
+  font-family: monospace;
+  font-size: 0.85em;
+}
+
 .continuous-paragraph.continuous-positioned {
   white-space: pre-line;
 }

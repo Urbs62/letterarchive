@@ -5,9 +5,10 @@ import { parseArchiveMarkdown } from "./archive-markdown.mjs";
 import { readSource } from "./archive-import.mjs";
 import { readFile } from "node:fs/promises";
 
-test("SPECIAL 1974-02-12 source preserves the reviewed page text and aftertext", async () => {
-  const parsed = await readSource("letters/1974/1974-02-12/letter.md");
-  const stored = JSON.parse(await readFile("letters.json", "utf8")).letters.find(letter => letter.id === "1974-02-12");
+for (const id of ["1974-02-12", "1974-02-19"]) {
+test(`SPECIAL ${id} source preserves the reviewed page text and aftertext`, async () => {
+  const parsed = await readSource(`letters/1974/${id}/letter.md`);
+  const stored = JSON.parse(await readFile("letters.json", "utf8")).letters.find(letter => letter.id === id);
   const pages = letter => letter.items.filter(item => item.type === "page");
   assert.deepEqual(pages(parsed).map(item => item.transcription), pages(stored).map(item => item.transcription));
   assert.deepEqual(pages(parsed).map(item => [item.label, item.image]), pages(stored).map(item => [item.label, item.image]));
@@ -17,6 +18,7 @@ test("SPECIAL 1974-02-12 source preserves the reviewed page text and aftertext",
   assert.deepEqual(parsed.sections.filter(section => stored.sections.some(existing => existing.title === section.title)), stored.sections);
   assert.deepEqual(parsed.items.map(item => item.type), ["envelope-front", "envelope-back", "page", "page"]);
 });
+}
 
 const metadata = `## Date
 1975-01-02
