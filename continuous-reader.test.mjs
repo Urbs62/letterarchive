@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -120,6 +120,36 @@ try {
    check(l.summary.length<200,'concise summary');
    check(document.documentElement.scrollWidth<=innerWidth,'expanded aftertext no overflow');
  }
+ if(l.id==='1974-02-12') {
+   check(pages.length===2&&frames.length===2,'only two registered physical pages');
+   check(JSON.stringify([...document.querySelectorAll('.original-stage .continuous-original-page .item-heading h2')].map(h=>h.textContent))===JSON.stringify(pages.map(p=>p.label)),'original labels preserved');
+   document.querySelector('#transcription-tab').click();
+   const preserved=[...document.querySelectorAll('.continuous-document .continuous-preserved')];
+   check(preserved.length===2&&preserved.every((p,i)=>p.textContent===pages[i].transcription&&p.childNodes.length===1&&p.firstChild.nodeType===Node.TEXT_NODE),'whole reviewed pages retained as untouched text nodes');
+   check(preserved.every(p=>getComputedStyle(p).whiteSpace==='pre-wrap'),'line breaks and whitespace preserved');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'SPECIAL bypasses prose splitting and reflow');
+   check(preserved[1].textContent.includes('Kriv\\nnart\\nå\\nka\\nvar\\nnart\\nändas'),'vertical wordplay retained');
+   check(preserved[1].textContent.includes('varv efter\\nvarv.')&&preserved[1].textContent.includes('Svar: 99 1/2.'),'spiral description and flap answer retained');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer']),'existing aftertext order, no new sections');
+   check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext follows complete letter and envelope');
+   check(sections[0].querySelector('p').textContent===l.summary,'exact summary');
+   sections.slice(1).forEach((s,i)=>check(s.querySelector('p').textContent===sectionPlainText(l.sections[i].content),'existing analysis presentation'));
+   check(!document.querySelector('.letter-additional-section')&&!/###|Bild:/.test(document.querySelector('.letter-view').textContent)&&!document.querySelector('.letter-view').textContent.includes(String.fromCharCode(96)),'no raw archive structure');
+   for(const panel of [document.querySelector('#original-panel'),document.querySelector('#transcription-panel')]) {
+     const envelope=panel.querySelector('.continuous-material');
+     check(envelope===panel.lastElementChild&&envelope.querySelector('summary').textContent==='Kuvert och övrigt material','normal separate envelope UI');
+     check(JSON.stringify([...envelope.querySelectorAll('h2')].map(h=>h.textContent))===JSON.stringify(l.items.filter(i=>i.type!=='page').map(i=>i.label)),'registered envelope labels');
+   }
+   const probe=document.createElement('p');probe.className='transcription-text continuous-preserved';probe.textContent='  A  B\\n    C\\n\\nD';preserved[0].parentElement.append(probe);
+   check(getComputedStyle(probe).whiteSpace==='pre-wrap'&&probe.textContent==='  A  B\\n    C\\n\\nD','meaningful whitespace preserved by reader styling');probe.remove();
+   const vertical=preserved[1].textContent.indexOf('Kriv');
+   const lineTops=[0,5,10,12,15,19,24].map(offset=>{const range=document.createRange();range.setStart(preserved[1].firstChild,vertical+offset);range.setEnd(preserved[1].firstChild,vertical+offset+1);return range.getBoundingClientRect().top;});
+   check(lineTops.every((top,i)=>i===0||top>lineTops[i-1]),'vertical wordplay displays on distinct ordered lines');
+   sections.forEach(s=>s.open=true);
+   check(document.documentElement.scrollWidth<=innerWidth,'SPECIAL and expanded aftertext no overflow');
+   check(JSON.stringify(l)===before,'all SPECIAL content unchanged');
+ }
  if(l.id==='1974-09-17') {
    const photo=document.querySelector('.preserved-object');
    const summaries=[...document.querySelectorAll('.letter-view > details')];
@@ -153,5 +183,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1975-05-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-09-17,1975-08-27'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-09-17,1975-08-27'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

@@ -740,6 +740,10 @@ button:focus-visible {
   white-space: normal;
 }
 
+.continuous-document .transcription-text.continuous-preserved {
+  white-space: pre-wrap;
+}
+
 .continuous-paragraph.continuous-positioned {
   white-space: pre-line;
 }

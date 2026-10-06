@@ -84,7 +84,7 @@ let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
-const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31"]);
+const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -626,6 +626,12 @@ function renderContinuousLetter(letter, view) {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
+        if (letter.id === "1974-02-12") {
+          // SPECIAL: line structure and spacing carry meaning in the rebuses
+          // and vertical text. Keep the entire reviewed transcription intact.
+          text.classList.add("continuous-preserved");
+          return;
+        }
         const paragraphs = text.textContent.match(/[^]+?(?:\n\s*\n|$)/g) || [];
         text.replaceChildren(...paragraphs.map(content => {
           const paragraph = document.createElement("span");
