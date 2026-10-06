@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -74,6 +74,25 @@ try {
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1974-03-05') {
+   check(pages.length===2&&frames.length===2,'two registered originals');
+   document.querySelector('#transcription-tab').click();
+   const texts=[...document.querySelectorAll('.continuous-document .transcription-text')];
+   check(texts.length===2&&texts.every((text,i)=>text.textContent===pages[i].transcription&&text.childNodes.length===1&&getComputedStyle(text).whiteSpace==='pre-wrap'),'reviewed text and line breaks preserved without reflow');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'SPECIAL bypasses paragraph splitting');
+   const description=document.querySelector('.continuous-page-description');description.open=true;
+   check(description.querySelector('p').textContent===pages[0].description&&getComputedStyle(description.querySelector('p')).whiteSpace==='pre-wrap','drawing description preserved exactly');
+   check(description.textContent.includes('SKA FÖRESTÄLLA CATARINA ELLER BIRGITTA'),'drawing text intact');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer']),'current aftertext order and no Places');
+   check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext follows complete material');
+   check(sections[0].querySelector('p').textContent===l.summary&&l.summary.length<300,'concise exact summary');
+   sections.slice(1).forEach((s,i)=>check(s.querySelector('p').textContent===l.sections[i].content,'edited analysis presented exactly'));
+   check(!document.querySelector('.letter-additional-section')&&!/##|Bild:/.test(document.querySelector('.letter-view').textContent),'no raw Markdown or archive structure');
+   check(l.sections[1].content.split('\\n').length===5&&!/##/.test(l.sections[1].content)&&l.sections[1].content.includes('inte vilken Birgitta'),'concise People and unresolved Birgitta identity');
+   sections.forEach(s=>s.open=true);
+   check(document.documentElement.scrollWidth<=innerWidth,'expanded drawing and aftertext no overflow');
+ }
  if(l.id==='1978-09-29') {
    check(pages.length===2&&frames.length===2&&pages[0].image.endsWith('page-01.jpeg')&&pages[1].image.endsWith('page-02.jpeg'),'two physical sheets only, registered order');
    document.querySelector('#transcription-tab').click();
@@ -225,5 +244,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1975-05-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-09-17,1975-08-27,1978-09-29'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-09-17,1975-08-27,1978-09-29'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

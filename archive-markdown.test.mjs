@@ -39,6 +39,25 @@ test("1978-09-29 keeps one logical transcription across two physical originals",
   assert.ok(!/Nirgitta|Bigitta|TOrbjörn/.test(people));
 });
 
+test("1974-03-05 retains legacy drawing material and uses concise aftertext", async () => {
+  const source = await readFile("letters/1974/1974-03-05/letter.md", "utf8");
+  const parsed = parseArchiveMarkdown(source, {fileName: "letter.md"});
+  const stored = JSON.parse(await readFile("letters.json", "utf8")).letters.find(letter => letter.id === "1974-03-05");
+  assert.equal(parsed.summary, stored.summary);
+  assert.deepEqual(parsed.sections.filter(section => ["Iakttagelser", "Personer"].includes(section.title)), stored.sections);
+  const pages = stored.items.filter(item => item.type === "page");
+  const first = source.split("## Sida 1")[1].split("### Teckning")[0].trim();
+  const drawing = source.split("### Teckning")[1].split("## Sida 2")[0].trim();
+  const story = source.split("### Historia")[1].split("# Sammanfattning")[0].trim();
+  assert.equal(pages[0].transcription, first);
+  assert.equal(pages[0].description, drawing);
+  assert.equal(pages[1].transcription, "Historia\n\n" + story);
+  assert.equal(stored.sections[0].content.split("\n\n").length, 5);
+  assert.equal(stored.sections[1].content.split("\n").length, 5);
+  assert.ok(stored.summary.length < 300);
+  assert.ok(!stored.sections.some(section => section.title === "Platser"));
+});
+
 const metadata = `## Date
 1975-01-02
 

@@ -98,58 +98,24 @@ svar. Jag fick in Luxemburg men klockan
 
 # Sammanfattning
 
-Ett kort, handskrivet brev från Urban till Ulf, poststämplat i Piteå den 5 mars 1974.
-
-Brevet visar en redan intensiv brevväxling mellan kusinerna. Urban beskriver hur det blivit svårt att hålla ordning på brevnumren eftersom ett nytt brev från Ulf kan hinna komma medan Urban fortfarande håller på att skriva ett tidigare svar.
-
-En stor del av första sidan upptas av en humoristisk teckning. En person rider på en häst som försetts med en cykelliknande drivlina med pedal, vevparti och kedja mellan en främre och en bakre krans. Teckningen kommenteras bland annat med "ARMA HÄST" och "SKA FÖRESTÄLLA CATARINA ELLER BIRGITTA".
-
-På andra sidan berättar Urban en historia om två män som slår vad om att den ene kan bita sig själv i ögat. Historien bygger först på ett porslinsöga och därefter på löständer.
-
-Därefter följer ett antal korta, numrerade och delvis svårlästa svar. Sammanhanget framgår inte av brevet, men de verkar sannolikt vara svar på frågor eller kommentarer från Ulf i ett tidigare brev.
-
-Mot slutet nämner Urban att han varit hos Jonas och åkt trickskidor och ramlat "100 gånger ungefär". Brevet avslutas med att klockan är omkring elva och att han ska gå och lägga sig.
-
+Urban skriver om den redan intensiva brevväxlingen med Ulf och svårigheten att hålla ordning på brevnumren. En stor humoristisk teckning upptar mycket av första sidan. På andra sidan följer en historia och numrerade svar som tycks anknyta till tidigare brev.
 
 # Iakttagelser
 
-- Brevet är poststämplat i Piteå den 5 mars 1974. Det är därmed ett av de tidigaste bevarade breven i samlingen.
+- Brevet är ett av de tidigare bevarade breven i samlingen.
 
-- Kuvertets adress ser ut att vara skriven med en annan handstil än själva brevet och kan ha skrivits av Urbans mamma.
+- Kuvertets adress verkar vara skriven med en annan, mer vuxen handstil än brevet. Den kan ha skrivits av Urbans mamma, men det är inte fastställt.
 
-- På kuvertets baksida står "A.V.S. För snutens skull." Därefter anges Urbans namn och adress. Formuleringen är ett skämtsamt sätt att ange avsändaren.
+- Urbans svårighet att hålla ordning på brevnumren ger ett tydligt belägg för hur intensiv brevväxlingen med Ulf redan var.
 
-- Brevet ger ett tydligt belägg för hur intensiv brevväxlingen mellan Urban och Ulf redan var. Urban beskriver själv problemet med att hålla reda på brevnummer när ett nytt brev hinner anlända innan ett tidigare svar har skickats.
+- Blandningen av vanlig kommunikation, interna hänvisningar, skämt och teckningar visar flera drag som blir typiska för senare brev i samlingen.
 
-- Teckningen på första sidan kombinerar humor med Urbans cykelintresse. Hästen har försetts med en cykelliknande konstruktion med pedal, vevparti och kedja mellan en främre och en bakre krans.
-
-- Texten "SKA FÖRESTÄLLA CATARINA ELLER BIRGITTA" visar att Catarina och Birgitta redan förekommer som personer i den humoristiska världen kring breven.
-
-- Sida 2 innehåller flera numrerade korta svar vars frågor inte finns med i brevet. De kan vara svar på ett tidigare brev från Ulf. Det går inte att avgöra om sammanhanget enbart fanns i Ulfs brev eller om någon sida eller bilaga till detta brev saknas.
-
-- Brevet blandar löpande berättande, intern kommunikation, skämt och teckningar. Redan här syns flera drag som återkommer i senare brev: ordlekar, absurda historier, kommentarer direkt till Ulf och teckningar som en integrerad del av brevet.
-
-- Hänvisningen till Jonas och trickskidåkning är ett exempel på hur vardagliga händelser återges mycket kortfattat, som om Ulf redan känner till personerna och sammanhanget.
-
+- Den korta hänvisningen till Jonas och trickskidåkning visar hur vardagshändelser nämns utan närmare förklaring, som om Ulf redan känner personerna och sammanhanget.
 
 # Personer
 
-## Urban Sandlund
-
-Brevets avsändare. Skriver om brevväxlingen med Ulf, berättar historier, svarar på vad som förefaller vara tidigare frågor och beskriver bland annat ett besök hos Jonas där han åkt trickskidor.
-
-## Ulf Sandlund
-
-Brevets mottagare och Urbans kusin. Brevet visar att Urban och Ulf vid denna tid redan hade en tät brevväxling.
-
-## Catarina
-
-Omnämns i texten till teckningen på sida 1: "SKA FÖRESTÄLLA CATARINA ELLER BIRGITTA". Catarina är Ulfs syster.
-
-## Birgitta
-
-Omnämns tillsammans med Catarina i texten till teckningen på sida 1. Det framgår inte av just detta brev vilken Birgitta som avses.
-
-## Jonas
-
-Urban skriver att han varit hos Jonas och åkt trickskidor. Någon ytterligare identifiering av Jonas framgår inte av brevet.
+- Urban Sandlund – brevets avsändare.
+- Ulf Sandlund – mottagare och Urbans kusin.
+- Catarina – Ulfs syster; nämns i teckningens text.
+- Birgitta – nämns tillsammans med Catarina i teckningens text; brevet fastställer inte vilken Birgitta som avses.
+- Jonas – nämns i samband med ett besök och trickskidåkning; närmare identitet är inte fastställd i brevet.
