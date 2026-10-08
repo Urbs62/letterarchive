@@ -1,12 +1,11 @@
-# 1975-07-22
+# Metadata
 
-## Datum
-
-**Poststämpel:** 1975-07-22
-
-## Sammanfattning
-
-Ett vardagligt sommarbrev där Urban berättar om cykeltävlingar i Boden, familjens placeringar, planer för bio och vardagslivet hemma. Brevet är uppbyggt nästan som en dagbok där flera korta anteckningar skrivits vid olika tidpunkter under ett dygn. Det mest utmärkande är de numrerade små teckningarna som förklaras i slutet av brevet – ett lekfullt inslag som visar både humor och fantasi.
+- Poststämplat: 1975-07-22
+- Typ: Brev
+- Skrivtyp: handwritten
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Avsändarens ålder: 12 år
 
 ## Bilder
 
@@ -26,12 +25,20 @@ Ett vardagligt sommarbrev där Urban berättar om cykeltävlingar i Boden, famil
 
 ![Page 02](page-02.jpg)
 
----
 
-# Transkription
+# Kuvert
 
-## Page 01
+## Framsida
 
+Poststämpel: 1975-07-22
+
+## Baksida
+
+## Sida 1
+
+### Transcription
+
+```text
 Hej Ulf!
 
 Hade just sagt hejdå och vinkat adjöss, så sprang jag in och skrev detta. Men nu måste jag gå och lägga mig. Jag ska ju upp klockan 6 i morgon. Godnatt för mig.
@@ -43,8 +50,9 @@ Ser auktion.
 Har just sett på när Murre ätit upp en råtta.
 
 Klockan är nu 6 på morgon. Vi ska som skrivet till Boden. Kommit hem från Boden. "Anki" 2:a. Anita 3:a. I kväll ska jag på bio. Ägget är löst med Jonas.
+```
 
-### Illustrationer på sidan
+### Description
 
 1. (Ingen teckning – förklaras på nästa sida som "Fluga, levande".)
 
@@ -58,10 +66,11 @@ Klockan är nu 6 på morgon. Vi ska som skrivet till Boden. Kommit hem från Bod
 
 6. Pil som visar att brevet fortsätter på nästa sida.
 
----
+## Sida 2
 
-## Page 02
+### Transcription
 
+```text
 Snart kommer nog Jonas, då ska vi gå. Jag är ensam hemma nu förutom "Anki" som ligger och sussar. Nu kommer Jonas.
 Har kommit hem från filmen. Den var faktisk dörolig på sina ställen.
 Nu har jag sett Orson Welles bästa.
@@ -84,10 +93,39 @@ Här kommer en nummerlista över mina teckningar.
 9. Orson Wells, teckning.
 P.S.
 Tjing.
+```
 
-### Illustrationer på sidan
+### Description
 
 7a. Hårdkokt ägg.
 7b. Löskokt ägg.
 8. Höna.
 9. Teckning av Orson Welles.
+
+# Bilagor
+
+# Sammanfattning
+
+Urban skriver ett sommarbrev i dagboksform med korta nedslag från cykeltävlingar, familjeliv och ett biobesök. Brevet får en lekfull prägel genom numrerade teckningar som förklaras på sista sidan.
+
+# Iakttagelser
+
+- Brevet växer fram genom korta anteckningar vid olika tidpunkter. Urban beskriver själv formen som ”mest en dagbok”.
+- Numrerade teckningar på första sidan får sina förklaringar på den andra; läsaren behöver båda sidorna för att följa bildleken.
+- Cykeltävlingar framträder som en del av familjens gemensamma vardag, med flera familjemedlemmar som deltagare.
+
+# Personer
+
+- Urban Sandlund – avsändare.
+- Ulf Sandlund – mottagare och Urbans kusin.
+- Rune Sandlund – Urbans pappa; deltar i cykeltävlingarna.
+- Anki Sandlund – Urbans storasyster; nämns i cykeltävlingarna och hemma.
+- Anita Sandlund – Urbans syster; nämns i cykelresultaten och stadsbesöket.
+- Jonas – följer med Urban på bio; efternamn inte fastställt här.
+- Orson Welles – nämns i samband med filmen.
+- Barbro Sandlund – Urbans mamma; följer med på stan.
+
+# Djur
+
+- Murre – nämns när han äter en råtta; art och ägare är inte fastställda.
+- Frasse – familjens katt; hans tass återges i en numrerad teckning.

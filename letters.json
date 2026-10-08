@@ -602,11 +602,40 @@
     {
       "id": "1975-07-22",
       "date": "1975-07-22",
-      "from": "Urban",
-      "to": "Ulf",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
       "senderAge": 12,
-      "type": "handwritten",
-      "summary": "Ett vardagligt sommarbrev där Urban berättar om cykeltävlingar i Boden, familjens placeringar, planer för bio och vardagslivet hemma. Brevet är uppbyggt nästan som en dagbok där flera korta anteckningar skrivits vid olika tidpunkter under ett dygn. Det mest utmärkande är de numrerade små teckningarna som förklaras i slutet av brevet – ett lekfullt inslag som visar både humor och fantasi.",
+      "type": "letter",
+      "writingType": "handwritten",
+      "folder": "letters/1975/1975-07-22/",
+      "postmarked": "1975-07-22",
+      "summary": "Urban skriver ett sommarbrev i dagboksform med korta nedslag från cykeltävlingar, familjeliv och ett biobesök. Brevet får en lekfull prägel genom numrerade teckningar som förklaras på sista sidan.",
+      "sections": [
+        {
+          "title": "Kuvert",
+          "content": "## Framsida\n\nPoststämpel: 1975-07-22\n\n## Baksida\n\n## Sida 1\n\n### Transcription\n\n```text\nHej Ulf!\n\nHade just sagt hejdå och vinkat adjöss, så sprang jag in och skrev detta. Men nu måste jag gå och lägga mig. Jag ska ju upp klockan 6 i morgon. Godnatt för mig.\n\nHar just kommit hem från Boden. Det gick åt hel-e för mig. Har aldrig åkt så dåligt. Kom 8 (åtta). Hade jag åkt som jag brukar hade jag kanske kommit in på en 4 placering eller i alla fall 5:a. Pappa vann oldboysklassen. För fjärde gången i rad. \"Anki\" 2:a. Anita 3:a.\nI morgon är det linjelopp. Synd att det inte är något linje för P.B.\nSer auktion.\n\nHar just sett på när Murre ätit upp en råtta.\n\nKlockan är nu 6 på morgon. Vi ska som skrivet till Boden. Kommit hem från Boden. \"Anki\" 2:a. Anita 3:a. I kväll ska jag på bio. Ägget är löst med Jonas.\n```\n\n### Description\n\n1. (Ingen teckning – förklaras på nästa sida som \"Fluga, levande\".)\n\n2. Teckning av ett fiskskelett.\n\n3. Fyra cirklar ovanför ett hjärtformat avtryck.\n\n4. Teckning av en mygga.\n\n5. Teckning av en mus.\n\n6. Pil som visar att brevet fortsätter på nästa sida.\n\n## Sida 2\n\n### Transcription\n\n```text\nSnart kommer nog Jonas, då ska vi gå. Jag är ensam hemma nu förutom \"Anki\" som ligger och sussar. Nu kommer Jonas.\nHar kommit hem från filmen. Den var faktisk dörolig på sina ställen.\nNu har jag sett Orson Welles bästa.\nKlockan är nu 22.30. Natt! \nNatti, nu har jag vaknat för tredje gången. Jag somnar bara om.\n\nJag och \"Anki\", Anita och mamma har varit på stan. Det blev ett band till pappas födelsedag. Med Les Humphries Singers Carnival.\nHejdå, lite knasigt brev, mest en dagbok.\n\nHär kommer en nummerlista över mina teckningar.\n1. Fluga, levande.\n2. Fisk, mindre levande.\n3. Frasses tass, underifrån.\n4. Mygga, hane.\n5. Mus, hungrig.\n6. Pil, så att ni fattar.\n7 a) Hårdkokt ägg.\n   b) Löskokt ägg.\n8. Höna, ej hane.\n9. Orson Wells, teckning.\nP.S.\nTjing.\n```\n\n### Description\n\n7a. Hårdkokt ägg.\n7b. Löskokt ägg.\n8. Höna.\n9. Teckning av Orson Welles."
+        },
+        {
+          "title": "Bilagor",
+          "content": ""
+        },
+        {
+          "title": "Sammanfattning",
+          "content": "Urban skriver ett sommarbrev i dagboksform med korta nedslag från cykeltävlingar, familjeliv och ett biobesök. Brevet får en lekfull prägel genom numrerade teckningar som förklaras på sista sidan."
+        },
+        {
+          "title": "Iakttagelser",
+          "content": "- Brevet växer fram genom korta anteckningar vid olika tidpunkter. Urban beskriver själv formen som ”mest en dagbok”.\n- Numrerade teckningar på första sidan får sina förklaringar på den andra; läsaren behöver båda sidorna för att följa bildleken.\n- Cykeltävlingar framträder som en del av familjens gemensamma vardag, med flera familjemedlemmar som deltagare."
+        },
+        {
+          "title": "Personer",
+          "content": "- Urban Sandlund – avsändare.\n- Ulf Sandlund – mottagare och Urbans kusin.\n- Rune Sandlund – Urbans pappa; deltar i cykeltävlingarna.\n- Anki Sandlund – Urbans storasyster; nämns i cykeltävlingarna och hemma.\n- Anita Sandlund – Urbans syster; nämns i cykelresultaten och stadsbesöket.\n- Jonas – följer med Urban på bio; efternamn inte fastställt här.\n- Orson Welles – nämns i samband med filmen.\n- Barbro Sandlund – Urbans mamma; följer med på stan."
+        },
+        {
+          "title": "Djur",
+          "content": "- Murre – nämns när han äter en råtta; art och ägare är inte fastställda.\n- Frasse – familjens katt; hans tass återges i en numrerad teckning."
+        }
+      ],
       "items": [
         {
           "type": "envelope-front",
@@ -627,16 +656,16 @@
           "page": 1,
           "label": "Sida 1",
           "image": "letters/1975/1975-07-22/page-01.jpg",
-          "transcription": "Hej Ulf!\n\nHade just sagt hejdå och vinkat adjöss, så\nsprang jag in och skrev detta. Men nu måste jag\ngå och lägga mig. Jag ska ju upp klockan 6 i morgon.\n\nGodnatt för mig.\n\nHar just kommit hem från Boden. Det gick åt\nhel-e för mig. Har aldrig åkt så dåligt.\nKom 8 (åtta). Hade jag åkt som jag brukar hade\njag kanske kommit in på en 4 placering eller\ni alla fall 5:a. Pappa vann oldboysklassen. För\nfjärde gången i rad. \"Anki\" 2:a. Anita 3:a.\n\nI morgon är det linjelopp. Synd att det inte är\nnågot linje för P.B.\n\nSer auktion.\n\nHar just\nsett på när Murre ätit upp en råtta.\n\nKlockan är nu 6 på morgon. Vi ska som skrivet\ntill Boden. Kommit hem från Boden. \"Anki\" 2:a.\nAnita 3:a. I kväll ska jag på bio.\nÄgget är löst med Jonas.",
-          "description": "Illustrationer på sidan:\n\n1. Ingen teckning – förklaras på nästa sida som \"Fluga, levande\".\n2. Teckning av ett fiskskelett.\n3. Fyra cirklar ovanför ett hjärtformat avtryck.\n4. Teckning av en mygga.\n5. Teckning av en mus.\n6. Pil som visar att brevet fortsätter på nästa sida."
+          "transcription": "Hej Ulf!\n\nHade just sagt hejdå och vinkat adjöss, så sprang jag in och skrev detta. Men nu måste jag gå och lägga mig. Jag ska ju upp klockan 6 i morgon. Godnatt för mig.\n\nHar just kommit hem från Boden. Det gick åt hel-e för mig. Har aldrig åkt så dåligt. Kom 8 (åtta). Hade jag åkt som jag brukar hade jag kanske kommit in på en 4 placering eller i alla fall 5:a. Pappa vann oldboysklassen. För fjärde gången i rad. \"Anki\" 2:a. Anita 3:a.\nI morgon är det linjelopp. Synd att det inte är något linje för P.B.\nSer auktion.\n\nHar just sett på när Murre ätit upp en råtta.\n\nKlockan är nu 6 på morgon. Vi ska som skrivet till Boden. Kommit hem från Boden. \"Anki\" 2:a. Anita 3:a. I kväll ska jag på bio. Ägget är löst med Jonas.",
+          "description": "1. (Ingen teckning – förklaras på nästa sida som \"Fluga, levande\".)\n\n2. Teckning av ett fiskskelett.\n\n3. Fyra cirklar ovanför ett hjärtformat avtryck.\n\n4. Teckning av en mygga.\n\n5. Teckning av en mus.\n\n6. Pil som visar att brevet fortsätter på nästa sida."
         },
         {
           "type": "page",
           "page": 2,
           "label": "Sida 2",
           "image": "letters/1975/1975-07-22/page-02.jpg",
-          "transcription": "Snart kommer nog Jonas, då ska vi gå. Jag är\nensam hemma nu förutom \"Anki\" som\nligger och sussar. Nu kommer Jonas.\n\nHar kommit hem från filmen. Den var\nfaktisk dörolig på sina ställen.\n\nNu har jag sett Orson Welles bästa.\n\nKlockan är nu 22.30. Natt!\nNatti, nu har jag vaknat\nför tredje gången. Jag somnar\nbara om. Jag och \"Anki\", Anita\noch mamma har varit på\nstan. Det blev ett band till\npappas födelsedag. Med Les\nHumphries Singers Carnival.\n\nHejdå, lite knasigt brev, mest en dagbok.\n\nHär kommer en nummerlista över mina\nteckningar.\n\n1. Fluga, levande.\n2. Fisk, mindre levande.\n3. Frasses tass, underifrån.\n4. Mygga, hane.\n5. Mus, hungrig.\n6. Pil, så att ni fattar.\n7 a) Hårdkokt ägg.\n   b) Löskokt ägg.\n8. Höna, ej hane.\n9. Orson Wells, teckning.\n\nP.S.\nTjing.",
-          "description": "Illustrationer på sidan:\n\n7a. Hårdkokt ägg.\n7b. Löskokt ägg.\n8. Höna.\n9. Teckning av Orson Welles."
+          "transcription": "Snart kommer nog Jonas, då ska vi gå. Jag är ensam hemma nu förutom \"Anki\" som ligger och sussar. Nu kommer Jonas.\nHar kommit hem från filmen. Den var faktisk dörolig på sina ställen.\nNu har jag sett Orson Welles bästa.\nKlockan är nu 22.30. Natt! \nNatti, nu har jag vaknat för tredje gången. Jag somnar bara om.\n\nJag och \"Anki\", Anita och mamma har varit på stan. Det blev ett band till pappas födelsedag. Med Les Humphries Singers Carnival.\nHejdå, lite knasigt brev, mest en dagbok.\n\nHär kommer en nummerlista över mina teckningar.\n1. Fluga, levande.\n2. Fisk, mindre levande.\n3. Frasses tass, underifrån.\n4. Mygga, hane.\n5. Mus, hungrig.\n6. Pil, så att ni fattar.\n7 a) Hårdkokt ägg.\n   b) Löskokt ägg.\n8. Höna, ej hane.\n9. Orson Wells, teckning.\nP.S.\nTjing.",
+          "description": "7a. Hårdkokt ägg.\n7b. Löskokt ägg.\n8. Höna.\n9. Teckning av Orson Welles."
         }
       ]
     },

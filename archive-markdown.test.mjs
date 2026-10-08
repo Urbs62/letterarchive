@@ -5,6 +5,27 @@ import { parseArchiveMarkdown } from "./archive-markdown.mjs";
 import { readSource } from "./archive-import.mjs";
 import { readFile } from "node:fs/promises";
 
+test("1975-07-22 imports reviewed diary text, illustrations and concise aftertext", async () => {
+  const source = "letters/1975/1975-07-22/letter.md";
+  const parsed = await readSource(source);
+  const stored = JSON.parse(await readFile("letters.json", "utf8")).letters.find(l => l.id === "1975-07-22");
+  assert.deepEqual(JSON.parse(JSON.stringify(parsed)), stored);
+  assert.deepEqual(stored.items.map(i => i.type), ["envelope-front", "envelope-back", "page", "page"]);
+  const md = (await readFile(source, "utf8")).replaceAll("\r\n", "\n");
+  const texts = [...md.matchAll(/```text\n([\s\S]*?)\n```/g)].map(m => m[1]);
+  const pages = stored.items.filter(i => i.type === "page");
+  assert.deepEqual(pages.map(i => i.transcription), texts);
+  assert(pages[1].transcription.includes("Klockan är nu 22.30. Natt! \n"));
+  assert(pages[1].transcription.includes("7 a) Hårdkokt ägg.\n   b) Löskokt ägg."));
+  assert(pages[1].transcription.endsWith("P.S.\nTjing."));
+  assert(pages[0].description.includes('1. (Ingen teckning – förklaras på nästa sida som "Fluga, levande".)'));
+  assert(pages[1].description.includes("7a. Hårdkokt ägg.\n7b. Löskokt ägg."));
+  assert.equal(stored.senderAge, 12);
+  assert.equal(stored.postmarked, "1975-07-22");
+  assert(stored.summary.length < 250);
+  assert.equal(stored.sections.find(s => s.title === "Iakttagelser").content.split("\n").length, 3);
+});
+
 for (const id of ["1974-02-12", "1974-02-19"]) {
 test(`SPECIAL ${id} source preserves the reviewed page text and aftertext`, async () => {
   const parsed = await readSource(`letters/1974/${id}/letter.md`);

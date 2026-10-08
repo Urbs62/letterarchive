@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -74,6 +74,24 @@ try {
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1975-07-22') {
+   check(pages.length===2&&frames.length===2,'two physical pages');
+   const texts=[...document.querySelectorAll('.continuous-document .transcription-text')];
+   check(texts.length===2&&texts.every((p,i)=>p.textContent===pages[i].transcription&&p.childNodes.length===1&&getComputedStyle(p).whiteSpace==='pre-wrap'),'exact reviewed text, line breaks and spaces');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'numbered material bypasses prose reflow');
+   check(texts[0].textContent.indexOf('Har just kommit hem från Boden.')<texts[0].textContent.indexOf('Klockan är nu 6 på morgon.'),'diary order retained');
+   check(texts[1].textContent.includes('7 a) Hårdkokt ägg.\\n   b) Löskokt ägg.')&&texts[1].textContent.endsWith('P.S.\\nTjing.'),'indented numbered list and closing');
+   check(descriptions.length===2&&descriptions[0].textContent.includes('förklaras på nästa sida')&&texts[1].textContent.includes('3. Frasses tass, underifrån.'),'illustrations and cross-page explanations');
+   check(JSON.stringify([...material.querySelectorAll('h2')].map(h=>h.textContent))===JSON.stringify(['Kuvert framsida','Kuvert baksida']),'normal envelope UI');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Djur']),'aftertext order');
+   check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext after complete letter');
+   check(sections[0].querySelector('p').textContent===l.summary&&l.summary.length<250,'concise exact summary');
+   sections.slice(1).forEach((s,i)=>check(s.querySelector('p').textContent===sectionPlainText(l.sections.filter(s=>['Iakttagelser','Personer','Djur'].includes(s.title))[i].content),'exact aftertext'));
+   check(!document.querySelector('.letter-additional-section')&&!/###|##|page-0|envelope-/.test(document.querySelector('.letter-view').textContent),'no raw Markdown or image filenames');
+   sections.forEach(s=>s.open=true);descriptions.forEach(p=>p.closest('details').open=true);
+   document.querySelector('#transcription-tab').click();check(document.documentElement.scrollWidth<=innerWidth,'expanded numbered descriptions and aftertext no overflow');
+ }
  if(l.id==='1980-10-19') {
    check(l.date==='1980-10-19'&&l.from==='Ulf Sandlund'&&l.to==='Urban Sandlund','date and correspondents');
    check(pages.length===3&&pages.every((p,i)=>p.page===i+1&&p.image.endsWith('page-0'+(i+1)+'.jpeg')),'three JPEG originals');
@@ -314,5 +332,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-08-27,1978-09-29,1980-10-19'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1978-09-29,1980-10-19'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}
