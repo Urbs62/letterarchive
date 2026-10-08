@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -75,6 +75,23 @@ try {
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1976-04-20') {
+   check(pages.length===5&&frames.length===5,'five physical pages');
+   const texts=[...document.querySelectorAll('.continuous-document .transcription-text')];
+   check(texts.every((p,i)=>p.textContent===pages[i].transcription&&p.childNodes.length===1&&getComputedStyle(p).whiteSpace==='pre-wrap'),'reviewed lines and whitespace preserved');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'no prose reflow');
+   const envelope=l.items.filter(i=>i.type.startsWith('envelope'));
+   check(JSON.stringify(envelope.map(i=>i.type))===JSON.stringify(['envelope-front','envelope-back','envelope-inside']),'three envelope parts');
+   check(JSON.stringify([...material.querySelectorAll('.transcription-text')].map(p=>p.textContent))===JSON.stringify(envelope.map(i=>i.transcription)),'exact envelope text');
+   check(JSON.stringify([...material.querySelectorAll('.item-description p')].map(p=>p.textContent))===JSON.stringify(envelope.map(i=>i.description)),'exact envelope descriptions');
+   check(JSON.stringify([...originals.querySelectorAll('img')].map(i=>i.getAttribute('src')))===JSON.stringify(envelope.map(i=>i.image)),'envelope image associations');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer']),'aftertext order');
+   check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext after letter');
+   sections.forEach(s=>s.open=true);
+   document.querySelector('#transcription-tab').click();
+   check(document.documentElement.scrollWidth<=innerWidth,'expanded text no overflow');
+ }
  if(l.id==='1975-07-22') {
    check(pages.length===2&&frames.length===2,'two physical pages');
    const texts=[...document.querySelectorAll('.continuous-document .transcription-text')];
@@ -348,5 +365,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1978-09-29,1980-10-19'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1978-09-29,1980-10-19'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}
