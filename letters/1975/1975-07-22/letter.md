@@ -34,31 +34,15 @@ Ett vardagligt sommarbrev där Urban berättar om cykeltävlingar i Boden, famil
 
 Hej Ulf!
 
-Hade just sagt hejdå och vinkat adjöss, så
-sprang jag in och skrev detta. Men nu måste jag
-gå och lägga mig. Jag ska ju upp klockan 6 i morgon.
+Hade just sagt hejdå och vinkat adjöss, så sprang jag in och skrev detta. Men nu måste jag gå och lägga mig. Jag ska ju upp klockan 6 i morgon. Godnatt för mig.
 
-Godnatt för mig.
-
-Har just kommit hem från Boden. Det gick åt
-hel-e för mig. Har aldrig åkt så dåligt.
-Kom 8 (åtta). Hade jag åkt som jag brukar hade
-jag kanske kommit in på en 4 placering eller
-i alla fall 5:a. Pappa vann oldboysklassen. För
-fjärde gången i rad. "Anki" 2:a. Anita 3:a.
-
-I morgon är det linjelopp. Synd att det inte är
-något linje för P.B.
-
+Har just kommit hem från Boden. Det gick åt hel-e för mig. Har aldrig åkt så dåligt. Kom 8 (åtta). Hade jag åkt som jag brukar hade jag kanske kommit in på en 4 placering eller i alla fall 5:a. Pappa vann oldboysklassen. För fjärde gången i rad. "Anki" 2:a. Anita 3:a.
+I morgon är det linjelopp. Synd att det inte är något linje för P.B.
 Ser auktion.
 
-Har just
-sett på när Murre ätit upp en råtta.
+Har just sett på när Murre ätit upp en råtta.
 
-Klockan är nu 6 på morgon. Vi ska som skrivet
-till Boden. Kommit hem från Boden. "Anki" 2:a.
-Anita 3:a. I kväll ska jag på bio.
-Ägget är löst med Jonas.
+Klockan är nu 6 på morgon. Vi ska som skrivet till Boden. Kommit hem från Boden. "Anki" 2:a. Anita 3:a. I kväll ska jag på bio. Ägget är löst med Jonas.
 
 ### Illustrationer på sidan
 
@@ -78,29 +62,16 @@ Anita 3:a. I kväll ska jag på bio.
 
 ## Page 02
 
-Snart kommer nog Jonas, då ska vi gå. Jag är
-ensam hemma nu förutom "Anki" som
-ligger och sussar. Nu kommer Jonas.
-
-Har kommit hem från filmen. Den var
-faktisk dörolig på sina ställen.
-
+Snart kommer nog Jonas, då ska vi gå. Jag är ensam hemma nu förutom "Anki" som ligger och sussar. Nu kommer Jonas.
+Har kommit hem från filmen. Den var faktisk dörolig på sina ställen.
 Nu har jag sett Orson Welles bästa.
+Klockan är nu 22.30. Natt! 
+Natti, nu har jag vaknat för tredje gången. Jag somnar bara om.
 
-Klockan är nu 22.30. Natt!
-Natti, nu har jag vaknat
-för tredje gången. Jag somnar
-bara om. Jag och "Anki", Anita
-och mamma har varit på
-stan. Det blev ett band till
-pappas födelsedag. Med Les
-Humphries Singers Carnival.
-
+Jag och "Anki", Anita och mamma har varit på stan. Det blev ett band till pappas födelsedag. Med Les Humphries Singers Carnival.
 Hejdå, lite knasigt brev, mest en dagbok.
 
-Här kommer en nummerlista över mina
-teckningar.
-
+Här kommer en nummerlista över mina teckningar.
 1. Fluga, levande.
 2. Fisk, mindre levande.
 3. Frasses tass, underifrån.
@@ -111,16 +82,12 @@ teckningar.
    b) Löskokt ägg.
 8. Höna, ej hane.
 9. Orson Wells, teckning.
-
 P.S.
 Tjing.
 
 ### Illustrationer på sidan
 
 7a. Hårdkokt ägg.
-
 7b. Löskokt ägg.
-
 8. Höna.
-
 9. Teckning av Orson Welles.

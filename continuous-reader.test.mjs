@@ -53,7 +53,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -74,6 +74,32 @@ try {
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1980-10-19') {
+   check(l.date==='1980-10-19'&&l.from==='Ulf Sandlund'&&l.to==='Urban Sandlund','date and correspondents');
+   check(pages.length===3&&pages.every((p,i)=>p.page===i+1&&p.image.endsWith('page-0'+(i+1)+'.jpeg')),'three JPEG originals');
+   check(JSON.stringify([...originals.querySelectorAll('img')].map(i=>i.getAttribute('src')))===JSON.stringify(l.items.filter(i=>i.type!=='page').map(i=>i.image)),'envelope front and back order');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   for(const title of ['Sammanfattning','Iakttagelser','Personer','Platser']) {
+     const section=sections.find(s=>s.querySelector('summary').textContent===title);
+     check(!!section,'visible aftertext '+title);
+     const source=title==='Sammanfattning'?l.summary:l.sections.find(s=>s.title===title).content;
+     check(section.querySelector('p').textContent===sectionPlainText(source),'exact aftertext '+title);
+   }
+   check(l.writtenDate==='1980-10-15'&&l.postmarked==='1980-10-19','writing date and postmark');
+   const attachments=l.items.filter(i=>i.type==='attachment');
+   check(attachments.length===1&&attachments[0].image==='letters/1980/1980-10-19/attachments/attachment-01.jpeg','one linked attachment JPEG');
+   check(material.querySelector('summary').textContent==='Kuvert och övrigt material'&&originals.querySelector('summary').textContent==='Kuvert och övrigt material','existing material disclosure');
+   const attachmentText=[...material.querySelectorAll('.continuous-text-page')].find(p=>p.querySelector('h2').textContent==='Bilaga 1');
+   check(attachmentText?.querySelector('.transcription-text').textContent===attachments[0].transcription,'exact attachment transcription inside material');
+   check((document.querySelector('.letter-view').textContent.match(/Nr 100713/g)||[]).length===1,'attachment transcription appears once');
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Platser']),'no duplicate attachment aftertext');
+   const attachmentButton=[...originals.querySelectorAll('button')].find(b=>b.querySelector('img')?.getAttribute('src')===attachments[0].image);
+   check(!!attachmentButton,'attachment original inside material');
+   attachmentButton.scrollIntoView({behavior:'instant',block:'center'});attachmentButton.focus({preventScroll:true});const attachmentY=scrollY;
+   attachmentButton.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden&&viewerContent.querySelector('img').getAttribute('src')===attachments[0].image,'attachment enlargement');
+   closeViewer();check(document.activeElement===attachmentButton&&Math.abs(scrollY-attachmentY)<2,'attachment focus and scroll restoration');
+   sections.forEach(s=>s.open=true);check(document.documentElement.scrollWidth<=innerWidth,'expanded aftertext no overflow');
+ }
  if(l.id==='1975-05-29') {
    check(pages.length===3&&frames.length===3,'three originals in registered order');
    document.querySelector('#transcription-tab').click();
@@ -288,5 +314,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-08-27,1978-09-29'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-08-27,1978-09-29,1980-10-19'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}
