@@ -65,7 +65,8 @@ try {
  for(const f of frames){f.scrollIntoView({behavior:'instant',block:'center'});const y=scrollY;f.focus({preventScroll:true});f.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden,'lightbox');closeViewer();check(document.activeElement===f&&Math.abs(scrollY-y)<2,'lightbox scroll and focus');}
  document.querySelector('#transcription-tab').click();
  const textPages=l.id==='1978-09-29'?pages.filter(p=>p.transcription):pages;
- check(JSON.stringify([...document.querySelectorAll('.continuous-document .continuous-text-page')].map(page=>[...page.querySelectorAll('.transcription-text')].map(p=>p.textContent).join('')))===JSON.stringify(textPages.map(i=>i.transcription)),'exact text');
+ const visibleText=s=>l.id==='1975-08-27'?s.replace(/\\*\\*([^*]+)\\*\\*/g,'$1').replace(/\\*([^*\\n]+)\\*/g,'$1'):s;
+ check(JSON.stringify([...document.querySelectorAll('.continuous-document .continuous-text-page')].map(page=>[...page.querySelectorAll('.transcription-text')].map(p=>p.textContent).join('')))===JSON.stringify(textPages.map(i=>visibleText(i.transcription))),'exact text');
  const headings=[...document.querySelectorAll('.continuous-document .continuous-text-page > h2')];check(headings.length===textPages.length&&headings.every((h,i)=>h.textContent===(l.id==='1978-09-29'?'Brevet i läsordning':textPages[i].label)&&getComputedStyle(h).fontSize==='12.8px'),'subtle reading labels in order');
  headings.forEach((h,i)=>check(h.parentElement.firstElementChild===h,'separator precedes page '+i));
  check([...document.querySelectorAll('.continuous-document .continuous-paragraph:not(.continuous-positioned)')].every(p=>getComputedStyle(p).whiteSpace==='normal'),'prose reflows');
@@ -316,7 +317,22 @@ try {
    descriptions.forEach(p=>p.closest('details').open=true);check(document.documentElement.scrollWidth<=innerWidth,'expanded descriptions no overflow');
    check(JSON.stringify(l)===before,'all contextual data unchanged');
  }
- if(l.id==='1975-08-27')check(!document.querySelector('.inline-context-photo'),'first prototype unchanged');
+ if(l.id==='1975-08-27') {
+   check(pages.length===4&&frames.length===4,'four physical pages');
+   check(l.writtenDate==='1975-08-16'&&l.postmarked==='1975-08-27'&&l.senderAge===12&&l.from==='Urban Sandlund'&&l.to==='Ulf Sandlund'&&l.fromPlace==='Piteå'&&l.toPlace==='Mölndal','source metadata');
+   const texts=[...document.querySelectorAll('.continuous-document .transcription-text')];
+   check(texts.every((p,i)=>p.textContent===visibleText(pages[i].transcription)&&getComputedStyle(p).whiteSpace==='pre-wrap'),'reviewed line breaks retained');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'no prose reflow');
+   check(document.querySelector('.frasse-exclamation')?.textContent==='Fruktansvärt.','oversized emphasis');
+   check(texts[0].textContent.includes('(Pil: Där har Frasse trampat.)')&&texts[0].textContent.includes('Marginaltext:')&&texts[1].textContent.includes('(Texten slingrar sig runt eftersom Frasse ligger på pappret.)')&&texts[3].textContent.includes('(Teckning av biologiläraren.)')&&texts[3].textContent.includes('Konica, Konika, du är bra.\\nMen som Agfa ska de va.\\nAgfa, Agfa, Agfa.'),'annotations and rhyme');
+   check(material.textContent.includes('Ett stort S med orden:')&&material.textContent.includes('- kriv')&&material.textContent.includes('- så'),'source envelope wordplay');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Djur']),'aftertext order');
+   check(document.querySelector('#transcription-panel').nextElementSibling===sections[0],'aftertext follows complete letter');
+   sections.forEach(s=>s.open=true);
+   check(!/\\*\\*|###|page-0|envelope-/.test(document.querySelector('.letter-view').textContent),'no raw Markdown');
+   check(document.documentElement.scrollWidth<=innerWidth,'expanded aftertext no overflow');
+ }
  document.querySelector('#transcription-tab').click();headings[Math.min(1,headings.length-1)].scrollIntoView({behavior:'instant',block:'start'});
  return 'text, order, images, envelopes, scroll, layout passed';
  })()`));

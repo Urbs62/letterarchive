@@ -5,6 +5,22 @@ import { parseArchiveMarkdown } from "./archive-markdown.mjs";
 import { readSource } from "./archive-import.mjs";
 import { readFile } from "node:fs/promises";
 
+test("1975-08-27 matches Markdown, including four reviewed page blocks", async () => {
+  const source = "letters/1975/1975-08-27/letter.md";
+  const parsed = await readSource(source);
+  const stored = JSON.parse(await readFile("letters.json", "utf8")).letters.find(l => l.id === "1975-08-27");
+  assert.deepEqual(JSON.parse(JSON.stringify(parsed)), stored);
+  const md = (await readFile(source, "utf8")).replaceAll("\r\n", "\n");
+  const blocks = [...md.matchAll(/```text\n([\s\S]*?)\n```/g)].map(m => m[1]);
+  assert.equal(blocks.length, 4);
+  assert.deepEqual(stored.items.filter(i => i.type === "page").map(i => i.transcription), blocks);
+  assert.deepEqual(stored.items.map(i => i.type), ["envelope-front", "envelope-back", "page", "page", "page", "page"]);
+  assert.equal(stored.writtenDate, "1975-08-16");
+  assert.equal(stored.date, "1975-08-27");
+  assert.equal(stored.sections.find(s => s.title === "Iakttagelser").content.split(/\n- /).length, 3);
+  assert.equal(stored.sections.find(s => s.title === "Djur").content, "- Frasse – Urbans familjs katt; central i brevet.");
+});
+
 test("1975-07-22 imports reviewed diary text, illustrations and concise aftertext", async () => {
   const source = "letters/1975/1975-07-22/letter.md";
   const parsed = await readSource(source);

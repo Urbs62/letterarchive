@@ -625,6 +625,26 @@ function renderContinuousLetter(letter, view) {
     const transcription = document.createElement("section");
     transcription.className = "continuous-text-page";
     updateTranscription(item, transcription);
+    if (letter.id === "1975-08-27") {
+      // Keep reviewed line breaks; interpret only the source's inline emphasis.
+      // The scans remain the authority for drawings and spatial wordplay.
+      transcription.querySelectorAll(".transcription-text").forEach(text => {
+        const source = text.textContent;
+        const nodes = [];
+        let end = 0;
+        for (const match of source.matchAll(/\*\*([^*]+)\*\*|\*([^*\n]+)\*/g)) {
+          nodes.push(document.createTextNode(source.slice(end, match.index)));
+          const emphasis = document.createElement(match[1] ? "strong" : "em");
+          emphasis.textContent = match[1] || match[2];
+          if (match[1] === "Fruktansvärt.") emphasis.className = "frasse-exclamation";
+          nodes.push(emphasis);
+          end = match.index + match[0].length;
+        }
+        nodes.push(document.createTextNode(source.slice(end)));
+        text.replaceChildren(...nodes);
+        text.classList.add("continuous-preserved");
+      });
+    }
     if (letter.id === "1978-09-29") {
       if (item.type === "page") transcription.querySelector("h2").textContent = "Brevet i läsordning";
       else if (item.type.startsWith("envelope")) {
@@ -638,6 +658,7 @@ function renderContinuousLetter(letter, view) {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
+        if (letter.id === "1975-08-27") return;
         if (letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05" || letter.id === "1974-08-23" || letter.id === "1975-05-29" || letter.id === "1975-07-22") {
           // SPECIAL: line structure and spacing carry meaning in the rebuses
           // and vertical text. Keep the entire reviewed transcription intact.

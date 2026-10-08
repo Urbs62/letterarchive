@@ -1,26 +1,28 @@
-# Letter
+# Metadata
 
-**Datum:** 1975-08-27  
-**Poststämpel:** 1975-08-27, Piteå  
-**Typ:** Brev
+- Datum: 1975-08-16
+- Poststämplat: 1975-08-27
+- Typ: Brev
+- Skrivtyp: handwritten
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Avsändarens ålder: 12 år
+- Från: Piteå
+- Till: Mölndal
 
-## Kuvert
+# Kuvert
 
-### Framsida
+## Framsida
 
-![Kuvert framsida](envelope-front.jpg)
-
-**Adressat:**
+### Transcription
 
 Ulf Sandlund  
 Safjällsgatan 16  
 431 39 MÖLNDAL
 
-### Baksida
+## Baksida
 
-![Kuvert baksida](envelope-back.jpg)
-
-**Text:**
+### Transcription
 
 AVS. Urban Sandlund  
 Degermansgatan 3  
@@ -32,16 +34,17 @@ Agfa
 
 Ett stort **S** med orden:
 
-- vara
-- åker
+- kriv
+- våra
+- aker
 - å
 - ka
-- våren
-- åker
-- snart
+- våra
+- aker
+- nart
 - varas
-- å
-- de
+- å de
+- så
 
 (ordleken avslutas med texten **"Skriv"**)
 
@@ -51,33 +54,27 @@ Hoppas du är familjemästare än.
 
 ## Sida 1
 
-![Brev sida 1](page-01.jpg)
+### Transcription
 
-### Transkription
-
+```text
 Hej (som vanligt, som vanligt, som vanligt.)
 
 Jag har anordnat en tävling som ni alla du känner (nästan)
-ska ställa upp i. Det gäller att gissa hur lång
-Frasse blir när han sträcker ut sig riktigt.
+ska ställa upp i. Det gäller att gissa hur lång Frasse blir när
+han sträcker ut sig riktigt. Från svansspets till tass.
 Det gäller som skrivet nästan alla. Din familj, Torbjörn,
 Svenne eller vad han nu hette, dina släktingar.
 Din skrytmåns till syster och givetvis du. Skriv i cm.
 
 Snart börjar helvetet och jag menar skolan.
 Jag, Mikael, J. Göran, K. har haft en illegal
-spelhåla. Vi fick in 3,50 var på ungefär 25 min.
-
-Dålig timpenning.
+spelhåla. Vi fick in 3,50 var på ungefär 25 min.Dålig timpenning.
 
 Imorgon har jag en tävling.
 
-En varning. Nästa gången Birgitta eller Catarina
-skriver på ett av mina brev river jag sönder
-det pappret.
+En varning. Nästa gången Birgitta eller Catarina skriver på ett av mina brev river jag sönder det pappret.
 
 Nu ikväll har jag bara 2,50 på godis.
-
 **Fruktansvärt.**
 
 *(Pil: Där har Frasse trampat.)*
@@ -86,19 +83,16 @@ Nu ikväll har jag bara 2,50 på godis.
 
 Från svansspets till tass.
 
+```
+
 ---
 
 ## Sida 2
 
-![Brev sida 2](page-02.jpg)
+### Transcription
 
-### Transkription
-
-Nu har jag gått en vecka i skolan, men vi
-har inte kommit igång riktigt. För det första
-har vi bara pratat om böcker och för det
-andra så har vi bara inskolning än. Det
-betyder att första veckan går den,
+```text
+Nu har jag gått en vecka i skolan, men vi har inte kommit igång riktigt. För det första har vi bara pratat om böcker och för det andra så har vi bara inskolning än. Det betyder att första veckan går den,
 det ids jag inte skriva, det får Birgitta förklara.
 
 Idag har vi haft
@@ -109,69 +103,45 @@ Klubbmästerskap.
 
 (Här sitter Frasse.)
 
-Nu ligger han här, han är verkligen
-besvärlig denna katt.
+Nu ligger han här, han är verkligen besvärlig denna katt.
 
-Nu täcker han
-hela pappret.
+Nu täcker han hela pappret.
+
+```
 
 ---
 
 ## Sida 3
 
-![Brev sida 3](page-03.jpg)
+### Transcription
 
-### Transkription
+```text
+Frasse gör allt för att jag inte ska skriva brev till dej. Lägger sig på pappret, biter i pennan, hoppar upp på ryggen, börjar prata om Torbjörn Olson och hans lustiga brev, biter mig i stortån så att jag skriker **Ajjjjg jävla katt**, börjar skriva på räknemaskin fastän den är sönder, som sagt denna Frans Artur Sandlund är omöjlig.
 
-Frasse gör allt för att jag inte ska skriva
-brev till dej. Lägger sig på pappret, biter i
-pennan, hoppar upp på ryggen, börjar prata
-om Torbjörn Olson och hans lustiga
-brev, biter mig i stortån så att jag
-skriker **Ajjjjg jävla katt**, börjar
-skriva på räknemaskin fastän den är
-sönder, som sagt denna Frans Artur Sandlund
-är omöjlig.
-
-Jag vann klubbmästerskapet.
-Anita två. Pappa vann över Gunnar.
+Jag vann klubbmästerskapet. Anita två. Pappa vann över Gunnar.
 "Anki" i Umeå.
 
-Här kommer en lista över
-mina lärare.
+Här kommer en lista över mina lärare.
 
 **Geografi / Historia / Samhällskunskap:**
+Kjell Sundberg. Skulle passa bättre som mattelärare. Han ska hela tiden räkna ut hur många sidor vi ska ha i sek, min tim. O.s.v. Kallad "Piggis".
 
-Kjell Sundberg. Skulle passa bättre som
-mattelärare. Han ska hela tiden räkna ut
-hur många sidor vi ska ha i sek, min tim.
-O.s.v.
-Kallad "Piggis".
+**Religion:** Fredrikson. Lustig typ. Kallad "Freddi".
 
-**Religion:**
+**Tyska:** Annbeat Person. En jäktad medelålders kvinna.
 
-Fredr. Kvarn. Lustig typ. Kallad "Freddi".
+**Engelska:** Barbro Kvist. Ställer ofta kvistiga frågor.
 
-**Tyska:**
-
-Annbeat Person. En jäklad medelålders
-kvinna.
-
-**Engelska:**
-
-Barbro Kvist. Ställer ofta kvistiga
-frågor.
+```
 
 ---
 
 ## Sida 4
 
-![Brev sida 4](page-04.jpg)
+### Transcription
 
-### Transkription
-
-**Matte:** Karl-Erik Lundberg verkar
-bra. Kanske lite för bråttom.
+```text
+**Matte:** Karl-Erik Lundberg verkar bra. Kanske lite för bråttom.
 
 **Teckning:** Kajsa Berg. Kanske. Mångfärjad dam.
 
@@ -183,38 +153,66 @@ bra. Kanske lite för bråttom.
 
 **Fysik:** Ola Ökvist. Klassföreståndare.
 
-**Biologi:** Lage. Stor man, stor näsa, stor mustasch.
-Annars hygglig.
+**Biologi:** Lage. Stor man, stor näsa, stor mustasch. Annars hygglig.
 
 *(Teckning av biologiläraren.)*
 
 Här kommer en "Varför får inte jag...",
 som jag hittat på själv.
+Varför får inte jag göra när Göran får.
 
-Varför får inte jag göra
-när Göran får.
+Grattis för att du är familjemästare!
+Kanske du inte är det nu.
 
-Grattis för att du är
-familjemästare!
-Kanske du inte
-är det nu.
-
-Konica, Konika,
-du är bra.
-
-Men som Agfa
-ska de va.
-
+Konica, Konika, du är bra.
+Men som Agfa ska de va.
 Agfa, Agfa, Agfa.
+
+```
 
 ---
 
 # Sammanfattning
 
-Brevet skrevs bara en vecka efter skolstarten hösten 1975 och ger en levande bild av hur Urban upplevde övergången till en ny termin. Istället för att beskriva skolarbetet berättar han främst om människorna omkring sig – lärarna får humoristiska smeknamn och korta, träffsäkra personbeskrivningar som visar den unga brevskrivarens blick för detaljer och ordlekar.
+Urban berättar om skolstarten, sina nya lärare och familjens cykeltävlingar.
+Katten Frasse spelar en huvudroll och påverkar till och med hur brevet
+skrivs. Humor, ordlekar och små tävlingar med Ulf präglar brevet.
 
-Den röda tråden genom hela brevet är dock katten **Frasse**, som inte bara nämns utan aktivt blir en del av berättandet. Urban låter katten störa själva brevskrivandet: Frasse ligger på pappret, biter i pennan och i stortån, hoppar upp på ryggen och gör att texten bokstavligen måste slingra sig runt honom. Brevet blir därför både en berättelse om katten och ett exempel på hur den fysiska situationen påverkar hur brevet är skrivet. Denna lek med form och innehåll återkommer ofta i Urbans brev men är ovanligt tydlig här.
+# Iakttagelser
 
-Brevet innehåller också flera återkommande teman i korrespondensen mellan kusinerna: en tävling där mottagaren och familjen ska gissa Frasses längd, små interna skämt om Birgitta och Catarina som skriver i Ulfs brev, rapporter från familjens klubbmästerskap och en lekfull rivalitet mellan kameramärkena **Agfa** och **Konica**. Även kuvertets baksida används kreativt med ordlekar och grafiska inslag.
+- Frasse blir en del av brevets fysiska utformning. Texten slingrar sig runt
+  platsen där katten ligger, och Urban kommenterar ständigt hans försök
+  att störa skrivandet.
+- Lärarförteckningen är en personlig ögonblicksbild från skolstarten 1975.
+  Smeknamn och korta omdömen säger lika mycket om brevskrivarens humor
+  som om lärarna.
+- Urban gör Ulf och hans omgivning delaktiga genom tävlingen om Frasses
+  längd. Även kuvertet används för ordlekar och grafiska infall.
 
-Sammantaget framstår brevet mindre som ett traditionellt brev och mer som ett underhållande litet magasin, där berättelser, ordvitsar, illustrationer och personliga kommentarer vävs samman. Det visar tydligt hur viktigt det var för Urban att inte bara informera Ulf om vad som hänt, utan också att roa honom under läsningen.
+# Personer
+
+- Urban Sandlund – avsändare.
+- Ulf Sandlund – mottagare och Urbans kusin.
+- Rune Sandlund – Urbans pappa; vinner över Gunnar i klubbmästerskapet.
+- Anki Sandlund – Urbans storasyster; nämns i Umeå.
+- Anita Sandlund – Urbans syster; tvåa i klubbmästerskapet.
+- Mikael Johansson – Urbans lekkamrat; nämns i spelhålan.
+- Göran K. – nämns i spelhålan; efternamn inte fastställt.
+- Torbjörn – Ulfs vän; nämns i tävlingen och i samband med lustiga brev.
+- Svenne – nämns bland tävlingsdeltagarna; identiteten är inte fastställd.
+- Birgitta Sandlund – Ulfs tvillingsyster och Urbans kusin.
+- Catarina Sandlund – Ulfs storasyster och Urbans kusin.
+- Gunnar – deltar i klubbmästerskapet; identiteten är inte fastställd.
+- Kjell Sundberg – lärare i geografi, historia och samhällskunskap; ”Piggis”.
+- Fredrikson – religionslärare; ”Freddi”.
+- Annbeat Person – tysklärare.
+- Barbro Kvist – engelsklärare.
+- Karl-Erik Lundberg – mattelärare.
+- Kajsa Berg – teckningslärare.
+- Sigurd Jönsen – slöjdlärare; ”Trä-Sigge”.
+- Ola Ökvist – fysiklärare och klassföreståndare.
+- Lage – biologilärare; avbildas i brevet.
+
+# Djur
+
+- Frasse – Urbans familjs katt; central i brevet.
