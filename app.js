@@ -84,7 +84,7 @@ let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
-const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20"]);
+const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20", "1976-05-xx"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -602,6 +602,21 @@ function appendAdditionalSections(view, letter) {
         : createCollapsibleSection(archiveSection.title, archiveSection.content)
     );
   });
+
+  if (letter.id === "1976-05-xx") {
+    const observations = sections.find(section => section.title === "Iakttagelser");
+    if (observations) {
+      const list = document.createElement("ul");
+      observations.content.split(/\r?\n\r?\n/).forEach(bullet => {
+        const item = document.createElement("li");
+        item.textContent = sectionPlainText(bullet.replace(/^- /, ""));
+        list.append(item);
+      });
+      const details = [...view.querySelectorAll("details")].find(section =>
+        section.querySelector(".letter-collapsible-heading")?.textContent === "Iakttagelser");
+      details.querySelector(".letter-collapsible-content").replaceChildren(list);
+    }
+  }
 }
 
 function renderContinuousLetter(letter, view) {
@@ -654,11 +669,31 @@ function renderContinuousLetter(letter, view) {
         });
       }
     }
+    if (letter.id === "1976-05-xx") {
+      // Twelve notes on two sheets: preserve the reviewed sequence verbatim.
+      transcription.querySelectorAll(".transcription-text").forEach(text => {
+        text.classList.add("continuous-preserved");
+        if (item.type !== "page" || item.page !== 1) return;
+        const source = text.textContent;
+        const start = source.indexOf("DUM NORRMAN        SMART");
+        const end = source.indexOf(source.includes("\r\n") ? "\r\n\r\nHej Ulf." : "\n\nHej Ulf.", start);
+        if (start < 0 || end < 0) return;
+        // Same local scrolling/monospace pattern as the two-column recipe.
+        const diagram = document.createElement("span");
+        diagram.className = "continuous-recipe continuous-spatial";
+        diagram.tabIndex = 0;
+        diagram.setAttribute("role", "region");
+        diagram.setAttribute("aria-label", "Skämt med skattkista i bevarad uppställning");
+        diagram.textContent = source.slice(start, end);
+        text.replaceChildren(document.createTextNode(source.slice(0, start)), diagram,
+          document.createTextNode(source.slice(end)));
+      });
+    }
     if (item.type === "page") {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
-        if (letter.id === "1975-08-27") return;
+        if (letter.id === "1975-08-27" || letter.id === "1976-05-xx") return;
         if (letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05" || letter.id === "1974-08-23" || letter.id === "1975-05-29" || letter.id === "1975-07-22" || letter.id === "1976-04-20") {
           // SPECIAL: line structure and spacing carry meaning in the rebuses
           // and vertical text. Keep the entire reviewed transcription intact.

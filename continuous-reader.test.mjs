@@ -7,6 +7,17 @@ import path from "node:path";
 import assert from "node:assert/strict";
 
 const root = process.cwd();
+// This SPECIAL letter is already curated: compare exact source blocks, without reimport.
+const mountedSource = await readFile('letters/1976/1976-05-xx/letter.md', 'utf8');
+const mountedEol = mountedSource.includes('\r\n') ? '\r\n' : '\n';
+const mountedEntry = JSON.parse(await readFile('letters.json', 'utf8')).letters.find(l => l.id === '1976-05-xx');
+for (const [index, heading] of ['Framsida', 'Baksida', 'Sida 1', 'Sida 2'].entries()) {
+  const marker = '## ' + heading + mountedEol + mountedEol;
+  const start = mountedSource.indexOf(marker) + marker.length;
+  const next = mountedEol + mountedEol + (index === 3 ? '# Sammanfattning' : '## ' + ['Baksida', 'Sida 1', 'Sida 2'][index]);
+  assert.equal(mountedEntry.items[index].transcription, mountedSource.slice(start, mountedSource.indexOf(next, start)));
+}
+
 const server = createServer(async (request, response) => {
   const name = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
   const file = path.resolve(root, `.${name === "/" ? "/index.html" : name}`);
@@ -53,7 +64,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -270,6 +281,31 @@ try {
    check(l.summary.length<200,'concise summary');
    check(document.documentElement.scrollWidth<=innerWidth,'expanded aftertext no overflow');
  }
+ if(l.id==='1976-05-xx') {
+   check(pages.length===2&&frames.length===2,'two mounted sheets, never twelve artificial pages');
+   check(l.date==='1976-05-xx'&&l.writtenDate==='1976-05'&&l.postmarked==='Okänt'&&l.folder==='letters/1976/1976-05-xx/','curated identity and dates');
+   document.querySelector('#transcription-tab').click();
+   const preserved=[...document.querySelectorAll('.continuous-document .continuous-preserved')];
+   check(preserved.length===2&&preserved.every((p,i)=>p.textContent===pages[i].transcription&&getComputedStyle(p).whiteSpace==='pre-wrap'),'exact whitespace and source line breaks');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'reviewed prose bypasses reflow');
+   const diagram=document.querySelector('.continuous-spatial');
+   const start=pages[0].transcription.indexOf('DUM NORRMAN        SMART');
+   const end=pages[0].transcription.indexOf(pages[0].transcription.includes('\\r\\n')?'\\r\\n\\r\\nHej Ulf.':'\\n\\nHej Ulf.',start);
+   check(diagram.textContent===pages[0].transcription.slice(start,end),'entire treasure joke verbatim');
+   check(getComputedStyle(diagram).whiteSpace==='pre'&&getComputedStyle(diagram).fontFamily==='monospace'&&getComputedStyle(diagram).overflowX==='auto','fixed positions and local overflow');
+   const at=offset=>{const r=document.createRange();r.setStart(diagram.firstChild,offset);r.setEnd(diagram.firstChild,offset+1);return r.getBoundingClientRect();};
+   const smart=at(diagram.textContent.indexOf('SMART')),norse=at(diagram.textContent.indexOf('NORRMAN',12)),right=at(diagram.textContent.indexOf('                   O')+19),chest=at(diagram.textContent.indexOf('[SKATTKISTA]')),left=at(0);
+   check(Math.abs(norse.left-right.left)<1&&smart.left>chest.left&&chest.left>left.left&&right.top>norse.top&&chest.top>right.top,'characters and chest retain relative columns and rows');
+   const y=scrollY;diagram.scrollLeft=diagram.scrollWidth;check(diagram.scrollWidth<=diagram.clientWidth||diagram.scrollLeft>0,'passage content reachable by local scroll');check(scrollY===y,'local scroll preserves document position');diagram.scrollLeft=0;
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Platser']),'analysis intact and ordered');
+   check(sections[0].querySelector('p').textContent===l.summary,'summary intact');
+   const bullets=l.sections.find(s=>s.title==='Iakttagelser').content.split(/\\r?\\n\\r?\\n/).map(s=>sectionPlainText(s.replace(/^- /,'')));
+   check(JSON.stringify([...sections[1].querySelectorAll('ul > li')].map(li=>li.textContent))===JSON.stringify(bullets)&&bullets.length===5,'five exact observation bullets');
+   sections.slice(2).forEach(s=>check(s.querySelector('p').textContent===sectionPlainText(l.sections.find(a=>a.title===s.querySelector('summary').textContent).content),'exact analysis content'));
+   check([...material.querySelectorAll('.transcription-text')].every((p,i)=>p.textContent===l.items.filter(i=>i.type!=='page')[i].transcription),'envelope text intact');
+   sections.forEach(s=>s.open=true);check(document.documentElement.scrollWidth<=innerWidth,'expanded sheet letter no document overflow');
+ }
  if(l.id==='1974-02-12'||l.id==='1974-02-19') {
    check(pages.length===2&&frames.length===2,'only two registered physical pages');
    check(JSON.stringify([...document.querySelectorAll('.original-stage .continuous-original-page .item-heading h2')].map(h=>h.textContent))===JSON.stringify(pages.map(p=>p.label)),'original labels preserved');
@@ -354,9 +390,9 @@ try {
  return 'text, order, images, envelopes, scroll, layout passed';
  })()`));
  const shot=await cdp('Page.captureScreenshot',{format:'png'},sessionId);await writeFile(path.join(profile,`reader-${id}-${width}.png`),Buffer.from(shot.data,'base64'));
- if(id==='1974-02-19') {
+ if(id==='1974-02-19'||id==='1976-05-xx') {
  await evaluate(`document.querySelector('.continuous-recipe').scrollIntoView({behavior:'instant',block:'center'})`);
- const recipe=await cdp('Page.captureScreenshot',{format:'png'},sessionId);await writeFile(path.join(profile,`recipe-${width}.png`),Buffer.from(recipe.data,'base64'));
+ const recipe=await cdp('Page.captureScreenshot',{format:'png'},sessionId);await writeFile(path.join(profile,`${id}-spatial-${width}.png`),Buffer.from(recipe.data,'base64'));
  }
  if(id==='1974-09-17') {
  await evaluate(`document.querySelector('.preserved-object').scrollIntoView({behavior:'instant',block:'center'})`);
@@ -365,5 +401,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1978-09-29,1980-10-19'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1978-09-29,1980-10-19'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}
