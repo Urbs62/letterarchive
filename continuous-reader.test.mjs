@@ -64,7 +64,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx','1976-08-07']) {
+ for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx','1976-08-07','1976-08-27']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -87,6 +87,22 @@ try {
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+ if(l.id==='1976-08-27') {
+   check(pages.length===8&&frames.length===8&&pages.every((p,i)=>p.page===i+1),'eight pages in registered order');
+   const allText=[...document.querySelectorAll('.continuous-document .transcription-text'),...material.querySelectorAll('.transcription-text')];
+   check(allText.length===10&&allText.every(p=>p.classList.contains('continuous-preserved')&&getComputedStyle(p).whiteSpace==='pre-wrap'),'all pages and envelope preserve whitespace');
+   check(JSON.stringify([...material.querySelectorAll('.transcription-text')].map(p=>p.textContent))===JSON.stringify(l.items.filter(i=>i.type!=='page').map(i=>i.transcription)),'exact envelope text');
+   check(!document.querySelector('.continuous-document .continuous-paragraph'),'no prose reflow');
+   check(pages[0].transcription.includes('Nu är det Anita')&&pages[4].transcription.includes('Birgitta Johansson')&&pages[5].transcription.includes('Nu skriver Eva.'),'writer transitions retained');
+   const photo=document.querySelector('.preserved-object'),sections=[...document.querySelectorAll('.letter-view > details')];
+   check(!!photo&&photo.parentElement===document.querySelector('.letter-view')&&document.querySelector('#transcription-panel').nextElementSibling===photo,'historical photo after complete reader');
+   check(photo.nextElementSibling===sections[0]&&JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Platser']),'photo before unchanged aftertext');
+   check(photo.querySelector('p').textContent==='Urban med sin tävlingscykel, omkring 1975–1976. Fotot är från samma period som cykeltävlingarna Dubbeltrampen och Hortlax Cup, som omnämns i brevet.','exact historical caption');
+   const button=photo.querySelector('button'),image=button.querySelector('img');await image.decode();
+   check(image.getAttribute('src')==='letters/1976/1976-08-27/urban-tavlingscykel-ca-1975-1976.jpg','historical photograph image');
+   document.querySelector('#transcription-tab').click();button.scrollIntoView({behavior:'instant',block:'center'});button.focus({preventScroll:true});const y=scrollY;button.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden&&viewerContent.querySelector('img').getAttribute('src')===image.getAttribute('src'),'historical photo lightbox');closeViewer();check(document.activeElement===button&&Math.abs(scrollY-y)<2,'photo focus and scroll restoration');
+   sections.forEach(s=>s.open=true);check(document.documentElement.scrollWidth<=innerWidth,'expanded photo and aftertext no overflow');
+ }
  if(l.id==='1976-04-20') {
    check(pages.length===5&&frames.length===5,'five physical pages');
    const texts=[...document.querySelectorAll('.continuous-document .transcription-text')];
@@ -402,5 +418,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1978-09-29,1980-10-19'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1978-09-29,1980-10-19'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

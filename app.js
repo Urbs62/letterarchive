@@ -84,7 +84,7 @@ let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
-const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20", "1976-05-xx", "1976-08-07"]);
+const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20", "1976-05-xx", "1976-08-07", "1976-08-27"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -640,7 +640,7 @@ function renderContinuousLetter(letter, view) {
     const transcription = document.createElement("section");
     transcription.className = "continuous-text-page";
     updateTranscription(item, transcription);
-    if (letter.id === "1976-08-07") {
+    if (letter.id === "1976-08-07" || letter.id === "1976-08-27") {
       // Preserve the manually reviewed lines and spacing on all six originals.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
         text.classList.add("continuous-preserved");
@@ -699,7 +699,7 @@ function renderContinuousLetter(letter, view) {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
-        if (letter.id === "1975-08-27" || letter.id === "1976-05-xx" || letter.id === "1976-08-07") return;
+        if (letter.id === "1975-08-27" || letter.id === "1976-05-xx" || letter.id === "1976-08-07" || letter.id === "1976-08-27") return;
         if (letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05" || letter.id === "1974-08-23" || letter.id === "1975-05-29" || letter.id === "1975-07-22" || letter.id === "1976-04-20") {
           // SPECIAL: line structure and spacing carry meaning in the rebuses
           // and vertical text. Keep the entire reviewed transcription intact.
@@ -813,12 +813,13 @@ function renderLetter(letter) {
   view.append(navigation);
 
   // Supplementary archival cards follow the complete letter, before analysis.
-  if (letter.id === "1972-12-10" || letter.id === "1974-09-17" || letter.id === "1974-08-23") {
+  if (letter.id === "1972-12-10" || letter.id === "1974-09-17" || letter.id === "1974-08-23" || letter.id === "1976-08-27") {
+    const isCyclingPhoto = letter.id === "1976-08-27";
     const isSafe = letter.id === "1972-12-10";
     const isCamera = letter.id === "1974-08-23";
-    const heading = isSafe || isCamera ? "Bevarat föremål" : "Personer i brevet";
-    const title = isCamera ? "Agfa Agfamatic" : isSafe ? "Barnkassaskåp – Junior-Safe" : "Urban och Frasse";
-    const text = isCamera ? "Kameran som Urban skriver om i brevet, inköpt av hans föräldrar." : isSafe
+    const heading = isCyclingPhoto ? "Historiskt fotografi" : isSafe || isCamera ? "Bevarat föremål" : "Personer i brevet";
+    const title = isCyclingPhoto ? "Urban med sin tävlingscykel" : isCamera ? "Agfa Agfamatic" : isSafe ? "Barnkassaskåp – Junior-Safe" : "Urban och Frasse";
+    const text = isCyclingPhoto ? "Urban med sin tävlingscykel, omkring 1975–1976. Fotot är från samma period som cykeltävlingarna Dubbeltrampen och Hortlax Cup, som omnämns i brevet." : isCamera ? "Kameran som Urban skriver om i brevet, inköpt av hans föräldrar." : isSafe
       ? "Kassaskåpet som Urban skriver om i brevet finns fortfarande bevarat."
       : "Urban och Frasse, fotograferade under samma period som brevet skrevs.";
     const reference = document.createElement("section");
@@ -835,7 +836,7 @@ function renderLetter(letter) {
     `;
     reference.querySelector(".preserved-object-content").prepend(createOriginalImage({
       label: title,
-      image: isCamera ? "letters/1974/1974-08-23/agfamatic-camera.jpeg" : isSafe
+      image: isCyclingPhoto ? "letters/1976/1976-08-27/urban-tavlingscykel-ca-1975-1976.jpg" : isCamera ? "letters/1974/1974-08-23/agfamatic-camera.jpeg" : isSafe
         ? "letters/1972/1972-12-10/artifact-junior-safe.jpg"
         : "letters/1974/1974-09-17/urban-frasse.jpg"
     }));
