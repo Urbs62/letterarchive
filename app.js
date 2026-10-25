@@ -84,7 +84,7 @@ let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
-const continuousReadingLetterIds = new Set(["1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20", "1976-05-xx", "1976-08-07", "1976-08-27", "1977-03-29"]);
+const continuousReadingLetterIds = new Set(["1978-07-25", "1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20", "1976-05-xx", "1976-08-07", "1976-08-27", "1977-03-29", "1976-09-xx"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -640,10 +640,22 @@ function renderContinuousLetter(letter, view) {
     const transcription = document.createElement("section");
     transcription.className = "continuous-text-page";
     updateTranscription(item, transcription);
-    if (letter.id === "1976-08-07" || letter.id === "1976-08-27") {
+    if (letter.id === "1976-08-07" || letter.id === "1976-08-27" || letter.id === "1976-09-xx") {
       // Preserve the manually reviewed lines and spacing on all six originals.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
         text.classList.add("continuous-preserved");
+      });
+    }
+    if (letter.id === "1976-09-xx") {
+      // Source writer annotations are editorial; preserve their bracketed text.
+      transcription.querySelectorAll(".transcription-text").forEach(text => {
+        const source = text.textContent, nodes = []; let end = 0;
+        for (const match of source.matchAll(/\*\*(\[[^\]\n]+skriver[^\]\n]*\])\*\*/g)) {
+          nodes.push(document.createTextNode(source.slice(end, match.index)));
+          const label = document.createElement("strong"); label.textContent = match[1];
+          nodes.push(label); end = match.index + match[0].length;
+        }
+        nodes.push(document.createTextNode(source.slice(end))); text.replaceChildren(...nodes);
       });
     }
     if (letter.id === "1975-08-27") {
@@ -699,8 +711,8 @@ function renderContinuousLetter(letter, view) {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
-        if (letter.id === "1975-08-27" || letter.id === "1976-05-xx" || letter.id === "1976-08-07" || letter.id === "1976-08-27") return;
-        if (letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05" || letter.id === "1974-08-23" || letter.id === "1975-05-29" || letter.id === "1975-07-22" || letter.id === "1976-04-20") {
+        if (letter.id === "1975-08-27" || letter.id === "1976-05-xx" || letter.id === "1976-08-07" || letter.id === "1976-08-27" || letter.id === "1976-09-xx") return;
+        if (letter.id === "1978-07-25" || letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05" || letter.id === "1974-08-23" || letter.id === "1975-05-29" || letter.id === "1975-07-22" || letter.id === "1976-04-20") {
           // SPECIAL: line structure and spacing carry meaning in the rebuses
           // and vertical text. Keep the entire reviewed transcription intact.
           text.classList.add("continuous-preserved");

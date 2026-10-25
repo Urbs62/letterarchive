@@ -1,16 +1,25 @@
-Datum: 1976-08-27
-Poststämplat: Okänt
-Typ: Brev
-Avsändare: Urban Sandlund
-Mottagare: Ulf Sandlund
-Urbans ålder: 13 år
-Från: Piteå
-Till: Mölndal
+# Metadata
+
+- Datum: 1976-09-xx
+- Skrivstart: 1976-08-27
+- Daterat: Påbörjat 27 augusti 1976; fortsätter in i september. Slutdatum och postningsdatum är inte fastställda.
+- Poststämpel: Okänd
+- Typ: Brev
+- Skrivtyp: typewritten
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Urbans ålder: 13 år
+- Från: Piteå
+- Till: Mölndal
+- Omfattning: 12 sidor
 
 # Kuvert
 
 ## Framsida
 
+### Transcription
+
+```text
 Ulf Sandlund
 Safjällsgatan 16
 431 39 MÖLNDAL 3
@@ -18,17 +27,27 @@ Safjällsgatan 16
 Två frimärken à 170 öre.
 
 Poststämpel saknas eller är inte läsbar.
+```
 
 ## Baksida
 
+### Transcription
+
+```text
 A.V.S
 
 Urban Sandlund
 Degermansgatan 3
 941 00 PITEÅ
+```
+
+# Brev
 
 ## Sida 1
 
+### Transcription
+
+```text
 Piteå 76.08.27
 
 Ber.  l.t.  2 min.
@@ -120,9 +139,13 @@ några flaggor
 P.S. Hälsa Tårrbjörn o Birgitta D.S.
 
 Och om du vill kan du hälsa Mårttten "Whööö" D.S. Birgitta.
+```
 
 ## Sida 2
 
+### Transcription
+
+```text
 Ber.  l.t.  1.46 min
 
 Idag har vi haft hemkunskap för första gången,det verkade kul.Men
@@ -163,9 +186,13 @@ Blir man skrivpapper är allting bra men blir man dasspapper undrar
 man varför man inte blev civil i alla fall...
 
 Taget från Klantomen.
+```
 
 ## Sida 3
 
+### Transcription
+
+```text
 Piteå 76.08.27.
 
 Ber.  l.t.  2 min.Nja,2.35 ska det nog vara.
@@ -219,9 +246,13 @@ nån,under tiden jag ser Lördax,skriver ut det här papperet.)
 
 Under tiden jag venter på att det o.s.v.Så kan jag ju dra en historia
 Flickan som fick lifte o.s.v.
+```
 
 ## Sida 4
 
+### Transcription
+
+```text
 Ber.  l.t.  1 min.
 
 Nu ska du ha läst i 4 min och 21 sek,efter mina beräkningar.Hoppas
@@ -267,9 +298,17 @@ så han gick sin väg)
 -Det vaj baja Ujban som skjev fel......
 
 [Teckning]
+```
+
+### Description
+
+Teckningarna på originalets sida 4 visas i motsvarande sidbild.
 
 ## Sida 5
 
+### Transcription
+
+```text
 Fortsättning:Nu har jag och hoogert slagits (jag vann förstås) tro
 inte att hannvann som han säkert kommer att skriva.
 
@@ -325,23 +364,18 @@ här.Såg du matchen?Det blev 3-3 i all fall.Vad gör du ?-Spjingej.
 ser ut.Ta en titt på nästa sida då.
 
 Gudnatt from Urban.
+```
 
 ## Sida 6
 
+### Transcription
+
+```text
 Ber.  l.t.  1 min.
 
-Vad tycker du om honom? Ser han inte skön ut.
-En riktig going.Apropå going,använder du din
-going som jag lurade dej att köpa.(det där
-skulle jag nog inte ha skrivit) Nu måste jag
-sticka och rosta lite mackor så att inte pappa
-hinner ta all franska.Gudmorron,nu ska jag ska till
-skolan.Nu machen jag läxan.Tyska och matte.Nu
-har jag inget att göra,inget att skriva heller.
-Jag väntar på att filmen Vampyr ska börja.Om
-jag törs se den,det vet jag inte,jag ska se
-den först.Vill du läsa en mojot? Okej,här kom-
-mer en.
+Vad tycker du om honom? Ser han inte skön ut. En riktig going.Apropå going,använder du din going som jag lurade dej att köpa.(det där skulle jag nog inte ha skrivit) Nu måste jag sticka och rosta lite mackor så att inte pappa
+hinner ta all franska.Gudmorron,nu ska jag ska till skolan.Nu machen jag läxan.Tyska och matte.Nu har jag inget att göra,inget att skriva heller.
+Jag väntar på att filmen Vampyr ska börja.Om jag törs se den,det vet jag inte,jag ska se den först.Vill du läsa en mojot? Okej,här kommer en.
 
 -Vad är det du äter?
 -Stjömming.
@@ -368,9 +402,17 @@ Jag går och lägger mej nu,ställer väckarklockan påett,när väckar
 klockan ringer går jag upp och ser matchen(kanske)
 
 Gudnatt from Urban.
+```
+
+### Description
+
+Teckningarna på originalets sida 6 visas i motsvarande sidbild.
 
 ## Sida 7
 
+### Transcription
+
+```text
 Ber.  l.t.  1.50 min.
 
 Idag är det torsdag.Idag har Catarina tvättat.Hon ska ta en spruta
@@ -394,8 +436,7 @@ Urban
 
 Anita har gett mej ett paket: Tipp-Ex.Mycket användbart av mej
 som skriveren massa fel. ← där använde jag det.Nu ska jag
-ta bort ett helt ord [korrigerat med Tipp-Ex]. Du ska få en Pricks hållare,den
-får du av "hogge".Han har börjat samla på reklam pennor.Du kan ju
+ta bort ett helt ord [korrigerat med Tipp-Ex]. Du ska få en Pricks hållare,den får du av "hogge".Han har börjat samla på reklam pennor.Du kan ju
 skicka såna om du vill.Pricks hållaren fick du av Krister B.Hoppas
 du fattade det,du fick den alltså inte av Kakmonstret öhh,jag menar
 Tomas.E.Fattar du? Nu kommer en mojot:
@@ -424,9 +465,13 @@ till före jag går och lägger mej.
 -Kjocketklubba......
 
 Gudnatt from Urban
+```
 
 ## Sida 8
 
+### Transcription
+
+```text
 Ber.  l.t.  2 min.
 
 Idag har holger och jag jag gjort mycket.Jag orkar inte skriva allt.
@@ -476,9 +521,13 @@ kolstenar för ungefär 45kr. Hoogert försökte selja en tavla åt CATRIN,
 i växan klss hon köpte den inte men en annan typ ska ha den på på-
 seende.hoogert gillar henne mycket CATRIN henne (har gillat då hon
 inte var [överstruket]) hejdå från BENGT.Nu är det hoogert somskriver
+```
 
 ## Sida 9
 
+### Transcription
+
+```text
 Ber.  l.t.  1.58 min
 
 Här sitter jag nu.Lars står här bredvid,jag skulle visa honom maskinen
@@ -486,11 +535,9 @@ så då kunde jag inte hålla mej från att skriva ett par rader,
 nu vill Lars skriva ett par rader till dej.
 
 **[Lars skriver:]**
-
 Häjj Ölf Jagheter Lars.Ö. broder till "spände JAN"
 
 **[Urban skriver igen:]**
-
 Caterina säger att jag ska skriva att brytt ska skriva till brytt.Det
 har jag skrivit en gång,men det gör ingenting.Nu går vi till Lars.
 Nu är jag hem för att äta.Catarina lagar.Jag skriver.Mamma lagar
@@ -530,9 +577,13 @@ en palm.Anita gav henne eht diskställ i trä.Nu går jag och lägger
 mig.
 
 Gudnatt from Urban.
+```
 
 ## Sida 10
 
+### Transcription
+
+```text
 Ber.  l.t.  2.10 min.
 
 Idag har jag inte skrivit förens nu,detvillaägaklnio.Jag har varit
@@ -542,7 +593,6 @@ hans skrivbord.En gammal Halda Norden 5.Den är något större än din,
 om jag mins rätt.
 
 **[Birgitta J skriver:]**
-
 Hej,nu är det Birgitta som skriver.Jag kom över för att låna några
 tidningar,men jag läste brevet till dig istället.Och förresten så har
 Ubbe inga tidningar som är läsliga,den enda tidningen som Ubbe köper
@@ -552,14 +602,12 @@ Nu står Urkban här bredvid och vill att jag ska sluta,för han vill
 nämligen skrina........jag pyser.hej!!!!!!!.
 
 **[Urban skriver igen:]**
-
 Siem du märker så skriver Brgtt en massa fel.För det första så
 prenumererar jag på Buster inte köper.För det andra så heter jag
 Urban och inte Urkban.Och för det tredje så ska detstå
 skriva och inte skrina
 
 **[Anita skriver:]**
-
 Nu är det din kusin Anita som tar chansen att klinga jag menar klicka n er
 ett par rader till dig fast jag har inget särskilt att skriva.
 Jo att jag är jätteglad att jag kom tvåa i klubbmästerskapet. Jag klådde
@@ -585,23 +633,25 @@ Så var det med det,Nu är klockan 22.10 jag ska upp och jobba i morgon.
 Dettär nog bäst att jag slutar
 
 **[Catarina skriver:]**
-
 Det tycker jag med. Så jag kan skriva lite grann. Man måste få in
 lite intelektuella rader också. OBS IntELEKtuella felstavat med ett l.
 Men Tele kom ju med. (det var inte meningen förstås) Godnatt och sov
 gott.. Hejdå. Your sister Catarina(släkt med Sandlunds)
 
 **[Urban skriver igen:]**
-
 Nu går jag också och lägger mej.
 
 Gudnatt from Urban.
 
 Kl. är nu 3 på natten och jag skriver i sömnen.( detta ska du inte
 tro på)
+```
 
 ## Sida 11
 
+### Transcription
+
+```text
 Ber.  1.t.  1.20 min.
 
 Igår skrev jag inget.Därför skriver jag lite om igår,idag.I fritt-
@@ -612,9 +662,13 @@ regn.Cyklarna var ju på andra sidan så vi fick ta det i etapper.Se nedan.
 
 [Tecknad karta över vägen från sporthallen till cyklarna, med sträckan
 uppdelad i fyra etapper för att ta sig fram i regnet.]
+```
 
 ## Sida 12
 
+### Transcription
+
+```text
 Ber.  1.t.  2 min.
 
 Nu går jag in på sista sidan(har jag tänkt i alla fall.)Nu har jag
@@ -663,6 +717,7 @@ inget att skriva.
 Gudbaj for diss taim from Urban.
 
 Beräknad lästid    19 min 44 sekunder.
+```
 
 # Sammanfattning
 
@@ -676,9 +731,7 @@ Mot slutet packar Urban ihop försändelsen: bland annat elva tändsticksaskar, 
 
 # Iakttagelser
 
-- Brevet fungerar nästan som en löpande dagbok. Urban återkommer till skrivmaskinen många gånger under dagen, avbryter sig för mat, skola, kompisar, TV och andra aktiviteter och fortsätter sedan där han befinner sig.
-
-- Själva brevskrivandet är ett återkommande ämne. Urban kommenterar brevets längd, papperet, skrivmaskinen, skrivfel, Tipp-Ex, Ulfs långa brev och hur brevrullarna ska läsas, förvaras och spolas tillbaka. Korrespondensen är inte bara innehållet utan också en teknisk och praktisk hobby.
+- Urban återkommer till skrivmaskinen under flera dagar och avbryter sig för mat, skola, kompisar, TV och andra aktiviteter. Han kommenterar samtidigt brevets längd, papperet, skrivmaskinen, skrivfel, Tipp-Ex och Ulfs långa brev.
 
 - Den egenbyggda "brevrullaren" utvecklas under brevets gång. Urban provar nya rullar och en konstruktion med två pennor för att kunna läsa och spola tillbaka Ulfs brev enklare. Även pennsoluret som förekommit tidigare i korrespondensen nämns igen.
 
@@ -690,9 +743,7 @@ Mot slutet packar Urban ihop försändelsen: bland annat elva tändsticksaskar, 
 
 - Catarina har en särskild roll eftersom hon både är Ulfs syster och tillfälligt befinner sig hos Urban i Piteå. Hon skriver själv i brevet och blir samtidigt en direkt länk mellan de två familjerna.
 
-- Samlandet och utbytet av småsaker är påfallande omfattande. Tändsticksaskar, korkar, femöringar, reklampennor, en prickshållare, brevpapper och andra små föremål ingår i ett slags parallellt utbyte vid sidan av själva breven.
-
-- Tändsticksaskarna behandlas nästan arkivmässigt: Urban tänker lägga en lapp i varje ask med uppgift om varifrån den kommer. Det är ett tidigt och ganska typiskt exempel på hans vilja att ordna, dokumentera och hålla reda på saker.
+- Samlandet och utbytet omfattar tändsticksaskar, korkar, femöringar, reklampennor, en prickshållare, brevpapper och andra småsaker. Urban lägger en lapp i varje tändsticksask med uppgift om varifrån den kommer.
 
 - Vardagen dokumenteras mycket nära inpå: hemkunskap och slöjd, läxor, mat, TV, hockey, biljard, Monopol, landhockey, kompisar på gatan, lingonplockning och besök hos farmor och farfar blandas utan tydlig rangordning.
 
@@ -708,8 +759,8 @@ Mot slutet packar Urban ihop försändelsen: bland annat elva tändsticksaskar, 
 
 - Urban Sandlund – brevets avsändare.
 - Ulf Sandlund – Urbans kusin och brevets mottagare.
-- Catarina Sandlund – Ulfs storasyster och Urbans kusin; 
-- Anita Sandlund – Urbans storasyster och Ulfs kusin; 
+- Catarina Sandlund – Ulfs storasyster och Urbans kusin.
+- Anita Sandlund – Urbans storasyster och Ulfs kusin.
 - Rune Sandlund – Urbans pappa.
 - Barbro Sandlund – Urbans mamma.
 - Birgitta J – Urbans kusin och granne.

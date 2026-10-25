@@ -303,13 +303,18 @@ en tillfällig lokal server och en separat webbläsarprofil i systemets tempmapp
 ## Visa webbplatsen lokalt
 
 Eftersom JavaScript läser `letters.json` med `fetch` behöver projektet öppnas
-via en lokal webbserver, inte direkt som en `file://`-adress. Ett exempel med
-Python är:
+via en lokal webbserver, inte direkt som en `file://`-adress. Starta alltid
+den lokala webbservern med:
 
 ```sh
-python -m http.server 8000
+python -m http.server 8000 --bind 127.0.0.1 --directory "C:\Users\urban\Projects\letterarchive"
 ```
 
-Öppna sedan `http://localhost:8000`.
+Öppna applikationen på `http://127.0.0.1:8000/`.
+
+Detta är standard vid all lokal testning, även när Codex arbetar i en enskild
+brevmapp. Den uttryckliga serverroten gör att applikationen öppnas korrekt
+oavsett aktuell arbetskatalog. Använd inte VS Code Live Server på port 5500
+för dessa tester.
 
 För GitHub Pages behövs inget byggsteg; publicera filerna från projektets rot.

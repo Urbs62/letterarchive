@@ -64,7 +64,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx','1976-08-07','1976-08-27','1977-03-29']) {
+ for(const id of ['1978-07-25','1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx','1976-08-07','1976-08-27','1976-09-xx','1977-03-29']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -76,7 +76,7 @@ try {
  for(const f of frames){f.scrollIntoView({behavior:'instant',block:'center'});const y=scrollY;f.focus({preventScroll:true});f.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden,'lightbox');closeViewer();check(document.activeElement===f&&Math.abs(scrollY-y)<2,'lightbox scroll and focus');}
  document.querySelector('#transcription-tab').click();
  const textPages=l.id==='1978-09-29'?pages.filter(p=>p.transcription):pages;
- const visibleText=s=>l.id==='1975-08-27'?s.replace(/\\*\\*([^*]+)\\*\\*/g,'$1').replace(/\\*([^*\\n]+)\\*/g,'$1'):s;
+ const visibleText=s=>l.id==='1976-09-xx'?s.replace(/\\*\\*([^*]+)\\*\\*/g,'$1'):l.id==='1975-08-27'?s.replace(/\\*\\*([^*]+)\\*\\*/g,'$1').replace(/\\*([^*\\n]+)\\*/g,'$1'):s;
  check(JSON.stringify([...document.querySelectorAll('.continuous-document .continuous-text-page')].map(page=>[...page.querySelectorAll('.transcription-text')].map(p=>p.textContent).join('')))===JSON.stringify(textPages.map(i=>visibleText(i.transcription))),'exact text');
  const headings=[...document.querySelectorAll('.continuous-document .continuous-text-page > h2')];check(headings.length===textPages.length&&headings.every((h,i)=>h.textContent===(l.id==='1978-09-29'?'Brevet i läsordning':textPages[i].label)&&getComputedStyle(h).fontSize==='12.8px'),'subtle reading labels in order');
  headings.forEach((h,i)=>check(h.parentElement.firstElementChild===h,'separator precedes page '+i));
@@ -87,6 +87,44 @@ try {
  const material=document.querySelector('#transcription-panel .continuous-material');material.open=true;check(material.querySelectorAll('.continuous-text-page').length===l.items.filter(i=>i.type!=='page').length,'envelope and other material');
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
+
+ if(l.id==='1978-07-25') {
+   check(l.writtenDate==='1978-07-22'&&l.postmarked==='1978-07-25','written and postmarked dates');
+   const body=document.querySelector('.continuous-document .transcription-text');
+   check(pages.length===1&&body.textContent===pages[0].transcription&&getComputedStyle(body).whiteSpace==='pre-wrap','complete reviewed strip text');
+   check(body.textContent.includes('1978-07-22')&&body.textContent.includes('1978-07-23'),'both writing dates');
+   check(!document.querySelector('.continuous-paragraph'),'preserved narrow lines');
+   document.querySelector('#original-tab').click();
+   const scan=frames[0].querySelector('img'),rect=scan.getBoundingClientRect();
+   check(scan.naturalWidth===7146&&scan.naturalHeight===3024,'unaltered full montage');
+   check(Math.abs(rect.width/rect.height-scan.naturalWidth/scan.naturalHeight)<0.02&&getComputedStyle(scan).maxHeight==='none','full original aspect ratio');
+   const attachments=l.items.filter(i=>i.type==='attachment');
+   check(originals.querySelectorAll('img').length===5,'tube and three attachments in material');
+   check(attachments.every((a,i)=>a.label==='Bilaga '+(i+1)&&a.image.endsWith('attachment-0'+(i+1)+'.jpg')),'attachment order');
+   check(JSON.stringify([...material.querySelectorAll('.transcription-text')].slice(2).map(p=>p.textContent))===JSON.stringify(attachments.map(a=>a.transcription)),'attachment descriptions and transcriptions once');
+   check(![...document.querySelectorAll('.letter-view > details')].some(s=>s.querySelector('summary').textContent==='Bilagor'),'no duplicate attachment section');
+   for(const button of [...originals.querySelectorAll('button')].slice(2)) {
+     button.scrollIntoView({behavior:'instant',block:'center'});button.focus({preventScroll:true});const y=scrollY;
+     button.click();await viewerContent.querySelector('img').decode();
+     check(!viewer.hidden&&viewerContent.querySelector('img').naturalWidth>=3024,'full resolution attachment viewer');
+     closeViewer();check(document.activeElement===button&&Math.abs(scrollY-y)<2,'attachment focus and scroll restored');
+   }
+   document.querySelector('#transcription-tab').click();
+   check(document.documentElement.scrollWidth<=innerWidth,'mobile text fits');
+ }
+ if(l.id==='1976-09-xx') {
+   check(pages.length===12&&frames.length===12&&pages.every((p,i)=>p.page===i+1),'twelve physical pages');
+   const text=[...document.querySelectorAll('.continuous-document .transcription-text')];
+   check(text.every(p=>getComputedStyle(p).whiteSpace==='pre-wrap')&&!document.querySelector('.continuous-paragraph'),'manual whitespace retained');
+   check(document.querySelectorAll('.continuous-document strong').length===7,'seven editorial writer labels');
+   check([...document.querySelectorAll('.continuous-document strong')].every(s=>s.textContent.startsWith('[')&&s.textContent.endsWith(']')),'editorial brackets retained');
+   check(JSON.stringify([...material.querySelectorAll('.transcription-text')].map(p=>p.textContent))===JSON.stringify(l.items.filter(i=>i.type!=='page').map(i=>i.transcription)),'two exact envelope blocks');
+   check(l.date==='1976-09-xx'&&l.writtenDate==='1976-08-27'&&l.postmarked==='Okänt','uncertain date retained');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Platser','Djur']),'complete archive notes without source structure');
+   sections.forEach(s=>s.open=true);document.querySelector('#transcription-tab').click();
+   check(document.documentElement.scrollWidth<=innerWidth,'expanded notes no horizontal overflow');
+ }
  if(l.id==='1976-08-27') {
    check(pages.length===8&&frames.length===8&&pages.every((p,i)=>p.page===i+1),'eight pages in registered order');
    const allText=[...document.querySelectorAll('.continuous-document .transcription-text'),...material.querySelectorAll('.transcription-text')];
@@ -418,5 +456,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1977-03-29,1978-09-29,1980-10-19'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1977-03-29,1978-07-25,1978-09-29,1980-10-19'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}
