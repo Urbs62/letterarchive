@@ -1,0 +1,30 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {readSource} from './archive-import.mjs';
+
+test('1976-11-14 preserves authoritative transcription, identity and original images',async()=>{
+  const before=await readFile('source-backups/1976-11-14-letter-20261027T163545.md.bak','utf8');
+  const after=await readFile('letters/1976/1976-11-14/letter.md','utf8');
+  const eol=before.includes('\r\n')?'\r\n':'\n';
+  const extract=(start,end)=>before.slice(before.indexOf(start)+start.length,before.indexOf(end,before.indexOf(start)+start.length));
+  const pages=[1,2,3,4].map(n=>extract('### Sida '+n+eol+eol,n<4?eol+eol+'### Sida '+(n+1):eol+eol+'---'+eol+eol+'## Kuvert'));
+  const envelopes=[extract('### Framsida'+eol+eol,eol+eol+'### Baksida'),extract('### Baksida'+eol+eol,eol+eol+'---'+eol+eol+'## Personer')];
+  assert.deepEqual([...after.matchAll(/```text\r?\n([\s\S]*?)\r?\n```/g)].map(m=>m[1]),[...envelopes,...pages]);
+  const parsed=await readSource('letters/1976/1976-11-14/letter.md');
+  const archive=JSON.parse(await readFile('letters.json','utf8'));
+  const entry=archive.letters.find(l=>l.id==='1976-11-14');
+  assert.equal(archive.letters.filter(l=>l.id===entry.id).length,1);
+  assert.deepEqual(entry.items,parsed.items);
+  assert.deepEqual(entry.items.map(i=>i.transcription),[...envelopes,...pages].map(b=>b.replaceAll('\r\n','\n')));
+  assert.deepEqual(entry.items.map(i=>i.image.split('/').at(-1)),['envelope-front.jpg','envelope-back.jpg','page-01.jpg','page-02.jpg','page-03.jpg','page-04.jpg']);
+  for(const item of entry.items)await readFile(item.image);
+  assert.equal(entry.senderAge,13);assert.equal(entry.writtenDate,'1976-11-11');assert.equal(entry.date,'1976-11-14');
+  assert.match(entry.postmarked,/osäkert/);assert.equal(entry.from,'Urban Sandlund');assert.equal(entry.to,'Ulf Sandlund');
+  assert.equal(entry.summary,parsed.summary);
+  assert.deepEqual(entry.sections.map(s=>s.title),['Iakttagelser','Personer','Platser','Arkivanteckning']);
+  assert.equal(entry.sections[0].content.split('\n').filter(l=>l.startsWith('- ')).length,6);
+  const original=JSON.parse(execFileSync('git',['show','HEAD:letters.json'],{encoding:'utf8',maxBuffer:20*1024*1024}));
+  assert.deepEqual(archive.letters.filter(l=>l.id!==entry.id),original.letters.filter(l=>l.id!==entry.id));
+});
