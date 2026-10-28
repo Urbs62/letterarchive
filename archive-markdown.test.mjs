@@ -143,6 +143,46 @@ test("uses postmark for identity while preserving writing date and explicit id",
   assert.equal(parseArchiveMarkdown("Datum: 1981-02-03", options).id, "1981-02-03");
 });
 
+test("date aliases preserve known, unknown and absent postmarks without folder inference", () => {
+  const options = { fileName: "letter.md", folder: "letters/1976/1976-09-05/" };
+  const dates = source => {
+    const parsed = parseArchiveMarkdown(source, options);
+    return [parsed.id, parsed.date, parsed.writtenDate, parsed.postmarked];
+  };
+  for (const field of ["Poststämplat", "Poststämpel"]) {
+    assert.deepEqual(dates(`Datum: 1976-08-27\n${field}: 1976-09-06`),
+      ["1976-09-06", "1976-09-06", "1976-08-27", "1976-09-06"]);
+    for (const unknown of ["Okänt", "Okänd"]) {
+      assert.deepEqual(dates(`Datum: 1976-09-xx\nSkrivstart: 1976-08-27\n${field}: ${unknown}`),
+        ["1976-09-xx", "1976-09-xx", "1976-08-27", "Okänt"]);
+      assert.deepEqual(dates(`Datum: 1976-08-27\n${field}: ${unknown}`),
+        ["1976-08-27", "1976-08-27", undefined, "Okänt"]);
+    }
+    for (const uncertain of ["[saknas]", "Troligen 5 september 1976", "1976-02-30"]) {
+      assert.deepEqual(dates(`Datum: 1976-09-xx\n${field}: ${uncertain}`),
+        ["1976-09-xx", "1976-09-xx", undefined, uncertain]);
+    }
+  }
+  assert.deepEqual(dates("Datum: 1976-08-27"),
+    ["1976-08-27", "1976-08-27", undefined, undefined]);
+  assert.deepEqual(dates("Datum: 1976-09-xx\nSkrivstart: 1976-08-27"),
+    ["1976-09-xx", "1976-09-xx", "1976-08-27", undefined]);
+  assert.deepEqual(dates("Skrivstart: 1976-08-27\nPoststämpel: Okänt"),
+    ["1976-08-27", "1976-08-27", undefined, "Okänt"]);
+  assert.deepEqual(dates(""), ["", "", undefined, undefined]);
+  assert.deepEqual(dates("- Datum:\n- Poststämplat: Okänt"),
+    ["", "", undefined, "Okänt"]);
+  assert.deepEqual(dates("Datum: 1976-09-xx\nPoststämpel:\n# Brev\nText"),
+    ["1976-09-xx", "1976-09-xx", undefined, undefined]);
+  const legacy = parseArchiveMarkdown("# Metadata\n## Date\n1976-08-27\n## From\nUrban", options);
+  assert.equal(legacy.date, "1976-08-27");
+  const annotated = "1976-09-06 (tolkat från svårläst poststämpel)";
+  assert.equal(dates(`Datum: 1976-08-27\nPoststämplat: ${annotated}`)[1], annotated);
+  const both = "Datum: 1976-09-xx\nSkrivstart: 1976-08-27\nPoststämplat: 1976-09-06\nPoststämpel: Okänd";
+  assert.deepEqual(dates(both), ["1976-09-06", "1976-09-06", "1976-08-27", "1976-09-06"]);
+  assert.equal(parseArchiveMarkdown(both, { ...options, id: "custom" }).id, "custom");
+});
+
 test("imports notepad covers separately from envelope and preserves page order", () => {
   for (const [heading, front, back] of [
     ["Anteckningsblock", "Framsida", "Baksida"],

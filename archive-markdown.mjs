@@ -31,7 +31,7 @@ function field(markdown, name) {
 
 function lineField(markdown, names) {
   for (const name of names) {
-    const match = markdown.match(new RegExp(`^(?:-\\s*)?${name}:\\s*(.+?)\\s*$`, "im"));
+    const match = markdown.match(new RegExp(`^(?:-[\\t ]*)?${name}:[\\t ]*(.+?)[\\t ]*$`, "im"));
     if (match) return match[1].trim();
   }
   return "";
@@ -227,9 +227,16 @@ export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, atta
   if (!type) throw new Error("Expected letter.md, postcard.md or artifact.md");
   if (type === "artifact") return parseArtifact(markdown, { folder, id, documentImages });
 
-  const writtenDate = metadataField(markdown, "Date", ["Datum"]);
-  const postmarked = lineField(markdown, ["Poststämplat"]);
-  const date = postmarked || writtenDate;
+  const sourceDate = metadataField(markdown, "Date", ["Datum"]);
+  const writtenDate = lineField(markdown, ["Skrivstart"]) || sourceDate;
+  const postmarkText = lineField(markdown, ["Poststämplat", "Poststämpel"]);
+  const postmarked = /^okän[dt]$/i.test(postmarkText) ? "Okänt" : postmarkText;
+  // Only a calendar date can override Datum/Date. Keep annotations on legacy
+  // ISO postmarks, but never use unknown or uncertain prose as an identity.
+  const postmarkDate = postmarked.match(/^\d{4}-\d{2}-\d{2}(?=\s|$)/)?.[0];
+  const knownPostmark = postmarkDate && !Number.isNaN(Date.parse(postmarkDate))
+    && new Date(postmarkDate).toISOString().slice(0, 10) === postmarkDate;
+  const date = knownPostmark ? postmarked : sourceDate || writtenDate;
   const age = metadataField(markdown, "Sender Age", ["Urbans ålder", "Avsändarens ålder"]);
   const sourceType = metadataField(markdown, "Type", ["Typ"]);
   return {

@@ -78,6 +78,10 @@ sammanfattningen före eller efter brevdelarna. Båda strukturerna kan därmed
 fortsätta användas vid import; den ovanstående ordningen är standard för nya
 filer.
 
+För brevet med arkiv-ID `1976-09-xx` är `1976-09-05` ett arkivmappnamn,
+inte belägg för en verifierad poststämpel den 5 september. Brevet påbörjas
+den 27 augusti 1976, fortsätter in i september och har okänd poststämpel.
+
 Varje brev har ett objekt i `letters.json`. Där finns datum, avsändare,
 mottagare, avsändarens ålder, brevtyp och en ordnad lista `items`. Varje post i
 listan är en egen arkivdel: kuvertets framsida, kuvertets baksida, en brevsida
