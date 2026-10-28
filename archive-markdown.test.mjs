@@ -183,6 +183,17 @@ test("date aliases preserve known, unknown and absent postmarks without folder i
   assert.equal(parseArchiveMarkdown(both, { ...options, id: "custom" }).id, "custom");
 });
 
+test("explicit local page images support derived sheets without changing legacy paths", () => {
+  const options = { fileName: "letter.md", folder: "letters/example/" };
+  const source = "Datum: 1976-12-30\n# Brev\n## Sida 1\n\n![Original](derived/sheet-01.png)\n\n### Transcription\n\n```text\nUser-reviewed text.\n```\n\n## Sida 2\n\n### Transcription\n\nSecond sheet.";
+  const pages = parseArchiveMarkdown(source, options).items;
+  assert.deepEqual(pages.map(p => p.image), ["letters/example/derived/sheet-01.png", "letters/example/page-02.jpg"]);
+  assert.deepEqual(pages.map(p => p.transcription), ["User-reviewed text.", "Second sheet."]);
+  for (const image of ["../outside.png", "https://example.com/image.png", "/absolute.png"]) {
+    assert.throws(() => parseArchiveMarkdown(source.replace("derived/sheet-01.png", image), options), /Expected a local page image/);
+  }
+});
+
 test("imports notepad covers separately from envelope and preserves page order", () => {
   for (const [heading, front, back] of [
     ["Anteckningsblock", "Framsida", "Baksida"],

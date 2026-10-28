@@ -140,6 +140,15 @@ Bilderna ligger under `letters/<år>/<datum>/`. Datum används i ISO-format:
 rekommendation, inte ett krav; sökvägen i objektets `image`-fält är alltid
 styrande.
 
+En brevsida kan ange en lokal bildlänk, exempelvis
+`![Original](derived/sheet-01.webp)`, direkt under `## Sida 1` och före
+`### Transcription`. Importören använder då den bilden i stället för
+standardnamnet. För samlingsfotografier kan separata utsnitt
+användas som sidbilder medan originalfotografierna bevaras. Brevet
+`1976-12-30` har en dokumenterad bildkoppling och ett återskapningsskript
+i sin `derived/`-mapp. Redaktionella avsnitt kan länka till verifierade
+arkivposter med `[länktext](#brev/arkiv-id)`.
+
 Objektens ordning i `items` styr läsordningen exakt. Original- och textvyn,
 föregående/nästa-knapparna samt tangentbords- och svepnavigeringen följer samma
 ordning oavsett objekttyp.

@@ -23,7 +23,7 @@ const server = createServer(async (request, response) => {
   const file = path.resolve(root, `.${name === "/" ? "/index.html" : name}`);
   if (!file.startsWith(root + path.sep)) { response.writeHead(403).end(); return; }
   try {
-    const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8", ".css": "text/css", ".jpg": "image/jpeg" };
+    const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8", ".css": "text/css", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
     response.setHeader("Content-Type", types[path.extname(file)] || "application/octet-stream");
     response.end(await readFile(file));
   } catch { response.writeHead(404).end(); }
@@ -64,7 +64,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1978-07-25','1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx','1976-08-07','1976-08-27','1976-09-xx','1977-03-29','1976-11-14','1976-12-27']) {
+ for(const id of ['1978-07-25','1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx','1976-08-07','1976-08-27','1976-09-xx','1977-03-29','1976-11-14','1976-12-27','1976-12-30']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -98,6 +98,23 @@ try {
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
 
+ if(l.id==='1976-12-30') {
+   check(pages.length===32&&frames.length===32,'32 ordinary sheets in the main reader');
+   check([...document.querySelectorAll('.continuous-document .transcription-text')].every(p=>getComputedStyle(p).whiteSpace==='pre-wrap')&&!document.querySelector('.continuous-document .continuous-paragraph'),'reviewed lists, headings and line breaks preserved');
+   check(new Set(pages.map(p=>p.image)).size===32&&new Set(frames.map(f=>f.querySelector('img').getAttribute('src'))).size===32,'32 distinct sheet images without composite duplication');
+   check(pages.every((p,i)=>p.page===i+1&&p.image.endsWith('/derived/sheet-'+String(i+1).padStart(2,'0')+'.webp')),'documentation page order and crop mapping');
+   check(l.items.length===34&&l.items.filter(i=>i.type==='attachment').length===0&&originals.querySelectorAll('img').length===2,'sheets are not supplementary material');
+   check(l.date==='1976-12-30'&&l.postmarked==='1976-12-30'&&!l.writtenDate&&l.senderAge===14,'confirmed metadata without invented writing date');
+   check(pages[26].transcription.includes('piggelin')&&pages[31].transcription.includes('Kandidatidiaden:'),'six newly reviewed sheets retained last');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(sections.length===6,'summary and five concise archive sections');
+   check(sections[0].querySelector('p').textContent===l.summary,'exact requested summary');
+   const link=document.querySelector('.letter-view a[href="#brev/1976-unknown-canned-heat-puzzle"]');
+   check(link&&link.textContent==='Hemmagjort Canned Heat-pussel','verified internal archive reference');
+   check([...document.querySelectorAll('.continuous-document .transcription-text')].every(p=>!p.textContent.includes('Notering:')),'editorial notes separate from transcription');
+   sections.forEach(s=>s.open=true);document.querySelector('#transcription-tab').click();
+   check(document.documentElement.scrollWidth<=innerWidth,'all expanded notes fit viewport');
+ }
  if(l.id==='1976-12-27') {
    check(pages.length===1&&frames.length===1,'one original page');
    check(l.date==='1976-12-27'&&l.postmarked==='1976-12-27'&&!l.writtenDate&&l.senderAge===14,'confirmed postmark without invented writing date');
@@ -478,6 +495,7 @@ try {
  }
  }
  }
+ assert.equal(await evaluate(`(async()=>{renderLetter(letters.find(l=>l.id==='1976-12-30'));document.querySelector('.letter-view a[href="#brev/1976-unknown-canned-heat-puzzle"]').click();await new Promise(r=>setTimeout(r,100));return activeLetter.id==='1976-unknown-canned-heat-puzzle'&&!!document.querySelector('.letter-view')})()`),true);
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1976-12-27,1977-03-29,1978-07-25,1978-09-29,1980-10-19'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1976-12-27,1976-12-30,1977-03-29,1978-07-25,1978-09-29,1980-10-19'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

@@ -1,0 +1,707 @@
+{
+  "sources": [
+    {
+      "file": "page-01.jpg",
+      "sha256": "5eedd5bc7a9345fc7072a72572c6b0fffc1a8c56331d80236d4d0fc954690925",
+      "orientedWidth": 3000,
+      "orientedHeight": 4000
+    },
+    {
+      "file": "page-02.jpg",
+      "sha256": "a9cd49670e9ef2cbd6009e648063f37dd5d9b46c6a4ff2d4194940fd66b88ee7",
+      "orientedWidth": 3000,
+      "orientedHeight": 4000
+    },
+    {
+      "file": "page-03.jpg",
+      "sha256": "785de4c69f07718850e56f2d8e4ecf957a3f4a9544c815434d38ee729e1dd2ac",
+      "orientedWidth": 3000,
+      "orientedHeight": 4000
+    },
+    {
+      "file": "page-05.jpg",
+      "sha256": "b8a426dbe7c61fa45851ae8936e0d4dd5e0e5371eba8ae852d6e29f882faef46",
+      "orientedWidth": 3000,
+      "orientedHeight": 4000
+    },
+    {
+      "file": "page-06.jpg",
+      "sha256": "5fabaeefdc0c1c7aa8471c6ae85f1659217db885d645a31f8b96d8b07cc19168",
+      "orientedWidth": 3000,
+      "orientedHeight": 4000
+    },
+    {
+      "file": "page-04.jpg",
+      "sha256": "cc1426d2455e27e2cd9dcb3b05b31a23f8362791771c8f8fdf885146fee71241",
+      "orientedWidth": 3000,
+      "orientedHeight": 4000
+    }
+  ],
+  "sheets": [
+    {
+      "page": 1,
+      "source": "page-01.jpg",
+      "rect": [
+        35,
+        0,
+        1480,
+        1255
+      ],
+      "file": "sheet-01.webp",
+      "reviewedBody": "Jonas skickar en hälsning. Just nu hjälper han mig med brev-\nskrivningen. Här kommer en historia som han hittat i en\nbjörk. (Hepp)\nVarför får inte jag bära nu, då Brigitte Bardot?",
+      "transcriptionSha256": "ffefe364cec0060e50b85d94d6b33baf01faf84e4432ebda88866f7a8d6e4f71",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "6aec45bc61020d6e1093a4675c487819f596c4c7ea588b65b3a9965474898bd5",
+      "pngSha256": "51386884c20891e9520ddad1e54923fb9d5602ec5d2a17fe47813c1c438cb4a8",
+      "pngBytes": 3008947,
+      "bytes": 480094,
+      "psnr": 44.49443110418572,
+      "meanAbsoluteError": 1.1508551380065324
+    },
+    {
+      "page": 2,
+      "source": "page-01.jpg",
+      "rect": [
+        1495,
+        60,
+        1400,
+        1230
+      ],
+      "file": "sheet-02.webp",
+      "reviewedBody": "Hälsningar ifrån Jons Petti som bor Albanien.\n**Historia**\n\"Min pappa är så liten att han måste gå opp på en stol då han tar på sig hatten\", sa Sven-Lennart.\nLäs Mad",
+      "transcriptionSha256": "a735cc160a33f49c8c47e2c07b76732d41b7dae31048343be9e500be18be5817",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "f5b53df4f4a1cd731aa089b8996826a2d826a50d49161ea9f719dfd87ec35ad2",
+      "pngSha256": "957c89f1c1d8fb8deae1d3ef0c02cba58c02f286fe57cbe663eeed4a8f690c0b",
+      "pngBytes": 2862339,
+      "bytes": 434486,
+      "psnr": 44.206487959025154,
+      "meanAbsoluteError": 1.184585559427023
+    },
+    {
+      "page": 3,
+      "source": "page-01.jpg",
+      "rect": [
+        0,
+        1235,
+        1530,
+        1345
+      ],
+      "file": "sheet-03.webp",
+      "reviewedBody": "**En historia från Buster**\nBravo, ni har vunnit en resa till Sydpolen. Svarar ni rätt på nästa fråga får ni även en returbiljett.\n\nUnder texten finns en tecknad figur.",
+      "transcriptionSha256": "39d585a65d83115c3a9774e5ac66996834c4d159489cac292abe31390fb5a19c",
+      "descriptionSha256": "04db7175c91cb20649f7fc1cdb23d7ed9f3b5b246348868db234e09602a682e0",
+      "sha256": "1f402429ebbb4dbff7375e9094921e306559d1ad6dbdba87c7cbd21f2b0d605c",
+      "pngSha256": "82da73b39bf9b580b1f588025021f799922c258aed49a6f46219d01bff3acfb2",
+      "pngBytes": 3631883,
+      "bytes": 558082,
+      "psnr": 44.264471128153566,
+      "meanAbsoluteError": 1.1752451992775632
+    },
+    {
+      "page": 4,
+      "source": "page-01.jpg",
+      "rect": [
+        1470,
+        1250,
+        1405,
+        1330
+      ],
+      "file": "sheet-04.webp",
+      "reviewedBody": "Två tecknade figurer.\n\nVid den ena står:\nhupp\nVid den andra:\nhepp\n\nDen ena är en variant av den återkommande **hepp-gubben**, där en linje går genom figuren så att huvudet är ovanför linjen och fötterna under.",
+      "transcriptionSha256": "471e71ba5b07bc8558e687481ab9ccc75e1e9ab24a52929079b8c3894783bb87",
+      "descriptionSha256": "b98d5d33bf287f41193b54c999a4e9a578c0e845eb08b5aad0b6e8d39c5d972e",
+      "sha256": "ab7422467a2d5b4d64a9f37152e0d864e1fbbf684a568dadfa69561e364028f4",
+      "pngSha256": "a71f0367f340f1641283522a6dcbc788deaed87ee649aca694c94f5b0517103f",
+      "pngBytes": 3116388,
+      "bytes": 432302,
+      "psnr": 44.07827348237791,
+      "meanAbsoluteError": 1.2107041625415853
+    },
+    {
+      "page": 5,
+      "source": "page-01.jpg",
+      "rect": [
+        0,
+        2580,
+        1535,
+        1420
+      ],
+      "file": "sheet-05.webp",
+      "reviewedBody": "Snart skall jag och cykla med Jonas. Det är bart på E4:an. Jag har varit och cyklat en gång förut. (Kanske har jag skrivit tidigare strunt i det)\nHan och jag och hans syster Ulrika ska anmäla oss för badmintontävling.\n\n**Notering:** Ulrika är Jonas syster.",
+      "transcriptionSha256": "5de350a511a91ca25d29568e39f96d8eedb87ca16997175c369f7ec5402bba45",
+      "descriptionSha256": "3dc08b90d18601bf88a7a30e3c4b20c4037c7f818ffdf345893e1e226fc7592b",
+      "sha256": "2cf25c4f60c29fac7d44389707fc405341b11eae511acdfef3319d75a50f122a",
+      "pngSha256": "4906c1e40956aefd33a88a9b7ae15c8c3c9671d2e4d6f562ead39e7ff0b8018b",
+      "pngBytes": 4052448,
+      "bytes": 643094,
+      "psnr": 44.087814312870606,
+      "meanAbsoluteError": 1.19424966738542
+    },
+    {
+      "page": 6,
+      "source": "page-01.jpg",
+      "rect": [
+        1490,
+        2570,
+        1390,
+        1405
+      ],
+      "file": "sheet-06.webp",
+      "reviewedBody": "I svenskan håller vi på och gör en tidning. Då får vi skriva på maskin. Då tänker jag på dig, vilket helvete du måtte ha haft i början, men sen man blir van går det ju bra.\nBörjar fundera på att köpa mig en skrivmaskin men då blir man då ju ruinerad.",
+      "transcriptionSha256": "f6b7d488bd241847f97fa5ce75f444829fd04b0d20329415d6ef65fac93ecf49",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "6cfb1ba863c5df98d4a219463c3962ad34f4e145f3223c0bf5ee72237f69564f",
+      "pngSha256": "41e9033e352fcfe5455e0f970b4eb76afd15b4fcbc555d0cc2c0533766c8ebf9",
+      "pngBytes": 3474426,
+      "bytes": 543836,
+      "psnr": 44.18349272195983,
+      "meanAbsoluteError": 1.1822666564257491
+    },
+    {
+      "page": 7,
+      "source": "page-02.jpg",
+      "rect": [
+        120,
+        0,
+        1435,
+        1290
+      ],
+      "file": "sheet-07.webp",
+      "reviewedBody": "Frasse mår bra, just nu ligger han på soffan och sover. Men han lider av stora kärleksproblem. Och den 1 april kastreras han. Bara det inte blir ett aprilskämt.\nU.S. är bäst\neller hur\n\n**Notering:** Frasse är katten. Hans kommande kastrering är en av de vardagliga händelser som återkommer i brevet.",
+      "transcriptionSha256": "a8f2c302731ce0dafeebd0d6020d75189abad6e3097c45dd9d016d2b1da559cd",
+      "descriptionSha256": "38d80e284ae9ae503cf91b93142d5633b5704d782df3b50dc3ed7a27b31c9549",
+      "sha256": "3627b09eba3fad24b4eca12e6f59476a5d8412540b4451da88d087a63185fa9f",
+      "pngSha256": "117514ac9287187dda6bd7968f49cef3f94509d7c934610799592e578dd2433d",
+      "pngBytes": 3252557,
+      "bytes": 480292,
+      "psnr": 44.30608083344835,
+      "meanAbsoluteError": 1.1677477964148413
+    },
+    {
+      "page": 8,
+      "source": "page-02.jpg",
+      "rect": [
+        1530,
+        0,
+        1425,
+        1300
+      ],
+      "file": "sheet-08.webp",
+      "reviewedBody": "Nu var det några dagar sen jag skrev. Det beror på byggsatsen, den är nästan klar. Pappa har fått en elektron klocka av mamma\n(försenad julklapp) det är en UNITREX D16! DIGITALUR.\n>\n> Vid ett tryck på T-knappen\n> får man fram tim, min. Vid\n> fortsatt nedtryckning, sek.\n> Och två tryck, datum.",
+      "transcriptionSha256": "dec803e44a8dc8c3a92a3f3a32e538d6dadfec3ecb0b0203d82a3bb5ed0d2e53",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "c22089679d04f15ebfc62d82e89ece665fe43bccf707e5c80f65f2d4c92771b3",
+      "pngSha256": "5fbad95b0fc0964c4416617de801c4ea6d8dff43bdfe477d9c77a22ebebcbb7f",
+      "pngBytes": 3172858,
+      "bytes": 475396,
+      "psnr": 44.25340493420396,
+      "meanAbsoluteError": 1.1774862798020693
+    },
+    {
+      "page": 9,
+      "source": "page-02.jpg",
+      "rect": [
+        140,
+        1270,
+        1435,
+        1320
+      ],
+      "file": "sheet-09.webp",
+      "reviewedBody": "Rubrik ungefär:\n\n> **Nu lite teckningar**\n\nFem figurer är numrerade.\nTexten under anger:\n1 = Suddgummi  \n2 = Utsuddat suddgummi  \n3 = en snöflinga  \n4 = en snöflinga  \n5 = en smält snöflinga",
+      "transcriptionSha256": "503620dd240d9838cade89360d0b8380bdb51fdecf3ce86ecca11c13cc6e4529",
+      "descriptionSha256": "0b493ba64353bee3a4a594099c99ed38adb62fc9f1d63102fc880bebba52045b",
+      "sha256": "b1515057f66a1692a3ea8960cf3f36a4c8f6133e3de9ff44e6a21958a1f67381",
+      "pngSha256": "33763a50e5319bf8b884038908a6869f748fc55ff480c68ada8507de2c6d56b1",
+      "pngBytes": 3374808,
+      "bytes": 492908,
+      "psnr": 44.17703902109394,
+      "meanAbsoluteError": 1.1796425931791785
+    },
+    {
+      "page": 10,
+      "source": "page-02.jpg",
+      "rect": [
+        1570,
+        1340,
+        1410,
+        1200
+      ],
+      "file": "sheet-10.webp",
+      "reviewedBody": "Idag har vi fått reda på matteprovet. Jag had 23 av 30 men kunde ha 25 ifall jag hade skrivit dit två tal som jag had räkna ut på ett annat papper.\nNär jag kom hem från skolan spelade jag schack med farsan Vann, som vanligt.\nNu far jag och köper en byggsats på Lek & Hobby. Nu har jag varit och köpt en byggsats, en fantasibil, Canned Heat. Nu börjar jag bygga.\n\n**Notering:** Lek & Hobby var en leksaksaffär i Piteå. Vad \"fantasibil\" närmare syftar på är osäkert.",
+      "transcriptionSha256": "32d215f583d2edf0ec42b37686e6eea853c1320adb825e85db194c7bddd91ed9",
+      "descriptionSha256": "8be314424d1e07ce88ddedac077460a608d781a503600c4a7bfe823ae0f9848f",
+      "sha256": "331b046d240d5af59aa5665c5a70f5157b9649ce3aacee3bfe8396884ca82f0f",
+      "pngSha256": "871d233691e0387332f62f696438a488be078be8d9987df044805921934e3230",
+      "pngBytes": 3102970,
+      "bytes": 433302,
+      "psnr": 43.82474893885865,
+      "meanAbsoluteError": 1.2352862490149725
+    },
+    {
+      "page": 11,
+      "source": "page-02.jpg",
+      "rect": [
+        140,
+        2570,
+        1470,
+        1385
+      ],
+      "file": "sheet-11.webp",
+      "reviewedBody": "Det brev som kommer kommer att bestå av flera små lappar. Det är ett nytt försök att skriva brev på inte det gamla och trista stora papperet.\n\n**Notering:** Detta beskriver själva formen på brevet: i stället för vanliga brevpapper består det av ett stort antal små lappar.",
+      "transcriptionSha256": "f0f7f3883a6a27a2ecee284f85d3e90868a5563598aff47164f818068515ca06",
+      "descriptionSha256": "687fa1efad7d1ab8576f15b35455156241a4fc09c405b3b67cdd9f527a289da2",
+      "sha256": "31d8097c30ea267d21d3a79e60f8e2a3487a98373566050a4b88c2f679886ca9",
+      "pngSha256": "341fea53e78248c700e0381064f69017bd27051fc188b7f2bb430f666999ef6d",
+      "pngBytes": 3467921,
+      "bytes": 509118,
+      "psnr": 44.64630650923951,
+      "meanAbsoluteError": 1.122355493340537
+    },
+    {
+      "page": 12,
+      "source": "page-02.jpg",
+      "rect": [
+        1640,
+        2570,
+        1360,
+        1370
+      ],
+      "file": "sheet-12.webp",
+      "reviewedBody": "Nu har jag varit och byggt en snökoja så här kommer kojan att se ut i genomskärning\n\nUnder texten finns en teckning av snökojan/snögrottan i genomskärning, med små figurer.",
+      "transcriptionSha256": "26d66008e6900b9b69aaccf55aa4575a1be05b0dcd33da5fae1311512b37724e",
+      "descriptionSha256": "c0c9a6962404fa4d0590440a5c12a02071319ad0f0439c73fb176e45f9c2ebd7",
+      "sha256": "f036b95f42bf841db9626247f010641a28b551fc9195a97debe2a66e14fb46f7",
+      "pngSha256": "d65fc046467dbe87840ff8c7fb10a9c7fb46dd3b21c88b10c38c9223bfa3676e",
+      "pngBytes": 3007192,
+      "bytes": 492538,
+      "psnr": 44.35798012677279,
+      "meanAbsoluteError": 1.1679399241448405
+    },
+    {
+      "page": 13,
+      "source": "page-03.jpg",
+      "rect": [
+        80,
+        70,
+        1410,
+        1235
+      ],
+      "file": "sheet-13.webp",
+      "reviewedBody": "Alla gör ju sina misstag sa igelkotten och hoppade ner från rotborsten.\n\nUnder texten finns en liten teckning av en igelkott/borste.",
+      "transcriptionSha256": "d1654922e0479c0efe76042a97c884df69e8115f0f1931365cba8c21c98d885e",
+      "descriptionSha256": "fcf381f5906fc32aebb9d872a462f42a7072375364f1e1320ffadefeef118666",
+      "sha256": "2929d1281289608e7345cfe022521d9bb8d43109ad1fb1ee776b940cdd953b97",
+      "pngSha256": "9b5834509e3818ae434d556687eeef5ec2e3af5f59ea738047fc927ad45f1c80",
+      "pngBytes": 2651261,
+      "bytes": 415324,
+      "psnr": 44.685686506712834,
+      "meanAbsoluteError": 1.1232476718254993
+    },
+    {
+      "page": 14,
+      "source": "page-03.jpg",
+      "rect": [
+        1490,
+        300,
+        1340,
+        1150
+      ],
+      "file": "sheet-14.webp",
+      "reviewedBody": "Sen spelade jag Risk med Julle. Han vann. Jag lånade två Asterix och gick hem och spelade schack med min moder som blev matt i 32 draget.\nDet har varit kring 10–11 grader idag.\n\n**Notering:** **Julle** är smeknamn för Göran Karlsson, som bodde på samma gata.",
+      "transcriptionSha256": "816bed318358eb0c2924d619f493ce0f1496f1cc9a828dba8021f4c1862974b0",
+      "descriptionSha256": "494bf39f7e61fee1aa174b0e9150e3141013073c9bd076fc589f7f022df8db83",
+      "sha256": "667afc74f4adf455da6af343951981517a25312f9bdb7bedf2386cba5da8ab04",
+      "pngSha256": "dd852b08e95cb64468f01e163fd883f6a0539989684c3956617327b78526b08b",
+      "pngBytes": 2652721,
+      "bytes": 396694,
+      "psnr": 44.00949808311252,
+      "meanAbsoluteError": 1.2127190136275146
+    },
+    {
+      "page": 15,
+      "source": "page-03.jpg",
+      "rect": [
+        25,
+        1275,
+        1480,
+        1280
+      ],
+      "file": "sheet-15.webp",
+      "reviewedBody": "Idag har jag varit hos Jonas. Vi byggde en rodelbana på Svartudden på ett berg där. Det gick ganska bra men det var för djup snö. Man sjönk till magen när man skulle gå uppför banan.\nDu skulle ha sett hur vi var klädda. Hade det kommit en stockholmare hade han trott vi var från ett dårhus!\n\n**Notering:** Texten fortsätter längst ned på arket och är delvis svårläst, men innebörden i avslutningen är att deras klädsel skulle ha fått en stockholmare att tro att de kom från ett dårhus.",
+      "transcriptionSha256": "93e32a418c653f4f85e7cb4b1b3f848976dd93e2e4d957da87832e700904be1e",
+      "descriptionSha256": "459188a07c92ca07ecfca34d9477525c28103c1c79db7966c9c8019f23b67adc",
+      "sha256": "8bfefcd1f0fde6a2af5a6a45b29c71d894cc9d669ddfd415ecf7388840844195",
+      "pngSha256": "9a5b7ca65e6210db1b14d325a62f014a28b6cc9e5895dd3e47c78a3e99671db4",
+      "pngBytes": 3738921,
+      "bytes": 534948,
+      "psnr": 43.31264406741349,
+      "meanAbsoluteError": 1.3128443482545045
+    },
+    {
+      "page": 16,
+      "source": "page-03.jpg",
+      "rect": [
+        1480,
+        1370,
+        1360,
+        1180
+      ],
+      "file": "sheet-16.webp",
+      "reviewedBody": "Här i Piteå har vi nu -17 till -16°. För nån vecka sen var här nästan 30° inte illa. Medeltemp har väl varit 17–18° från jul.\nNästa blad får du veta vad jag fick i jul- klapp.",
+      "transcriptionSha256": "5dcc5c4ac841269353af2d8d82c713a9522205aa81db913ad49c5c61d1aa7e6f",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "132b793eb9e7a4a1a24c6cb323b3bdcbde0372406ddb99b5bcbb39353110c0c5",
+      "pngSha256": "13c71ec49fab8fc3088b76c0cdeb2cf429d81b692f12cc3985cae724883b13e5",
+      "pngBytes": 2635857,
+      "bytes": 408144,
+      "psnr": 44.230503603893744,
+      "meanAbsoluteError": 1.1834992937853108
+    },
+    {
+      "page": 17,
+      "source": "page-03.jpg",
+      "rect": [
+        40,
+        2510,
+        1485,
+        1380
+      ],
+      "file": "sheet-17.webp",
+      "reviewedBody": "En lista över julklappar. Bland de identifierade posterna finns:\n\n1 st Ingemar Stenmark-mössa  \n1 st hundralapp  \n1 st fluga  \n1 st snurra  \n1 st lapp för ögat  \n1 st körtlek  \n1 st skidskor  \n1 st Buster pocket  \n1 st tia  \n1 st Lucky Luke  \nPrenumeration på Buster 1 år\n\nDessutom finns flera andra saker i listan som är svårare att säkert tyda i fotografiet.",
+      "transcriptionSha256": "df55c8aa87c03608d23cf0e0c61b6f69b106a0a86314c783ef787e23a065d02a",
+      "descriptionSha256": "80612b50e6f243b151da85ac545733d2aed4afc32826d446f65f7d80d2798c3a",
+      "sha256": "a97b94ef05fdeb1dc2de6b13dc41b6356197b35ac3df91bc82385550f9289880",
+      "pngSha256": "712775809b4c8653ee6920810102f1bfdc66d46766dc988ebc5491971760aa8f",
+      "pngBytes": 4061185,
+      "bytes": 615298,
+      "psnr": 43.68326835659015,
+      "meanAbsoluteError": 1.258348379121326
+    },
+    {
+      "page": 18,
+      "source": "page-03.jpg",
+      "rect": [
+        1485,
+        2620,
+        1390,
+        1230
+      ],
+      "file": "sheet-18.webp",
+      "reviewedBody": "Kära Ulf nu kommer jag med en historia, gammal men någorlunda god.\nEn cowboy frågar en ko-pojke ifrån Texas:\nVad är 2 + 3.\n5, svarade ko-pojken.\nCowboyen drog blixtsnabbt sin pistol och sköt ko-pojken. Han avled nästa minut. Men medan han levde hann han fråga cowboyen:\nVarför?\nDu vet för mycket.",
+      "transcriptionSha256": "984ed5dbf98e3e191edb6503ddd6e8c216507ccdc1ef2e1d2a8b60a3a722387a",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "1bc147820693a386c54acb1e6ea017829a7549d88bd85346d97b5ab865868389",
+      "pngSha256": "a0863074f171d1814efdded91f7a15dd9da2e367791f6b83b7fa5756434b6163",
+      "pngBytes": 3190302,
+      "bytes": 482184,
+      "psnr": 43.713522301772215,
+      "meanAbsoluteError": 1.2614975336803729
+    },
+    {
+      "page": 19,
+      "source": "page-05.jpg",
+      "rect": [
+        190,
+        0,
+        1530,
+        1360
+      ],
+      "file": "sheet-19.webp",
+      "reviewedBody": "Vet du varför norrmännen har vindrute torkaren på insidan\n**Svar:**\nDet flyger så mycket spott när dom låter som en bil\n\nUnder texten finns en teckning av en bil och ljudhärmande text.",
+      "transcriptionSha256": "d695e3a1644f633dcfeeccb2e80e910dbaf253e6e1edb23437d998b084e22531",
+      "descriptionSha256": "7caac8394c97b0904b4d00e38b559030dc25dc8e8f9f1f91a1b937ba6a953a81",
+      "sha256": "a683f32325b8f8bb277f1047d2a82dc97fe6f5a1f683f124cdd43da220c65749",
+      "pngSha256": "5ef49b65acdd037293886f2020112cfee3f3ff515c83c8e2d8d07940fb913158",
+      "pngBytes": 3416783,
+      "bytes": 486806,
+      "psnr": 44.77035113096435,
+      "meanAbsoluteError": 1.1106359733435858
+    },
+    {
+      "page": 20,
+      "source": "page-05.jpg",
+      "rect": [
+        1610,
+        170,
+        1390,
+        1310
+      ],
+      "file": "sheet-20.webp",
+      "reviewedBody": "Fyra numrerade små teckningar med tillhörande text:\n1. Dass  \n2. Tänd tändstickan  \n3. Tänd tändstickan  \n4. Hepp-gubbe med röda hund\nDen fjärde bilden är ytterligare en variant av den återkommande **hepp-gubben**.",
+      "transcriptionSha256": "46fbd16b9c40e9c756e97c1a47913ae28186b586d10e31c252f41bf084962c6b",
+      "descriptionSha256": "47c2953c5c14da01a90bfd2573a664e6ee96bd39ed664961f1be232d1e18a74a",
+      "sha256": "e5b9cbf566abf94b5091e9acd48060692e93b06989cba6c2de146bf209a676ba",
+      "pngSha256": "0063862c538eab11385528d25f1715350bb5dd3873a9458ff636c4cef86bd2ae",
+      "pngBytes": 2920187,
+      "bytes": 431252,
+      "psnr": 44.502214440413006,
+      "meanAbsoluteError": 1.1481617149028869
+    },
+    {
+      "page": 21,
+      "source": "page-05.jpg",
+      "rect": [
+        130,
+        1250,
+        1540,
+        1350
+      ],
+      "file": "sheet-21.webp",
+      "reviewedBody": "> **En rapport**\nArkitektfirman Sandlund & Kusin kommer att gå i konkurs om inte\nSandlund bättrar på sina husritningar\n\n**Notering:** Ordet \"då\" ser ut att ha skrivits in i efterhand.",
+      "transcriptionSha256": "7d93b80144a202b51645ab4d1f95170bb130274105f92705ffd85536abacd069",
+      "descriptionSha256": "69c0b2b1e262f936c124b859e9af72259a0354217b4c2c9fe097e8b7cf020615",
+      "sha256": "11ba564bbce5270ed0ddab1ca2dd5a461ca9a1a53e38f3d6e0b7c9173e39eada",
+      "pngSha256": "372b7b095713ba2247ff6fb88631997ad991f7cfd667de9118a8fe150b8986ea",
+      "pngBytes": 3312076,
+      "bytes": 477618,
+      "psnr": 44.72662478034631,
+      "meanAbsoluteError": 1.1135210838544172
+    },
+    {
+      "page": 22,
+      "source": "page-05.jpg",
+      "rect": [
+        1635,
+        1400,
+        1330,
+        1400
+      ],
+      "file": "sheet-22.webp",
+      "reviewedBody": "Rubrik:\n\n**Uppifrån**\nDegermansgatan 3\n\nArket innehåller en ritning av familjen Sandlunds tomt på Degermansgatan 3 sedd uppifrån.\n\nRitningen visar **var snögrottan/snökojan ligger på tomten**. Bland orienteringspunkterna finns huset, staketet och garageinfarten samt markeringar för \"in\" och \"ut\".\n\n**Notering:** Detta ark hör innehållsmässigt ihop med ark 12, där snökojan/snögrottan visas i genomskärning. Tillsammans visar de alltså både konstruktionen och var på tomten den låg.",
+      "transcriptionSha256": "712c1535e98d01c5d9071b0590bcee5e6fdf1d00a40e7ab593d0925c4a03d931",
+      "descriptionSha256": "eeee3ef2713c95fe77aa8df1bf050ba9a591ccd2496f99f6df667c03f881b698",
+      "sha256": "86bffdcb34e9842b95d24623a4e8a7ea7bcbf1883e93eadba90f1f11ab5dfdec",
+      "pngSha256": "19b43ca8f58e1f57afe225a451fb6af0b6bfd670c8f94fae5d0469553328f670",
+      "pngBytes": 2957983,
+      "bytes": 447566,
+      "psnr": 44.31028607762379,
+      "meanAbsoluteError": 1.1721414249910491
+    },
+    {
+      "page": 23,
+      "source": "page-05.jpg",
+      "rect": [
+        0,
+        2500,
+        1670,
+        1500
+      ],
+      "file": "sheet-23.webp",
+      "reviewedBody": "Riv försiktigt bort tejpen ta ut flygplanet och kasta\n\nPå arket sitter ett litet hemmagjort pappersflygplan fasttejpat.\n\n**Notering:** Detta är ett av flera interaktiva inslag i brevet. Mottagaren ska alltså lossa själva föremålet från brevet och använda det.",
+      "transcriptionSha256": "1d9d2f72c1ee232a869f8ed9fac1cd0b6cd98286da4caaea928809d505432924",
+      "descriptionSha256": "2fddcf279c9579a42dd7820eae9e6b26d08e878f10342baa41ca79d916c7e45d",
+      "sha256": "62e62b2aef8c2fedcc3edd2b551de22edf23da5ff4a4b2d249073f40339b98f6",
+      "pngSha256": "f7fbb027aef6558a383999def2a981e6040fe1760277c9296f3868b7dd2a11cc",
+      "pngBytes": 4365239,
+      "bytes": 631668,
+      "psnr": 44.69042452569373,
+      "meanAbsoluteError": 1.1214746506986029
+    },
+    {
+      "page": 24,
+      "source": "page-05.jpg",
+      "rect": [
+        1610,
+        2710,
+        1390,
+        1290
+      ],
+      "file": "sheet-24.webp",
+      "reviewedBody": "Här får du en tändsticka och en plån-bit och nånting att bränna upp.\n ↓\nAnvändes endast i nödfall\n\nPå arket finns föremålen fasttejpade.\n\n**Notering:** Även detta är ett interaktivt skämt där själva brevet innehåller de saker som texten beskriver.",
+      "transcriptionSha256": "086e1818415685396e945d8b82b30f65ef7d2135bb778de1369cf3d51d866597",
+      "descriptionSha256": "d23443e722d3dd77f3cb616500530b51077d7379962de168ea8a0bb686705434",
+      "sha256": "0f23da04e20db45278d7f5256d196e0840e5444566332768eea9003ddc420000",
+      "pngSha256": "bc19a97d949fc7306a93c79adbcbd425d54503de8b04dbd9fdbef8820b3e2652",
+      "pngBytes": 3048333,
+      "bytes": 477780,
+      "psnr": 44.332636521436044,
+      "meanAbsoluteError": 1.1719504396482814
+    },
+    {
+      "page": 25,
+      "source": "page-06.jpg",
+      "rect": [
+        390,
+        180,
+        1840,
+        1610
+      ],
+      "file": "sheet-25.webp",
+      "reviewedBody": "**Svar till Fotofrågan**\nBirgitta: barnvagn  \nMamma: stekpanna  \nÅsa W: Hästhuvud  \nJag: Närbild på Birgitta eller något annat ansikte\nDom flesta jag frågat har inte kunnat kom på något\n\n**Notering:** Fotofrågan tycks ursprungligen ha kommit från Ulf. Urban har samlat in förslag från flera personer:\n\n- **Birgitta** – Urbans kusin och granne\n- **Mamma**\n- **Åsa W** – granntjej\n- **Urban själv**\n\nDen ursprungliga fotofrågan finns inte i detta brev, så exakt vad förslagen avser går ännu inte att fastställa.",
+      "transcriptionSha256": "bd538cb45e599fbc0b336eee3fc6b96a2022b5175c7fdafa45ed67ccb1bb5857",
+      "descriptionSha256": "6b886c9c350210487f0d4a42be2792e83d6fab947886a0b758c574fe88a7f350",
+      "sha256": "91246e939ec4490531a37671aeaa96b7f7ce04dba5bd83def88c6fe53106b479",
+      "pngSha256": "18dc8c602f54abe3c80a3f0776ca2cfb671d7eb796e4cc3825a7dc3729060fec",
+      "pngBytes": 4855040,
+      "bytes": 769684,
+      "psnr": 44.5273789239699,
+      "meanAbsoluteError": 1.1371520838959401
+    },
+    {
+      "page": 26,
+      "source": "page-06.jpg",
+      "rect": [
+        350,
+        2300,
+        1900,
+        1670
+      ],
+      "file": "sheet-26.webp",
+      "reviewedBody": "Försök skynda på kattsvaren lite va.\n\n**Notering:** \"Kattsvaren\" syftar sannolikt på en tidigare fråga eller frågor från Ulf om katten Frasse. Exakt vilken fråga det gäller framgår inte av detta brev. Det kan möjligen ha samband med en fråga om Frasses längd, men detta är ännu inte säkert fastställt.",
+      "transcriptionSha256": "4ba992b4748b88612a3427864ee7d1c2d8549d4bb1adf53c6c279a5490c4769d",
+      "descriptionSha256": "749bc78906cd98fb09dd2f88d74d470eab02a14b75deaf2d9a4e49b945729290",
+      "sha256": "615724bfe70f3159bd269e13d50559867a80f7e018f1a6128ca8dad0bcc14de9",
+      "pngSha256": "c7b6c4d91673a1023d1e5d2a8a52279a770bd5e5caa53574846c98ad268cd4fe",
+      "pngBytes": 4704792,
+      "bytes": 758632,
+      "psnr": 45.046498804465884,
+      "meanAbsoluteError": 1.0768973631684
+    },
+    {
+      "page": 27,
+      "source": "page-04.jpg",
+      "rect": [
+        0,
+        0,
+        1580,
+        1350
+      ],
+      "file": "sheet-27.webp",
+      "reviewedBody": "Tyvär is jag inte skriva något om piggelin. Hoppas Anita skriver något till Catarina, isåfall får du höra av henne.",
+      "transcriptionSha256": "657d0571d763de0d3eddefee05901e6c1e4f042aea932bb8ec065ef855be1dca",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "c0b467f7735e79131821bbc3aa0906de1565ea3523431e719618681ff3dd1271",
+      "pngSha256": "7ad8691608beae9a2aa072c587fe55f116a42e80ebf8442f2cc1d09716abe9b3",
+      "pngBytes": 3422462,
+      "bytes": 545288,
+      "psnr": 44.86477619424201,
+      "meanAbsoluteError": 1.0911640881387716
+    },
+    {
+      "page": 28,
+      "source": "page-04.jpg",
+      "rect": [
+        1550,
+        0,
+        1450,
+        1350
+      ],
+      "file": "sheet-28.webp",
+      "reviewedBody": "Idag har jag ingenting att göra, så då blir det brevskrivning till dej. Hoppas du mår bra. Jag mår bra. Hoppas\n * Tor [ritad björn] mår bra. Frasse mår bra. Hoppas din cykel är hel. Hoppas ni får god mat i skolan. Vi får då inte god mat\ni skolan. Det säger URK i magen efter man har ätit.\n\n* Torbjörn\n\nHepp",
+      "transcriptionSha256": "266c26fe57f9efc39e051057ddd7bf904aa00c5196a30cd1609bbabd0eb91bd6",
+      "descriptionSha256": "0cf6fae6ab898468249b5af8fdaed3fcc7e387379b8e396815e51de209e17d14",
+      "sha256": "c668b12b7a363a58a06cdcaa57114540b941de071ceabb4cf104949d2790f1ef",
+      "pngSha256": "fc88886b7d6e8b5cbedc47b0fdef27c8d5d4ece797bcfd8aa571e6c1158f3dc0",
+      "pngBytes": 3527317,
+      "bytes": 543390,
+      "psnr": 44.148927954103456,
+      "meanAbsoluteError": 1.1866675180928055
+    },
+    {
+      "page": 29,
+      "source": "page-04.jpg",
+      "rect": [
+        0,
+        1260,
+        1580,
+        1390
+      ],
+      "file": "sheet-29.webp",
+      "reviewedBody": "Vet du hur många norrmän det behövs för att skruva i en lampa\nSvar: 300 st\n1 håller i lampan och dom andra 299 snurrar huset.",
+      "transcriptionSha256": "6d3ee457e6f963b6cbf3712b1e826adc81cfc8b91144f4114545dc5f13853374",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "1dd6e91a4abc774baa99c87290ff5d2d43d5b9ef49791e5271d331320907004e",
+      "pngSha256": "0e2156dc81eff43273b24c918b9c61fecffee12de5e54a4169a185e03872bdf4",
+      "pngBytes": 3652904,
+      "bytes": 525944,
+      "psnr": 44.71521919785321,
+      "meanAbsoluteError": 1.1168406034665939
+    },
+    {
+      "page": 30,
+      "source": "page-04.jpg",
+      "rect": [
+        1520,
+        1220,
+        1480,
+        1440
+      ],
+      "file": "sheet-30.webp",
+      "reviewedBody": "Vet du hur man lättast bränner en norrman på örat. Jo, ringer till honom mens han stryker.\nHallå Marve här [tecknad gubbe som svarar i telefon med ett strykjärn]",
+      "transcriptionSha256": "235f215244b26a8a2d5e621cce4966c8186c911ad0bfc247ef14a4de2de2941a",
+      "descriptionSha256": "436f500f5f244bb50f8a7b53d9bdcdd7ba74fac8ba47aeb1ceadd9d1fe9e9011",
+      "sha256": "91829385e34a25ba3a846da7b0876c159e639ef2248fca1b48b6e08b35593d44",
+      "pngSha256": "d9d1ab997a185dfe310af4592d24abdb6de780dbbc1967bda85743023fa2a422",
+      "pngBytes": 3724867,
+      "bytes": 556368,
+      "psnr": 44.14588895235891,
+      "meanAbsoluteError": 1.1931411098598599
+    },
+    {
+      "page": 31,
+      "source": "page-04.jpg",
+      "rect": [
+        0,
+        2570,
+        1600,
+        1410
+      ],
+      "file": "sheet-31.webp",
+      "reviewedBody": "Har just sett superstar. Ricky Brich. och var ju riktigt bra.\nIgår var jag och squashade (vet ej hur det stavas) med Lars H. Jag vann med 3-2 i set vi spelade i nästan 2 tim gratis",
+      "transcriptionSha256": "5b23e79626f48bc1e996943598109210fbdc5dd4245e2992f4ad42750a5be9ce",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "abc2c8d647d462ccfb966d5805049c958aaf89da68d5fb97a1e396eac97e3030",
+      "pngSha256": "fc4647f986f048b46a5f28aed98a01100f78815dae8d4fd10fea86e551d1f0bc",
+      "pngBytes": 3899852,
+      "bytes": 571906,
+      "psnr": 44.335804243459165,
+      "meanAbsoluteError": 1.1727231087470449
+    },
+    {
+      "page": 32,
+      "source": "page-04.jpg",
+      "rect": [
+        1540,
+        2570,
+        1460,
+        1430
+      ],
+      "file": "sheet-32.webp",
+      "reviewedBody": "Snart skall jag gå och se den hår-resande deckaren Kojak.\n\nEn Historia\nProfessorn till en av sina kandidater.\n- Ge exempel på förspilld energi.\nKandidatidiaden: \n- Berätta en hår-resande historia för Kojak",
+      "transcriptionSha256": "5c5078f4fa2363fa51674c76cfe4a2e5b3a19d5cd079606b9fbfa295b9608a40",
+      "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "940e793e29ce0e742fe841472e6991f403ace7ee29cf4e4498331bd0aa5928a9",
+      "pngSha256": "dfb2b55af31af3985bd3c7f82f69b7be7d38203f6ed05a4d4c98967a1908e649",
+      "pngBytes": 3593021,
+      "bytes": 568542,
+      "psnr": 44.25632140698538,
+      "meanAbsoluteError": 1.175455343743015
+    }
+  ],
+  "reviewedSourceSha256": "7402a8d2cfbb3cf4afa4e9cf292ea7ec4aed36a133021d90a0b38e0332e77753",
+  "reviewedSourceBackup": "source-backups/1976-12-30-letter-20261028-202414.md.bak",
+  "unrelatedArchiveSha256": "89d963647a83d4be1311f60af09fdeb8ce55e1e0b8e3a1d0c2e468497acfe392",
+  "envelopes": [
+    {
+      "file": "envelope-front.jpg",
+      "sha256": "70cb46d382dd070229bb6e852c7f496cbe1be6f0206f1bc2d679fbe294e451c0"
+    },
+    {
+      "file": "envelope-back.jpg",
+      "sha256": "5ee9f547800181d95e2a5239cc1f7e53289e775119067598d03e821a665f1432"
+    }
+  ],
+  "optimization": {
+    "format": "WebP",
+    "lossless": false,
+    "quality": 95,
+    "libwebp": "1.5.0",
+    "api": "WebPEncodeBGR",
+    "originalPngTotalBytes": 109855840,
+    "totalBytes": 16620484,
+    "reductionPercent": 84.87064137873782,
+    "dimensions": "unchanged",
+    "additionalCropping": false
+  }
+}

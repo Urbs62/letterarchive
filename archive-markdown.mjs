@@ -162,12 +162,21 @@ function parseLetter(markdown, folder, attachmentImages = [], documentImages = [
   const pagePattern = /^##\s+(?:Page|Sida)\s+(\d+)\s*$/gim;
   for (const match of markdown.matchAll(pagePattern)) {
     const page = Number(match[1]);
+    const heading = match[0].replace(/^##\s+/, "").trim();
+    // A page may use a lossless crop or another local image instead of the
+    // default numbered photograph. Only read image links before its content.
+    const pageHeader = section(markdown, heading, "##").split(/^###\s/m)[0];
+    const explicitImage = pageHeader.match(/^!\[[^\]]*\]\(([^)]+)\)[\t ]*$/m)?.[1];
+    if (explicitImage && (!/\.(?:png|jpe?g|webp)$/i.test(explicitImage)
+      || /^(?:[a-z]+:|[\\/])/i.test(explicitImage) || explicitImage.split(/[\\/]/).includes(".."))) {
+      throw new Error(`Expected a local page image: ${explicitImage}`);
+    }
     items.push({
       type: "page",
       page,
       label: `Sida ${page}`,
-      image: `${folder}${discoveredImage(`page-${String(page).padStart(2, "0")}.jpg`, documentImages)}`,
-      ...itemContent(markdown, match[0].replace(/^##\s+/, "").trim())
+      image: `${folder}${explicitImage || discoveredImage(`page-${String(page).padStart(2, "0")}.jpg`, documentImages)}`,
+      ...itemContent(markdown, heading)
     });
   }
 
