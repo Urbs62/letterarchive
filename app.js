@@ -84,7 +84,7 @@ let touchStartX = 0;
 let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
-const continuousReadingLetterIds = new Set(["1978-07-25", "1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20", "1976-05-xx", "1976-08-07", "1976-08-27", "1977-03-29", "1976-09-xx", "1976-11-14"]);
+const continuousReadingLetterIds = new Set(["1978-07-25", "1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20", "1976-05-xx", "1976-08-07", "1976-08-27", "1977-03-29", "1976-09-xx", "1976-11-14", "1976-12-27"]);
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {

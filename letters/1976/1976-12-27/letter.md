@@ -1,124 +1,96 @@
-# Brev
+# Metadata
 
-**Datum:** 1976-12-27 (poststämpel Piteå 27.12.1976)  
-**Typ:** Brev (1 sida)  
-**Ort:** Piteå  
-**Avsändare:** Urban Sandlund  
-**Mottagare:** Ulf Sandlund
-
----
+- Datum: 1976-12-27
+- Poststämplat: 1976-12-27
+- Typ: Brev
+- Skrivtyp: mixed
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Urbans ålder: 14 år
+- Från: Piteå
+- Till: Mölndal
+- Omfattning: 1 originalsida samt kuvertets båda sidor
 
 # Kuvert
 
 ## Framsida
 
-Adress:
+### Transcription
 
-Ulf Sandlund  
-Safjällsgatan 16  
+```text
+Tomten
+
+Ulf Sandlund
+Safjällsgatan 16
 431 39 Mölndal 3
 
-Poststämpel: **PITEÅ 27.12.76**
+PITEÅ 27.12.76
+```
 
-Julfrimärke med motiv av barn och kyrka.
+### Description
+
+Kuvertets framsida är adresserad till Ulf Sandlund i Mölndal och har ett julfrimärke med motiv av barn och kyrka.
 
 ## Baksida
 
-Avsändare:
+### Transcription
 
-(A.V.S.) Urban Sandlund  
-Degermansgatan 3  
+```text
+(A.V.S.) Urban Sandlund
+Degermansgatan 3
 941 00 PITEÅ
 
-Kuvertet är rikt dekorerat med tusch i flera färger. Bland annat finns en tecknad telefon med sladd, färgmarkeringar och den humoristiska texten:
+Babyn simmar som en löja
+i sin nya fina blöja
+```
 
-> Babyn simmar som en löja  
-> i sin nya fina blöja
+### Description
 
----
+Kuvertets baksida är rikt dekorerad med tusch i flera färger, bland annat en tecknad telefon med sladd och färgmarkeringar.
 
-## Page 1
+# Brev
 
-### Transkription
+## Sida 1
 
+### Transcription
+
+```text
 Hej.
 
-Nu skickar jag dej en **karta** av dessa förhatliga Psoriasisbrevmärken. 12 spänn kostar den. Julklappar har jag köpt för fulla muggar (varför just muggar)(?). Tandställningen har jag fått. Mandolinen är klar. Den går att spela på, men ack vilket ljud. Idag har det varit 18° kallt. Huga.
+Nu skickar jag dej en karta av dessa förhatliga Psoriasisbrevmärken. 12 spänn kostar den. Julklappar har jag köpt för fulla muggar (varför just muggar)(?). Tandställningen har jag fått. Mandolinen är klar. Den går att spela på, men ack vilket ljud. Idag har det varit 18° kallt. Huga.
 
 GOD JUL
 
 AAJÖSS.
 
 P.S. Hälsa Tabben.
+```
 
----
+### Description
 
-### Sammanfattning
+Ett kort julbrev med maskinskriven text och handskrivna tillägg.
 
-Urban skickar ett kort julbrev några dagar efter jul. Han bifogar ett av de särskilda psoriasisbrevmärkena, konstaterar att det kostade 12 kronor och kommenterar skämtsamt att han handlat julklappar "för fulla muggar".
+# Sammanfattning
 
-Han berättar också om flera aktuella händelser i sitt liv: han har fått sin tandställning, mandolinen är färdig men låter ännu inte särskilt bra och den stränga vinterkylan i Piteå når 18 minusgrader.
+Urban skickar ett kort julbrev till Ulf tillsammans med en karta psoriasisbrevmärken för 12 kronor. Han berättar att han köpt julklappar, fått sin tandställning och färdigställt mandolinen, även om ljudet lämnar en del att önska. I Piteå är det 18 grader kallt.
 
-Brevet avslutas med ett stort maskinskrivet "GOD JUL", ett "AAJÖSS" och en hälsning till Tabben.
-
----
+Brevet avslutas med julhälsningar och ett hälsningsmeddelande till Tabben. Kuvertet är rikt dekorerat med färger, teckningar och ett skämtsamt rim.
 
 # Iakttagelser
 
-Trots att brevet bara består av en sida innehåller det flera typiska drag för Urbans brev från den här perioden.
+- **Fortsättning på tidigare brev.** Psoriasisbrevmärkena, tandställningen och mandolinbygget har alla nämnts tidigare under hösten 1976. Brevet ger korta uppdateringar om hur det gått.
 
-Den maskinskrivna texten blandas med handskrivna tillägg, och själva kuvertet är nästan lika viktigt som brevet. Urban dekorerar det med färger, teckningar och ett nonsensrim, vilket visar att även kuvertet är en del av upplevelsen.
+- **Humor i förbifarten.** Ordleken om att köpa julklappar "för fulla muggar", det stora "GOD JUL" och avslutningen "AAJÖSS" visar den lekfulla brevstilen.
 
-Brevet fungerar nästan som en snabb lägesrapport efter julhelgen. Flera små händelser nämns i snabb följd utan längre förklaringar, vilket ger känslan av ett spontant vardagsbrev.
-
----
+- **Kuvertet som del av brevet.** Den färgglada utsmyckningen, telefonteckningen och nonsensrimmet gör kuvertet till en viktig del av försändelsen, trots att själva brevet bara upptar en sida.
 
 # Personer
 
-**Ulf Sandlund**  
-Mottagare.
-
-**Tabben**  
-Person som Urban skickar en särskild hälsning till.
-
----
+- Urban Sandlund – avsändare
+- Ulf Sandlund – mottagare och kusin
+- Tabben – person som Urban ber Ulf hälsa
 
 # Platser
 
-**Piteå**  
-Här skrivs och postas brevet.
-
-**Mölndal**  
-Dit brevet skickas.
-
----
-
-# Tidsdokument
-
-Brevet fångar flera vardagliga detaljer från vintern 1976.
-
-- Psoriasisbrevmärken säljs för att stödja Psoriasisförbundet.
-- Julhandel inför julen.
-- Tandställning.
-- Mandolin som nytt instrument.
-- Vinterkyla på omkring 18 minusgrader i Piteå.
-
----
-
-# Humor
-
-Humorn finns både i texten och i kuvertets utformning.
-
-- "för fulla muggar (varför just muggar)"
-- det stora maskinskrivna "GOD JUL"
-- det informella avslutet "AAJÖSS"
-- det dekorerade kuvertet med telefonteckning och det absurda rimmet:
-  > Babyn simmar som en lööa i sin nya fina blöja.
-
----
-
-# Reflektion
-
-Det här är ett av de kortare breven i samlingen, men visar ändå tydligt hur Urban redan som fjortonåring såg hela försändelsen som ett kreativt projekt. Själva kuvertet blir en del av berättelsen genom sina teckningar, färger och ordlekar.
-
-Även ett enkelt julbrev blir därför personligt och lekfullt. Kombinationen av maskinskriven text, handskrivna inslag och ett omsorgsfullt dekorerat kuvert gör att brevet känns betydligt rikare än vad den korta textmängden först antyder.
+- Piteå – avsändningsort
+- Mölndal – mottagarort

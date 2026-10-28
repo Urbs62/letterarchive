@@ -64,7 +64,7 @@ try {
  for(let n=0;n<50&&!await evaluate(`!!document.querySelector('.continuous-reading')`);n++)await new Promise(r=>setTimeout(r,100));
  for(const width of [1280,390,320]) {
  await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<600},sessionId);
- for(const id of ['1978-07-25','1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx','1976-08-07','1976-08-27','1976-09-xx','1977-03-29','1976-11-14']) {
+ for(const id of ['1978-07-25','1975-08-27','1974-09-17','1972-12-10','1971-01-31','1974-02-12','1974-02-19','1978-09-29','1974-03-05','1974-08-23','1975-05-29','1980-10-19','1975-07-22','1976-04-20','1976-05-xx','1976-08-07','1976-08-27','1976-09-xx','1977-03-29','1976-11-14','1976-12-27']) {
  console.log(width,id,await evaluate(`(async()=>{
  const l=letters.find(l=>l.id==='${id}'),before=JSON.stringify(l);renderLetter(l);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const check=(v,m)=>{if(!v)throw Error(m)};
@@ -98,6 +98,19 @@ try {
  document.querySelector('#original-tab').click();const originals=document.querySelector('#original-panel .continuous-material');originals.open=true;await Promise.all([...originals.querySelectorAll('img')].map(i=>i.decode()));originals.querySelector('button').click();check(!viewer.hidden,'envelope enlargement');closeViewer();
  check(document.documentElement.scrollWidth<=innerWidth,'no overflow');check(JSON.stringify(l)===before,'unchanged data');
 
+ if(l.id==='1976-12-27') {
+   check(pages.length===1&&frames.length===1,'one original page');
+   check(l.date==='1976-12-27'&&l.postmarked==='1976-12-27'&&!l.writtenDate&&l.senderAge===14,'confirmed postmark without invented writing date');
+   check(pages[0].transcription.includes('en karta av dessa')&&!pages[0].transcription.includes('**'),'plain source wording without editorial emphasis');
+   check(originals.querySelectorAll('img').length===2,'two envelope originals');
+   check(JSON.stringify([...material.querySelectorAll('.transcription-text')].map(p=>p.textContent))===JSON.stringify(l.items.filter(i=>i.type!=='page').map(i=>i.transcription)),'exact envelope texts');
+   check(material.textContent.includes('Babyn simmar som en löja')&&material.textContent.includes('i sin nya fina blöja'),'confirmed envelope rhyme');
+   const sections=[...document.querySelectorAll('.letter-view > details')];
+   check(JSON.stringify(sections.map(s=>s.querySelector('summary').textContent))===JSON.stringify(['Sammanfattning','Iakttagelser','Personer','Platser']),'concise archive sections');
+   check(sections[0].querySelector('p').textContent===l.summary,'exact requested summary');
+   sections.forEach(s=>s.open=true);document.querySelector('#transcription-tab').click();
+   check(document.documentElement.scrollWidth<=innerWidth,'expanded archive notes fit viewport');
+ }
  if(l.id==='1978-07-25') {
    check(l.writtenDate==='1978-07-22'&&l.postmarked==='1978-07-25','written and postmarked dates');
    const body=document.querySelector('.continuous-document .transcription-text');
@@ -466,5 +479,5 @@ try {
  }
  }
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1977-03-29,1978-07-25,1978-09-29,1980-10-19'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1976-12-27,1977-03-29,1978-07-25,1978-09-29,1980-10-19'`),true);
 } finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}

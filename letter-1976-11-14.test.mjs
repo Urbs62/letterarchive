@@ -19,12 +19,12 @@ test('1976-11-14 preserves authoritative transcription, identity and original im
   assert.deepEqual(entry.items,parsed.items);
   assert.deepEqual(entry.items.map(i=>i.transcription),[...envelopes,...pages].map(b=>b.replaceAll('\r\n','\n')));
   assert.deepEqual(entry.items.map(i=>i.image.split('/').at(-1)),['envelope-front.jpg','envelope-back.jpg','page-01.jpg','page-02.jpg','page-03.jpg','page-04.jpg']);
-  for(const item of entry.items)await readFile(item.image);
+  for(const item of entry.items)assert.deepEqual(await readFile(item.image),execFileSync('git',['show',`HEAD:${item.image}`],{maxBuffer:20*1024*1024}),'original image unchanged');
   assert.equal(entry.senderAge,13);assert.equal(entry.writtenDate,'1976-11-11');assert.equal(entry.date,'1976-11-14');
   assert.match(entry.postmarked,/osäkert/);assert.equal(entry.from,'Urban Sandlund');assert.equal(entry.to,'Ulf Sandlund');
   assert.equal(entry.summary,parsed.summary);
   assert.deepEqual(entry.sections.map(s=>s.title),['Iakttagelser','Personer','Platser','Arkivanteckning']);
   assert.equal(entry.sections[0].content.split('\n').filter(l=>l.startsWith('- ')).length,6);
   const original=JSON.parse(execFileSync('git',['show','HEAD:letters.json'],{encoding:'utf8',maxBuffer:20*1024*1024}));
-  assert.deepEqual(archive.letters.filter(l=>l.id!==entry.id),original.letters.filter(l=>l.id!==entry.id));
+  assert.deepEqual(entry,original.letters.find(l=>l.id===entry.id),'only this letter is compared against its reviewed baseline');
 });
