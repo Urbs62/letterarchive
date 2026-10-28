@@ -1,8 +1,7 @@
 // Real browser smoke test, using Chrome's DevTools pipe; no npm dependencies.
-import { spawn } from "node:child_process";
+import { withBrowserTestResources } from "./browser-test-resources.mjs";
 import { createServer } from "node:http";
-import { readFile, mkdtemp, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import assert from "node:assert/strict";
 
@@ -28,12 +27,7 @@ const server = createServer(async (request, response) => {
     response.end(await readFile(file));
   } catch { response.writeHead(404).end(); }
 });
-await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
-const profile = await mkdtemp(path.join(tmpdir(), "letterarchive-browser-"));
-const executable = process.env.LETTERARCHIVE_BROWSER || "C:/Program Files/Google/Chrome/Application/chrome.exe";
-const browser = spawn(executable, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", `--user-data-dir=${profile}`, "--remote-debugging-pipe", "about:blank"], {
-  windowsHide: true, stdio: ["ignore", "ignore", "pipe", "pipe", "pipe"]
-});
+await withBrowserTestResources(server, "continuous-reader.test", async ({ browser, profile }) => {
 let counter = 0;
 let buffer = "";
 const pending = new Map();
@@ -57,7 +51,6 @@ function cdp(method, params = {}, sessionId) {
     browser.stdio[3].write(JSON.stringify({ id, method, params, sessionId }) + "\0");
   });
 }
-try {
  const {targetId}=await cdp('Target.createTarget',{url:`http://127.0.0.1:${server.address().port}/#brev/1975-08-27`});
  const {sessionId}=await cdp('Target.attachToTarget',{targetId,flatten:true});
  const evaluate=async expression=>{const r=await cdp('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sessionId);if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
@@ -498,4 +491,4 @@ try {
  assert.equal(await evaluate(`(async()=>{renderLetter(letters.find(l=>l.id==='1976-12-30'));document.querySelector('.letter-view a[href="#brev/1976-unknown-canned-heat-puzzle"]').click();await new Promise(r=>setTimeout(r,100));return activeLetter.id==='1976-unknown-canned-heat-puzzle'&&!!document.querySelector('.letter-view')})()`),true);
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
  assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1976-12-27,1976-12-30,1977-03-29,1978-07-25,1978-09-29,1980-10-19'`),true);
-} finally {try{await cdp('Browser.close')}catch{browser.kill()}server.close();console.log(profile);}
+});

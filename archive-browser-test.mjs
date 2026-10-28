@@ -1,8 +1,7 @@
 // Real browser smoke test, using Chrome's DevTools pipe; no npm dependencies.
-import { spawn } from "node:child_process";
+import { withBrowserTestResources } from "./browser-test-resources.mjs";
 import { createServer } from "node:http";
-import { readFile, mkdtemp, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import assert from "node:assert/strict";
 
@@ -17,12 +16,7 @@ const server = createServer(async (request, response) => {
     response.end(await readFile(file));
   } catch { response.writeHead(404).end(); }
 });
-await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
-const profile = await mkdtemp(path.join(tmpdir(), "letterarchive-browser-"));
-const executable = process.env.LETTERARCHIVE_BROWSER || "C:/Program Files/Google/Chrome/Application/chrome.exe";
-const browser = spawn(executable, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", `--user-data-dir=${profile}`, "--remote-debugging-pipe", "about:blank"], {
-  windowsHide: true, stdio: ["ignore", "ignore", "pipe", "pipe", "pipe"]
-});
+await withBrowserTestResources(server, "archive-browser-test", async ({ browser, profile }) => {
 let counter = 0;
 let buffer = "";
 const pending = new Map();
@@ -46,7 +40,6 @@ function cdp(method, params = {}, sessionId) {
     browser.stdio[3].write(JSON.stringify({ id, method, params, sessionId }) + "\0");
   });
 }
-try {
   const { targetId } = await cdp("Target.createTarget", { url: `http://127.0.0.1:${server.address().port}/` });
   const { sessionId } = await cdp("Target.attachToTarget", { targetId, flatten: true });
   const evaluate = async expression => {
@@ -243,10 +236,4 @@ try {
   })()`);
   assert.ok(results.length > 30);
   console.log(`Browser passed: ${results.length} checks (letter, postcard, artifact; images, text, dates, metadata, sections, navigation).`);
-} finally {
-  try { await cdp("Browser.close"); } catch { browser.kill(); }
-  server.close();
-  // Chrome can retain profile locks briefly after shutdown. Keep this disposable
-  // profile in the OS temp directory rather than touching the user's browser.
-  console.log(`Temporary browser profile: ${profile}`);
-}
+});
