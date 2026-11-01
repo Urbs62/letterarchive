@@ -1,30 +1,37 @@
-Datum: 1977-01-18
-Poststämplat: 1977-01-18
-Typ: Brev
-Avsändare: Urban Sandlund
-Mottagare: Ulf Sandlund
-Urbans ålder: 14 år
-Från: Piteå
-Till: Mölndal
+# Metadata
+
+- Datum: 1977-01-18
+- Poststämplat: 1977-01-18
+- Typ: Brev
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Urbans ålder: 14 år
+- Från: Piteå
+- Till: Mölndal
+- Skrivtyp: typewritten
+- Omfattning: 5 originalsidor samt kuvertets båda sidor
 
 # Kuvert
 
 ## Framsida
 
-**Transkription:**
+### Transcription
 
+```text
 Ulf.Sandlund  
 Safjällsg.16.  
 43139 MÖLNDAL 3
+```
 
-**Beskrivning:**
+### Description
 
 Brunt, kraftigt slitet kuvert med maskinskriven adress. Kuvertet är poststämplat i Piteå den 18 januari 1977 och frankerat med ett svenskt frimärke på 1,90 kr.
 
 ## Baksida
 
-**Transkription:**
+### Transcription
 
+```text
 A.V.S.        Urban Sandlund  
               Degermansgatan 3  
               941 00 PITEÅ
@@ -45,15 +52,19 @@ honom.
 
 Skicka mej snarast den där saxen.Hjärna  
 också dom där psoriasís-pengarna.Gått!!
+```
 
-**Beskrivning:**
+### Description
 
 Kuvertets baksida är fylld med maskinskrivna texter placerade i olika riktningar och inramade med linjer. Förutom avsändaradressen finns ett rim, en uppmaning till Ulf att skriva kortare brev på vanliga A4-ark samt flera skämtsamma, absurda kommentarer och medvetna felstavningar. Kuvertet är kraftigt slitet och vikt.
 
+# Brev
+
 ## Sida 1
 
-**Transkription:**
+### Transcription
 
+```text
 77.01.10.
 
 Hej !
@@ -97,11 +108,13 @@ Välskrivning i klassen .Lärarinnan har skrivit följande ordspråk på
 svarta tavlan: En ihärdig man är bättre än en stark.  
 Lilla Greta fyller fem sidor med sin vekraste stil:En ihärdig 
 man är bättre än en stork.
+```
 
 ## Sida 2
 
-**Transkription:**
+### Transcription
 
+```text
 77.01.14.
 
 Idag har vi haft hemkunskap.När jag skriver hemkunskap tänker du nog  
@@ -143,11 +156,13 @@ skorpan.
 Ibland kan det förekomma att fadern och modern blir besviknaa,när  
 barnet föds.Fader vill kanske att det ska bli en pojke men modern att  
 det ska bli enn flicka och så blir det tvärtom. Värmlands folkblad.
+```
 
 ## Sida 3
 
-**Transkription:**
+### Transcription
 
+```text
 Va ä dä lönt en tvättar sej  
 när en strax ä svart igen?  
 Va ä dä lönt en lägger sej  
@@ -201,11 +216,13 @@ mamma sa de som mamma sa sist.
 -Hurr kommer mamma int ihåg de som mamma sa förrän mamma sa de som mamma  
 sa sist,mamma.  
 -Spännande fortsättning på nästa blad.
+```
 
 ## Sida 4
 
-**Transkription:**
+### Transcription
 
+```text
 För varje nytt inlägg som kom med underbar precision,steg spänningen  
 i vagnen.Men kunde nästan höra hur alla väntade på vad Olle sedan skulle  
 svara.Nu går jag och ser filmen men fortsätter i morgon.
@@ -265,11 +282,13 @@ Stig Grybe.
 Taget ur "glädjens blomster".
 
 Kl. är 23.11. och jag ska gåoch läägga mej.
+```
 
 ## Sida 5
 
-**Transkription:**
+### Transcription
 
+```text
 77.01.17.
 
 Nyss jag har ätit mums.Spagetti som jag gjort själv.Den blev godare den  
@@ -286,6 +305,7 @@ Urban.
 
 P.S.Jag vet att du skakar på huvudet,suckar och muttrar,med en  
 konstig min,4;a i svenska.
+```
 
 # Sammanfattning
 
@@ -325,3 +345,7 @@ Urban skriver under drygt en vecka i januari 1977 om skolan, kompisarna och vint
 - **Strömbacka** – plats för planerad träning.
 - **Norrfjärden** – plats för skidtävling.
 - **Ömans** – butik som Anita åker till.
+
+# Arkivanteckning
+
+Brevets arkivdatum och poststämpel är 1977-01-18. De daterade avsnitten i texten avser enskilda anteckningar, inte hela försändelsens datum. De fem sidorna visas i befintlig dokumentordning, page-01.jpg–page-05.jpg, även där datumen inte följer kronologisk ordning. Den manuellt granskade transkriptionen är bevarad med sina radbrytningar och mellanrum.
