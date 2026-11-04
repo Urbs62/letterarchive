@@ -499,5 +499,5 @@ function cdp(method, params = {}, sessionId) {
  }
  assert.equal(await evaluate(`(async()=>{renderLetter(letters.find(l=>l.id==='1976-12-30'));document.querySelector('.letter-view a[href="#brev/1976-unknown-canned-heat-puzzle"]').click();await new Promise(r=>setTimeout(r,100));return activeLetter.id==='1976-unknown-canned-heat-puzzle'&&!!document.querySelector('.letter-view')})()`),true);
  assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
- assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1976-12-27,1976-12-30,1977-01-18,1977-03-29,1978-07-25,1978-09-29,1980-10-19'`),true);
+ assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1976-12-27,1976-12-30,1977-01-18,1977-03-29,1978-07-25,1978-09-29,1979-01-27,1980-10-19'`),true);
 });

@@ -85,6 +85,7 @@ let lastFocusedElement = null;
 let archiveScrollPosition = null;
 // Reading experiment: keep this isolated until the prototype is reviewed.
 const continuousReadingLetterIds = new Set(["1978-07-25", "1975-08-27", "1974-09-17", "1972-12-10", "1971-01-31", "1974-02-12", "1974-02-19", "1978-09-29", "1974-03-05", "1974-08-23", "1975-05-29", "1980-10-19", "1975-07-22", "1976-04-20", "1976-05-xx", "1976-08-07", "1976-08-27", "1977-03-29", "1976-09-xx", "1976-11-14", "1976-12-27", "1976-12-30", "1977-01-18"]);
+continuousReadingLetterIds.add("1979-01-27");
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -656,6 +657,18 @@ function renderContinuousLetter(letter, view) {
     const transcription = document.createElement("section");
     transcription.className = "continuous-text-page";
     updateTranscription(item, transcription);
+    if (letter.id === "1979-01-27") {
+      // Preserve every reviewed line; fixed-width listings scroll locally.
+      transcription.querySelectorAll(".transcription-text").forEach(text => {
+        text.classList.add("continuous-preserved");
+        if (item.type === "page" && [3, 5, 6, 12, 20, 23].includes(item.page)) {
+          text.classList.add("continuous-recipe");
+          text.tabIndex = 0;
+          text.setAttribute("role", "region");
+          text.setAttribute("aria-label", `${item.label}, bevarad uppställning`);
+        }
+      });
+    }
     if (letter.id === "1976-08-07" || letter.id === "1976-08-27" || letter.id === "1976-09-xx" || letter.id === "1976-11-14" || letter.id === "1976-12-30" || letter.id === "1977-01-18") {
       // Preserve the manually reviewed lines and spacing on these originals.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
@@ -727,6 +740,7 @@ function renderContinuousLetter(letter, view) {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
+        if (letter.id === "1979-01-27") return;
         if (letter.id === "1975-08-27" || letter.id === "1976-05-xx" || letter.id === "1976-08-07" || letter.id === "1976-08-27" || letter.id === "1976-09-xx" || letter.id === "1976-11-14" || letter.id === "1976-12-30" || letter.id === "1977-01-18") return;
         if (letter.id === "1978-07-25" || letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05" || letter.id === "1974-08-23" || letter.id === "1975-05-29" || letter.id === "1975-07-22" || letter.id === "1976-04-20") {
           // SPECIAL: line structure and spacing carry meaning in the rebuses

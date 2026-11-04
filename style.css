@@ -744,6 +744,10 @@ button:focus-visible {
   white-space: pre-wrap;
 }
 
+.continuous-document .transcription-text.continuous-preserved.continuous-recipe {
+  white-space: pre;
+}
+
 .continuous-recipe {
   display: block;
   max-width: 100%;
