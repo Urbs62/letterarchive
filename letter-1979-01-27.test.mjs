@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile, readdir} from 'node:fs/promises';
+import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {readSource} from './archive-import.mjs';
 
 test('1979-01-27 preserves all source pages, originals and editorial information', async () => {
-  const original='letters/1979/1979-03-15/', folder='letters/1979/1979-01-27/';
-  const bytes=await readFile(original+'letter.md');
+  const backup='source-backups/1979-03-15-letter-original.md', folder='letters/1979/1979-01-27/';
+  const bytes=await readFile(backup);
   const source=bytes.toString('utf8').replace(/\r\n/g,'\n');
   const clean=s=>s.replace(/^(?:[\t ]*\n)+/,'').replace(/\n[\t \n]*$/,'');
   const raw=[...source.matchAll(/^## Sida (\d+)\n([\s\S]*?)(?=^## Sida \d+\s*$|^# Bilagor\s*$)/gm)];
@@ -15,7 +15,7 @@ test('1979-01-27 preserves all source pages, originals and editorial information
   const entry=archive.letters.find(l=>l.id==='1979-01-27');
   assert.equal(archive.letters.filter(l=>l.id==='1979-01-27').length,1);
   const baseline=JSON.parse(execFileSync('git',['show','HEAD:letters.json'],{maxBuffer:20*1024*1024}));
-  assert.deepEqual(archive.letters.filter(l=>l.id!==entry.id),baseline.letters);
+  assert.deepEqual(archive.letters.filter(l=>l.id!==entry.id),baseline.letters.filter(l=>l.id!==entry.id));
   assert.deepEqual(entry,JSON.parse(JSON.stringify(await readSource(folder+'letter.md'))));
   const pages=entry.items.filter(i=>i.type==='page');
   assert.equal(pages.length,41);
@@ -31,6 +31,11 @@ test('1979-01-27 preserves all source pages, originals and editorial information
   assert(entry.summary.includes('den 27 januari till den 15 mars 1979'));
   assert(entry.sections.find(s=>s.title==='Iakttagelser').content.includes('den 27 januari och den 15 mars 1979'));
   const hash=b=>createHash('sha256').update(b).digest('hex');
-  for(const item of entry.items) assert.equal(hash(await readFile(item.image)),hash(await readFile(item.image.replace(folder,original))));
+  const images=JSON.parse(await readFile('source-backups/1979-03-15-image-sha256.json','utf8'));
+  assert.deepEqual(entry.items.map(item=>item.image.slice(folder.length)).sort(),Object.keys(images).sort());
+  for(const item of entry.items) {
+    assert(item.image.startsWith(folder));
+    assert.equal(hash(await readFile(item.image)),images[item.image.slice(folder.length)]);
+  }
   assert((await readFile(folder+'preparation-notes.md','utf8')).includes(hash(bytes)));
 });

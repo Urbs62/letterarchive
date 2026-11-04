@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict';
-import {readFile, writeFile, cp, mkdir, readdir} from 'node:fs/promises';
+import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {readSource, importSource} from './archive-import.mjs';
+import {readSource} from './archive-import.mjs';
 
-const original = 'letters/1979/1979-03-15/';
+// Read-only verification of the completed import; never overwrites archive files.
+const backup = 'source-backups/1979-03-15-letter-original.md';
 const folder = 'letters/1979/1979-01-27/';
-const bytes = await readFile(original + 'letter.md');
+const bytes = await readFile(backup);
 const source = bytes.toString('utf8').replace(/\r\n/g, '\n');
 const clean = s => s.replace(/^(?:[\t ]*\n)+/, '').replace(/\n[\t \n]*$/, '');
 const pages = [...source.matchAll(/^## Sida (\d+)\n([\s\S]*?)(?=^## Sida \d+\s*$|^# Bilagor\s*$)/gm)]
@@ -35,16 +36,17 @@ for (const [heading,text,description] of [['Framsida',frontText,frontDescription
 prepared += '# Brev\n\n';
 for (const page of pages) prepared += '## Sida ' + page.page + '\n\n' + fenced(page.text);
 prepared += '# Bilagor\n\n## Bilaga 1\n\n### Description\n\n' + attachment + '\n\n' + editorial;
-await mkdir(folder, {recursive:true});
-assert.deepEqual(await readdir(folder), [], 'Refuse to overwrite prepared files');
-for (const name of await readdir(original)) await cp(original+name, folder+name, {recursive:true, force:false, errorOnExist:true});
-await writeFile(folder + 'letter.md', prepared);
-const parsed = await readSource(folder + 'letter.md');
-assert.deepEqual(parsed.items.filter(i=>i.type==='page').map(i=>i.transcription), pages.map(p=>p.text));
-assert.deepEqual([parsed.id,parsed.date,parsed.postmarked],['1979-01-27','1979-01-27','Okänt']);
-assert.equal(parsed.items.length,44);
-assert.equal(parsed.items.at(-1).transcription,'');
-await importSource(folder + 'letter.md');
-assert.deepEqual(await readFile(original+'letter.md'), bytes);
-await writeFile(folder+'preparation-notes.md', `# Preparation notes\n\nOriginal source retained at \`${original}letter.md\`.\nSource SHA-256: ${createHash('sha256').update(bytes).digest('hex')}\n\nArchive identity uses written date 1979-01-27; postmark remains unknown.\nAll 41 page bodies retain their text, indentation, trailing spaces and internal line breaks; CRLF is normalized to LF for import. Blank lines separating Markdown sections are structural. Fenced blocks protect the transcription from Markdown parsing.\n\nSida 41 says “sidan 40”; no renumbering or correction was made.\nSummary and observations only change the writing period to 1979-01-27 through 1979-03-15. People and places are unchanged.\nEnvelope addresses and handwritten text are separated from descriptions without deleting information. The Ga-Jol box is one physical attachment; references to a cassette in the source do not create additional attachments.\n\nThe old folder is retained for review; only the prepared entry is registered in letters.json. The importer refuses an existing id.\n`);
-console.log('Prepared and imported 1979-01-27; 41 exact page bodies, 44 images.');
+const actual = (await readFile(folder+'letter.md','utf8')).replace(/\r\n/g,'\n');
+assert.equal(actual, prepared, 'Imported Markdown differs from the prepared source');
+const parsed = JSON.parse(JSON.stringify(await readSource(folder+'letter.md')));
+const archive = JSON.parse(await readFile('letters.json','utf8'));
+assert.deepEqual(archive.letters.find(letter=>letter.id==='1979-01-27'),parsed);
+const images = JSON.parse(await readFile('source-backups/1979-03-15-image-sha256.json','utf8'));
+assert.equal(Object.keys(images).length,44);
+assert.deepEqual(parsed.items.map(item=>item.image.slice(folder.length)).sort(),Object.keys(images).sort());
+for (const item of parsed.items) {
+  assert(item.image.startsWith(folder));
+  assert.equal(createHash('sha256').update(await readFile(item.image)).digest('hex'),images[item.image.slice(folder.length)]);
+}
+assert((await readFile(folder+'preparation-notes.md','utf8')).includes(createHash('sha256').update(bytes).digest('hex')));
+console.log('Verified 1979-01-27 against backed-up source: 41 exact page bodies, 44 image hashes; no files changed.');
