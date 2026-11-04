@@ -2196,11 +2196,15 @@
     {
       "id": "1977-03-02",
       "date": "1977-03-02",
-      "from": "Urban",
-      "to": "Ulf",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
       "senderAge": 14,
       "type": "letter",
       "writingType": "typewritten",
+      "folder": "letters/1977/1977-03-02/",
+      "postmarked": "1977-03-02",
+      "fromPlace": "Piteå",
+      "toPlace": "Mölndal",
       "summary": "Brevet är poststämplat 2 mars 1977 men har skrivits under flera dagar, från 22 februari till 1 mars. Urban är 14 år. De fem maskinskrivna sidorna fungerar närmast som en liten dagbok där vardagshändelser, sport, TV, skola, kamrater, skämt och maskinskrivningsövningar blandas.\n\nEn stor del av inledningen handlar om en vinteraktivitet vid Knabben tillsammans med Hoogert. De bygger och vattnar en bana för Snowraceråkning. När Urban själv åker nerför backen glömmer han en frusen tvättlina och kör rakt in i den med munnen. Han skadar tandköttet, får en skrubbning på ryggen och en fläskläpp. Händelsen illustreras dessutom med en detaljerad karta över backen, husen, tvättlinan och färdvägen.\n\nBrevet ger många glimtar av vardagen. Urban berättar om ett geografiprov där han fått 22 av 27 rätt, gymnastik och rugby i skolan, skidträning, pingis, kretsmästerskap och sportlov. Kamrater som Bengt, Hoogert, Gurra, Larsa, Jonas och andra förekommer återkommande.\n\nTV och kultur dyker också upp. Urban skriver att han sett sista delen av \"Odysseus äventyr\", går tillsammans med Bengt till Kristinasalen och ser \"En handelsresandes död\" med Isa Quensel och nämner TV-programmet \"Vårat lag\". Han återger dessutom material ur \"Glädjens blomster\", bland annat \"Den uppriktige portugularen\", som han skriver av i flera omgångar.\n\nMaskinskrivandet är en tydlig del av själva brevet. Urban kommenterar skrivmaskinen, felskrivningar och att han försöker skriva med alla fingrar. Mot slutet berättar han att mamma tagit hem en bok om maskinskrivning och avslutar med rena skrivövningar med ord som \"fabla\", \"just\", \"basa\", \"fluga\", \"blinka\" och \"butik\".\n\nHumorn genomsyrar hela brevet. Egna kommentarer och historier blandas med avskrivna skämt och ordlekar. Även kuvertet är en del av detta, med urklippta djur, texter placerade åt olika håll och uppmaningar som \"Skicka psoriasispengarna och saxen\", \"Extra innehåll Intelligenstest\" och \"Hälsa Tabben\".\n\nFyra bilagor följer med brevet. Tre hör till en serie skämtsamma intelligenstest: själva testen, facit samt en \"intelligenskvotstabell\" och ett diagram där Ulf, Catarina och Birgitta har kunnat föra in sina verkliga testresultat. Den fjärde bilagan innehåller ordlekar och en palindrommening.",
       "sections": [
         {
@@ -2210,6 +2214,10 @@
         {
           "title": "Personer",
           "content": "- Urban Sandlund – brevets avsändare.\n- Ulf Sandlund – Urbans kusin och brevets mottagare.\n- Hoogert – smeknamn för Krister Berg, kamrat till Urban.\n- Bengt – kamrat till Urban.\n- Gurra – kamrat till Urban.\n- Larsa – kamrat till Urban.\n- Stefan Lahti – skolkamrat till Urban.\n- Stefan Olofsson – skolkamrat till Urban.\n- Pompe – skolkamrat till Urban.\n- Tomas Eriksson – skolkamrat till Urban.\n- Lars Wesslan Westerberg – skolkamrat till Urban.\n- Jonas – kamrat till Urban.\n- Birgitta – Ulfs tvillingsyster.\n- Catarina – Ulfs storasyster.\n- Tabben – relation oklar.\n- Isa Quensel – svensk skådespelare, omnämnd i brevet."
+        },
+        {
+          "title": "Arkivanteckning",
+          "content": "På sida 5 står det bokstavligen ”77-02-01”, medan den befintliga sammanfattningen och iakttagelserna tolkar slutanteckningen som den 1 mars. Båda uppgifterna har bevarats utan rättelse. Något enskilt skrivdatum har inte fastställts."
         }
       ],
       "items": [

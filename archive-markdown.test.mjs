@@ -548,6 +548,16 @@ Second page`, {
   ]);
 });
 
+test("titled attachment groups preserve nested headings and Markdown tables inside transcription fences", () => {
+  const text = '### Test 1\n\nFirst line  \nnext line\n\n### Results\n\n| Score | Result |\n|---|---|\n| 1 | A |';
+  const letter = parse('# Letter\n\n## Page 1\n\nPage\n\n# Bilagor\n\n## Bilaga 1 – Tests and results\n\n### Transcription\n\n```text\n' + text + '\n```\n\n## Bilaga 2\n\nAnswers');
+  assert.equal(letter.items.length, 3);
+  assert.equal(letter.items[1].title, 'Tests and results');
+  assert.equal(letter.items[1].transcription, text);
+  assert.equal(letter.items[2].label, 'Bilaga 2');
+  assert.equal(letter.items[2].transcription, 'Answers');
+});
+
  test("preserves positioned text inside an existing fenced transcription", () => {
  const text = "                                   8/12-72\n\n                         HEJ!\n\nProse line\nnext line.\n\n                      Hälsningar\n                    Urban Sandlund";
  const letter = parse("# Letter\n\n## Page 1\n\n### Transcription\n\n" + "```text\n" + text + "\n```");

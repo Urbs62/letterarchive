@@ -8,11 +8,15 @@
 - Till: Mölndal
 - Omfattning: 5 maskinskrivna sidor
 - Bilagor: 4
+- Skrivtyp: typewritten
 
 # Kuvert
 
 ## Framsida
 
+### Transcription
+
+```text
 Brunt kuvert adresserat med skrivmaskin:
 
 Ulf Sandlund  
@@ -23,9 +27,13 @@ Kuvertet är frankerat med två svenska frimärken à 1 krona och poststämplat:
 
 PITEÅ 1  
 2.3.1977
+```
 
 ## Baksida
 
+### Transcription
+
+```text
 Avsändaradress, maskinskriven:
 
 AVS. Urban Sandlund  
@@ -49,9 +57,15 @@ Intelligenstest
 5-öre, tändsticksask utan Jonas [otydbart slut]
 
 [Som dekoration finns även långa rader med §-tecken.]
+```
+
+# Brev
 
 ## Sida 1
 
+### Transcription
+
+```text
 77.02.22.
 
 Hej på dej Ulf.
@@ -89,9 +103,13 @@ Text och markeringar i kartan:
 - Hoogerts hus
 - Garage
 - Grind
+```
 
 ## Sida 2
 
+### Transcription
+
+```text
 Under tiden vi väntade på att vattnet skulle frysa upptäckte jag
 att ifall man står uppe på knabben och skriker mot några hus
 100 meter bort så blir det ett jättefint eko. Vi skrek t.ex. Pelle
@@ -134,9 +152,13 @@ frågade kyparen hur många dom hade druckit. Ja jag har druckit fyra
 och pinka tre. Jaha, men hur många har du nu druckit. Fyra och pinka
 tre. Ja det blir 4 x tre kronor = 6 kronor. Jaa du pinka, du har tur
 som slipper betala. Oerhört lustigt.
+```
 
 ## Sida 3
 
+### Transcription
+
+```text
 Nu ska jag skriva nånting ur "Glädjens blomster".
 
 DEN UPPRIKTIGE PORTUGALAREN
@@ -173,9 +195,13 @@ jag ersätta Venusbysten efter vikt, och själv försöka göra en ny
 byst till er. - Kan jag inte? Det blir det vi får se! Det är emellertid
 mycket ofint av er att skrika på polis för en sådan bagatell så här
 tidigt på morgonen!
+```
 
 ## Sida 4
 
+### Transcription
+
+```text
 77.02.26.
 
 Idag är det ett väldans fint väder,-10 grader och solsken.Man får
@@ -222,9 +248,13 @@ naturligtvis,ty det är starkast.-Det blir väl rabatt,om jag dricker
 ur hela flaskan?-Åh,det orkar jag gott och väl.Kvällen är lång.-Låt
 mig få Dagens nyheter och Vårt land!-Tag på samma gång också Stock-
 holms-tidningen och göteborgs handelstidning till mig-
+```
 
 ## Sida 5
 
+### Transcription
+
+```text
 och alla skämt tidningarna förstås-Där ligger Aftonbladet,ser jag;
 var snäll och ge meg det,och fråga den fula herrn,där,om han inte
 är klar med Piteåtidningen snart!-Frågan är fri min impertinente
@@ -258,9 +288,15 @@ nu orkar jag inte skriva mer.Adios amigo.
                               Urban.S.
 
 Utrymme för anteckningar.
+```
+
+# Bilagor
 
 ## Bilaga 1 – Intelligenstest 1 och 2
 
+### Transcription
+
+```text
 ### Intelligenstest 1
 
 Besvara dessa frågor. Svaren finns på bak sida. Tid för detta prov
@@ -295,9 +331,13 @@ fyrben?
 tid tar det då för en man att fylla samma badkar med två kranar?
 
 4. Vad är det som brukar lukta när man kommer in i en ladgård?
+```
 
 ## Bilaga 2 – Svar till intelligenstest 1 och 2
 
+### Transcription
+
+```text
 ### Svar till intelligenstest 1
 
 1. Fransmännen hade tagit Essen ifrån dom
@@ -316,9 +356,13 @@ tid tar det då för en man att fylla samma badkar med två kranar?
 2. Dom tappar håret fortare.
 3. Exakt halva tiden.
 4. Näsan – smartskalle
+```
 
 ## Bilaga 3 – Intelligenskvotstabell och resultatkurva
 
+### Transcription
+
+```text
 Bilagan består av en maskinskriven tabell för att översätta antal rätt till en skämtsam ”intelligenskvot”, samt ett handritat diagram där resultaten från flera test kan föras in.
 
 ### Intelligenskvotstabell
@@ -350,9 +394,13 @@ Resultaten är markerade med olika linjer enligt en handskriven förklaring:
 - ...... Birgitta
 
 De inritade resultaten är alltså faktiska resultat från Catarina, Ulf och Birgitta.
+```
 
 ## Bilaga 4 – Historier och ordlekar
 
+### Transcription
+
+```text
 Bilagan innehåller en samling ordlekar med namn samt en mening som ska läsas baklänges.
 
 Grinig magiker – Uri Gnäller.  
@@ -369,6 +417,7 @@ Skrattande popsångare – Gary Fnitter.
 Läs detta baklänges.
 
 I Reväl sitta ni apor alla under fred nu.Alla ropa i natt i slaveri
+```
 
 # Sammanfattning
 
@@ -420,3 +469,7 @@ Brevet visar också hur korrespondensen är interaktiv. Urban skickar inte bara 
 - Catarina – Ulfs storasyster.
 - Tabben – relation oklar.
 - Isa Quensel – svensk skådespelare, omnämnd i brevet.
+
+# Arkivanteckning
+
+På sida 5 står det bokstavligen ”77-02-01”, medan den befintliga sammanfattningen och iakttagelserna tolkar slutanteckningen som den 1 mars. Båda uppgifterna har bevarats utan rättelse. Något enskilt skrivdatum har inte fastställts.

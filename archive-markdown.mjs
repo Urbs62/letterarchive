@@ -10,14 +10,25 @@ const DOCUMENT_FILES = {
 
 function section(markdown, heading, level = "#{1,3}") {
   const lines = markdown.split(/\r?\n/);
+  // Heading-looking text inside a transcription fence is historical content.
+  let fence;
+  const outsideFence = lines.map(line => {
+    const marker = line.match(/^\s*(`{3,}|~{3,})/);
+    if (marker) {
+      if (!fence) fence = marker[1];
+      else if (marker[1][0] === fence[0] && marker[1].length >= fence.length) fence = undefined;
+      return false;
+    }
+    return !fence;
+  });
   const allowedLevel = new RegExp(`^(${level})\\s+${heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`, "i");
-  const start = lines.findIndex((line) => allowedLevel.test(line));
+  const start = lines.findIndex((line, index) => outsideFence[index] && allowedLevel.test(line));
   if (start < 0) return "";
   const headingLevel = lines[start].match(/^#+/)[0].length;
   let end = lines.length;
   for (let index = start + 1; index < lines.length; index += 1) {
     const nextHeading = lines[index].match(/^(#+)\s+/);
-    if (nextHeading && nextHeading[1].length <= headingLevel) {
+    if (outsideFence[index] && nextHeading && nextHeading[1].length <= headingLevel) {
       end = index;
       break;
     }
@@ -180,13 +191,14 @@ function parseLetter(markdown, folder, attachmentImages = [], documentImages = [
     });
   }
 
-  const attachmentPattern = /^##\s+(?:Attachment|Bilaga)\s+(\d+)\s*$/gim;
+  const attachmentPattern = /^##[\t ]+(?:Attachment|Bilaga)[\t ]+(\d+)(?:[\t ]+[–—-][\t ]+([^\r\n]+))?[\t ]*\r?$/gim;
   for (const match of markdown.matchAll(attachmentPattern)) {
     const number = Number(match[1]);
     const defaultImage = `attachments/attachment-${String(number).padStart(2, "0")}.jpg`;
     items.push({
       type: "attachment",
       label: `Bilaga ${number}`,
+      ...(match[2] ? {title: match[2].trim()} : {}),
       image: `${folder}${attachmentImages[number - 1] || defaultImage}`,
       ...itemContent(markdown, match[0].replace(/^##\s+/, "").trim())
     });
