@@ -1,60 +1,40 @@
-# Brev 1977-03-03
+# Metadata
 
-## Metadata
+- Datum: 1977-04-03
+- Skrivstart: 1977-03-03
+- Poststämplat: Okänt
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Avsändarens ålder: 14 år
+- Från: Piteå
+- Till: Mölndal
+- Skrivtyp: typewritten
+- Omfattning: 2 maskinskrivna originalsidor samt kuvertets båda sidor
+- Bilagor: 5
 
-**Datum:** 1977-03-03 (första sidan daterad)
+# Kuvert
 
-**Poststämpel:** Ej läsbar.
+## Framsida
 
-**Avsändare:**
+### Transcription
 
-Urban Sandlund  
-Degermansgatan 3  
-941 00 Piteå
-
-**Mottagare:**
-
-Ulf Sandlund  
-Safjällsgatan 16  
-431 39 Mölndal 3
-
-**Typ:** Maskinskrivet brev.
-
-**Innehåll:**
-
-- Kuvert (fram- och baksida)
-- Två maskinskrivna sidor
-- Handritad karta över skidback
-- Intelligenstest 3
-- Facit till Intelligenstest 3
-- Två tidningsurklipp från Piteå-Tidningen
-
----
-
-# Kuvert – framsida
-
-## Beskrivning
-
-Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Kuvertet är frankerat med fyra svenska frimärken. Poststämpeln är så svag att datum inte går att utläsa.
-
-## Transkription
-
+```text
 **Mottagare**
 
 Ulf Sandlund  
 Safjällsgatan 16  
 431 39 Mölndal 3
+```
 
----
+### Description
 
-# Kuvert – baksida
+Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Kuvertet är frankerat med fyra svenska frimärken. Poststämpeln är så svag att datum inte går att utläsa.
 
-## Beskrivning
+## Baksida
 
-På kuvertets baksida finns en handskriven vers, en fråga om ett tidigare intelligenstest samt ett humoristiskt svar. Texten visar att Urban och Ulf redan tidigare utbytt egna intelligenstest i sin brevväxling.
+### Transcription
 
-## Transkription
-
+```text
 Eskimån av glädje strålar  
 när han äter gamla tvålar.
 
@@ -65,16 +45,20 @@ Hur går det med intelligenstestet?
 Svar:
 
 Kanske.
+```
 
----
+### Description
 
-# Page 1
+På kuvertets baksida finns en handskriven vers, en fråga om ett tidigare intelligenstest samt ett humoristiskt svar. Texten visar att Urban och Ulf redan tidigare utbytt egna intelligenstest i sin brevväxling.
 
-## Datum
+# Brev
 
+## Sida 1
+
+### Transcription
+
+```text
 77-03-03
-
-## Transkription
 
 Hej Ulf!
 
@@ -118,13 +102,27 @@ bra. Nu är Bengt här. Vi har sett på Tipsextra. Jag hejade på
 Man. United, pappa och Bengt hejade på Man. City. Man. United
 vann med 3–1.
 
-# Page 2
+---
 
-## Datum
+77-03-07
 
+Har kommit hem från den första skoldan (urk) efter lovet.
+Igår åkte jag och jonas miniskidor. På strömlida. först körde vi
+i skogen. sen gjorde vi banor, vid sidan om backen. jonas hade sitt
+stoppur med sej så vi tog tid på varandra, jonas vann i alla banorna.
+Till sist gjorde vi trix. sista gången jag gjorde det gick det
+inte. jag tog fart. hoppade i ett hopp. landade. snurrade runt.
+tappa balansen. ner i nästa hopp. upp i luften. och ner på
+ändan. skidorna flög åt alla håll. typiskt. Utförlig beskrivning
+på baksidan.
+```
+
+## Sida 2
+
+### Transcription
+
+```text
 77-04-02
-
-## Transkription
 
 Du trodde att du skulle få ett brev av mej den första april
 men då blev du lurad. April, april din dumma sill, jag kan lura
@@ -164,25 +162,19 @@ bara haglade in dassrullar. Nu har jag ej nåt mer att skriva
 om så då slutar jag att skriva. Kära hälsningar från din
 
 dxvldädsgbåbsbh Urban.
+```
 
-## Beskrivning
+### Description
 
 Brevet fortsätter med två dagboksanteckningar daterade den 2 och 3 april 1977. Urban berättar om aprilskämt i Piteå-Tidningen ("Petan"), ett lyckat matteprov, inspelningen av ett kassettband till Ulf och vardagliga händelser hemma i Piteå. Han beskriver också hur han färdigställt "Intelligenstest 3", kommenterar ett pussel och godis han fått av Ulf samt berättar om en nallebjörn som fått namnet **Arkimedes Euklides Einstein**. Sidan avslutas med ett medvetet tangentbordskladd före signaturen.
 
----
+# Bilagor
 
-# Bilaga 1 – Handritad karta över skidområdet
+## Bilaga 1 – Handritad karta över skidområdet
 
-## Bild
+### Transcription
 
-attachment-01-map.jpg
-
-## Beskrivning
-
-Handritad minnesskiss över skidområdet där Urban och Jonas åkte miniskidor, vilket beskrivs i brevet. Kartan visar skogen, stugan, krogen, bilvägen upp till backen, den enkla liftens spår samt olika hopp och portar markerade med kvistar. Nederst finns en liten "stillstudie" som illustrerar ett hopp och den vurpa som nämns i brevet.
-
-## Transkriberade etiketter
-
+```text
 - Skog
 - Stuga
 - Krog
@@ -192,19 +184,17 @@ Handritad minnesskiss över skidområdet där Urban och Jonas åkte miniskidor, 
 - Stillstudie
 - Väg som vi åkte upp (bilväg)
 - Spår som man höll skidorna i när man åkte upp (den primitiva liften)
+```
 
-# Bilaga 2 – Intelligenstest 3
+### Description
 
-## Bild
+Handritad minnesskiss över skidområdet där Urban och Jonas åkte miniskidor, vilket beskrivs i brevet. Kartan visar skogen, stugan, krogen, bilvägen upp till backen, den enkla liftens spår samt olika hopp och portar markerade med kvistar. Nederst finns en liten "stillstudie" som illustrerar ett hopp och den vurpa som nämns i brevet.
 
-attachment-02-IQ-test.jpg
+## Bilaga 2 – Intelligenstest 3
 
-## Beskrivning
+### Transcription
 
-Maskinskrivet **Intelligenstest 3** med fem frågor, skapat av Urban och bifogat brevet. Testet nämns i brevets dagboksanteckning daterad 3 april 1977, där Urban berättar att han färdigställt det och skickar det till Ulf.
-
-## Transkription
-
+```text
 Intelligenstest 3
 
 Tid:
@@ -220,21 +210,17 @@ vikten per bulle till hälften.
 4. Vad hette Jakobs söner?
 
 5. Vet du hurdana ärtorna är nu för tiden?
+```
 
----
+### Description
 
-# Bilaga 3 – Facit till Intelligenstest 3
+Maskinskrivet **Intelligenstest 3** med fem frågor, skapat av Urban och bifogat brevet. Testet nämns i brevets dagboksanteckning daterad 3 april 1977, där Urban berättar att han färdigställt det och skickar det till Ulf.
 
-## Bild
+## Bilaga 3 – Facit till Intelligenstest 3
 
-attachment-03-test-answers.jpg
+### Transcription
 
-## Beskrivning
-
-Maskinskrivet facit till Intelligenstest 3. Svaren bygger huvudsakligen på ordlekar och humor och visar att testet var avsett som underhållning snarare än ett seriöst kunskapstest.
-
-## Transkription
-
+```text
 Svar;
 
 1. Ett blåbär som åker hiss.
@@ -242,39 +228,50 @@ Svar;
 3. Bi.
 4. Bröderna Jakobsson.
 5. Runda.
+```
 
----
+### Description
 
-# Bilaga 4 – Tidningsurklipp
+Maskinskrivet facit till Intelligenstest 3. Svaren bygger huvudsakligen på ordlekar och humor och visar att testet var avsett som underhållning snarare än ett seriöst kunskapstest.
 
-## Bild
+## Bilaga 4 – April, april...
 
-attachment-04-april-april-1.jpg
+### Transcription
 
-## Beskrivning
+```text
+
+```
+
+### Description
 
 Tidningsurklipp ur Piteå-Tidningen med rubriken **"April, april..."**. Artikeln sammanfattar årets aprilskämt i ett antal norrländska tidningar och avslöjar bland annat att Piteå-Tidningens påstådda oljefyndighet utanför Rosvik var ett aprilskämt. Bilagan förklarar direkt den hänvisning Urban gör i brevet.
 
----
+## Bilaga 5 – Oljefynd kullkastar byggplaner
 
-# Bilaga 5 – Tidningsurklipp
+### Transcription
 
-## Bild
+```text
 
-attachment-05-april-april-2.jpg
+```
 
-## Beskrivning
+### Description
 
 Tidningsurklipp ur Piteå-Tidningen med rubriken **"Oljefynd kullkastar byggplaner"**. Artikeln presenterades som en vanlig nyhet men var Piteå-Tidningens aprilskämt 1977. Urban hänvisar till artikeln i brevet och funderar över vilket av tidningens reportage som egentligen var aprilskämtet.
 
----
-
 # Sammanfattning
 
-Detta brev skiljer sig från de tidigare genom att det är maskinskrivet, något Urban själv kommenterar redan i inledningen. Brevet är skrivet som en serie dagboksanteckningar under mars och början av april 1977 och ger en levande bild av vardagen med skola, skidträning, serietävlingar, miniskidåkning och familjeliv i Piteå.
+Urban utvecklar sin maskinskrivning med bredare marginal och ändrat höjdsteg, något han själv kommenterar redan i inledningen. Även det tidigare brevet med arkivdatum 1977-03-02 var maskinskrivet. Brevet är skrivet som en serie dagboksanteckningar under mars och början av april 1977 och ger en levande bild av vardagen med skola, skidträning, serietävlingar, miniskidåkning och familjeliv i Piteå.
 
 Humorn är ständigt närvarande. Urban skämtar om maskinskrivning, aprilskämt, klasskamrater och sin nallebjörn "Arkimedes Euklides Einstein". Brevet visar också hur nära kontakten mellan kusinerna var genom hänvisningar till vykort, fotografier, pussel, godis och kassettband som skickades mellan dem.
 
 Bilagorna är ovanligt omfattande och gör försändelsen till mer än ett vanligt brev. Den handritade kartan över skidbacken illustrerar en händelse som beskrivs i texten. Intelligenstest 3 med tillhörande facit visar Urbans intresse för ordlekar och klurigheter. De två tidningsurklippen från Piteå-Tidningen ger dessutom historisk bakgrund till aprilskämtet om oljefyndigheten utanför Rosvik som nämns i brevet.
 
 Sammantaget fungerar försändelsen som en liten tidskapsel från våren 1977 och ger en ovanligt levande bild av Urbans vardag, humor, intressen och brevväxlingen med kusinen Ulf.
+
+# Iakttagelser
+
+Brevet växer fram under två skrivperioder: 3–7 mars och 2–3 april 1977. Inledningen handlar om förbättrad skrivteknik och layout; den 3 april berättar Urban att han återgått till pekfingervalsen. Skidåkning och tävlingar, aprilskämt, Intelligenstest 3, kassettinspelningen och nallen Arkimedes Euklides Einstein förenar vardag och humor. De fem bilagorna ger ytterligare sammanhang.
+
+# Arkivanteckning
+
+Arkivdatum har korrigerats från 1977-03-03 till 1977-04-03, den senaste dokumenterade skrivdagen. Brevet påbörjades den 3 mars och färdigställdes tidigast den 3 april. Datumet är inte ett verifierat avsändnings- eller poststämpeldatum; poststämpeln är oläsbar och datumet okänt. Första originalsidan innehåller dateringar 3, 4, 5 och 7 mars; andra sidan 2 och 3 april. Avsnittet daterat 7 mars har kompletterats med den tillhandahållna transkriptionen från originalbilden. Övrig ordalydelse, radbrytningar och sidgränser har bevarats. Karta, test, facit och två tidningsurklipp visas som fem separata bilagor efter de två brevsidorna.

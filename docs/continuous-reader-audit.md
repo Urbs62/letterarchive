@@ -56,7 +56,7 @@ Each date below identifies its folder: `letters/YYYY/date/`. Page references fol
 | 1976-12-30 | Entire entry’s organization | **26 loose slips are transcribed under `Småarken`; the six page items are documentation photographs with empty transcription fields.** The existing prototype would not put the main text into its continuous page flow. |
 | 1977-01-18 | 3–4 | Verse, author attributions and dialogue. Preserve verse lines and speaker divisions. |
 | 1977-03-02 | 1, 5; attachments | Map labels and typing exercises; attachments contain questions, a table and graph explanation. Body and attachments need distinct treatment. |
-| 1977-03-03 | 1–2; attachments | Writing-session divisions and typing experiments; separate map, question sheets and newspaper clippings. Mostly ordinary body prose. |
+| 1977-04-03 | 1–2; attachments | Writing-session divisions and typing experiments; separate map, question sheets and newspaper clippings. Mostly ordinary body prose. |
 | 1977-04-04 | 4, 6, 11, 14–15 | Drawing-heavy pages, a grade list, a typewriter figure already represented descriptively, and a map continuing across two images. Source also repeats the “Sida 8” heading; JSON has unique page numbers. |
 | 1977-06-10 | 1 | Quiz/result material and accompanying notes. Local list treatment needs checking. |
 | 1977-09-07 | 1; inner-envelope attachments | Almost blank folded sheet with a positioned question mark. Its emptiness is meaningful; this is not a conventional prose letter. |

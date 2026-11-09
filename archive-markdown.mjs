@@ -33,7 +33,7 @@ function section(markdown, heading, level = "#{1,3}") {
       break;
     }
   }
-  return lines.slice(start + 1, end).join("\n").replace(/^---\s*$/gm, "").trim();
+  return lines.slice(start + 1, end).map((line, offset) => outsideFence[start + 1 + offset] && /^---\s*$/.test(line) ? "" : line).join("\n").trim();
 }
 
 function field(markdown, name) {

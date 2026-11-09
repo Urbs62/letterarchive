@@ -485,65 +485,81 @@
       ]
     },
     {
-      "id": "1977-03-03",
-      "date": "1977-03-03",
-      "from": "Urban",
-      "to": "Ulf",
+      "id": "1977-04-03",
+      "date": "1977-04-03",
+      "writtenDate": "1977-03-03",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
       "senderAge": 14,
-      "type": "typewritten",
-      "summary": "Detta brev skiljer sig från de tidigare genom att det är maskinskrivet, något Urban själv kommenterar redan i inledningen. Brevet är skrivet som en serie dagboksanteckningar under mars och början av april 1977 och ger en levande bild av vardagen med skola, skidträning, serietävlingar, miniskidåkning och familjeliv i Piteå.\n\nHumorn är ständigt närvarande. Urban skämtar om maskinskrivning, aprilskämt, klasskamrater och sin nallebjörn \"Arkimedes Euklides Einstein\". Brevet visar också hur nära kontakten mellan kusinerna var genom hänvisningar till vykort, fotografier, pussel, godis och kassettband som skickades mellan dem.\n\nBilagorna är ovanligt omfattande och gör försändelsen till mer än ett vanligt brev. Den handritade kartan över skidbacken illustrerar en händelse som beskrivs i texten. Intelligenstest 3 med tillhörande facit visar Urbans intresse för ordlekar och klurigheter. De två tidningsurklippen från Piteå-Tidningen ger dessutom historisk bakgrund till aprilskämtet om oljefyndigheten utanför Rosvik som nämns i brevet.\n\nSammantaget fungerar försändelsen som en liten tidskapsel från våren 1977 och ger en ovanligt levande bild av Urbans vardag, humor, intressen och brevväxlingen med kusinen Ulf.",
+      "type": "letter",
+      "writingType": "typewritten",
+      "folder": "letters/1977/1977-04-03/",
+      "postmarked": "Okänt",
+      "fromPlace": "Piteå",
+      "toPlace": "Mölndal",
+      "summary": "Urban utvecklar sin maskinskrivning med bredare marginal och ändrat höjdsteg, något han själv kommenterar redan i inledningen. Även det tidigare brevet med arkivdatum 1977-03-02 var maskinskrivet. Brevet är skrivet som en serie dagboksanteckningar under mars och början av april 1977 och ger en levande bild av vardagen med skola, skidträning, serietävlingar, miniskidåkning och familjeliv i Piteå.\n\nHumorn är ständigt närvarande. Urban skämtar om maskinskrivning, aprilskämt, klasskamrater och sin nallebjörn \"Arkimedes Euklides Einstein\". Brevet visar också hur nära kontakten mellan kusinerna var genom hänvisningar till vykort, fotografier, pussel, godis och kassettband som skickades mellan dem.\n\nBilagorna är ovanligt omfattande och gör försändelsen till mer än ett vanligt brev. Den handritade kartan över skidbacken illustrerar en händelse som beskrivs i texten. Intelligenstest 3 med tillhörande facit visar Urbans intresse för ordlekar och klurigheter. De två tidningsurklippen från Piteå-Tidningen ger dessutom historisk bakgrund till aprilskämtet om oljefyndigheten utanför Rosvik som nämns i brevet.\n\nSammantaget fungerar försändelsen som en liten tidskapsel från våren 1977 och ger en ovanligt levande bild av Urbans vardag, humor, intressen och brevväxlingen med kusinen Ulf.",
+      "sections": [
+        {
+          "title": "Iakttagelser",
+          "content": "Brevet växer fram under två skrivperioder: 3–7 mars och 2–3 april 1977. Inledningen handlar om förbättrad skrivteknik och layout; den 3 april berättar Urban att han återgått till pekfingervalsen. Skidåkning och tävlingar, aprilskämt, Intelligenstest 3, kassettinspelningen och nallen Arkimedes Euklides Einstein förenar vardag och humor. De fem bilagorna ger ytterligare sammanhang."
+        },
+        {
+          "title": "Arkivanteckning",
+          "content": "Arkivdatum har korrigerats från 1977-03-03 till 1977-04-03, den senaste dokumenterade skrivdagen. Brevet påbörjades den 3 mars och färdigställdes tidigast den 3 april. Datumet är inte ett verifierat avsändnings- eller poststämpeldatum; poststämpeln är oläsbar och datumet okänt. Första originalsidan innehåller dateringar 3, 4, 5 och 7 mars; andra sidan 2 och 3 april. Avsnittet daterat 7 mars har kompletterats med den tillhandahållna transkriptionen från originalbilden. Övrig ordalydelse, radbrytningar och sidgränser har bevarats. Karta, test, facit och två tidningsurklipp visas som fem separata bilagor efter de två brevsidorna."
+        }
+      ],
       "items": [
         {
           "type": "envelope-front",
           "label": "Kuvert framsida",
-          "image": "letters/1977/1977-03-03/envelope-front.jpg",
-          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal 3",
+          "image": "letters/1977/1977-04-03/envelope-front.jpg",
+          "transcription": "**Mottagare**\n\nUlf Sandlund  \nSafjällsgatan 16  \n431 39 Mölndal 3",
           "description": "Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Kuvertet är frankerat med fyra svenska frimärken. Poststämpeln är så svag att datum inte går att utläsa."
         },
         {
           "type": "envelope-back",
           "label": "Kuvert baksida",
-          "image": "letters/1977/1977-03-03/envelope-back.jpg",
-          "transcription": "Eskimån av glädje strålar\nnär han äter gamla tvålar.\n\nFråga:\n\nHur går det med intelligenstestet?\n\nSvar:\n\nKanske.",
+          "image": "letters/1977/1977-04-03/envelope-back.jpg",
+          "transcription": "Eskimån av glädje strålar  \nnär han äter gamla tvålar.\n\nFråga:\n\nHur går det med intelligenstestet?\n\nSvar:\n\nKanske.",
           "description": "På kuvertets baksida finns en handskriven vers, en fråga om ett tidigare intelligenstest samt ett humoristiskt svar. Texten visar att Urban och Ulf redan tidigare utbytt egna intelligenstest i sin brevväxling."
         },
         {
           "type": "page",
           "page": 1,
           "label": "Sida 1",
-          "image": "letters/1977/1977-03-03/page-01.jpg",
-          "transcription": "77-03-03\n\nHej Ulf!\n\nDetta brev skriver jag på ett någorlunda \"riktigt\" sätt.\nJag skriver alltså inte den gamla vanliga pekfingervalsen.\nSom du säkert märkt så har jag bredare marginal nu, jag\nhar också ändrat till ett höjdsteg. Det står i en bok om\nmaskinskrivning att det vanligaste höjdsteget är 1, så då\ngör jag också så. Jag tänker på att förr fick man brev ofta\noch dom man fick var långa. Nu kan man högst få ett vartannat\nhalvår, alltså tar det bara 5 min. att läsa dom. Men jag måste\nju tänka på dej. Du får ju inte överanstränga dig. Du ligger\nväl och slöar nästan hela dagarna.\n\n---\n\n77-03-04\n\nKl. 11 far pappa och jag till Pitholm, jag ska ha träning\ndär. Sen far jag kanske direkt på ÖCK-träning. I morgon ska\njag tävla på Vallsberget, serietävlan.\n\nNu har jag tittat på dessa fina kort du skickat till mej.\nGången blev ju fin. Likaså Anki och Gösta. Och korten på dej.\nEn annan såg som vanligt dum ut.\nImorse hittade jag en sliskig mask i brevlådan. Nu lägger jag\nmej och läser den tills jag somnar.\n\n---\n\n77-03-05\n\nSteg upp halv nio. Snart ska jag på serietävling på Valls-\nberget. Du var duktig på att komma på mina klasskompisar.\nEndast tre fel. Du skrev 2. Åsa. Sen skrev du Garpen. Garpen\när en av dom där asorna. Hasse och Kardan är tyvärr en och\nsamma person. Tredje felet: Nitka går inte i vår klass, han\när endast 7:a. Jag blev 2:a på Vallsberget. 10 sek efter Alf\nOlofsson. Jag fick starta med en kille från Hammarby. Han var\nbra. Nu är Bengt här. Vi har sett på Tipsextra. Jag hejade på\nMan. United, pappa och Bengt hejade på Man. City. Man. United\nvann med 3–1.",
+          "image": "letters/1977/1977-04-03/page-01.jpg",
+          "transcription": "77-03-03\n\nHej Ulf!\n\nDetta brev skriver jag på ett någorlunda \"riktigt\" sätt.\nJag skriver alltså inte den gamla vanliga pekfingervalsen.\nSom du säkert märkt så har jag bredare marginal nu, jag\nhar också ändrat till ett höjdsteg. Det står i en bok om\nmaskinskrivning att det vanligaste höjdsteget är 1, så då\ngör jag också så. Jag tänker på att förr fick man brev ofta\noch dom man fick var långa. Nu kan man högst få ett vartannat\nhalvår, alltså tar det bara 5 min. att läsa dom. Men jag måste\nju tänka på dej. Du får ju inte överanstränga dig. Du ligger\nväl och slöar nästan hela dagarna.\n\n---\n\n77-03-04\n\nKl. 11 far pappa och jag till Pitholm, jag ska ha träning\ndär. Sen far jag kanske direkt på ÖCK-träning. I morgon ska\njag tävla på Vallsberget, serietävlan.\n\nNu har jag tittat på dessa fina kort du skickat till mej.\nGången blev ju fin. Likaså Anki och Gösta. Och korten på dej.\nEn annan såg som vanligt dum ut.\nImorse hittade jag en sliskig mask i brevlådan. Nu lägger jag\nmej och läser den tills jag somnar.\n\n---\n\n77-03-05\n\nSteg upp halv nio. Snart ska jag på serietävling på Valls-\nberget. Du var duktig på att komma på mina klasskompisar.\nEndast tre fel. Du skrev 2. Åsa. Sen skrev du Garpen. Garpen\när en av dom där asorna. Hasse och Kardan är tyvärr en och\nsamma person. Tredje felet: Nitka går inte i vår klass, han\när endast 7:a. Jag blev 2:a på Vallsberget. 10 sek efter Alf\nOlofsson. Jag fick starta med en kille från Hammarby. Han var\nbra. Nu är Bengt här. Vi har sett på Tipsextra. Jag hejade på\nMan. United, pappa och Bengt hejade på Man. City. Man. United\nvann med 3–1.\n\n---\n\n77-03-07\n\nHar kommit hem från den första skoldan (urk) efter lovet.\nIgår åkte jag och jonas miniskidor. På strömlida. först körde vi\ni skogen. sen gjorde vi banor, vid sidan om backen. jonas hade sitt\nstoppur med sej så vi tog tid på varandra, jonas vann i alla banorna.\nTill sist gjorde vi trix. sista gången jag gjorde det gick det\ninte. jag tog fart. hoppade i ett hopp. landade. snurrade runt.\ntappa balansen. ner i nästa hopp. upp i luften. och ner på\nändan. skidorna flög åt alla håll. typiskt. Utförlig beskrivning\npå baksidan.",
           "description": ""
         },
         {
           "type": "page",
           "page": 2,
           "label": "Sida 2",
-          "image": "letters/1977/1977-03-03/page-02.jpg",
+          "image": "letters/1977/1977-04-03/page-02.jpg",
           "transcription": "77-04-02\n\nDu trodde att du skulle få ett brev av mej den första april\nmen då blev du lurad. April, april din dumma sill, jag kan lura\ndej vart jag vill. I Petan såg man direkt vilket som var april-\nskämtet. Vem som helst förstår väl att dom inte har hittat nå\nolja utanför Rosvik (by ovanför Piteå). Just nu håller jag på att\nspela in skivan du bad mej spela in. Typisk sopig skiva. På ett\nmatteprov vi hade i onsdags hade jag 22 av 23. Jag\nhade haft alla rätt om jag inte gjort ett slarvfel. Birgitta\nvägrar att säga vad hon hade. Typiskt feg. När jag har typiskt\ndåligt på engelska standardproven så säger jag det till henne\ni alla fall. Det enda jag gör nu är: käkar jordnötter, skriver\ntill dej, dricker, käkar jordnötter, skriver brev, dricker, käkar\njordnötter osv. Nu har jag spelat in hela den jädrans skivan.\nNu snöar det. Ute alltså.\n\n---\n\n77-04-03\n\nNu har jag skrivit klart intelligenstest 3. Jag vaknade och\nsteg upp vid 10-tiden. Kl är nu 20 över 11. Anita har vaknat.\nIfall du vill veta det så har jag gått över till gamla heder-\nliga pekfingervalsen. Nu har jag klippt ut aprilskämtet från\nPetan. Pusslet jag fick gillar jag. Inte. Det kunde väl i alla-\nfall varit i färg. Gärna lite stadigare. Jag har tejpat ihop\nden i 10 bitar. Tack för godisen. Den var god. På golvet ligger\nden där lilla nallen jag böt mot några märken med Birgitta.\nDen är ganska massakerad. Efter senaste matteprovet, som jag\ntrodde gick dåligt, blev jag lite grym mot den. Ett öga och\nmunnen bortslitna. Skinnflådd på en del ställen. Men den\nlever ju. Nu har jag hittat på ett namn åt honom:\nArkimedes Euklides Einstein. Nu ska jag lappa ihop lilla\nArkimedes. Åsa tycker jag det är lite skralt med vykort.\nÄndå skralare är det med breven. Jag minns ett tag att det\nbara haglade in dassrullar. Nu har jag ej nåt mer att skriva\nom så då slutar jag att skriva. Kära hälsningar från din\n\ndxvldädsgbåbsbh Urban.",
-          "description": "Brevet fortsätter med två dagboksanteckningar daterade den 2 och 3 april 1977. Urban berättar om aprilskämt i Piteå-Tidningen (\"Petan\"), ett lyckat matteprov, inspelningen av ett kassettband till Ulf och vardagliga händelser hemma i Piteå. Han beskriver också hur han färdigställt \"Intelligenstest 3\", kommenterar ett pussel och godis han fått av Ulf samt berättar om en nallebjörn som fått namnet Arkimedes Euklides Einstein. Sidan avslutas med ett medvetet tangentbordskladd före signaturen."
+          "description": "Brevet fortsätter med två dagboksanteckningar daterade den 2 och 3 april 1977. Urban berättar om aprilskämt i Piteå-Tidningen (\"Petan\"), ett lyckat matteprov, inspelningen av ett kassettband till Ulf och vardagliga händelser hemma i Piteå. Han beskriver också hur han färdigställt \"Intelligenstest 3\", kommenterar ett pussel och godis han fått av Ulf samt berättar om en nallebjörn som fått namnet **Arkimedes Euklides Einstein**. Sidan avslutas med ett medvetet tangentbordskladd före signaturen."
         },
         {
           "type": "attachment",
           "label": "Bilaga 1",
           "title": "Handritad karta över skidområdet",
-          "image": "letters/1977/1977-03-03/attachments/attachment-01-map.jpg",
-          "transcription": "Skog\nStuga\nKrog\nKvistar (portar)\nHopp\nHopp från sidan\nStillstudie\nVäg som vi åkte upp (bilväg)\nSpår som man höll skidorna i när man åkte upp (den primitiva liften)",
+          "image": "letters/1977/1977-04-03/attachments/attachment-01-map.jpg",
+          "transcription": "- Skog\n- Stuga\n- Krog\n- Kvistar (portar)\n- Hopp\n- Hopp från sidan\n- Stillstudie\n- Väg som vi åkte upp (bilväg)\n- Spår som man höll skidorna i när man åkte upp (den primitiva liften)",
           "description": "Handritad minnesskiss över skidområdet där Urban och Jonas åkte miniskidor, vilket beskrivs i brevet. Kartan visar skogen, stugan, krogen, bilvägen upp till backen, den enkla liftens spår samt olika hopp och portar markerade med kvistar. Nederst finns en liten \"stillstudie\" som illustrerar ett hopp och den vurpa som nämns i brevet."
         },
         {
           "type": "attachment",
           "label": "Bilaga 2",
           "title": "Intelligenstest 3",
-          "image": "letters/1977/1977-03-03/attachments/attachment-02-IQ-test.jpg",
+          "image": "letters/1977/1977-04-03/attachments/attachment-02-IQ-test.jpg",
           "transcription": "Intelligenstest 3\n\nTid:\n\n1. Vad är det som är blått och åker upp och ner?\n\n2. Av en deg får man 20 bullar som väger 50 g per st.\nDå får man troligen halva antalet bullar om man minskar\nvikten per bulle till hälften.\n\n3. Vilket är första djuret som nämns i Bibeln?\n\n4. Vad hette Jakobs söner?\n\n5. Vet du hurdana ärtorna är nu för tiden?",
-          "description": "Maskinskrivet Intelligenstest 3 med fem frågor, skapat av Urban och bifogat brevet. Testet nämns i brevets dagboksanteckning daterad 3 april 1977, där Urban berättar att han färdigställt det och skickar det till Ulf."
+          "description": "Maskinskrivet **Intelligenstest 3** med fem frågor, skapat av Urban och bifogat brevet. Testet nämns i brevets dagboksanteckning daterad 3 april 1977, där Urban berättar att han färdigställt det och skickar det till Ulf."
         },
         {
           "type": "attachment",
           "label": "Bilaga 3",
           "title": "Facit till Intelligenstest 3",
-          "image": "letters/1977/1977-03-03/attachments/attachment-03-test-answers.jpg",
+          "image": "letters/1977/1977-04-03/attachments/attachment-03-test-answers.jpg",
           "transcription": "Svar;\n\n1. Ett blåbär som åker hiss.\n2. Nej.\n3. Bi.\n4. Bröderna Jakobsson.\n5. Runda.",
           "description": "Maskinskrivet facit till Intelligenstest 3. Svaren bygger huvudsakligen på ordlekar och humor och visar att testet var avsett som underhållning snarare än ett seriöst kunskapstest."
         },
@@ -551,17 +567,17 @@
           "type": "attachment",
           "label": "Bilaga 4",
           "title": "April, april...",
-          "image": "letters/1977/1977-03-03/attachments/attachment-04-april-april-1.jpg",
+          "image": "letters/1977/1977-04-03/attachments/attachment-04-april-april-1.jpg",
           "transcription": "",
-          "description": "Tidningsurklipp ur Piteå-Tidningen med rubriken \"April, april...\". Artikeln sammanfattar årets aprilskämt i ett antal norrländska tidningar och avslöjar bland annat att Piteå-Tidningens påstådda oljefyndighet utanför Rosvik var ett aprilskämt. Bilagan förklarar direkt den hänvisning Urban gör i brevet."
+          "description": "Tidningsurklipp ur Piteå-Tidningen med rubriken **\"April, april...\"**. Artikeln sammanfattar årets aprilskämt i ett antal norrländska tidningar och avslöjar bland annat att Piteå-Tidningens påstådda oljefyndighet utanför Rosvik var ett aprilskämt. Bilagan förklarar direkt den hänvisning Urban gör i brevet."
         },
         {
           "type": "attachment",
           "label": "Bilaga 5",
           "title": "Oljefynd kullkastar byggplaner",
-          "image": "letters/1977/1977-03-03/attachments/attachment-05-april-april-2.jpg",
+          "image": "letters/1977/1977-04-03/attachments/attachment-05-april-april-2.jpg",
           "transcription": "",
-          "description": "Tidningsurklipp ur Piteå-Tidningen med rubriken \"Oljefynd kullkastar byggplaner\". Artikeln presenterades som en vanlig nyhet men var Piteå-Tidningens aprilskämt 1977. Urban hänvisar till artikeln i brevet och funderar över vilket av tidningens reportage som egentligen var aprilskämtet."
+          "description": "Tidningsurklipp ur Piteå-Tidningen med rubriken **\"Oljefynd kullkastar byggplaner\"**. Artikeln presenterades som en vanlig nyhet men var Piteå-Tidningens aprilskämt 1977. Urban hänvisar till artikeln i brevet och funderar över vilket av tidningens reportage som egentligen var aprilskämtet."
         }
       ]
     },
