@@ -32,28 +32,45 @@ export async function readSource(source) {
   });
 }
 
-export async function importSource(source, target = "letters.json") {
+export async function importSource(source, target = "letters.json", replaceId) {
   const entry = await readSource(source);
   if (!entry.id) throw new Error("Missing archive object id");
   const original = await readFile(target, "utf8");
   const archive = JSON.parse(original);
-  if (archive.letters.some(item => item.id === entry.id)) throw new Error(`Object already exists: ${entry.id}; review updates manually`);
+  const replaceIndex = replaceId ? archive.letters.findIndex(item => item.id === replaceId) : -1;
+  if (replaceId && replaceIndex < 0) throw new Error(`Object to replace does not exist: ${replaceId}`);
+  if (archive.letters.some((item, index) => index !== replaceIndex && item.id === entry.id)) {
+    throw new Error(`Object already exists: ${entry.id}; review updates manually`);
+  }
   for (const item of entry.items) await readFile(item.image);
-  // Append only; do not reserialize or reimport any curated existing objects.
-  const closing = /\s*\]\s*}\s*$/.exec(original);
-  if (!closing) throw new Error("Expected letters to be the last array in archive JSON");
+  if (entry.archivePhoto) await readFile(entry.archivePhoto.image);
   const eol = original.includes("\r\n") ? "\r\n" : "\n";
-  const serialized = JSON.stringify(entry, null, 2).split("\n").map(line => `    ${line}`).join(eol);
-  const output = original.slice(0, closing.index) + (archive.letters.length ? "," : "") + eol + serialized + closing[0];
+  const serialize = item => JSON.stringify(item, null, 2).split("\n").map(line => `    ${line}`).join(eol);
+  const expected = archive.letters.slice();
+  let output;
+  if (replaceId) {
+    const previous = serialize(expected[replaceIndex]);
+    const start = original.indexOf(previous);
+    if (start < 0) throw new Error(`Unexpected JSON formatting for ${replaceId}`);
+    output = original.slice(0, start) + serialize(entry) + original.slice(start + previous.length);
+    expected[replaceIndex] = entry;
+  } else {
+    // Append without reserializing existing objects.
+    const closing = /\s*\]\s*}\s*$/.exec(original);
+    if (!closing) throw new Error("Expected letters to be the last array in archive JSON");
+    output = original.slice(0, closing.index) + (archive.letters.length ? "," : "") + eol + serialize(entry) + closing[0];
+    expected.push(entry);
+  }
   const checked = JSON.parse(output);
-  if (JSON.stringify(checked.letters.slice(0, -1)) !== JSON.stringify(archive.letters)) throw new Error("Existing archive objects changed");
+  if (JSON.stringify(checked.letters) !== JSON.stringify(expected)) throw new Error("Unexpected archive changes");
   await writeFile(target, output, "utf8");
   return entry;
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
-  const [command, source] = process.argv.slice(2);
+  const [command, source, replaceId] = process.argv.slice(2);
   if (command === "--list") console.log((await discoverSources()).join("\n"));
   else if (command === "--write" && source) console.log(`Imported ${(await importSource(source)).id}`);
-  else throw new Error("Usage: node archive-import.mjs --list | --write <source.md>");
+  else if (command === "--replace" && source && replaceId) console.log(`Imported ${(await importSource(source, "letters.json", replaceId)).id}`);
+  else throw new Error("Usage: node archive-import.mjs --list | --write <source.md> | --replace <source.md> <old-id>");
 }

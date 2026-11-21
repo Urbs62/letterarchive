@@ -13,7 +13,7 @@ const parse = (text, images = []) => parseArchiveMarkdown(text, {
 
 test("discovers all three source types and imports the real artifact without changing text", async () => {
   const sources = await discoverSources();
-  for (const name of [source, "letters/1977/1977-04-04/letter.md", "letters/1977/1977-04-09/postcard.md"]) assert.ok(sources.includes(name));
+  for (const name of [source, "letters/1977/1977-06-30/letter.md", "letters/1977/1977-04-09/postcard.md"]) assert.ok(sources.includes(name));
   const artifact = await readSource(source);
   const text = (await readFile(source, "utf8")).replaceAll("\r\n", "\n");
   assert.equal(artifact.type, "artifact");

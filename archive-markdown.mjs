@@ -103,7 +103,15 @@ function topLevelSections(markdown) {
         .trim();
       return { title: heading.title, content };
     })
-    .filter(({ title }) => title.toLowerCase() !== "metadata");
+    .filter(({ title }) => !["metadata", "kompletterande arkivfoto"].includes(title.toLowerCase()));
+}
+
+function parseArchivePhoto(markdown, folder) {
+  const block = section(markdown, "Kompletterande arkivfoto", "#");
+  if (!block) return undefined;
+  const photo = block.match(/^## ([^\n]+)\n\n!\[[^\]\n]*\]\(([\w-]+\.(?:jpe?g|png|webp))\)\n\n([\s\S]+)$/i);
+  if (!photo) throw new Error("Expected a title, local image and caption for the supplementary archive photo");
+  return { label: photo[1], image: folder + photo[2], caption: photo[3] };
 }
 
 function discoveredImage(defaultName, documentImages) {
@@ -269,6 +277,8 @@ export function parseArchiveMarkdown(markdown, { fileName, folder = "", id, atta
     senderAge: Number.parseInt(age, 10) || undefined,
     type: /vykort|postcard/i.test(sourceType) ? "postcard" : type,
     writingType: metadataField(markdown, "Writing Type", ["Skrivtyp"]) || undefined,
+    readerLayout: type === "letter" && lineField(markdown, ["Läsläge"]) === "sammanhängande" ? "continuous" : undefined,
+    archivePhoto: type === "letter" ? parseArchivePhoto(markdown, folder) : undefined,
     folder,
     postmarked: postmarked || undefined,
     fromPlace: lineField(markdown, ["Från"]) || undefined,

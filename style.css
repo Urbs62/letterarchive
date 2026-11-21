@@ -645,6 +645,10 @@ button:focus-visible {
   margin-bottom: 1.5rem;
 }
 
+.supplementary-archive-photo {
+  width: 100%;
+}
+
 .related-image .original-frame img {
   width: 100%;
   height: auto;

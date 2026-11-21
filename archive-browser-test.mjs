@@ -177,7 +177,7 @@ function cdp(method, params = {}, sessionId) {
     check(card && card.textContent.includes('Efter 1977-04-08'), 'artifact card and date');
     check(card.closest('.year-group').querySelector('h2').textContent === '1977', 'artifact grouped in 1977');
     check(!card.querySelector('time').hasAttribute('datetime'), 'no invented exact datetime');
-    for (const [id, kind] of [['1977-04-04', 'letter'], ['1977-04-09', 'postcard'], ['1977-unknown-intelligenstest', 'artifact'], ['1978-08-16-korsordsfacit', 'artifact'], ['1974-after-eurovision-abba', 'artifact']]) {
+    for (const [id, kind] of [['1977-06-10', 'letter'], ['1977-04-09', 'postcard'], ['1977-unknown-intelligenstest', 'artifact'], ['1978-08-16-korsordsfacit', 'artifact'], ['1974-after-eurovision-abba', 'artifact']]) {
       history.replaceState(null, '', '#brev/' + id);
       handleRoute();
       check(activeLetter.type === kind, id + ' type and route');

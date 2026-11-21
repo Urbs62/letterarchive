@@ -182,6 +182,14 @@ Behåll det separata fotokortet, bildtexten och möjligheten att förstora bilde
 1974-09-17 följer detta beslut. Befintlig lagring och hantering av
 kompletterande bilder enligt nedan är oförändrad.
 
+Ett brev med `Läsläge: sammanhängande` i sina Markdown-metadata visar hela
+transkriptionen med bevarade radbrytningar under **Text** och sidbilderna
+under **Original**. Ett `# Kompletterande arkivfoto` visas under läsaren,
+före sammanfattningen. I Markdown följs avsnittsrubriken av en underrubrik (`##`),
+en lokal Markdown-bildlänk och en bildtext, med en tom rad mellan delarna.
+Importören sparar fotot som `archivePhoto`, separat från brevets fysiska delar
+i `items`.
+
 ### Kompletterande arkivbilder
 
 En arkivdel kan ha `relatedImages`, en lista med `label`, `image`, `caption`
@@ -296,6 +304,7 @@ node archive-markdown.mjs archive-finds/1977-unknown-intelligenstest/artifact.md
 
 # Importera den angivna posten till letters.json:
 node archive-import.mjs --write archive-finds/1977-unknown-intelligenstest/artifact.md
+node archive-import.mjs --replace letters/1977/1977-06-30/letter.md 1977-06-30
 ```
 
 Importen lägger endast till den angivna posten och vägrar skriva över ett

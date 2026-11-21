@@ -63,11 +63,14 @@ function cdp(method, params = {}, sessionId) {
  const check=(v,m)=>{if(!v)throw Error(m)};
  check(!document.querySelector('.image-navigation'),'pagination removed');
  const pages=l.items.filter(i=>i.type==='page');
+ const hasLayout=element=>element.getClientRects().length>0;
  const frames=[...document.querySelectorAll('.original-stage .original-frame')];
+ check(frames.every(hasLayout)&&!hasLayout(document.querySelector('#transcription-panel')),'original mode visible on open');
  await Promise.all(frames.map(f=>f.querySelector('img').decode()));
  check(JSON.stringify(frames.map(f=>f.querySelector('img').getAttribute('src')))===JSON.stringify(pages.map(i=>i.image)),'original order');
  for(const f of frames){f.scrollIntoView({behavior:'instant',block:'center'});const y=scrollY;f.focus({preventScroll:true});f.click();await viewerContent.querySelector('img').decode();check(!viewer.hidden,'lightbox');closeViewer();check(document.activeElement===f&&Math.abs(scrollY-y)<2,'lightbox scroll and focus');}
  document.querySelector('#transcription-tab').click();
+ check(frames.every(frame=>!hasLayout(frame))&&hasLayout(document.querySelector('#transcription-panel')),'text tab hides originals');
  const textPages=l.id==='1978-09-29'?pages.filter(p=>p.transcription):pages;
  const visibleText=s=>l.id==='1976-09-xx'?s.replace(/\\*\\*([^*]+)\\*\\*/g,'$1'):l.id==='1975-08-27'?s.replace(/\\*\\*([^*]+)\\*\\*/g,'$1').replace(/\\*([^*\\n]+)\\*/g,'$1'):s;
  check(JSON.stringify([...document.querySelectorAll('.continuous-document .continuous-text-page')].map(page=>[...page.querySelectorAll('.transcription-text')].map(p=>p.textContent).join('')))===JSON.stringify(textPages.map(i=>visibleText(i.transcription))),'exact text');
@@ -498,6 +501,79 @@ function cdp(method, params = {}, sessionId) {
  }
  }
  assert.equal(await evaluate(`(async()=>{renderLetter(letters.find(l=>l.id==='1976-12-30'));document.querySelector('.letter-view a[href="#brev/1976-unknown-canned-heat-puzzle"]').click();await new Promise(r=>setTimeout(r,100));return activeLetter.id==='1976-unknown-canned-heat-puzzle'&&!!document.querySelector('.letter-view')})()`),true);
- assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-04-04'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
+ assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-06-10'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
+ await cdp('Page.navigate', {url: `http://127.0.0.1:${server.address().port}/#brev/1977-04-04`}, sessionId);
+ for (let n = 0; n < 50 && !await evaluate(`activeLetter?.id === '1977-06-30'`); n++) {
+   await new Promise(resolve => setTimeout(resolve, 100));
+ }
+ assert.equal(await evaluate('location.hash'), '#brev/1977-06-30');
+ for (const width of [1280, 390, 320]) {
+   await cdp('Emulation.setDeviceMetricsOverride', {width, height: 900, deviceScaleFactor: 1, mobile: width < 600}, sessionId);
+   const layout = await evaluate(`(async () => {
+     const check = (condition, message) => { if (!condition) throw Error(message); };
+     const hasLayout = element => element.getClientRects().length > 0;
+     const tabs = [...document.querySelectorAll('[role="tablist"] [role="tab"]')];
+     check(tabs.length === 2 && tabs.map(tab => tab.textContent).join(',') === 'Original,Text' && tabs.every(hasLayout), 'exactly two visible reader tabs');
+     const [originalTab, textTab] = tabs;
+     const textPanel = document.querySelector('#transcription-panel');
+     const originalPanel = document.querySelector('#original-panel');
+     const photo = document.querySelector('.supplementary-archive-photo');
+     const pages = activeLetter.items.filter(item => item.type === 'page');
+     const texts = [...textPanel.querySelectorAll('.continuous-document .transcription-text')];
+     const originals = [...originalPanel.querySelectorAll('.original-stage img')];
+     const checkMode = showOriginal => {
+       check(hasLayout(originalPanel) === showOriginal && hasLayout(textPanel) === !showOriginal, 'only the selected panel is visible');
+       check(originalTab.getAttribute('aria-selected') === String(showOriginal) && textTab.getAttribute('aria-selected') === String(!showOriginal), 'selected tab state');
+       check(originals.every(img => hasLayout(img) === showOriginal) && texts.every(text => hasLayout(text) === !showOriginal), 'pages follow the active tab');
+       check(hasLayout(photo), 'supplementary photo visible in both modes');
+       check(document.documentElement.scrollWidth <= innerWidth, 'no horizontal overflow');
+     };
+     check(!document.querySelector('.image-navigation'), 'no page navigation');
+     check(textPanel.nextElementSibling === photo && !photo.closest('[role="tabpanel"]') && photo.parentElement === originalPanel.parentElement, 'photo after and outside both reader panels');
+     check(texts.length === 15 && originals.length === 15, '15 physical pages');
+     check(document.querySelectorAll('.letter-view .transcription-text').length === 15 && !originalPanel.querySelector('.item-transcription'), 'each transcription appears once and only under Text');
+     check(!textPanel.querySelector('img'), 'no page scans under Text');
+     check(texts.every((text, i) => text.closest('.continuous-text-page').querySelector('h2').textContent === pages[i].label), 'page markers in physical order');
+     check(texts.every((text, i) => text.textContent === pages[i].transcription && getComputedStyle(text).whiteSpace === 'pre-wrap'), 'exact text in physical order');
+     check(originals.every((image, i) => image.getAttribute('src') === pages[i].image), 'original image order');
+     check(originals.every(image => document.querySelectorAll('img[src="' + image.getAttribute('src') + '"]').length === 1), 'each original appears once');
+     checkMode(true);
+     const image = photo.querySelector('img');
+     const button = photo.querySelector('button');
+     check(document.querySelectorAll('img[src="' + activeLetter.archivePhoto.image + '"]').length === 1, 'one supplementary image');
+     check(photo.querySelector('h2').textContent === activeLetter.archivePhoto.label, 'photo heading');
+     check(photo.querySelector('figcaption').textContent === activeLetter.archivePhoto.caption, 'photo caption');
+     for (const original of [...originals, image, originalPanel.querySelector('.continuous-material img')]) {
+       await original.decode();
+       check(original.naturalWidth > 0, 'image decodes');
+     }
+     check(image.getBoundingClientRect().width > originalPanel.clientWidth * 0.8, 'large responsive class photo');
+     const originalButton = originals[0].closest('button');
+     originalButton.scrollIntoView({behavior: 'instant', block: 'center'});
+     originalButton.focus({preventScroll: true});
+     const originalScroll = scrollY;
+     originalButton.click();
+     await viewerContent.querySelector('img').decode();
+     check(!viewer.hidden && viewerContent.querySelector('img').src === originals[0].src, 'original image can be enlarged');
+     closeViewer();
+     check(document.activeElement === originalButton && Math.abs(scrollY - originalScroll) < 2, 'original viewer restores focus and scroll');
+     textTab.click();
+     checkMode(false);
+     button.scrollIntoView({behavior: 'instant', block: 'center'});
+     button.focus({preventScroll: true});
+     button.click();
+     await viewerContent.querySelector('img').decode();
+     check(!viewer.hidden && viewerContent.querySelector('img').src === image.src, 'class photo can be enlarged');
+     closeViewer();
+     check(document.activeElement === button, 'viewer restores focus');
+     document.querySelectorAll('.letter-view details').forEach(details => details.open = true);
+     check(document.documentElement.scrollWidth <= innerWidth, 'no horizontal overflow');
+     originalTab.click();
+     checkMode(true);
+     return innerWidth;
+   })()`);
+   assert.equal(layout, width);
+   console.log(width, '1977-06-30: visible tabs, exact text, original sequence, archive photo and zoom passed');
+ }
  assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1976-12-27,1976-12-30,1977-01-18,1977-03-02,1977-03-29,1977-04-03,1978-07-25,1978-09-29,1979-01-27,1980-10-19'`),true);
 });

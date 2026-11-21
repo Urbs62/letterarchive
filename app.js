@@ -60,6 +60,7 @@ const primarySectionTitles = new Set([
 // other top-level Markdown section is treated as editorial and collapsible, so
 // future analytical headings require no rendering changes.
 const openStructuralSectionTitles = new Set([
+  "arkivnotis",
   "metadata",
   "grunduppgifter",
   "fakta",
@@ -88,6 +89,14 @@ const continuousReadingLetterIds = new Set(["1978-07-25", "1975-08-27", "1974-09
 continuousReadingLetterIds.add("1979-01-27");
 continuousReadingLetterIds.add("1977-03-02");
 continuousReadingLetterIds.add("1977-04-03");
+const legacyLetterIds = new Map([
+  ["1977-03-03", "1977-04-03"],
+  ["1977-04-04", "1977-06-30"]
+]);
+
+function usesContinuousReader(letter) {
+  return letter.readerLayout === "continuous" || continuousReadingLetterIds.has(letter.id);
+}
 const collapsedArchiveYears = new Set();
 
 const swedishDate = new Intl.DateTimeFormat("sv-SE", {
@@ -365,11 +374,11 @@ function imagePositionLabel(letter, index) {
   return `${item.label} · ${index + 1} av ${letter.items.length}`;
 }
 
-function createRelatedImage(image) {
+function createRelatedImage(image, headingText = "Kompletterande arkivbild") {
   const section = document.createElement("aside");
   section.className = "historical-archive-photo related-image";
   const heading = document.createElement("h2");
-  heading.textContent = "Kompletterande arkivbild";
+  heading.textContent = headingText;
   const figure = document.createElement("figure");
   const caption = document.createElement("figcaption");
   caption.textContent = image.caption;
@@ -424,7 +433,7 @@ function createItemHeading(item) {
 
 function moveImage(direction) {
   if (!activeLetter) return;
-  if (continuousReadingLetterIds.has(activeLetter.id)) return;
+  if (usesContinuousReader(activeLetter)) return;
   const nextIndex = activeImageIndex + direction;
   if (nextIndex < 0 || nextIndex >= activeLetter.items.length) return;
   activeImageIndex = nextIndex;
@@ -615,11 +624,14 @@ function appendAdditionalSections(view, letter) {
   );
 
   sections.forEach((archiveSection, index) => {
-    view.append(
-      isOpenStructuralSectionTitle(archiveSection.title)
-        ? createOpenAdditionalSection(archiveSection.title, archiveSection.content, index)
-        : createCollapsibleSection(archiveSection.title, archiveSection.content)
-    );
+    const section = isOpenStructuralSectionTitle(archiveSection.title)
+      ? createOpenAdditionalSection(archiveSection.title, archiveSection.content, index)
+      : createCollapsibleSection(archiveSection.title, archiveSection.content);
+    if (letter.readerLayout === "continuous" && archiveSection.title === "Arkivnotis") {
+      view.querySelector(".letter-heading").after(section);
+    } else {
+      view.append(section);
+    }
   });
 
   if (letter.id === "1976-05-xx") {
@@ -742,6 +754,10 @@ function renderContinuousLetter(letter, view) {
       // Reflow physical line endings while keeping the exact source text in
       // the DOM, including paragraph breaks and transcription annotations.
       transcription.querySelectorAll(".transcription-text").forEach(text => {
+        if (letter.readerLayout === "continuous") {
+          text.classList.add("continuous-preserved");
+          return;
+        }
         if (letter.id === "1979-01-27") return;
         if (letter.id === "1975-08-27" || letter.id === "1976-05-xx" || letter.id === "1976-08-07" || letter.id === "1976-08-27" || letter.id === "1976-09-xx" || letter.id === "1976-11-14" || letter.id === "1976-12-30" || letter.id === "1977-01-18" || letter.id === "1977-03-02" || letter.id === "1977-04-03") return;
         if (letter.id === "1978-07-25" || letter.id === "1974-02-12" || letter.id === "1974-02-19" || letter.id === "1978-09-29" || letter.id === "1974-03-05" || letter.id === "1974-08-23" || letter.id === "1975-05-29" || letter.id === "1975-07-22" || letter.id === "1976-04-20") {
@@ -808,6 +824,12 @@ function renderContinuousLetter(letter, view) {
   }
 }
 
+function createArchivePhoto(photo) {
+  const section = createRelatedImage(photo, photo.label);
+  section.classList.add("supplementary-archive-photo");
+  return section;
+}
+
 function renderLetter(letter) {
   activeLetter = letter;
   activeImageIndex = 0;
@@ -855,6 +877,10 @@ function renderLetter(letter) {
     <button class="next-image" type="button">Nästa <span aria-hidden="true">→</span></button>
   `;
   view.append(navigation);
+
+  if (letter.archivePhoto) {
+    view.append(createArchivePhoto(letter.archivePhoto));
+  }
 
   // Supplementary archival cards follow the complete letter, before analysis.
   if (letter.id === "1976-11-14") {
@@ -911,13 +937,13 @@ function renderLetter(letter) {
   view.querySelectorAll(".mode-tab").forEach((tab) => {
     tab.addEventListener("click", () => setMode(tab.id === "original-tab"));
   });
-  if (continuousReadingLetterIds.has(letter.id)) renderContinuousLetter(letter, view);
+  if (usesContinuousReader(letter)) renderContinuousLetter(letter, view);
   else updateItem();
   app.focus({ preventScroll: true });
   requestAnimationFrame(() => window.scrollTo({
     top: 0,
     left: 0,
-    behavior: continuousReadingLetterIds.has(letter.id) ? "instant" : "auto"
+    behavior: usesContinuousReader(letter) ? "instant" : "auto"
   }));
 }
 
@@ -960,7 +986,7 @@ function handleRoute() {
     return;
   }
   const requestedId = decodeURIComponent(match[1]);
-  const resolvedId = requestedId === "1977-03-03" ? "1977-04-03" : requestedId;
+  const resolvedId = legacyLetterIds.get(requestedId) || requestedId;
   if (resolvedId !== requestedId) history.replaceState(null, "", `#brev/${resolvedId}`);
   const letter = letters.find((item) => item.id === resolvedId);
   if (letter) renderLetter(letter);
