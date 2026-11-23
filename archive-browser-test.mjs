@@ -177,7 +177,7 @@ function cdp(method, params = {}, sessionId) {
     check(card && card.textContent.includes('Efter 1977-04-08'), 'artifact card and date');
     check(card.closest('.year-group').querySelector('h2').textContent === '1977', 'artifact grouped in 1977');
     check(!card.querySelector('time').hasAttribute('datetime'), 'no invented exact datetime');
-    for (const [id, kind] of [['1977-06-10', 'letter'], ['1977-04-09', 'postcard'], ['1977-unknown-intelligenstest', 'artifact'], ['1978-08-16-korsordsfacit', 'artifact'], ['1974-after-eurovision-abba', 'artifact']]) {
+    for (const [id, kind] of [['1976-10-29', 'letter'], ['1977-04-09', 'postcard'], ['1977-unknown-intelligenstest', 'artifact'], ['1978-08-16-korsordsfacit', 'artifact'], ['1974-after-eurovision-abba', 'artifact']]) {
       history.replaceState(null, '', '#brev/' + id);
       handleRoute();
       check(activeLetter.type === kind, id + ' type and route');
@@ -236,10 +236,9 @@ function cdp(method, params = {}, sessionId) {
   })()`);
   assert.ok(results.length > 30);
   console.log(`Browser passed: ${results.length} checks (letter, postcard, artifact; images, text, dates, metadata, sections, navigation).`);
-  for (const width of [1280, 390, 320]) {
-    await cdp('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 }, sessionId);
-    await evaluate(`location.hash = '#brev/1977-05-09'`);
-    for (let attempt = 0; attempt < 50 && !await evaluate(`activeLetter?.id === '1977-05-09'`); attempt++) {
+  async function checkSinglePageReader(width, id, writtenDate) {
+    await evaluate(`location.hash = '#brev/${id}'`);
+    for (let attempt = 0; attempt < 50 && !await evaluate(`activeLetter?.id === '${id}'`); attempt++) {
       await new Promise(resolve => setTimeout(resolve, 100));
     }
     await evaluate(`(async () => {
@@ -249,8 +248,8 @@ function cdp(method, params = {}, sessionId) {
       const original = document.getElementById(originalTab.getAttribute('aria-controls'));
       const text = document.getElementById(textTab.getAttribute('aria-controls'));
       const letter = activeLetter;
-      check(letter.id === '1977-05-09' && document.querySelector('h1 time').dateTime === letter.id, 'archive date');
-      check(letter.writtenDate === '1977-05-07', 'written date');
+      check(letter.id === '${id}' && document.querySelector('h1 time').dateTime === letter.id, 'archive date');
+      check(letter.writtenDate === '${writtenDate}', 'written date');
       check(document.querySelectorAll('.mode-tabs [role=tab]').length === 2, 'exactly two tabs');
       check(originalTab.textContent === 'Original' && textTab.textContent === 'Text', 'tab labels');
       const select = (tab, panel, otherTab, otherPanel) => {
@@ -261,12 +260,18 @@ function cdp(method, params = {}, sessionId) {
         check(visible(panel) && !visible(otherPanel), 'exclusive panel visibility');
       };
       select(textTab, text, originalTab, original);
-      const transcription = text.querySelector('.continuous-document .transcription-text');
-      check(transcription?.textContent === letter.items.find(item => item.type === 'page').transcription, 'complete exact transcription');
+      const letterTexts = text.querySelectorAll('.continuous-document .transcription-text');
+      const [transcription] = letterTexts;
+      check(letterTexts.length === 1 && visible(transcription) && transcription.textContent === letter.items.find(item => item.type === 'page').transcription, 'one visible complete transcription');
       check(getComputedStyle(transcription).whiteSpace === 'pre-wrap' && !transcription.querySelector('.continuous-paragraph'), 'preserved whitespace');
       const textMaterial = text.querySelector('.continuous-material');
       if (!textMaterial.open) textMaterial.querySelector('summary').click();
       check(textMaterial.open && !text.querySelector('img'), 'no photographs in Text, including expanded envelope material');
+      const envelopeTexts = [...textMaterial.querySelectorAll('.transcription-text')];
+      const envelopeItems = letter.items.filter(item => item.type.startsWith('envelope-'));
+      check(envelopeTexts.length === 2 && envelopeTexts.every((node, index) =>
+        visible(node) && getComputedStyle(node).whiteSpace === 'pre-wrap' &&
+        node.textContent === envelopeItems[index].transcription), 'both visible envelope transcriptions preserve whitespace');
       select(originalTab, original, textTab, text);
       const pages = original.querySelectorAll('.original-stage .original-frame');
       check(pages.length === 1 && !original.querySelector('.transcription-text'), 'one original page and no transcription');
@@ -275,7 +280,7 @@ function cdp(method, params = {}, sessionId) {
       const envelopes = [...material.querySelectorAll('.original-frame')];
       const frames = [...pages, ...envelopes];
       const filenames = ['page-01.jpg', 'envelope-front.jpg', 'envelope-back.jpg'];
-      check(frames.length === filenames.length, 'page and both envelope photographs');
+      check(frames.length === filenames.length && original.querySelectorAll('img').length === filenames.length, 'page and both envelope photographs, without duplicates');
       for (const [index, frame] of frames.entries()) {
         frame.scrollIntoView({ behavior: 'instant', block: 'center' });
         const image = frame.querySelector('img');
@@ -296,6 +301,11 @@ function cdp(method, params = {}, sessionId) {
       select(originalTab, original, textTab, text);
       material.open = false;
     })()`);
-    console.log(`1977-05-09 reader passed at ${width}px`);
+    console.log(`${id} reader passed at ${width}px`);
+  }
+  for (const width of [1280, 390, 320]) {
+    await cdp('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 }, sessionId);
+    await checkSinglePageReader(width, '1977-05-09', '1977-05-07');
+    await checkSinglePageReader(width, '1977-06-10', '1977-06-06');
   }
 });

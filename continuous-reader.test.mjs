@@ -501,7 +501,7 @@ function cdp(method, params = {}, sessionId) {
  }
  }
  assert.equal(await evaluate(`(async()=>{renderLetter(letters.find(l=>l.id==='1976-12-30'));document.querySelector('.letter-view a[href="#brev/1976-unknown-canned-heat-puzzle"]').click();await new Promise(r=>setTimeout(r,100));return activeLetter.id==='1976-unknown-canned-heat-puzzle'&&!!document.querySelector('.letter-view')})()`),true);
- assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1977-06-10'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
+ assert.equal(await evaluate(`renderLetter(letters.find(l=>l.id==='1976-10-29'));document.querySelector('.next-image').click();activeImageIndex===1&&!document.querySelector('.continuous-reading')`),true);
  await cdp('Page.navigate', {url: `http://127.0.0.1:${server.address().port}/#brev/1977-04-04`}, sessionId);
  for (let n = 0; n < 50 && !await evaluate(`activeLetter?.id === '1977-06-30'`); n++) {
    await new Promise(resolve => setTimeout(resolve, 100));

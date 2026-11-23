@@ -1,33 +1,24 @@
-# Letter Archive Source
+# Metadata
 
-## Date
+- Datum: 1977-06-10
+- Skrivstart: 1977-06-06
+- Poststämplat: 1977-06-10
+- Från: Piteå
+- Till: Mölndal
+- Typ: Brev
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Avsändarens ålder: 15 år
+- Skrivtyp: handwritten
+- Läsläge: sammanhängande
 
-1977-06-10
+# Kuvert
 
-## Postmarked
-
-1977-06-10 (Piteå)
-
-## Location
-
-Piteå
-
-## Description
-
-Ett kort brev skrivet under den sista fysiklektionen före sommarlovet. Klassen avslutar lektionen med en frågesport där fyra lag tävlar mot varandra. Urban beskriver tävlingen medan den pågår och redovisar slutresultatet direkt i brevet.
-
----
-
-# Envelope
-
-## Front
-
-### Description
-
-Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Frankerat med ett svenskt frimärke på 1,10 kr. Två tydliga poststämplar från Piteå visar datumet 10.6.77.
+## Framsida
 
 ### Transcription
 
+```text
 Poststämpel:
 
 PITEÅ
@@ -41,17 +32,17 @@ Ulf Sandlund
 Safjällsgatan 16
 
 431 39 Mölndal 3
-
----
-
-## Back
+```
 
 ### Description
 
-Kuvertets baksida innehåller ett färgglatt doftklistermärke föreställande två barn med godis och en katt. Klistermärket började lukta godis när man gnuggade på det. Urban har dessutom skrivit några korta meddelanden, en ordvits och en namnsdagshälsning.
+Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Frankerat med ett svenskt frimärke på 1,10 kr. Två tydliga poststämplar från Piteå visar datumet 10.6.77.
+
+## Baksida
 
 ### Transcription
 
+```text
 Avsändare:
 
 AVS. Urban Sandlund
@@ -83,60 +74,51 @@ Gnugga, och
 vips får du
 lite god-
 lukt.
-
-### Notes
-
-Doftklistermärken var populära under 1970-talet. Urban uppmanar Ulf att gnugga på märket så att doften framträder, vilket gör själva kuvertet till en del av upplevelsen.
-
----
-
-# Letter
-
-## Page 1
+```
 
 ### Description
 
-Det enda brevet i försändelsen. Urban skriver direkt från fysiklektionen där klassen har sin sista fysiklektion för terminen. Lektionen avslutas med en frågesport mellan fyra lag.
+Kuvertets baksida innehåller ett färgglatt doftklistermärke föreställande två barn med godis och en katt. Klistermärket började lukta godis när man gnuggade på det. Urban har dessutom skrivit några korta meddelanden, en ordvits och en namnsdagshälsning.
+
+Doftklistermärken var populära under 1970-talet. Urban uppmanar Ulf att gnugga på märket så att doften framträder, vilket gör själva kuvertet till en del av upplevelsen.
+
+# Transkription
+
+## Sida 1
 
 ### Transcription
 
+```text
 Piteå 77.06.06. Fysikrummet.
 
 Hej,
 
-Det är nu sista gången vi har
-fysik. Det ska vi fira med en
-frågesport. Hogert är ledare. Vi
-ska bilda 4 lag med 5 i varje.
-Vårt lag består av Wesslan, Bengt,
-Kattis, och jag. Hogert ställer en
-fråga. Den som först räcker upp
-handen får svara. Vi är lag 1.
-
+Det är nu sista gången vi har fysik. Det ska vi fira med en
+frågesport. Hogert är ledare. Vi ska bilda 4 lag med 5 i varje.
+Vårt lag består av Wesslan, Bengt, Kattis, och jag.
+Hogert ställer en fråga. Den som först räcker upp handen får svara.
+Vi är lag 1.
 Vi leder med 8 p.
 
 Resultat av tävling.
-
 Lag 1 – 13 p
-
 Lag 2 – 12 p
-
 Lag 3 – 5 p
-
 Lag 4 – 0 p
-
 Seger.
 
 Hej då.
 
-PS Ett byggare brev kommer
-nog snart.
+PS Ett biggare brev kommer nog snart.
+```
 
-### Notes
+### Description
+
+Ett kort brev skrivet under den sista fysiklektionen före sommarlovet. Klassen avslutar lektionen med en frågesport där fyra lag tävlar mot varandra. Urban beskriver tävlingen medan den pågår och redovisar slutresultatet direkt i brevet.
+
+Det enda brevet i försändelsen. Urban skriver direkt från fysiklektionen där klassen har sin sista fysiklektion för terminen. Lektionen avslutas med en frågesport mellan fyra lag.
 
 Brevet skrevs mitt under den pågående lektionen. Urban uppdaterar brevet medan frågesporten pågår och avslutar med det slutliga resultatet där lag 1 vinner.
-
----
 
 # Summary
 

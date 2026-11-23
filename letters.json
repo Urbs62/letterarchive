@@ -584,12 +584,32 @@
     {
       "id": "1977-06-10",
       "date": "1977-06-10",
-      "postmarked": "1977-06-10",
-      "from": "Urban",
-      "to": "Ulf",
+      "writtenDate": "1977-06-06",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
       "senderAge": 15,
-      "type": "handwritten",
+      "type": "letter",
+      "writingType": "handwritten",
+      "readerLayout": "continuous",
+      "folder": "letters/1977/1977-06-10/",
+      "postmarked": "1977-06-10",
+      "fromPlace": "Piteå",
+      "toPlace": "Mölndal",
       "summary": "Detta är ett ovanligt ögonblicksdokument från den 6 juni 1977. Till skillnad från de längre breven skrevs detta mitt under en fysiklektion när klassen genomförde en frågesport som avslutning på terminen.\n\nBrevet fångar stämningen i klassrummet i realtid. Urban berättar om lagindelningen, hur tävlingen går till och redovisar resultatet direkt när den är avgjord. Tillsammans med kuvertets doftklistermärke och den personliga namnsdagshälsningen ger försändelsen en levande bild av vardagen mellan två kusiner under 1970-talet.\n\nDet korta formatet gör brevet till ett fint komplement till de mer omfattande breven i samlingen och visar att även små vardagshändelser ansågs värda att dela.",
+      "sections": [
+        {
+          "title": "Kuvert",
+          "content": "## Framsida\n\n### Transcription\n\n```text\nPoststämpel:\n\nPITEÅ\n\n10.6.77\n\nMottagare:\n\nUlf Sandlund\n\nSafjällsgatan 16\n\n431 39 Mölndal 3\n```\n\n### Description\n\nBrunt kuvert adresserat till Ulf Sandlund i Mölndal. Frankerat med ett svenskt frimärke på 1,10 kr. Två tydliga poststämplar från Piteå visar datumet 10.6.77.\n\n## Baksida\n\n### Transcription\n\n```text\nAvsändare:\n\nAVS. Urban Sandlund\n\nDegermansgatan 3\n\n941 00 PITEÅ 1\n\n\nIfall du inte vill sprätta upp\nkuväret går det bra att ånga\nupp det.\n\n\nFinkan är ett hem för gubbar\nsom gjort bort sej genom nubbar.\n\n\nGrattis på namnsdagen, Ulf.\n\n\nHandskriven notering:\n\nGnugga, och\nvips får du\nlite god-\nlukt.\n```\n\n### Description\n\nKuvertets baksida innehåller ett färgglatt doftklistermärke föreställande två barn med godis och en katt. Klistermärket började lukta godis när man gnuggade på det. Urban har dessutom skrivit några korta meddelanden, en ordvits och en namnsdagshälsning.\n\nDoftklistermärken var populära under 1970-talet. Urban uppmanar Ulf att gnugga på märket så att doften framträder, vilket gör själva kuvertet till en del av upplevelsen."
+        },
+        {
+          "title": "Transkription",
+          "content": "## Sida 1\n\n### Transcription\n\n```text\nPiteå 77.06.06. Fysikrummet.\n\nHej,\n\nDet är nu sista gången vi har fysik. Det ska vi fira med en\nfrågesport. Hogert är ledare. Vi ska bilda 4 lag med 5 i varje.\nVårt lag består av Wesslan, Bengt, Kattis, och jag.\nHogert ställer en fråga. Den som först räcker upp handen får svara.\nVi är lag 1.\nVi leder med 8 p.\n\nResultat av tävling.\nLag 1 – 13 p\nLag 2 – 12 p\nLag 3 – 5 p\nLag 4 – 0 p\nSeger.\n\nHej då.\n\nPS Ett biggare brev kommer nog snart.\n```\n\n### Description\n\nEtt kort brev skrivet under den sista fysiklektionen före sommarlovet. Klassen avslutar lektionen med en frågesport där fyra lag tävlar mot varandra. Urban beskriver tävlingen medan den pågår och redovisar slutresultatet direkt i brevet.\n\nDet enda brevet i försändelsen. Urban skriver direkt från fysiklektionen där klassen har sin sista fysiklektion för terminen. Lektionen avslutas med en frågesport mellan fyra lag.\n\nBrevet skrevs mitt under den pågående lektionen. Urban uppdaterar brevet medan frågesporten pågår och avslutar med det slutliga resultatet där lag 1 vinner."
+        },
+        {
+          "title": "Summary",
+          "content": "Detta är ett ovanligt ögonblicksdokument från den 6 juni 1977. Till skillnad från de längre breven skrevs detta mitt under en fysiklektion när klassen genomförde en frågesport som avslutning på terminen.\n\nBrevet fångar stämningen i klassrummet i realtid. Urban berättar om lagindelningen, hur tävlingen går till och redovisar resultatet direkt när den är avgjord. Tillsammans med kuvertets doftklistermärke och den personliga namnsdagshälsningen ger försändelsen en levande bild av vardagen mellan två kusiner under 1970-talet.\n\nDet korta formatet gör brevet till ett fint komplement till de mer omfattande breven i samlingen och visar att även små vardagshändelser ansågs värda att dela."
+        }
+      ],
       "items": [
         {
           "type": "envelope-front",
@@ -610,7 +630,7 @@
           "page": 1,
           "label": "Sida 1",
           "image": "letters/1977/1977-06-10/page-01.jpg",
-          "transcription": "Piteå 77.06.06. Fysikrummet.\n\nHej,\n\nDet är nu sista gången vi har\nfysik. Det ska vi fira med en\nfrågesport. Hogert är ledare. Vi\nska bilda 4 lag med 5 i varje.\nVårt lag består av Wesslan, Bengt,\nKattis, och jag. Hogert ställer en\nfråga. Den som först räcker upp\nhanden får svara. Vi är lag 1.\n\nVi leder med 8 p.\n\nResultat av tävling.\n\nLag 1 – 13 p\n\nLag 2 – 12 p\n\nLag 3 – 5 p\n\nLag 4 – 0 p\n\nSeger.\n\nHej då.\n\nPS Ett byggare brev kommer\nnog snart.",
+          "transcription": "Piteå 77.06.06. Fysikrummet.\n\nHej,\n\nDet är nu sista gången vi har fysik. Det ska vi fira med en\nfrågesport. Hogert är ledare. Vi ska bilda 4 lag med 5 i varje.\nVårt lag består av Wesslan, Bengt, Kattis, och jag.\nHogert ställer en fråga. Den som först räcker upp handen får svara.\nVi är lag 1.\nVi leder med 8 p.\n\nResultat av tävling.\nLag 1 – 13 p\nLag 2 – 12 p\nLag 3 – 5 p\nLag 4 – 0 p\nSeger.\n\nHej då.\n\nPS Ett biggare brev kommer nog snart.",
           "description": "Ett kort brev skrivet under den sista fysiklektionen före sommarlovet. Klassen avslutar lektionen med en frågesport där fyra lag tävlar mot varandra. Urban beskriver tävlingen medan den pågår och redovisar slutresultatet direkt i brevet.\n\nDet enda brevet i försändelsen. Urban skriver direkt från fysiklektionen där klassen har sin sista fysiklektion för terminen. Lektionen avslutas med en frågesport mellan fyra lag.\n\nBrevet skrevs mitt under den pågående lektionen. Urban uppdaterar brevet medan frågesporten pågår och avslutar med det slutliga resultatet där lag 1 vinner."
         }
       ]
