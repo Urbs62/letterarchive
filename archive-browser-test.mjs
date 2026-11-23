@@ -272,6 +272,29 @@ function cdp(method, params = {}, sessionId) {
       check(envelopeTexts.length === 2 && envelopeTexts.every((node, index) =>
         visible(node) && getComputedStyle(node).whiteSpace === 'pre-wrap' &&
         node.textContent === envelopeItems[index].transcription), 'both visible envelope transcriptions preserve whitespace');
+      const lineTop = (element, offset) => {
+        const range = document.createRange();
+        range.setStart(element.firstChild, offset);
+        range.setEnd(element.firstChild, offset + 1);
+        return range.getBoundingClientRect().top;
+      };
+      const front = envelopeTexts[0];
+      const addressTops = ['Ulf Sandlund', 'Safjällsgatan', '431 39'].map(line => {
+        const offset = front.textContent.indexOf(line);
+        check(offset >= 0, 'address line present: ' + line);
+        return lineTop(front, offset);
+      });
+      const envelopeLineHeight = parseFloat(getComputedStyle(front).lineHeight);
+      check(addressTops.slice(1).every((top, index) =>
+        Math.abs(top - addressTops[index] - envelopeLineHeight) < 1), 'address lines are one line apart');
+      const greeting = transcription.textContent.indexOf('Hej');
+      check(greeting > 0, 'letter greeting present');
+      const letterLineHeight = parseFloat(getComputedStyle(transcription).lineHeight);
+      check(Math.abs(lineTop(transcription, greeting) - lineTop(transcription, 0) - 2 * letterLineHeight) < 1,
+        'intentional blank line before greeting is visible');
+      const afterGreeting = transcription.textContent.indexOf('\\n', greeting) + 1;
+      check(Math.abs(lineTop(transcription, afterGreeting) - lineTop(transcription, greeting) - letterLineHeight) < 1,
+        'body follows greeting on the next line');
       select(originalTab, original, textTab, text);
       const pages = original.querySelectorAll('.original-stage .original-frame');
       check(pages.length === 1 && !original.querySelector('.transcription-text'), 'one original page and no transcription');

@@ -32,11 +32,15 @@ test("1977-05-09 imports the tabbed reader with the original dates and materials
 
 test("1977-05-09 preserves the manually reviewed transcription and summary", async () => {
   const markdown = (await readFile(source, "utf8")).replaceAll("\r\n", "\n");
-  const [, transcription] = markdown.match(/## Sida 1\n[\s\S]*?\n```text\n([\s\S]*?)\n```/);
+  const blocks = [...markdown.matchAll(/^```text\n([\s\S]*?)\n```$/gm)].map(match => match[1]);
   const imported = await readSource(source);
   // Hashes from the supplied Markdown, with LF line endings for portability.
-  assert.equal(sha256(transcription), "64aa36b3d402f6fdecb2731b8fd46fd6a144585d04cd9ea6374ab18c7e16c427");
-  assert.equal(imported.items.find(item => item.type === "page").transcription, transcription);
+  assert.deepEqual(blocks.map(sha256), [
+    "b6f6e93011980cec8076a4f12716fcc3c1d9c411043ce82da971f6b6b69a6813",
+    "27a80502b714cbf3bbf9b161de15e4287ef1df268039e5eac65ef36c8df0afb6",
+    "24de3e3d3a957269598429e9d63d53c133d905639221fc35880ca542f367e255"
+  ]);
+  assert.deepEqual(imported.items.map(item => item.transcription), blocks);
   assert.equal(sha256(imported.summary), "6e1ba2bb54e06aef27a0328362249d856318d315ae875be6ea4e171de875386a");
 });
 

@@ -32,9 +32,9 @@ test("1977-06-10 imports one letter page and preserves the complete source", asy
   const blocks = [...markdown.matchAll(/^\x60{3}text\n([\s\S]*?)\n\x60{3}$/gm)].map(match => match[1]);
   assert.deepEqual(imported.items.map(item => item.transcription), blocks);
   assert.deepEqual(blocks.map(sha256), [
-    "8e714bc09c41d0768fef78326d26418c0555328e266ce3ed6674ca1b999a6992",
-    "11c8da6af4e5d1ff18425e0fe62da18d1a961ee2deb0cd3a442237e19ebce563",
-    "9476dc8f815edae67e65518c5d0cfdcd4c56a83612f64f2589082e98be434ab0"
+    "940aa0d8472f389760b39c442528398e01a2d93b2c62b2155fe9654426c5896d",
+    "262b4c4624af0d223569a97f89ca1b338a9a6526e09e265fdcc5902d70ba33b6",
+    "8ee8edc0d516707a21e16caf667b887b8d8c8c61bc35e926eb59a07ecdf11dfe"
   ]);
   assert.deepEqual(imported.items.map(item => sha256(item.description)), [
     "6a8bfb9447ed8b7a9e14ce9fa78e690c2160fc271f4665f6c90107bd62c07c97",

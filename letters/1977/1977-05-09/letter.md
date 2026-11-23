@@ -54,7 +54,6 @@ Kuvert från Esso Motor Hotel.
 **Avsändare**
 
 A.V.S.
-
 Urban Sandlund  
 Degermansgatan 3  
 941 00 Piteå
@@ -72,7 +71,6 @@ Degermansgatan 3
 Stockholm 77.05.07
 
 Hej Ulf!
-
 Det är kusin Urban som skriver. Jag skulle skriva igår när vi
 kom fram, men jag hade ingen penna. Nu har jag fått en av Sixten Hedkvist, tabbens pappa. Vi ligger på Esso Motor Hotel. Järva Krog i Stockholm. Idag tävlade jag.
 Sträcka: 28 km. Tid: 40.24.

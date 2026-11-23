@@ -21,16 +21,10 @@
 ```text
 Poststämpel:
 
-PITEÅ
-
-10.6.77
-
+PITEÅ 10.6.77
 Mottagare:
-
 Ulf Sandlund
-
 Safjällsgatan 16
-
 431 39 Mölndal 3
 ```
 
@@ -44,36 +38,22 @@ Brunt kuvert adresserat till Ulf Sandlund i Mölndal. Frankerat med ett svenskt 
 
 ```text
 Avsändare:
-
 AVS. Urban Sandlund
-
 Degermansgatan 3
-
 941 00 PITEÅ 1
 
 ---
-
 Ifall du inte vill sprätta upp
 kuväret går det bra att ånga
 upp det.
-
 ---
-
 Finkan är ett hem för gubbar
 som gjort bort sej genom nubbar.
-
 ---
-
 Grattis på namnsdagen, Ulf.
-
 ---
-
 Handskriven notering:
-
-Gnugga, och
-vips får du
-lite god-
-lukt.
+Gnugga, och vips får du lite godlukt.
 ```
 
 ### Description
@@ -92,7 +72,6 @@ Doftklistermärken var populära under 1970-talet. Urban uppmanar Ulf att gnugga
 Piteå 77.06.06. Fysikrummet.
 
 Hej,
-
 Det är nu sista gången vi har fysik. Det ska vi fira med en
 frågesport. Hogert är ledare. Vi ska bilda 4 lag med 5 i varje.
 Vårt lag består av Wesslan, Bengt, Kattis, och jag.
@@ -108,7 +87,6 @@ Lag 4 – 0 p
 Seger.
 
 Hej då.
-
 PS Ett biggare brev kommer nog snart.
 ```
 
