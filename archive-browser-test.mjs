@@ -236,4 +236,66 @@ function cdp(method, params = {}, sessionId) {
   })()`);
   assert.ok(results.length > 30);
   console.log(`Browser passed: ${results.length} checks (letter, postcard, artifact; images, text, dates, metadata, sections, navigation).`);
+  for (const width of [1280, 390, 320]) {
+    await cdp('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 }, sessionId);
+    await evaluate(`location.hash = '#brev/1977-05-09'`);
+    for (let attempt = 0; attempt < 50 && !await evaluate(`activeLetter?.id === '1977-05-09'`); attempt++) {
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+    await evaluate(`(async () => {
+      const check = (condition, message) => { if (!condition) throw new Error(message); };
+      const visible = element => element.getClientRects().length > 0;
+      const [originalTab, textTab] = document.querySelectorAll('.mode-tabs [role=tab]');
+      const original = document.getElementById(originalTab.getAttribute('aria-controls'));
+      const text = document.getElementById(textTab.getAttribute('aria-controls'));
+      const letter = activeLetter;
+      check(letter.id === '1977-05-09' && document.querySelector('h1 time').dateTime === letter.id, 'archive date');
+      check(letter.writtenDate === '1977-05-07', 'written date');
+      check(document.querySelectorAll('.mode-tabs [role=tab]').length === 2, 'exactly two tabs');
+      check(originalTab.textContent === 'Original' && textTab.textContent === 'Text', 'tab labels');
+      const select = (tab, panel, otherTab, otherPanel) => {
+        const { x, y, width, height } = tab.getBoundingClientRect();
+        check(width && height && tab.contains(document.elementFromPoint(x + width / 2, y + height / 2)), 'tab is visible and clickable');
+        tab.click();
+        check(tab.getAttribute('aria-selected') === 'true' && otherTab.getAttribute('aria-selected') === 'false', 'tab selection');
+        check(visible(panel) && !visible(otherPanel), 'exclusive panel visibility');
+      };
+      select(textTab, text, originalTab, original);
+      const transcription = text.querySelector('.continuous-document .transcription-text');
+      check(transcription?.textContent === letter.items.find(item => item.type === 'page').transcription, 'complete exact transcription');
+      check(getComputedStyle(transcription).whiteSpace === 'pre-wrap' && !transcription.querySelector('.continuous-paragraph'), 'preserved whitespace');
+      const textMaterial = text.querySelector('.continuous-material');
+      if (!textMaterial.open) textMaterial.querySelector('summary').click();
+      check(textMaterial.open && !text.querySelector('img'), 'no photographs in Text, including expanded envelope material');
+      select(originalTab, original, textTab, text);
+      const pages = original.querySelectorAll('.original-stage .original-frame');
+      check(pages.length === 1 && !original.querySelector('.transcription-text'), 'one original page and no transcription');
+      const material = original.querySelector('.continuous-material');
+      material.querySelector('summary').click();
+      const envelopes = [...material.querySelectorAll('.original-frame')];
+      const frames = [...pages, ...envelopes];
+      const filenames = ['page-01.jpg', 'envelope-front.jpg', 'envelope-back.jpg'];
+      check(frames.length === filenames.length, 'page and both envelope photographs');
+      for (const [index, frame] of frames.entries()) {
+        frame.scrollIntoView({ behavior: 'instant', block: 'center' });
+        const image = frame.querySelector('img');
+        await image.decode();
+        check(visible(image) && image.getAttribute('src') === letter.folder + filenames[index], 'visible original photograph');
+        frame.focus({ preventScroll: true });
+        frame.click();
+        const enlarged = viewerContent.querySelector('img');
+        await enlarged.decode();
+        check(visible(viewer) && enlarged.src === image.src && enlarged.naturalWidth > 0, 'photograph opens in zoom viewer');
+        viewerClose.click();
+        check(!visible(viewer) && document.activeElement === frame, 'viewer closes and restores focus');
+      }
+      check(document.documentElement.scrollWidth <= innerWidth && innerWidth === ${width}, 'reader fits viewport');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      select(textTab, text, originalTab, original);
+      check(visible(transcription), 'return to Text');
+      select(originalTab, original, textTab, text);
+      material.open = false;
+    })()`);
+    console.log(`1977-05-09 reader passed at ${width}px`);
+  }
 });

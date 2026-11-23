@@ -745,25 +745,45 @@
     {
       "id": "1977-05-09",
       "date": "1977-05-09",
-      "postmarked": "1977-05-09",
-      "from": "Urban",
-      "to": "Ulf",
+      "writtenDate": "1977-05-07",
+      "from": "Urban Sandlund",
+      "to": "Ulf Sandlund",
       "senderAge": 14,
-      "type": "handwritten",
+      "type": "letter",
+      "writingType": "handwritten",
+      "readerLayout": "continuous",
+      "folder": "letters/1977/1977-05-09/",
+      "postmarked": "1977-05-09",
+      "fromPlace": "Stockholm (Esso Motor Hotel, Järva Krog)",
+      "toPlace": "Mölndal",
       "summary": "Urban skriver brevet från Esso Motor Hotel vid Järva Krog i Stockholm under en tävlingshelg. Han berättar att han glömde skriva dagen innan eftersom han saknade penna, men har nu fått låna en av Sixten Hedkvist, tabbens pappa.\n\nHan redovisar dagens cykeltävling med stor noggrannhet: sträckan var 28 kilometer, tiden 40.24 och han kom på åttonde plats bland 75 startande (88 anmälda). Som pris vann han en cykelflaska.\n\nUrban berättar vilka som bor i hotellrummen, att de planerar att besöka Gröna Lund på kvällen och att nästa dags tävling ska köras i Järfälla. Han nämner flera cykelkamrater vid namn, bland andra boman, tabbe, sixten, nyström, lundberg, fors och gunnar.\n\nBrevet avslutas med att Urban skickar med en tändsticksask och berättar att Jörgen och tabbe gör pappersflygplan av hotellets brevpapper.",
+      "sections": [
+        {
+          "title": "Kuvert",
+          "content": "## Framsida\n\n![Kuvert framsida](envelope-front.jpg)\n\n### Transcription\n\n```text\n**Mottagare**\n\nUlf Sandlund  \nSafjällsgatan 16  \n431 39 Mölndal\n\n**Poststämpel**\n\nSolna 1977-05-09\n```\n\n### Description\n\n**Frimärken**\n\nTvå svenska 55-öres frimärken.\n\n**Övrigt**\n\nKuvert från Esso Motor Hotel.\n\n## Baksida\n\n![Kuvert baksida](envelope-back.jpg)\n\n### Transcription\n\n```text\n**Avsändare**\n\nA.V.S.\n\nUrban Sandlund  \nDegermansgatan 3  \n941 00 Piteå\n```"
+        },
+        {
+          "title": "Transkription",
+          "content": "## Sida 1\n\n![Page 01](page-01.jpg)\n\n### Transcription\n\n```text\nStockholm 77.05.07\n\nHej Ulf!\n\nDet är kusin Urban som skriver. Jag skulle skriva igår när vi\nkom fram, men jag hade ingen penna. Nu har jag fått en av Sixten Hedkvist, tabbens pappa. Vi ligger på Esso Motor Hotel. Järva Krog i Stockholm. Idag tävlade jag.\nSträcka: 28 km. Tid: 40.24.\nAnmälda: 88. Startande: 75. Plac.: 8.\n\nMycket bra. Vi ligger i ett fyrabäddarsrum. Jag, boman, tabbe, sixten och jörgan dalberg. Snart ska jag ringa hem.\n\nImorgon väntar tävling i Järfälla. I andra rummet ligger nyström, lundberg, fors, gunnar och Lars Lundberg.\n\nIkväll ska vi till Gröna Lund. På tävlingen vann jag en cykelflaska.\n\nJörgen och tabbe gör pappersflygplan av sånt här papper. Skickar med en\ntändsticksask fastän jag vet att du har denna.\n\nHälsningar\n\nUrban\n```\n\n### Description\n\nBrevet är skrivet på Esso Motor Hotels brevpapper under en tävlingshelg i Stockholm."
+        },
+        {
+          "title": "Sammanfattning",
+          "content": "Urban skriver brevet från Esso Motor Hotel vid Järva Krog i Stockholm under en tävlingshelg. Han berättar att han glömde skriva dagen innan eftersom han saknade penna, men har nu fått låna en av Sixten Hedkvist, tabbens pappa.\n\nHan redovisar dagens cykeltävling med stor noggrannhet: sträckan var 28 kilometer, tiden 40.24 och han kom på åttonde plats bland 75 startande (88 anmälda). Som pris vann han en cykelflaska.\n\nUrban berättar vilka som bor i hotellrummen, att de planerar att besöka Gröna Lund på kvällen och att nästa dags tävling ska köras i Järfälla. Han nämner flera cykelkamrater vid namn, bland andra boman, tabbe, sixten, nyström, lundberg, fors och gunnar.\n\nBrevet avslutas med att Urban skickar med en tändsticksask och berättar att Jörgen och tabbe gör pappersflygplan av hotellets brevpapper."
+        }
+      ],
       "items": [
         {
           "type": "envelope-front",
           "label": "Kuvert framsida",
           "image": "letters/1977/1977-05-09/envelope-front.jpg",
-          "transcription": "Ulf Sandlund\nSafjällsgatan 16\n431 39 Mölndal\n\nSolna 1977-05-09",
-          "description": "Kuvert från Esso Motor Hotel med två svenska 55-öres frimärken."
+          "transcription": "**Mottagare**\n\nUlf Sandlund  \nSafjällsgatan 16  \n431 39 Mölndal\n\n**Poststämpel**\n\nSolna 1977-05-09",
+          "description": "**Frimärken**\n\nTvå svenska 55-öres frimärken.\n\n**Övrigt**\n\nKuvert från Esso Motor Hotel."
         },
         {
           "type": "envelope-back",
           "label": "Kuvert baksida",
           "image": "letters/1977/1977-05-09/envelope-back.jpg",
-          "transcription": "A.V.S.\n\nUrban Sandlund\nDegermansgatan 3\n941 00 Piteå",
+          "transcription": "**Avsändare**\n\nA.V.S.\n\nUrban Sandlund  \nDegermansgatan 3  \n941 00 Piteå",
           "description": ""
         },
         {
@@ -771,7 +791,7 @@
           "page": 1,
           "label": "Sida 1",
           "image": "letters/1977/1977-05-09/page-01.jpg",
-          "transcription": "Stockholm 77.05.07\n\nHej Ulf!\n\nDet är kusin Urban som skriver.\nJag skulle skriva igår när vi\nkom fram, men jag hade ingen\npenna. Nu har jag fått\nen av Sixten Hedkvist, tabbens\npappa. Vi ligger på Esso Motor\nHotel. Järva Krog i Stockholm. Idag\ntävlade jag. Sträcka: 28 km. Tid: 40.24.\nAnmälda: 88. Startande: 75. Plac.: 8.\n\nMycket bra. Vi ligger i ett\nfyrabäddarsrum. Jag, boman, tabbe, sixten och\njörgan dalberg. Snart ska\njag ringa hem.\n\nImorgon väntar tävling\ni Järfälla. I andra\nrummet ligger nyström,\nlundberg, fors, gunnar\noch Lars Lundberg.\n\nIkväll ska vi till\nGröna Lund. På tävlingen vann\njag en cykelflaska.\n\nJörgen och tabbe\ngör pappersflygplan av\nsånt här papper. Skickar med en\ntändsticksask fastän jag vet att\ndu har denna.\n\nHälsningar\n\nUrban",
+          "transcription": "Stockholm 77.05.07\n\nHej Ulf!\n\nDet är kusin Urban som skriver. Jag skulle skriva igår när vi\nkom fram, men jag hade ingen penna. Nu har jag fått en av Sixten Hedkvist, tabbens pappa. Vi ligger på Esso Motor Hotel. Järva Krog i Stockholm. Idag tävlade jag.\nSträcka: 28 km. Tid: 40.24.\nAnmälda: 88. Startande: 75. Plac.: 8.\n\nMycket bra. Vi ligger i ett fyrabäddarsrum. Jag, boman, tabbe, sixten och jörgan dalberg. Snart ska jag ringa hem.\n\nImorgon väntar tävling i Järfälla. I andra rummet ligger nyström, lundberg, fors, gunnar och Lars Lundberg.\n\nIkväll ska vi till Gröna Lund. På tävlingen vann jag en cykelflaska.\n\nJörgen och tabbe gör pappersflygplan av sånt här papper. Skickar med en\ntändsticksask fastän jag vet att du har denna.\n\nHälsningar\n\nUrban",
           "description": "Brevet är skrivet på Esso Motor Hotels brevpapper under en tävlingshelg i Stockholm."
         }
       ]

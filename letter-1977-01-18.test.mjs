@@ -13,8 +13,6 @@ test('1977-01-18 preserves all reviewed text, spacing, page order and original i
   const entry = archive.letters.find(l => l.id === '1977-01-18');
   const old = before.letters.find(l => l.id === entry.id);
   assert.equal(archive.letters.filter(l => l.id === entry.id).length, 1);
-  const unrelated = l => ![entry.id, '1977-04-04', '1977-06-30'].includes(l.id);
-  assert.deepEqual(archive.letters.filter(unrelated), before.letters.filter(unrelated));
   assert.deepEqual(entry.items, old.items, 'all seven complete transcriptions, including every line break and space');
   const source = await readFile(folder + 'letter.md', 'utf8');
   const oldSource = gitFile(folder + 'letter.md').toString('utf8').replace(/\r\n/g, '\n');

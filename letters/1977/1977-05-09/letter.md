@@ -1,25 +1,28 @@
-# 1977-05-07 – Stockholm (Esso Motor Hotel)
+# Metadata
 
-## Fakta
+- Datum: 1977-05-09
+- Skrivstart: 1977-05-07
+- Poststämplat: 1977-05-09
+- Från: Stockholm (Esso Motor Hotel, Järva Krog)
+- Till: Mölndal
+- Typ: Brev
+- Avsändare: Urban Sandlund
+- Mottagare: Ulf Sandlund
+- Avsändarens ålder: 14 år
+- Skrivtyp: handwritten
+- Läsläge: sammanhängande
+- Omfattning: 1 sida
+- Bilagor: Tändsticksask (omnämnd i brevet)
 
-**Datum skrivet:** 1977-05-07
+# Kuvert
 
-**Poststämpel:** 1977-05-09 (Solna)
-
-**Plats:** Stockholm (Esso Motor Hotel, Järva Krog)
-
-**Antal sidor:** 1
-
-**Bilagor:** Tändsticksask (omnämnd i brevet)
-
----
-
-## Kuvert
-
-### Framsida
+## Framsida
 
 ![Kuvert framsida](envelope-front.jpg)
 
+### Transcription
+
+```text
 **Mottagare**
 
 Ulf Sandlund  
@@ -29,6 +32,9 @@ Safjällsgatan 16
 **Poststämpel**
 
 Solna 1977-05-09
+```
+
+### Description
 
 **Frimärken**
 
@@ -38,10 +44,13 @@ Två svenska 55-öres frimärken.
 
 Kuvert från Esso Motor Hotel.
 
-### Baksida
+## Baksida
 
 ![Kuvert baksida](envelope-back.jpg)
 
+### Transcription
+
+```text
 **Avsändare**
 
 A.V.S.
@@ -49,57 +58,43 @@ A.V.S.
 Urban Sandlund  
 Degermansgatan 3  
 941 00 Piteå
+```
 
----
+# Transkription
 
-# Brevet
-
-## Page 01
+## Sida 1
 
 ![Page 01](page-01.jpg)
 
-### Transkription
+### Transcription
 
+```text
 Stockholm 77.05.07
 
 Hej Ulf!
 
-Det är kusin Urban som skriver.
-Jag skulle skriva igår när vi
-kom fram, men jag hade ingen
-penna. Nu har jag fått
-en av Sixten Hedkvist, tabbens
-pappa. Vi ligger på Esso Motor
-Hotel. Järva Krog i Stockholm. Idag
-tävlade jag. Sträcka: 28 km. Tid: 40.24.
+Det är kusin Urban som skriver. Jag skulle skriva igår när vi
+kom fram, men jag hade ingen penna. Nu har jag fått en av Sixten Hedkvist, tabbens pappa. Vi ligger på Esso Motor Hotel. Järva Krog i Stockholm. Idag tävlade jag.
+Sträcka: 28 km. Tid: 40.24.
 Anmälda: 88. Startande: 75. Plac.: 8.
 
-Mycket bra. Vi ligger i ett
-fyrabäddarsrum. Jag, boman, tabbe, sixten och
-jörgan dalberg. Snart ska
-jag ringa hem.
+Mycket bra. Vi ligger i ett fyrabäddarsrum. Jag, boman, tabbe, sixten och jörgan dalberg. Snart ska jag ringa hem.
 
-Imorgon väntar tävling
-i Järfälla. I andra
-rummet ligger nyström,
-lundberg, fors, gunnar
-och Lars Lundberg.
+Imorgon väntar tävling i Järfälla. I andra rummet ligger nyström, lundberg, fors, gunnar och Lars Lundberg.
 
-Ikväll ska vi till
-Gröna Lund. På tävlingen vann
-jag en cykelflaska.
+Ikväll ska vi till Gröna Lund. På tävlingen vann jag en cykelflaska.
 
-Jörgen och tabbe
-gör pappersflygplan av
-sånt här papper. Skickar med en
-tändsticksask fastän jag vet att
-du har denna.
+Jörgen och tabbe gör pappersflygplan av sånt här papper. Skickar med en
+tändsticksask fastän jag vet att du har denna.
 
 Hälsningar
 
 Urban
+```
 
----
+### Description
+
+Brevet är skrivet på Esso Motor Hotels brevpapper under en tävlingshelg i Stockholm.
 
 # Sammanfattning
 
