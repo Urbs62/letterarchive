@@ -575,5 +575,54 @@ function cdp(method, params = {}, sessionId) {
    assert.equal(layout, width);
    console.log(width, '1977-06-30: visible tabs, exact text, original sequence, archive photo and zoom passed');
  }
+ await cdp('Page.navigate', {url: `http://127.0.0.1:${server.address().port}/#brev/1977-11-03`}, sessionId);
+ for (let n = 0; n < 50 && !await evaluate(`activeLetter?.id === '1977-11-03'`); n++) {
+   await new Promise(resolve => setTimeout(resolve, 100));
+ }
+ for (const width of [1280, 390]) {
+   await cdp('Emulation.setDeviceMetricsOverride', {width, height: 900, deviceScaleFactor: 1, mobile: width < 600}, sessionId);
+   await evaluate(`(async () => {
+     const check = (condition, message) => { if (!condition) throw Error(message); };
+     const original = document.querySelector('#original-panel');
+     const text = document.querySelector('#transcription-panel');
+     const photos = [...document.querySelectorAll('.supplementary-archive-photo')];
+     const headings = panel => [...panel.querySelectorAll('.continuous-original-page > header > h2, .continuous-text-page > h2')].map(heading => heading.textContent);
+     const pageLabels = Array.from({length: 8}, (_, i) => 'Sida ' + (i + 1));
+     const materialLabels = ['Kuvert framsida', 'Kuvert baksida', 'Bilaga 1', 'Bilaga 2', 'Bilaga 3', 'Bilaga 4'];
+     check(activeLetter.id === '1977-11-03' && activeLetter.senderAge === 14, 'letter and age');
+     check(original.closest('.continuous-reading') && !document.querySelector('.image-navigation'), 'continuous reader');
+     for (const panel of [original, text]) {
+       check(headings(panel).join() === [...pageLabels, ...materialLabels].join(), 'pages and supplementary original material in order');
+       panel.querySelector('.continuous-material').open = true;
+     }
+     const scans = [...original.querySelectorAll('img')];
+     const orderedItems = [...activeLetter.items.filter(item => item.type === 'page'), ...activeLetter.items.filter(item => item.type !== 'page')];
+     check(scans.length === 14 && scans.every((scan, i) => scan.getAttribute('src') === orderedItems[i].image), 'eight page scans and six original material scans');
+     const texts = [...text.querySelectorAll('.continuous-document .transcription-text')];
+     check(texts.length === 8 && texts.every((node, i) => node.textContent === activeLetter.items[i + 2].transcription && getComputedStyle(node).whiteSpace === 'pre-wrap'), 'exact page text and line breaks');
+     check(photos.map(photo => photo.querySelector('h2').textContent).join() === 'Mamms cyklar på rullar,Katamaranen Jeanette', 'photo order');
+     check(text.nextElementSibling === photos[0] && photos[0].nextElementSibling === photos[1] &&
+       photos[1].nextElementSibling.querySelector('summary').textContent.trim() === 'Sammanfattning', 'photos between complete reader and analysis');
+     for (const [tab, panel] of [['original-tab', original], ['transcription-tab', text]]) {
+       document.getElementById(tab).click();
+       check(!panel.hidden && (panel === text ? original : text).hidden, 'active tab');
+       for (const photo of photos) {
+         const img = photo.querySelector('img');
+         check(photo.getClientRects().length && [...document.images].filter(image => image.src === img.src).length === 1, 'photo visible once');
+         await img.decode();
+         const button = photo.querySelector('button');
+         button.focus({preventScroll: true});
+         button.click();
+         await viewerContent.querySelector('img').decode();
+         check(!viewer.hidden && viewerContent.querySelector('img').src === img.src, 'photo magnifies');
+         closeViewer();
+         check(document.activeElement === button, 'viewer restores focus');
+       }
+       check(document.documentElement.scrollWidth <= innerWidth, 'no horizontal overflow');
+     }
+     await Promise.all(scans.map(scan => scan.decode()));
+   })()`);
+   console.log(width, '1977-11-03: both tabs, page and attachment order, two unique archive photos and zoom passed');
+ }
  assert.equal(await evaluate(`[...continuousReadingLetterIds].sort().join(',')==='1971-01-31,1972-12-10,1974-02-12,1974-02-19,1974-03-05,1974-08-23,1974-09-17,1975-05-29,1975-07-22,1975-08-27,1976-04-20,1976-05-xx,1976-08-07,1976-08-27,1976-09-xx,1976-11-14,1976-12-27,1976-12-30,1977-01-18,1977-03-02,1977-03-29,1977-04-03,1978-07-25,1978-09-29,1979-01-27,1980-10-19'`),true);
 });

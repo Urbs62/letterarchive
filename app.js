@@ -881,6 +881,9 @@ function renderLetter(letter) {
   if (letter.archivePhoto) {
     view.append(createArchivePhoto(letter.archivePhoto));
   }
+  for (const photo of letter.archivePhotos || []) {
+    view.append(createArchivePhoto(photo));
+  }
 
   // Supplementary archival cards follow the complete letter, before analysis.
   if (letter.id === "1976-11-14") {

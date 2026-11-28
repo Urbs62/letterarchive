@@ -649,6 +649,10 @@ button:focus-visible {
   width: 100%;
 }
 
+.supplementary-archive-photo figcaption {
+  white-space: pre-line;
+}
+
 .related-image .original-frame img {
   width: 100%;
   height: auto;

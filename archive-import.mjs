@@ -44,6 +44,7 @@ export async function importSource(source, target = "letters.json", replaceId) {
   }
   for (const item of entry.items) await readFile(item.image);
   if (entry.archivePhoto) await readFile(entry.archivePhoto.image);
+  for (const photo of entry.archivePhotos || []) await readFile(photo.image);
   const eol = original.includes("\r\n") ? "\r\n" : "\n";
   const serialize = item => JSON.stringify(item, null, 2).split("\n").map(line => `    ${line}`).join(eol);
   const expected = archive.letters.slice();
